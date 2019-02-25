@@ -59,3 +59,16 @@ d$`Incident Datetime` <- ymd_hms(d$`Incident Datetime`)
 d %>% 
   ggplot(aes(`Incident Datetime`, ))
 
+# d3 calendar of crime count
+# https://rstudio.github.io/r2d3/articles/gallery/calendar/
+
+
+# monthly basis?
+
+# crime around holidays
+
+# spatial distribution of crime
+
+# geom_point with size = n
+
+# leaflet of all crimes -> try new plugin for fast rendering of many points
