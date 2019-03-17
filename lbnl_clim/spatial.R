@@ -20,7 +20,7 @@ library(fields)
 ####################################################################################################
 
 # load in all csv files
-fp <- list.files("C:/Users/rpauloo/Desktop/zhilin/tb/TB_CSV", full = TRUE)[-1]
+fp <- list.files("F:/Box Sync/Research/Post QE Research/work_by_person/zhilin/lbnl_clim/TB_CSV", full = TRUE)[-1]
 
 # read all data into a list, fill missing lat/lon, convert dates
 l <- vector("list", length = length(fp))
@@ -41,8 +41,11 @@ spdf <- SpatialPointsDataFrame(coords = coords,
 # calcualte all ET
 spdf@data <- spdf@data %>% mutate(ALLET = QSOIL + QVEGE + QVEGT)
 
-# C2VSim elements shapefile: URL
-s <- shapefile("C:/Users/rpauloo/Desktop/zhilin/tb/c2vsim/C2Vsim_mesh.shp")
+# C2VSim elements shapefile:
+#s <- shapefile("F:/Box Sync/Research/Post QE Research/work_by_person/zhilin/lbnl_clim/c2vsim/C2Vsim_mesh.shp")
+
+# c2vSim FG
+s <- shapefile("F:/Box Sync/Research/Post QE Research/work_by_person/zhilin/lbnl_clim/c2vsim/C2VSimFG_Elements.shp")
 
 # plot elements and points
 s <- spTransform(s, CRS("+init=epsg:4326 +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs +towgs84=0,0,0"))
@@ -51,8 +54,12 @@ s <- spTransform(s, CRS("+init=epsg:4326 +proj=longlat +ellps=WGS84 +datum=WGS84
 # points(spdf, col = "red", pch = 16)
 
 # subset to tulare basin: subbasins 14:21
-tb <- s[s@data$ISGE %in% 14:21, ]
-tb@data <- tb@data %>% dplyr::select(IE, ISGE) #only keep eleemnt id and sb id
+# tb <- s[s@data$ISGE %in% 14:21, ]
+# tb@data <- tb@data %>% dplyr::select(IE, ISGE) #only keep eleemnt id and sb id
+# rownames(tb@data) <- NULL # remove rownames
+
+tb <- s[s@data$SubRegion %in% 14:21, ]
+tb@data <- tb@data %>% dplyr::select(ElementID, SubRegion) #only keep eleemnt id and sb id
 rownames(tb@data) <- NULL # remove rownames
 
 # plot(tb)
@@ -77,17 +84,21 @@ spdf@data %>%
 # first make a list of dataframes: each element is a unique time
 int <- split(spdf@data, f = spdf@data$TIME)
 
+library(velox)
 interp <- function(df, var, extr){
   tps <- Tps(df[, c("LONG", "LAT")], df[, var])
-  p   <- raster(tb, nrow = 100, ncol = 100) # res: 0.02008855, 0.02061255  (x, y)
+  p   <- raster(tb, nrow = 1000, ncol = 1000) # res: 0.002008855, 0.002061255  (x, y)
   p   <- interpolate(p, tps)
-  p   <- mask(p, tb)
+  # p   <- mask(p, tb)
   if(extr == FALSE){
     return(p)
   } 
   if(extr == TRUE){
-    rb  <- raster::extract(p, tb, sp = TRUE, fun = mean) # extract to tb elements
-    rb  <- rb@data
+    p   <- velox(p)
+    rb  <- p$extract(tb, small = TRUE, fun = mean, df = TRUE)
+    # rb  <- raster::extract(p, tb, sp = TRUE, fun = mean) # extract to tb elements
+    #rb  <- rb@data
+    #tb$var <- rb; return(tb) # sanity check for FG extraction
     return(rb)
   }   
 }
@@ -102,22 +113,59 @@ qover <- qsoil <- qvege <- qvegt <- allet <- prect
 st <- Sys.time()
 # calculate rasters
 for(i in 1:length(prect)){
-  prect[[i]] <- interp(int[[i]], vars[1], FALSE)
-  qover[[i]] <- interp(int[[i]], vars[2], FALSE)
-  qsoil[[i]] <- interp(int[[i]], vars[3], FALSE)
-  qvege[[i]] <- interp(int[[i]], vars[4], FALSE)
-  qvegt[[i]] <- interp(int[[i]], vars[5], FALSE)
-  allet[[i]] <- interp(int[[i]], vars[6], FALSE)
+  prect[[i]] <- interp(int[[i]], vars[1], TRUE)
+  qover[[i]] <- interp(int[[i]], vars[2], TRUE)
+  qsoil[[i]] <- interp(int[[i]], vars[3], TRUE)
+  qvege[[i]] <- interp(int[[i]], vars[4], TRUE)
+  qvegt[[i]] <- interp(int[[i]], vars[5], TRUE)
+  allet[[i]] <- interp(int[[i]], vars[6], TRUE)
 }
-Sys.time() - st # took about 45 minutes
+#Sys.time() - st # took about 45 minutes
+
+# add time
+for(i in 1:length(prect)){
+  prect[[i]]$time <- names(int)[i]
+  qover[[i]]$time <- names(int)[i]
+  qsoil[[i]]$time <- names(int)[i]
+  qvege[[i]]$time <- names(int)[i]
+  qvegt[[i]]$time <- names(int)[i]
+  allet[[i]]$time <- names(int)[i]
+}
 
 # save
-readr::write_rds(prect, "C:/Users/rpauloo/Desktop/zhilin/tb/results/prect.rds") 
-readr::write_rds(qover, "C:/Users/rpauloo/Desktop/zhilin/tb/results/qover.rds") 
-readr::write_rds(qsoil, "C:/Users/rpauloo/Desktop/zhilin/tb/results/qsoil.rds") 
-readr::write_rds(qvege, "C:/Users/rpauloo/Desktop/zhilin/tb/results/qvege.rds") 
-readr::write_rds(qvegt, "C:/Users/rpauloo/Desktop/zhilin/tb/results/qvegt.rds") 
-readr::write_rds(allet, "C:/Users/rpauloo/Desktop/zhilin/tb/results/allet.rds") 
+# readr::write_rds(prect, "C:/Users/rpauloo/Desktop/zhilin/tb/results/FG_prect.rds") 
+# readr::write_rds(qover, "C:/Users/rpauloo/Desktop/zhilin/tb/results/FG_qover.rds") 
+# readr::write_rds(qsoil, "C:/Users/rpauloo/Desktop/zhilin/tb/results/FG_qsoil.rds") 
+# readr::write_rds(qvege, "C:/Users/rpauloo/Desktop/zhilin/tb/results/FG_qvege.rds") 
+# readr::write_rds(qvegt, "C:/Users/rpauloo/Desktop/zhilin/tb/results/FG_qvegt.rds") 
+# readr::write_rds(allet, "C:/Users/rpauloo/Desktop/zhilin/tb/results/FG_allet.rds") 
+readr::write_rds(prect, "F:/Box Sync/Research/Post QE Research/work_by_person/zhilin/lbnl_clim/results/FG_prect.rds")
+readr::write_rds(qover, "F:/Box Sync/Research/Post QE Research/work_by_person/zhilin/lbnl_clim/results/FG_qover.rds")
+readr::write_rds(qsoil, "F:/Box Sync/Research/Post QE Research/work_by_person/zhilin/lbnl_clim/results/FG_qsoil.rds")
+readr::write_rds(qvege, "F:/Box Sync/Research/Post QE Research/work_by_person/zhilin/lbnl_clim/results/FG_qvege.rds")
+readr::write_rds(qvegt, "F:/Box Sync/Research/Post QE Research/work_by_person/zhilin/lbnl_clim/results/FG_qvegt.rds")
+readr::write_rds(allet, "F:/Box Sync/Research/Post QE Research/work_by_person/zhilin/lbnl_clim/results/FG_allet.rds")
+
+Sys.time() - st # took about 7.5 hours
+
+####################################################################################################
+# compile into a single file 
+####################################################################################################
+
+v1 <- bind_rows(prect) %>% rename(PRECT = out, TIME = time, ELEMENT_ID = ID_sp) %>% select(TIME, everything()) 
+v2 <- bind_rows(qover) %>% select(out) %>% rename(QOVER = out) 
+v3 <- bind_rows(qsoil) %>% select(out) %>% rename(QSOIL = out) 
+v4 <- bind_rows(qvege) %>% select(out) %>% rename(QVEGE = out) 
+v5 <- bind_rows(qvegt) %>% select(out) %>% rename(QVEGT = out) 
+v6 <- bind_rows(allet) %>% select(out) %>% rename(ALLET = out) 
+
+vf <- bind_cols(v1, v2, v3, v4, v5, v6)
+rm(v1, v2, v3, v4, v5, v6)
+
+# save
+readr::write_csv(vf, "F:/Box Sync/Research/Post QE Research/work_by_person/zhilin/lbnl_clim/results/FG_lbnl_clim_c2vsim.csv")
+
+
 
 
 
