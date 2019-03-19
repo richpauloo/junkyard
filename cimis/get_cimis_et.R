@@ -68,7 +68,7 @@ active_stations <- spdf_in[(spdf_in$IsActive == 'True' &
 
 # query parameters
 key       <- "43e46605-8d96-491e-aa09-be9a5ca4bcf3"
-targets   <- "2,125"
+targets   <- "2,125" # paste(active_stations, collapse = ",")
 startdate <- "2019-03-01"
 enddate   <- "2019-03-03"
 dataitems <- "day-asce-eto"
