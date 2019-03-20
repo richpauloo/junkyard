@@ -82,7 +82,7 @@ active_stations <- spdf_in[spdf_in$IsEtoStation == 'True', ]@data %>%
 len <- 30
 
 # query parameters
-key       <- ""
+key       <- "43e46605-8d96-491e-aa09-be9a5ca4bcf3"
 targets   <- paste(active_stations, collapse = ",")
 startdate <- "2001-01-01" #as.character(ymd(substr(Sys.time(), 1, 10)) - len) 
 enddate   <- substr(Sys.time(), 1, 10)
