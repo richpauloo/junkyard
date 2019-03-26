@@ -32,10 +32,25 @@ spdf <- SpatialPointsDataFrame(coords = coords,
                                proj4string = CRS(pro))
 
 # make leaflet
-leaflet(spdf) %>% 
+library(leaflet)
+
+providers <- c("Esri.WorldTopoMap", "Stamen.TopOSMFeatures", "Stamen.TopOSMRelief", "Esri.WorldImagery")
+map = leaflet(spdf) %>% 
   addTiles() %>% 
-  addMarkers(label = paste(w, ds, sep = ": ")) %>% 
-  addProviderTiles(provider = providers$Esri.WorldImagery)
+  addMarkers(label = paste(w, ds, sep = ": "))
+for(i in 1:length(providers)){
+  map = map %>% addProviderTiles(providers[i], group = providers[i])
+}
+
+map = map %>% addLayersControl(
+  baseGroups = providers,
+  options = layersControlOptions(collapsed = FALSE))
+
+map
+
+# save HTML
+library(htmlwidgets)
+saveWidget(map, file = "jtriz.html")
 
 # save to kmz
 library(rgdal)
