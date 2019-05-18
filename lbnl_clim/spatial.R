@@ -22,6 +22,7 @@ library(fields)
 # load in all csv files
 fp <- list.files("F:/Box Sync/Research/Post QE Research/work_by_person/zhilin/lbnl_clim/TB_CSV", full = TRUE)[-1]
 
+
 # read all data into a list, fill missing lat/lon, convert dates
 l <- vector("list", length = length(fp))
 for(i in 1:length(l)){
@@ -30,6 +31,7 @@ for(i in 1:length(l)){
 
 l <- do.call(rbind.data.frame, l)
 l <- tidyr::fill(l, LAT) %>% tidyr::fill(LONG)
+
 
 
 # convert to spatial data
