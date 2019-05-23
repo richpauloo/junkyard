@@ -100,11 +100,11 @@ sudo ln -s ~/name_of_folder_with_app
 
 To view this new app, you'll aso need to remove the index file: `sudo rm /srv/shiny-server/index.html`  
 
-The shiny server configuration file is at `/etc/shiny-server/shiny.conf`.  
+The shiny server configuration file is at `/etc/shiny-server/shiny-server.conf`.  
 
-Edit it with `sudo nano /etc/shiny-server/shiny.conf`. You'll want to add to the top line `preserve_logs true;` to start logging errors in `/var/log/shiny-server`. You'll also want to change `directory_index on;` to `directory_index off;` to remove the directory index screen you encounter when visiting the page.  
+Edit it with `sudo nano /etc/shiny-server/shiny-server.conf`. You'll want to add to the top line `preserve_logs true;` to start logging errors in `/var/log/shiny-server`. You'll also want to change `directory_index on;` to `directory_index off;` to remove the directory index screen you encounter when visiting the page.  
 
-To make these changes to `shiny.conf` live, restart shiny server: `sudo systemctl reload shiny-server`  
+To make these changes to `shiny-server.conf` live, restart shiny server: `sudo systemctl reload shiny-server`  
 
 By the way, when installing additional R packages, do so from the user `shiny`, like so:    
 
