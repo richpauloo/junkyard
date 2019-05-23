@@ -66,9 +66,9 @@ If you're unable to connect, reboot the instance, and restart your computer befo
 
 ```
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9  
-sudo add-apt-repository 'deb [arch=amd64,i386] https://cran.rstudio.com/bin/linux/ubuntu bionic/'  
+sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/'
 sudo apt update  
-sudo apt install r-base r-base-dev  
+sudo apt install r-base 
 sudo R  
 install.packages("shiny")  # install shiny
 quit()                     # quit R
