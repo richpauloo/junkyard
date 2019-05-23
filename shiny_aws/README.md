@@ -166,6 +166,8 @@ sudo ln -s /etc/niginx/sites-available/shiny.conf
 
 The reasoning behind this linking is that you can simply unlink the file when it's not necessary, but retain it in `sites-available`.  
 
+Test the `.conf` with `sudo nginx -t`.  
+
 To see the changes `sudo systemctl restart nginx` . You might also need to restart shiny server with `sudo systemctl reload shiny server` .  
 
 Now the app should render at `shiny.richpauloo.com/my_app` .  
