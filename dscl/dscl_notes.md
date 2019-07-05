@@ -1,3 +1,23 @@
+# Getting local directories/files into Docker
+
+Create a directory, navigate to it, and run:  
+
+```
+docker run --rm -it -v`pwd`:/data datascienceworkshops/data-science-at-the-command-line
+```
+
+to map that local directory to Docker. This will open Docker, and the local directory will be accessible in `/data` inside the container.  
+
+
+To start Docker:  
+
+```
+docker run --rm -it datascienceworkshops/data-science-at-the-command-line
+```
+
+***  
+
+
 # Chapter 2: Getting Started  
 
 > Unix philosophy: each tool does one thing and does it well  
@@ -240,6 +260,187 @@ If using a shortened URL (e.g. - bitly) use the `-L`or `--location` option to au
 Web APIs that return JSON/XML can be accessed via `curl` and worked with `jq`  
 
 `curl -s https://randomuser.me/api/1.2/ | jq`  
+
+
+
+***  
+
+# Chapter 4: Creating Re-usable command line tools 
+
+Consider the following pipeline:  
+
+```
+$ curl -s http://www.gutenberg.org/files/76/76-0.txt |
+> tr '[:upper:]' '[:lower:]' | 
+> grep -oE '\w+' |             
+> sort |                       
+> uniq -c |                    
+> sort -nr |                   
+> head -n 10                   
+   6441 and
+   5082 the
+   3666 i
+   3258 a
+   3022 to
+   2567 it
+   2086 t
+   2044 was
+   1847 he
+   1778 of
+```
+
+Extracts the top ten words by count in a document. Let's turn into a cmd line tool. Can run every hour on a website, on all books, etc.  
+
+Turn into a bash shell script. Steps:  
+
+1. Copy and paste the one-liner into a file.  
+2. Add execute permissions.  
+3. Define a so-called shebang.  
+4. Remove the fixed input part.  
+5. Add a parameter.  
+6. Optionally extend your PATH.  
+
+Save as bash script `top-words-1.sh`:  
+
+```
+curl -s http://www.gutenberg.org/files/76/76-0.txt |
+tr '[:upper:]' '[:lower:]' | grep -oE '\w+' | sort |
+uniq -c | sort -nr | head -n 10
+```
+
+And use `bash` to run: `bash book/ch04/top-words-1.sh`.  
+
+The file cannot be executed on its own, so it's not a "true" command-line tool. The reason it can't be executed directly is that we don't have the correct access permissions. In particular, you, as a user, need to have the permission to execute the file. To add permission use chmod (**change mode**).  
+
+First copy file and rename: `cp top-words-{1,2}.sh`.  
+
+`chmod u+x top-words-2.sh`  
+
+The command-line argument u+x consists of three characters: (1) u indicates that we want to change the permissions for the user who owns the file, which is you, because you created the file; (2) + indicates that we want to add a permission; and (3) x, which indicates the permissions to execute. Let us now have a look at the access permissions of both files by listing the files `ls` in long format `-l`:  
+
+```
+$ ls -l top-words-{1,2}.sh
+-rw-r--r--@ 1 richpauloo  staff  137 Jul  5 14:27 top-words-1.sh
+-rwxr--r--@ 1 richpauloo  staff  137 Jul  5 14:30 top-words-2.sh
+```
+
+First character `-` means file and `d` means directory. These are files. Next are three sets of `rwx` which stand for reacd, write, and execute permissions. The first chunk of 3 is for you, the second 3 are for all users who share the file, and the last three are for ALL users.   
+
+As you can see, the first chunk of `rwx` is complete for `top-words-2.sh` which we modified for the current user `u`. To set permissions for other groups, see [the docs](https://www.geeksforgeeks.org/chmod-command-linux/).  
+
+Now you can execute the file without preceeding it with `bash`. Note that if you're in the same directory as an executable, you need to preceed it with `./`:   
+
+```
+$ ./top-words-2.sh 
+6439 and
+5077 the
+3666 i
+3258 a
+3022 to
+2567 it
+2086 t
+2044 was
+1847 he
+1777 of
+
+```
+
+Without the correct permission to execute you'll see:  
+
+```
+$ ./top-words-1.sh 
+-bash: ./top-words-1.sh: Permission denied
+```
+
+Although we can already execute the file on its own, we should add a so-called **shebang** to the file. The shebang is a special line in the script, which instructs the system which executable should be used to interpret the commands.  
+
+In our case we want to use bash to interpret our commands. Write a file `top-words-3.sh` with a shebang.  
+
+```
+#!/usr/bin/env bash
+curl -s http://www.gutenberg.org/files/76/76-0.txt |
+tr '[:upper:]' '[:lower:]' | grep -oE '\w+' | sort |
+uniq -c | sort -nr | head -n 10
+```
+
+The name shebang comes from the first two characters: a hash (she) and an exclamation mark (bang). This command tells the OS to use `env` to run `bash` when calling this cmd line tool.  
+
+In next step, make the code more useable by generalizing to any text. `cp top-words-{3,4}.sh`, `nano` to remove the first line with `curl`.  
+
+Taking it another step further, you can add parameters to a shell script. For instance, consider the utility to passing a number `n` into the previous function so that `head` prints a user-defined amount of lines.  
+
+
+`top-words-5.sh`: 
+
+```
+#!/usr/bin/env bash
+NUM_WORDS="$1"                                        
+tr '[:upper:]' '[:lower:]' | grep -oE '\w+' | sort |
+uniq -c | sort -nr | head -n $NUM_WORDS 
+```
+
+* The variable `NUM_WORDS` is set to the value of `$1`, which is a special variable in Bash. It holds the value of the first command-line argument passed to our command-line tool. The table below lists the other special variables that Bash offers.  
+
+* Note that in order to use the value of the `$NUM_WORDS` variable, you need to put a dollar sign in front of it. When you set it, you do not write a dollar sign.  
+
+Now if we wanted to see the top 5 most-used words of our text, we would invoke our command-line tool as follows:  
+
+```
+$ cat /home/data/ch03/data/finn.txt | /home/data/ch04/top-words-5.sh 5
+   6441 and
+   5082 the
+   3666 i
+   3258 a
+   3022 to
+```
+
+
+To make the cmd line tool accessible from everywhere, you need to add it to the `PATH`.  
+
+Current paths are: `echo $PATH | fold`. Paths are separated by `:`, so let's transform `tr` those to new lines (`\n`):  
+
+```
+$ echo $PATH | tr ':' '\n'
+/usr/local/sbin
+/usr/local/bin
+/usr/sbin
+/usr/bin
+/sbin
+/bin
+```
+
+
+To change the `PATH` permanently, you'll need to edit the `.bashrc` or `.profile` file located in your home directory. If you put all your custom command-line tools into one directory, say, `~/tools`, then you only change the `PATH` once. As you can see, the Data Science Toolbox already has `/home/vagrant/.bin` in its `PATH`. Now, you no longer need to add the `./`, but you can just use the filename. Moreover, you do no longer need to remember where the command-line tool is located.  
+
+Command-line tools in Python and R need to specify `python` and `Rscript`, respectively, as the interpreter after the shebang (`#!`).  
+
+Equivalent Python and R code:  
+
+```
+#!/usr/bin/env python
+import re
+import sys
+from collections import Counter
+num_words = int(sys.argv[1])
+text = sys.stdin.read().lower()
+words = re.split('\W+', text)
+cnt = Counter(words)
+for word, count in cnt.most_common(num_words):
+    print "%7d %s" % (count, word)
+```
+
+```
+#!/usr/bin/env Rscript
+n <- as.integer(commandArgs(trailingOnly = TRUE))
+f <- file("stdin")
+lines <- readLines(f)
+words <- tolower(unlist(strsplit(lines, "\\W+")))
+counts <- sort(table(words), decreasing = TRUE)
+counts_n <- counts[1:n]
+cat(sprintf("%7d %s\n", counts_n, names(counts_n)), sep = "")
+close(f)
+```
+
 
 
 
