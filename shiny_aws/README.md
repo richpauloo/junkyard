@@ -127,6 +127,8 @@ A few tips related to installing R packages:
 
 # Step 3: Add a custom domain name with nginx  
 
+See [this beginner's guide](http://nginx.org/en/docs/beginners_guide.html).  
+
 Currently all requests to `richpauloo.com` and all subdomains `*.richpauloo.com` redirect to some IP. We want all requests to `shiny.richpauloo.com` to direct to the IP address of the AWS server.  
 
 To do this, go to your DNS registrar (e.g. - GoDaddy) and manage the domain you select (e.g. `richpauloo.com`). Remove the present `TYPE` _A_ records. Then make a new `TYPE` _A_, with `HOST` _shiny_, and `VALUE` equal to the IP address of your EC2 instance. Now _shiny_ is a subdomain of `richpauloo.com` , so requests to `shiny.richpauloo` are redirected to the IP address provided, which is the EC2 instance!  
