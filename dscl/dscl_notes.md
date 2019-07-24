@@ -441,6 +441,165 @@ cat(sprintf("%7d %s\n", counts_n, names(counts_n)), sep = "")
 close(f)
 ```
 
+Processing "streaming data" is a bit different than "static data". Some cmd line tools like `sort` and `awk` require complete data before it's piped to another command, so with streaming data they become useless. However, in `R` and `Python` there are ways to deal with data coming from a non-stop stream.  
+
+```
+#!/usr/bin/env python
+from sys import stdin, stdout
+while True:
+    line = stdin.readline()
+    if not line:
+        break
+    stdout.write("%d\n" % int(line)**2)
+    stdout.flush()
+```
+
+```
+#!/usr/bin/env Rscript
+f <- file("stdin")
+open(f)
+while(length(line <- readLines(f, n = 1)) > 0) {
+        write(as.integer(line)^2, stdout())
+}
+close(f)
+```
+
+
+
+***  
+
+
+# Chapter 5: Scrubbing Data  
+
+`cut`, `sed`, `jq`, `csvgrep` and others.  
+
+```
+printf 'foo\nbar\nfoo' | sort | uniq -c | sort -nr
+  2 foo
+  1 bar
+printf 'foo\nbar\nfoo' | sort | uniq -c | sort -nr | awk '{print $2","$1}' | header -a 'value, count'
+  value,count
+  foo,2
+  bar,1
+```
+
+`uniq` only looks for different rows in sorted data, so things need to be sorted first.   
+
+
+Filtering lines based on location.  
+
+Create some dummy data with `seq`. `%{e,f,g}` options create different output. 
+
+```
+$ seq -f "Line %e" 2
+  Line 1.000000e+00
+  Line 2.000000e+00
+$ seq -f "Line %f" 2
+  Line 1.000000
+  Line 2.000000
+$ seq -f "Line %g" 2
+  Line 1
+  Line 2
+```
+
+`seq` is pretty cool. Make a bunch of files (`touch`) or directories (`mkdir`).    
+
+```
+mkdir temp
+cd temp
+touch $(seq -f "file%03g" 1 10)
+ls
+```
+
+Let's make a dummy file and filter rows by position:  
+
+```
+seq -f "Line %g" 10 | tee lines
+```
+
+Print first 3 rows with `head`, `sed`, or `awk`. Can do the same for the last lines with `tail`.  
+
+```
+[/data]$ < lines head -n 3
+Line 1
+Line 2
+Line 3
+[/data]$ < lines sed -n '1,3p'
+Line 1
+Line 2
+Line 3
+[/data]$ < lines awk 'NR<=3'
+Line 1
+Line 2
+Line 3
+```
+
+Removing lines with `head` and `tail`. Remove the first 3 lines. Note with `tail` you need to add one. With `head` you dont.  
+
+```
+< lines tail -n +4
+< lines sed '1,3d'
+< lines sed -n '1,3!p'
+```
+
+
+You can print (or extract) specific lines (4, 5, and 6 in this case) using a either `sed`, `awk`, or a combination of `head` and `tail`: 
+
+```
+< lines sed -n '4,6p'
+< lines awk '(NR>=4)&&(NR<=6)'
+< lines head -n 6 | tail -n 3
+  Line 4
+  Line 5
+  Line 6
+```  
+
+Print odd lines with `sed` by specifying a start and a step, or with `awk` by using the modulo operator:  
+
+```
+< lines sed -n '1~2p'
+< lines awk 'NR%2'
+  Line 1
+  Line 3
+  Line 5
+  Line 7
+  Line 9
+```
+
+Printing even lines works in a similar manner:
+
+```
+< lines sed -n '0~2p'
+< lines awk '(NR+1)%2'
+  Line 2
+  Line 4
+  Line 6
+  Line 8
+  Line 10
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
