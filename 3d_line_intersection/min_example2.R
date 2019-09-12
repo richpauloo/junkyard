@@ -1,10 +1,12 @@
+# https://stackoverflow.com/questions/57153978/interpolate-points-along-a-3d-line
+
 library(dplyr)
 library(purrr)
 library(plotly)
 
 path3d <- data.frame(
-  x = c(245, 233, 270, 400, 380),
-  y = c(245, 270, 138, 225, 300),
+  x = c(245, 233, 270, 400, 380)-200,
+  y = c(245, 270, 138, 225, 300)-100,
   z = c(0, 1.2, 5, 3, 9),
   t = 1:5)
 
@@ -28,10 +30,11 @@ root_finder <- function(f, zero, range, cuts) {
   
 }
 
-root_finder(path3d_interp_funs$z, zero = 4, range = range(path3d$t), cuts = 10)
+#root_finder(path3d_interp_funs$z, zero = 4, range = range(path3d$t), cuts = 10)
 
 t_solutions <- map(
-  1:8, 
+  #1:8,
+  seq(0.1, 8, 0.1),
   ~root_finder(path3d_interp_funs$z, zero = .x, range = range(path3d$t), cuts = 100)
 ) %>% unlist()
 
@@ -42,3 +45,5 @@ path <- arrange(path, t)
 
 plot3D::scatter3D(path$x, path$y, path$z, type = "b", bty = "g", 
                   phi = 0, col = "red", pch = 20, ticktype = "detailed")
+
+
