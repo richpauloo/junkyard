@@ -46,7 +46,7 @@ ds <- mutate(ds,
              geo = paste0(x1, " and ", x2, ", Davis, CA ", zip))
 
 # geocode with OSM -- takes a while. Then save it to avoid re-geocoding
-ggmap::register_google("AIzaSyC_dLbZhGkf-tb81oH-xeRk_kANAL2fcu8")
+ggmap::register_google("my_secret_code")
 l <- lapply(ds$geo, purrr::possibly(ggmap::geocode, NA_real_), source = "google")
 textme()
 

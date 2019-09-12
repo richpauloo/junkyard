@@ -1,6 +1,13 @@
 ---
+title: UC Davis student location data
 output: html_document
 ---
+
+* Click the  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/OOjs_UI_icon_fullScreen.svg/1024px-OOjs_UI_icon_fullScreen.svg.png" alt="fullscreen" width="10" height="10">  icon to enter full screen mode.  
+
+* Clusters show areas of high survey response data. Click on clusters to zoom in.  
+
+* Hover over clusters to see a polygon showing the range of markers within.  
 
 ```{r, echo = FALSE, warning=FALSE, message=FALSE, error=FALSE, out.width="100%"}
 library(leaflet)
