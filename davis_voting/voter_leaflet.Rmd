@@ -1,0 +1,48 @@
+---
+output: html_document
+---
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE, error=FALSE, out.width="100%"}
+library(leaflet)
+library(leaflet.extras)
+library(tidyverse)
+library(sf)
+
+lsfd <- read_rds("C:/Users/rpauloo/Documents/lsfd.rds")
+
+# map
+leaflet(lsfd) %>%
+  setView(lat = mean(st_coordinates(lsfd)[, 2]),
+          lng = mean(st_coordinates(lsfd)[, 1]),
+          zoom = 10) %>% 
+  addProviderTiles(providers$CartoDB.DarkMatter, group = "Carto") %>% 
+  addProviderTiles(providers$Esri.WorldImagery, group = "World") %>% 
+  addProviderTiles(providers$OpenStreetMap, group = "Street") %>% 
+  addMarkers(clusterOptions = markerClusterOptions()) %>% 
+  addDrawToolbar(
+    targetGroup = "my_polygon", 
+    circleOptions = FALSE, 
+    polylineOptions = FALSE,
+    rectangleOptions = FALSE,
+    circleMarkerOptions = FALSE,
+    markerOptions = FALSE,
+    editOptions = editToolbarOptions(
+      selectedPathOptions = selectedPathOptions()
+    )
+  )  %>%
+  addLayersControl(
+    overlayGroups = "my_polygon",
+    baseGroups = c("Carto", "World", "Street"),
+    options = layersControlOptions(collapsed = FALSE, position = "bottomright")
+  ) %>%
+  addStyleEditor() %>% 
+  addFullscreenControl(position = "topleft", 
+                       pseudoFullscreen = FALSE) %>% 
+  addMeasurePathToolbar(options =
+                          measurePathOptions(imperial = TRUE,
+                                             minPixelDistance = 100,
+                                             showDistances = FALSE)
+                        )
+  
+```
+
