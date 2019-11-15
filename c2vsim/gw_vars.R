@@ -20,7 +20,7 @@ sjv <- mutate(d, Time = lubridate::ymd(Time)) %>%
   summarise(mean_sub_af = mean(`Net Subsurface Inflow (+)`)) %>%
   ungroup()
   
-sjv %>% 
+p <- sjv %>% 
   ggplot(aes(year, mean_sub_af)) + 
   geom_line() + 
   geom_hline(aes(yintercept = mean(sjv$mean_sub_af)), linetype = "dashed", color = "red") +
@@ -37,3 +37,4 @@ sjv %>%
        title = "Average annual subsurface inflow in the SJV (1988-2008)", 
        subtitle = "Negative values indicate a net export of subsufrace flow",
        caption = "Values calcualted from C2VSim subregions 10-21 (Brush, 2012)") 
+ggsave(p, filename="~/p.png")
