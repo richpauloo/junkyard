@@ -1,15 +1,8 @@
 ---
 title: Aquifer thickness calculated from ~300,000 well logs
 author: Rich
-date: '2019-09-16 02:57:45+00:00'
-slug: cawdc-2019
-summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-image_preview: "static/img/clifford.png"
 external_link: ""
 math: false
-header:
-  caption: "static/img/clifford.png"
-  image: "My caption 😄"
 ---
 
 At the time of writing, the [California DWR Online Well Completion Report Database](https://data.ca.gov/dataset/well-completion-reports) contains ~1,000,000 digitized well logs. About 1/3 of those wells have information on the top and bottom of the perforated interval.  
