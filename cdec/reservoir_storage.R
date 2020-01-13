@@ -10,6 +10,12 @@ library(rvest)     # for webscraping
 library(viridis)   # colorblind-safe color palettes
 library(readr)     # fast read/write functions
 
+# all station capacity
+# seems to be something for major 12 reservoirs, but nothing comprehensive
+# https://www.americangeosciences.org/critical-issues/maps/interactive-map-water-levels-major-reservoirs-california
+res_capacity <- 
+
+
 # scrape CDEC station codes
 station_codes <- read_html('http://cdec.water.ca.gov/misc/resinfo.html') %>% 
   html_table() %>% 
@@ -19,31 +25,32 @@ station_codes <- read_html('http://cdec.water.ca.gov/misc/resinfo.html') %>%
 length(station_codes) # 199 unique reservoirs
 
 # 30 day data window
-start <- Sys.Date() - 30            # start of query
+start <- Sys.Date() - 365            # start of query
 end   <- Sys.Date()                 # today
 
 # constrct the url to query CDEC
 url <- paste0('https://cdec.water.ca.gov/dynamicapp/req/CSVDataServlet?Stations=', 
               paste(station_codes, collapse = '%2C'),
-              '&SensorNums=23&dur_code=H&Start=',       # 23 indicates hourly outflow
+              '&SensorNums=15&dur_code=D&Start=',       # 15 = storage, D = daily
               start,
               '&End=',
               end)
 
 # read the generated webpage, clean the date column, and omit missing values for the present day
-df <- read.csv(url)
-
+df <- read_csv(url) %>% 
+  rename(value = VALUE, id = STATION_ID, dt = `DATE TIME`)
+  
 df <- df %>% 
-  mutate(year = substr(df$DATE.TIME, 1, 4), 
-         month = substr(df$DATE.TIME, 5, 6), 
-         day = substr(df$DATE.TIME, 7, 8), 
-         hour = substr(df$DATE.TIME, 10, 13),
-         ymdhm = lubridate::ymd_hm(paste(year, month, day, hour, sep = "-"))) %>% 
-  filter(VALUE != "---") %>% 
-  mutate_at(c("VALUE","year","month","day"), as.numeric)
+  mutate(year = substr(df$dt, 1, 4), 
+         month = substr(df$dt, 5, 6), 
+         day = substr(df$dt, 7, 8),
+         value = as.numeric(value)
+  ) %>% 
+  select(id, dt, value, year, month, day)
+  
 
-# how many reservoirs have hourly outflow data?
-unique(df$STATION_ID) %>% length() # 27
+# reservoirs with daily storage data
+unique(df$id) %>% length() # 81
 
  
 # Visualize  
@@ -54,12 +61,13 @@ unique(df$STATION_ID) %>% length() # 27
 # Reservoir outflow in Shasta peaking around 8pm. Hydropeaking? 
 
 df %>%
-  filter(STATION_ID %in% c("FOL", "SHA")) %>% 
-  ggplot(aes(ymdhm, VALUE, color = STATION_ID)) + 
+  filter(id %in% c("SHA")) %>% 
+  ggplot(aes(dt, value/1e6, color = id)) + 
   geom_line(size = 1) + 
+  geom_hline(yintercept = 4552000/1e6) +
   scale_color_viridis_d() +
-  labs(title = "Hourly Outflow",
+  labs(title = "Daily Storage",
        subtitle = "Folsom and Shasta Reservoir",
-       x = "Date", y = "Outflow (CFS)") +
+       x = "Date", y = "Storage (MAF)") +
   theme_minimal() +
-  facet_wrap(~STATION_ID, ncol=1)
+  facet_wrap(~id, ncol=1, scales = "free_y") 
