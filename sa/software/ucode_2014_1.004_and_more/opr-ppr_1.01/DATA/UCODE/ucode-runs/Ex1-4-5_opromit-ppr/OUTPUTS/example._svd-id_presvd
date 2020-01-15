@@ -1,0 +1,44 @@
+"PARAMETER NAME"  "SVD-ID statistic (see _svd for vector contributions to SVD-ID stat)"  "Number of SVD parameters = "        1
+RCH_1            0.1039524747491787
+RCH_2            0.2793436009258941
+K_RB             0.1239297430972412E-04
+HK_1             0.6126983945742738
+VK_CB            0.1890376493033297E-09
+HK_2             0.3993136587306067E-02
+
+"If a different SVDNumber is selected, SVD-ID statistic would be:"
+"PARAMETER NAME"  "SVD-ID statistic "  "Number of SVD parameters = "        2
+RCH_1            0.6086056350568989
+RCH_2            0.7093493609660229
+K_RB             0.2255003898217930E-03
+HK_1             0.6401522981813844
+VK_CB            0.3649887933297969E-03
+HK_2             0.4130221661254325E-01
+"PARAMETER NAME"  "SVD-ID statistic "  "Number of SVD parameters = "        3
+RCH_1            0.9831652813804977
+RCH_2            0.9754992164887675
+K_RB             0.2509190850411592E-03
+HK_1             0.9991910597819962
+VK_CB            0.3655796636889087E-03
+HK_2             0.4152794360000989E-01
+"PARAMETER NAME"  "SVD-ID statistic "  "Number of SVD parameters = "        4
+RCH_1            0.9835700982970166
+RCH_2            0.9759611088542668
+K_RB             0.3195001045200489E-01
+HK_1             0.9992055995045063
+VK_CB            0.9662194207920942
+HK_2             0.4309376210011349E-01
+"PARAMETER NAME"  "SVD-ID statistic "  "Number of SVD parameters = "        5
+RCH_1            0.9836147173883947
+RCH_2            0.9760372326301570
+K_RB             0.9998165114817505
+HK_1             0.9992583834067641
+VK_CB            0.9981653714599693
+HK_2             0.4310778363296679E-01
+"PARAMETER NAME"  "SVD-ID statistic "  "Number of SVD parameters = "        6
+RCH_1             1.000000000000001
+RCH_2             1.000000000000000
+K_RB              1.000000000000000
+HK_1              1.000000000000000
+VK_CB             1.000000000000001
+HK_2              1.000000000000000

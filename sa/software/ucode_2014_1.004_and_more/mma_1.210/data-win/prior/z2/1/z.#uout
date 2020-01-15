@@ -1,0 +1,813 @@
+ 
+  Reading input from file: z.in
+ 
+ 
+  ******************************************************************************
+  ******************************************************************************
+ 
+                Output from program UCODE_2005, Version:   1.023
+ 
+               Constructed using the JUPITER API, Version:  1.5.0
+ 
+  ******************************************************************************
+  ******************************************************************************
+ 
+ 
+ -------------------------------------------------------------------------------
+  ECHO UCODE CONTROLS INPUT:
+ 
+  MODEL NAME =   2a
+  MODEL LENGTH UNITS =   NA
+  MODEL TIME UNITS =   NA
+  MODEL MASS UNITS =   NA
+ 
+  OPTIMIZATION WILL BE PERFORMED
+ 
+    REACTIVATION HAS BEEN REQUESTED IN THE UCODE_CONTROL_DATA BLOCK
+      EITHER BY USER SPECIFICATION OR BY DEFAULT:
+      IF ANY PARAMETERS ARE OMITTED FROM THE ITERATION WITH THE LOWEST
+      OBJECTIVE FUNCTION VALUE DUE TO USER REQUESTED LIMITS ON
+      SENSITIVITY OR CONSTRAINTED PARAMETER VALUES, CONSEQUENTLY
+      ALL ADJUSTABLE PARAMETERS WILL BE REACTIVATED FOR CALCULATION OF
+      FINAL SENSITIVITIES AND STATISTICS.
+    REACTIVATE = final IN THE UCODE_CONTROL_DATA BLOCK:
+      PARAMETER VALUES FROM THE ITERATION WITH THE LOWEST OBJECTIVE
+      FUNCTION VALUE WILL BE SUBSTITUTED FOR PARAMETERS THAT WERE OMITTED.
+ 
+  NONLINEAR INTERVALS WILL NOT BE PERFORMED (BY DEFAULT)
+  SENSITIVITIES WILL BE CALCULATED
+  STARTRES - Residuals written at initial parameter values
+  INTERMEDRES - Residuals will not be written between iterations
+  FINALRES - Residuals written at final parameter values
+  EIGENVECTORS/EIGENVALUES WILL NOT BE PRINTED
+  STARTSENS Print dimensionless scaled sensitivities at starting values
+  INTERMEDSENS Do not print any sensitivities at intermed values
+  FINALSENS Print dimensionless scaled sensitivities at final values
+  DATA EXCHANGE FILES WILL BE PRODUCED
+ 
+  ECHO MODIFIED GAUSS-NEWTON UCODE REGRESSION CONTROL INPUT:
+ 
+  MAXIMUM NUMBER OF PARAMETER ITERATIONS                  =          4
+  DEFAULT TOLERANCE ON % PARAMETER CHANGE FOR CLOSURE     =   1.00E-02
+  TOLERANCE ON % CHANGE OF SOSC OVER 3 ITERATIONS         =   0.00E+00
+  MAXIMUM FRACTIONAL PARAMETER CHANGE                     =   2.00E+00
+  MAXIMUM CHANGE APPLIES TO INDICATED PARAMETER SPACE         NATIVE
+  MARQUARDT DIRECTION (IN DEGREES)                        =   85.41
+  MARQUARDT FACTOR                                        =   1.50E+00
+  MARQUARDT INCREMENT                                     =   1.00E-03
+ 
+ 
+  ECHO MODEL COMMAND LINES:
+ 
+  Command ID    Purpose       Command Line
+  ------------  ------------  --------------------------------------------------
+  modflow       forward       m.bat
+  
+
+ PARAMETER INFORMATION:
+
+ No.  Param. name     Group        Value       Lower value   Upper value    Adj?
+ ---- ------------ ------------  ------------  ------------  ------------  -----
+    1 Kx1          DefaultPar     1.00000       1.00000       25.0000       Y
+    2 Kx5          DefaultPar     25.0000       1.00000       25.0000       Y
+    3 RCH          DefaultPar    8.000000E-04  8.000000E-05  8.000000E-03   Y
+    4 KrMain       DefaultPar    0.100000      1.000000E-02   1.00000       N
+    5 KrTrib       DefaultPar    0.200000      2.000000E-02   2.00000       N
+
+ No.  Param. name   LN   SCALEPVAL   PERTURB    MAXCHANGE    TOLPAR
+ ---- ------------  --  ----------  ----------  ---------  ---------
+    1 Kx1            1   1.000E-06   1.000E-02   2.00      1.000E-02
+    2 Kx5            1   2.500E-05   1.000E-02   2.00      1.000E-02
+    3 RCH            0   8.000E-11   1.000E-02   2.00      1.000E-02
+    4 KrMain         1   1.000E-08   1.000E-02   2.00      1.000E-02
+    5 KrTrib         1   2.000E-08   1.000E-02   2.00      1.000E-02
+  
+
+ INFORMATION FOR ADJUSTABLE PARAMETERS:
+
+ Param. name     Group          Value       Lower value    Upper value  Par. no.
+ ------------ ------------  -------------  -------------  -------------  -------
+ Kx1          DefaultPar      1.00000        1.00000        25.0000           1
+ Kx5          DefaultPar      25.0000        1.00000        25.0000           2
+ RCH          DefaultPar     8.000000E-04   8.000000E-05   8.000000E-03       3
+
+               Sens
+ Param. name   Method  LN   SCALEPVAL   PERTURB    MAXCHANGE    TOLPAR
+ ------------  ------  --  ----------  ----------  ---------  ----------
+ Kx1               1    1   1.000E-06   1.000E-02   2.00       1.000E-02
+ Kx5               1    1   2.500E-05   1.000E-02   2.00       1.000E-02
+ RCH               1    0   8.000E-11   1.000E-02   2.00       1.000E-02
+
+ OBSERVATIONS
+  Total number of observations read---------    21
+  Number of directly extracted observations-    21
+  Number of observations to be derived------     0
+  Number of observations to be used---------    21
+
+
+ Number of linear prior-information equations =    2
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+  PRIOR EQUATIONS
+
+  # of PRIOR EQUATIONS =            2
+
+   NAME                       EQUATION
+
+   K1P                        KX1
+   K5P                        KX5
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+               NUM. OF         PLOT     WEIGHT    COV. MATRIX,
+ GROUP NAME    MEMBERS  USE?  SYMBOL  MULTIPLIER  IF CORRELATED
+ ------------  -------  ----  ------  ----------  -------------
+ PRIOR               2  YES        3    1.00                  
+  
+  
+ PRIOR INFORMATION
+  (TRANSFORMED PARAMETERS AND WEIGHTS ARE REPORTED IN NATURAL LOG SPACE)
+
+ NAME                  GROUP         VALUE         WEIGHT
+ --------------------  ------------  ------------  ------------
+ K1P                   PRIOR           1.3863        1.2561    
+ K5P                   PRIOR           3.0910        1.2170    
+
+********************************************************************************
+ END ECHO OF INPUT - REPORT RESULTS OF SIMULATION
+********************************************************************************
+
+
+ -------------------------------------------------------------------
+ FIT OF SIMULATED EQUIVALENTS TO OBSERVATIONS
+
+ OBSERVATION            MEASURED      SIMULATED                            WEIGHTED
+    NAME                 VALUE          VALUE      RESIDUAL   WEIGHT**.5   RESIDUAL
+
+ o11                     33.1337       50.9091      -17.78        1.33      -23.70    
+ o12                     34.6976       48.4772      -13.78        1.33      -18.37    
+ o13                     37.7553       56.3126      -18.56        1.33      -24.74    
+ o14                     36.9401       68.5619      -31.62        1.33      -42.16    
+ o15                     39.1762       71.6319      -32.46        1.33      -43.27    
+ o21                     26.7187       35.2155      -8.497        1.33      -11.33    
+ o22                     28.0992       35.8001      -7.701        1.33      -10.27    
+ o23                     24.8157       27.2344      -2.419        1.33      -3.225    
+ o24                     26.4149       29.0381      -2.623        1.33      -3.498    
+ o25                     29.8216       55.6655      -25.84        1.33      -34.46    
+ o31                     24.2804       33.5210      -9.241        1.33      -12.32    
+ o32                     24.2560       32.1140      -7.858        1.33      -10.48    
+ o33                     20.4360       21.6683      -1.232        1.33      -1.643    
+ o34                     21.9011       22.8137     -0.9125        1.33      -1.217    
+ o35                     24.3628       36.9049      -12.54        1.33      -16.72    
+ o41                     18.2117       21.8227      -3.611        1.33      -4.815    
+ o42                     17.2043       20.1325      -2.928        1.33      -3.904    
+ o43                     12.1015       10.4245       1.677        1.33       2.236    
+ o44                     14.9044       15.4357     -0.5313        1.33     -0.7084    
+ o45                     15.5125       15.4754      3.7098E-02    1.33      4.9464E-02
+ qtrib                  -5668.00      -6320.89       652.9       4.348E-04  0.2839    
+ K1P                     4.00000       1.00000       1.386       6.531E-02  9.0535E-02
+ K5P                     22.0000       25.0000     -0.1278       1.187E-02 -1.5179E-03
+
+ STATISTICS FOR ALL RESIDUALS :
+ AVERAGE WEIGHTED RESIDUAL  :-0.126E+02
+ # RESIDUALS >= 0. :      4
+ # RESIDUALS < 0.  :     19
+ NUMBER OF RUNS  :    5  IN   21 OBSERVATIONS
+
+ INTERPRETING THE CALCULATED RUNS STATISTIC VALUE OF     -1.62    
+ NOTE: THE FOLLOWING APPLIES ONLY IF 
+        # RESIDUALS >= 0. IS GREATER THAN 10 AND 
+        # RESIDUALS < 0.   IS GREATER THAN 10
+ THE NEGATIVE VALUE MAY INDICATE TOO FEW RUNS:
+    IF THE VALUE IS LESS THAN -1.28, THERE IS LESS THAN A 10 PERCENT
+       CHANCE THE VALUES ARE RANDOM,
+    IF THE VALUE IS LESS THAN -1.645, THERE IS LESS THAN A 5 PERCENT
+       CHANCE THE VALUES ARE RANDOM,
+    IF THE VALUE IS LESS THAN -1.96, THERE IS LESS THAN A 2.5 PERCENT
+       CHANCE THE VALUES ARE RANDOM.
+
+
+ STATISTICS FOR THESE RESIDUALS:
+ MAXIMUM WEIGHTED RESIDUAL:  0.224E+01  Observation: o43                 
+ MINIMUM WEIGHTED RESIDUAL: -0.433E+02  Observation: o15                 
+ AVERAGE WEIGHTED RESIDUAL: -0.126E+02
+ # RESIDUALS >= 0.  :       4
+ # RESIDUALS <  0.  :      19
+ NUMBER OF RUNS:        5  IN       23 OBSERVATIONS
+
+ SUMS OF SQUARED, WEIGHTED RESIDUALS:
+   DEPENDENT VARIABLES:              7195.013    
+   DEPENDENT VARIABLES AND PRIOR:    7195.021    
+
+ NUMBER OF INCLUDED DEPENDENTS =      21 OF      21
+ NUMBER OF PRIOR =                     2
+
+********************************************************************************
+********************************************************************************
+
+ CALCULATING SENSITIVITIES FOR THE INITIAL PARAMETERS
+
+ Method of obtaining sensitivities is: PERTURBATION SENSITIVITY
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+ SENSITIVITIES ARE FIT-INDEPENDENT STATISTICS
+
+ DIMENSIONLESS SCALED SENSITIVITIES (SCALED BY (PARAMETER_VALUE*(wt**.5))
+
+                   PARAMETER:  Kx1           Kx5           RCH         
+ OBS #  OBSERVATION ---------  ------------  ------------  ------------
+     1  o11                    -15.572       -24.865        79.339    
+     2  o12                    -9.1907       -27.831        74.880    
+     3  o13                    -19.027       -25.439        68.365    
+     4  o14                    -34.632       -25.777        81.688    
+     5  o15                    -35.425       -29.156        86.279    
+     6  o21                    -7.6147       -13.604        61.352    
+     7  o22                    -9.4133       -10.861        53.899    
+     8  o23                   -0.54133       -4.0813        18.353    
+     9  o24                   -0.20133       -7.9667        21.281    
+    10  o25                    -33.227       -11.999        59.827    
+    11  o31                    -7.7867       -12.317        52.935    
+    12  o32                    -8.2293       -10.167        46.416    
+    13  o33                   -0.81600      -0.46400        12.585    
+    14  o34                   -0.46933       -3.1400        14.348    
+    15  o35                    -17.111       -7.2787        35.513    
+    16  o41                    -4.5827       -3.1640        27.636    
+    17  o42                    -5.9160       -2.6093        22.849    
+    18  o43                    0.48000       -1.0747        5.1147    
+    19  o44                   -0.90800       -1.0400        10.673    
+    20  o45                   -0.70800       -1.5413        11.304    
+    21  qtrib                 -0.74217E-01   0.29935       -3.6296    
+
+ COMPOSITE SCALED SENSITIVITIES ((SUM OF THE SQUARED DSS)/ND)**.5
+  DSS = DIMENSIONLESS SCALED SENSITIVITIES (SCALED BY (PARAMETER_VALUE*(wt**.5))
+  SENSITIVITIES ARE FIT-INDEPENDENT STATISTICS
+
+  PARAMETER    COMPOSITE SCALED SENSITIVITY    RATIO TO MAXIMUM
+  ----------   ----------------------------    ----------------
+  Kx1                   1.52344E+01             3.12589E-01
+  Kx5                   1.45099E+01             2.97724E-01
+  RCH                   4.87361E+01             1.00000E+00
+
+ STARTING VALUES OF REGRESSION PARAMETERS :
+
+ Kx1          Kx5          RCH         
+
+    1.000        25.00       8.0000E-04
+
+
+================================================================================
+================================================================================
+
+ UCODE Modified Gauss-Newton: Parameter-Estimation Iteration#:    1
+
+ VALUES FROM SOLVING THE NORMAL EQUATION :
+   MRQT PARAMETER ------------------- =  0.0000    
+   FRACTIONAL PARAMETER CHANGE IS EVALUATED IN                  NATIVE     SPACE
+        MAXIMUM FRACTIONAL CHANGE OCCURRED FOR PARAMETER:  "Kx1         "
+                      MAXIMUM FRACTIONAL PARAMETER CHANGE     =   1.53    
+        CONVERGENCE TOLERANCE FOR THIS PARAMETER (TolPar)     =  1.000E-02
+        MAXIMUM CHANGE ALLOWED FOR THIS PARAMETER (MaxChange) =   2.00    
+
+ ADJUSTMENTS TO PARAMETER CHANGE VECTOR WERE NOT REQUIRED
+
+ UPDATED ESTIMATES OF REGRESSION PARAMETERS :
+
+ Kx1          Kx5          RCH         
+
+    2.535        39.64       8.3056E-04
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+ THERE ARE NO DERIVED PARAMETERS FOR THIS EVALUATION
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+ SUMS OF SQUARED, WEIGHTED RESIDUALS:
+   DEPENDENT VARIABLES:              504.2369    
+   DEPENDENT VARIABLES AND PRIOR:    504.2379    
+
+ NUMBER OF INCLUDED DEPENDENTS =      21 OF      21
+ NUMBER OF PRIOR =                     2
+
+********************************************************************************
+********************************************************************************
+
+ CALCULATING SENSITIVITIES FOR PARAMETERS ESTIMATED IN ITERATION:    1
+
+ Method of obtaining sensitivities is: PERTURBATION SENSITIVITY
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+
+
+================================================================================
+================================================================================
+
+ UCODE Modified Gauss-Newton: Parameter-Estimation Iteration#:    2
+
+ VALUES FROM SOLVING THE NORMAL EQUATION :
+   MRQT PARAMETER ------------------- =  0.0000    
+   FRACTIONAL PARAMETER CHANGE IS EVALUATED IN                  NATIVE     SPACE
+        MAXIMUM FRACTIONAL CHANGE OCCURRED FOR PARAMETER:  "Kx1         "
+                      MAXIMUM FRACTIONAL PARAMETER CHANGE     =   1.08    
+        CONVERGENCE TOLERANCE FOR THIS PARAMETER (TolPar)     =  1.000E-02
+        MAXIMUM CHANGE ALLOWED FOR THIS PARAMETER (MaxChange) =   2.00    
+
+ ADJUSTMENTS TO PARAMETER CHANGE VECTOR WERE NOT REQUIRED
+
+ UPDATED ESTIMATES OF REGRESSION PARAMETERS :
+
+ Kx1          Kx5          RCH         
+
+    5.284        43.45       8.7442E-04
+
+ SUMS OF SQUARED, WEIGHTED RESIDUALS:
+   DEPENDENT VARIABLES:              29.91607    
+   DEPENDENT VARIABLES AND PRIOR:    29.91646    
+
+ NUMBER OF INCLUDED DEPENDENTS =      21 OF      21
+ NUMBER OF PRIOR =                     2
+
+********************************************************************************
+********************************************************************************
+
+ CALCULATING SENSITIVITIES FOR PARAMETERS ESTIMATED IN ITERATION:    2
+
+ Method of obtaining sensitivities is: PERTURBATION SENSITIVITY
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+
+
+================================================================================
+================================================================================
+
+ UCODE Modified Gauss-Newton: Parameter-Estimation Iteration#:    3
+
+ VALUES FROM SOLVING THE NORMAL EQUATION :
+   MRQT PARAMETER ------------------- =  0.0000    
+   FRACTIONAL PARAMETER CHANGE IS EVALUATED IN                  NATIVE     SPACE
+        MAXIMUM FRACTIONAL CHANGE OCCURRED FOR PARAMETER:  "Kx1         "
+                      MAXIMUM FRACTIONAL PARAMETER CHANGE     =  0.348    
+        CONVERGENCE TOLERANCE FOR THIS PARAMETER (TolPar)     =  1.000E-02
+        MAXIMUM CHANGE ALLOWED FOR THIS PARAMETER (MaxChange) =   2.00    
+
+ ADJUSTMENTS TO PARAMETER CHANGE VECTOR WERE NOT REQUIRED
+
+ UPDATED ESTIMATES OF REGRESSION PARAMETERS :
+
+ Kx1          Kx5          RCH         
+
+    7.121        41.33       8.9494E-04
+
+ SUMS OF SQUARED, WEIGHTED RESIDUALS:
+   DEPENDENT VARIABLES:              17.76377    
+   DEPENDENT VARIABLES AND PRIOR:    17.76524    
+
+ NUMBER OF INCLUDED DEPENDENTS =      21 OF      21
+ NUMBER OF PRIOR =                     2
+
+********************************************************************************
+********************************************************************************
+
+ CALCULATING SENSITIVITIES FOR PARAMETERS ESTIMATED IN ITERATION:    3
+
+ Method of obtaining sensitivities is: PERTURBATION SENSITIVITY
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+
+
+================================================================================
+================================================================================
+
+ UCODE Modified Gauss-Newton: Parameter-Estimation Iteration#:    4
+
+ VALUES FROM SOLVING THE NORMAL EQUATION :
+   MRQT PARAMETER ------------------- =  0.0000    
+   FRACTIONAL PARAMETER CHANGE IS EVALUATED IN                  NATIVE     SPACE
+        MAXIMUM FRACTIONAL CHANGE OCCURRED FOR PARAMETER:  "Kx1         "
+                      MAXIMUM FRACTIONAL PARAMETER CHANGE     = -9.230E-03
+        CONVERGENCE TOLERANCE FOR THIS PARAMETER (TolPar)     =  1.000E-02
+        MAXIMUM CHANGE ALLOWED FOR THIS PARAMETER (MaxChange) =   2.00    
+
+ CALCULATION OF DAMPING PARAMETER
+                                      CONTROLLING PARAMETER : "Kx1         "
+   CHANGE CALCULATED FOR CONTROLLING PARAM:   2.0       USED:   2.0    
+   OSCILL. CONTROL FACTOR (1 is NO EFFECT) = 0.98258    
+   DAMPING PARAMETER (RANGE 0 TO 1) ------ = 0.98258    
+
+ UPDATED ESTIMATES OF REGRESSION PARAMETERS :
+
+ Kx1          Kx5          RCH         
+
+    7.056        41.66       8.9517E-04
+
+
+********************************************************************************
+  Parameter Estimation CONVERGED: % change of PARAMETER VALUES less than TolPar
+********************************************************************************
+
+
+ -------------------------------------------------------------------
+ FIT OF SIMULATED EQUIVALENTS TO OBSERVATIONS
+
+ OBSERVATION            MEASURED      SIMULATED                            WEIGHTED
+    NAME                 VALUE          VALUE      RESIDUAL   WEIGHT**.5   RESIDUAL
+
+ o11                     33.1337       34.0397     -0.9059        1.33      -1.208    
+ o12                     34.6976       34.5030      0.1947        1.33      0.2596    
+ o13                     37.7553       35.9556       1.800        1.33       2.400    
+ o14                     36.9401       37.7889     -0.8488        1.33      -1.132    
+ o15                     39.1762       38.9835      0.1927        1.33      0.2569    
+ o21                     26.7187       26.9218     -0.2032        1.33     -0.2709    
+ o22                     28.0992       26.9838       1.115        1.33       1.487    
+ o23                     24.8157       25.4747     -0.6590        1.33     -0.8787    
+ o24                     26.4149       26.6723     -0.2575        1.33     -0.3433    
+ o25                     29.8216       30.8949      -1.073        1.33      -1.431    
+ o31                     24.2804       24.7630     -0.4826        1.33     -0.6434    
+ o32                     24.2560       23.6916      0.5644        1.33      0.7525    
+ o33                     20.4360       20.8781     -0.4421        1.33     -0.5895    
+ o34                     21.9011       21.7491      0.1521        1.33      0.2028    
+ o35                     24.3628       24.2814      8.1441E-02    1.33      0.1086    
+ o41                     18.2117       17.8026      0.4091        1.33      0.5455    
+ o42                     17.2043       16.3071      0.8972        1.33       1.196    
+ o43                     12.1015       12.4308     -0.3294        1.33     -0.4392    
+ o44                     14.9044       15.3024     -0.3980        1.33     -0.5307    
+ o45                     15.5125       15.5140     -1.5020E-03    1.33     -2.0027E-03
+ qtrib                  -5668.00      -6970.58       1303.       4.348E-04  0.5663    
+ K1P                     4.00000       7.05613     -0.5676       6.531E-02 -3.7068E-02
+ K5P                     22.0000       41.6605     -0.6385       1.187E-02 -7.5816E-03
+
+ STATISTICS FOR ALL RESIDUALS :
+ AVERAGE WEIGHTED RESIDUAL  : 0.125E-01
+ # RESIDUALS >= 0. :     10
+ # RESIDUALS < 0.  :     13
+ NUMBER OF RUNS  :   13  IN   21 OBSERVATIONS
+
+ THE NUMBER OF RUNS EQUALS THE EXPECTED NUMBER OF RUNS
+
+ STATISTICS FOR THESE RESIDUALS:
+ MAXIMUM WEIGHTED RESIDUAL:  0.240E+01  Observation: o13                 
+ MINIMUM WEIGHTED RESIDUAL: -0.143E+01  Observation: o25                 
+ AVERAGE WEIGHTED RESIDUAL:  0.125E-01
+ # RESIDUALS >= 0.  :      10
+ # RESIDUALS <  0.  :      13
+ NUMBER OF RUNS:       13  IN       23 OBSERVATIONS
+
+ SUMS OF SQUARED, WEIGHTED RESIDUALS:
+   DEPENDENT VARIABLES:              17.75908    
+   DEPENDENT VARIABLES AND PRIOR:    17.76052    
+
+ NUMBER OF INCLUDED DEPENDENTS =      21 OF      21
+ NUMBER OF PRIOR =                     2
+
+********************************************************************************
+********************************************************************************
+
+ SEARCHING FOR ITERATION WITH LOWEST SUM OF SQUARED RESIDUALS
+
+
+ PARAMETER VALUES FROM THE FINAL ITERATION 
+ YIELDED THE LOWEST SUM OF SQUARED RESIDUALS
+
+
+   Kx1          Kx5          RCH       
+
+    7.056        41.66       8.9517E-04
+
+********************************************************************************
+********************************************************************************
+
+
+ CALCULATING SENSITIVITIES FOR THE FINAL PARAMETERS
+
+ Method of obtaining sensitivities is: PERTURBATION SENSITIVITY
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+ SENSITIVITIES ARE FIT-INDEPENDENT STATISTICS
+
+ DIMENSIONLESS SCALED SENSITIVITIES (SCALED BY (PARAMETER_VALUE*(wt**.5))
+
+                   PARAMETER:  Kx1           Kx5           RCH         
+ OBS #  OBSERVATION ---------  ------------  ------------  ------------
+     1  o11                    -6.5420       -12.341        37.339    
+     2  o12                    -6.1713       -13.121        37.031    
+     3  o13                    -7.8473       -12.759        36.030    
+     4  o14                    -10.450       -12.510        37.370    
+     5  o15                    -11.374       -13.243        39.053    
+     6  o21                    -4.0407       -6.3787        29.403    
+     7  o22                    -4.0487       -5.6687        27.121    
+     8  o23                    -1.8227       -3.9607        18.137    
+     9  o24                    -1.6220       -6.6027        20.249    
+    10  o25                    -7.4920       -7.2780        26.960    
+    11  o31                    -4.4327       -4.3160        24.469    
+    12  o32                    -4.0040       -3.4160        21.714    
+    13  o33                    -1.3947      -0.76733        13.082    
+    14  o34                    -1.0713       -2.8373        14.636    
+    15  o35                    -3.8340       -4.2893        18.973    
+    16  o41                    -2.3580      -0.11000        14.909    
+    17  o42                    -1.3960      -0.13533        12.596    
+    18  o43                     1.6480      -0.14667E-01    6.7547    
+    19  o44                   -0.13133      -0.86000E-01    9.8813    
+    20  o45                    0.89333E-01  -0.52733        10.370    
+    21  qtrib                  0.87978E-01   0.33789       -4.3126    
+
+ COMPOSITE SCALED SENSITIVITIES ((SUM OF THE SQUARED DSS)/ND)**.5
+  DSS = DIMENSIONLESS SCALED SENSITIVITIES (SCALED BY (PARAMETER_VALUE*(wt**.5))
+  SENSITIVITIES ARE FIT-INDEPENDENT STATISTICS
+
+  PARAMETER    COMPOSITE SCALED SENSITIVITY    RATIO TO MAXIMUM
+  ----------   ----------------------------    ----------------
+  Kx1                   5.06889E+00             2.07621E-01
+  Kx5                   7.11119E+00             2.91274E-01
+  RCH                   2.44141E+01             1.00000E+00
+
+ SMALLEST AND LARGEST WEIGHTED RESIDUALS
+
+             SMALLEST WEIGHTED RESIDUALS
+                      WEIGHTED   PERCENT OF   
+ NAME                 RESIDUAL    OBJ FUNC
+ o25                     -1.43        11.53
+ o11                     -1.21         8.22
+ o14                     -1.13         7.21
+ o23                    -0.879         4.35
+ o31                    -0.643         2.33
+
+             LARGEST  WEIGHTED RESIDUALS
+                      WEIGHTED   PERCENT OF   
+ NAME                 RESIDUAL    OBJ FUNC
+ o13                      2.40        32.42
+ o22                      1.49        12.45
+ o42                      1.20         8.06
+ o32                     0.753         3.19
+ qtrib                   0.566         1.81
+
+ CORRELATION BETWEEN ORDERED WEIGHTED RESIDUALS AND NORMAL ORDER STATISTICS
+ FOR OBSERVATIONS =    0.961    
+
+ CORRELATION BETWEEN ORDERED WEIGHTED RESIDUALS AND NORMAL ORDER STATISTICS
+ FOR OBSERVATIONS AND PRIOR INFORMATION =    0.957    
+
+--------------------------------------------------------------------------------
+ COMMENTS ON THE INTERPRETATION OF THE CORRELATION BETWEEN
+ WEIGHTED RESIDUALS AND NORMAL ORDER STATISTICS:
+
+ Generally, IF the reported CORRELATION is LESS than the critical value,
+ at the selected significance level (usually 5 or 10%), the hypothesis
+ that the weighted residuals are INDEPENDENT AND NORMALLY DISTRIBUTED
+ would be REJECTED.  HOWEVER, in this case, conditions are outside of
+ the range of published critical values as discussed below.
+
+ The sum of the number of observations and prior information items is    23
+ which is less than 35, the minimum value for which critical values are
+ published.  Therefore, the critical values for the 5 and 10% significance
+ levels are less than 0.943 and 0.952, respectively.
+
+ CORRELATIONS GREATER than these critical values indicate that, probably, the 
+ weighted residuals ARE INDEPENDENT AND NORMALLY DISTRIBUTED.
+
+ Correlations LESS than these critical values MAY BE ACCEPTABLE, and
+ rejection of the hypothesis is not necessarily warranted.
+
+ The Kolmogorov-Smirnov test can be used to further evaluate the residuals.
+ --------------------------------------------------------------------------
+
+
+          VARIANCE-COVARIANCE MATRIX FOR THE PARAMETERS
+          ---------------------------------------------
+
+              Kx1          Kx5          RCH         
+ ....................................................
+ Kx1           1.82840E-02 -7.88417E-03  1.22921E-06
+ Kx5          -7.88417E-03  1.16347E-02  1.50651E-06
+ RCH           1.22921E-06  1.50651E-06  6.43138E-10
+
+--------------------------------------------------------------------------------
+ UCODE is printing the decomposition of the CSS (with prior if used in the
+  regression) using SVD of the XTwX matrix scaled by multiplying by parameter
+  values and dividing by (#observations + # prior information equations).
+  See file _sc_svd
+--------------------------------------------------------------------------------
+
+
+        THE CORRELATION MATRIX IS FIT-INDEPENDENT
+
+          -------------------------------------
+          CORRELATION MATRIX FOR THE PARAMETERS
+          -------------------------------------
+
+              Kx1          Kx5          RCH         
+ ....................................................
+ Kx1            1.0000     -0.54056      0.35846    
+ Kx5          -0.54056       1.0000      0.55073    
+ RCH           0.35846      0.55073       1.0000    
+
+ THE CORRELATION OF THE FOLLOWING PARAMETER PAIRS >= .95
+     PARAMETER   PARAMETER   CORRELATION
+
+        NONE 
+
+ THE CORRELATION OF THE FOLLOWING PARAMETER PAIRS IS BETWEEN .90 AND .95
+     PARAMETER   PARAMETER   CORRELATION
+
+        NONE 
+
+ THE CORRELATION OF THE FOLLOWING PARAMETER PAIRS IS BETWEEN .85 AND .90
+     PARAMETER   PARAMETER   CORRELATION
+
+        NONE 
+
+
+ _________________
+
+ PARAMETER SUMMARY
+ _________________
+
+ ________________________________________________________________________
+
+ PARAMETER VALUES IN "REGRESSION" SPACE --- LOG TRANSFORMED AS APPLICABLE
+ ________________________________________________________________________
+
+ PARAMETER:        Kx1        Kx5        RCH       
+ * = LOG TRNS:        *          *           
+
+
+ UPPER 95% C.I.     9.71E-01   1.72E+00   9.48E-04
+ FINAL VALUES       8.49E-01   1.62E+00   8.95E-04
+ LOWER 95% C.I.     7.26E-01   1.52E+00   8.42E-04
+
+ STD. DEV.          5.87E-02   4.68E-02   2.54E-05
+
+ COEF. OF VAR. (STD. DEV. / FINAL VALUE); "--" IF FINAL VALUE = 0.0
+                    6.92E-02   2.89E-02   2.83E-02                              
+
+ ------------------------------------------------------------------------
+ ------------------------------------------------------------------------
+
+ ________________________________________________________________________
+
+ PHYSICAL PARAMETER VALUES --- EXP10 OF LOG TRANSFORMED PARAMETERS
+ ________________________________________________________________________
+
+ PARAMETER:        Kx1        Kx5        RCH       
+ * = LOG TRNS:        *          *           
+
+ UPPER 95% C.I.     9.36E+00   5.22E+01   9.48E-04
+ FINAL VALUES       7.06E+00   4.17E+01   8.95E-04
+ LOWER 95% C.I.     5.32E+00   3.33E+01   8.42E-04
+
+     REASONABLE
+    UPPER LIMIT     2.50E+01   2.50E+01   8.00E-03
+     REASONABLE
+    LOWER LIMIT     1.00E+00   1.00E+00   8.00E-05
+
+ ESTIMATE ABOVE (1)
+ BELOW(-1)LIMITS        0          1          0
+ ENTIRE CONF. INT.
+ ABOVE(1)BELOW(-1)      0          1          0
+
+ SOME PARAMETER VALUES ARE OUTSIDE THEIR USER-SPECIFIED REASONABLE
+ RANGES TO A STATISTICALLY SIGNIFICANT EXTENT, BASED ON LINEAR THEORY.
+ THIS IMPLIES THAT THERE ARE PROBLEMS WITH THE OBSERVATIONS, THE MODEL
+ DOES NOT ADEQUATELY REPRESENT THE PHYSICAL SYSTEM, THE DATA ARE NOT
+ CONSISTENT WITH THEIR SIMULATED EQUIVALENTS, OR THE SPECIFIED MINIMUM
+ AND/OR MAXIMUM ARE NOT REASONABLE.  CHECK YOUR DATA, CONCEPTUAL MODEL,
+ AND MODEL DESIGN.
+
+
+  LEAST-SQUARES OBJ FUNC (OBS. ONLY)----- =  17.759    
+  LEAST-SQUARES OBJ FUNC (W/PRIOR)------- =  17.761    
+  NUMBER OF INCLUDED OBSERVATIONS-------- =      21 OF      21
+  NUMBER OF PRIOR ESTIMATES-------------- =       2
+  NUMBER OF ESTIMATED PARAMETERS--------- =       3
+
+  CALCULATED ERROR VARIANCE (CEV)-------- = 0.88803    
+  95% CONFIDENCE INTERVAL ON CEV--------- = 0.51977      1.8518    
+  STANDARD ERROR ------------------------ = 0.94235    
+  95% CONFIDENCE INTERVAL ON STD ERR----- = 0.72095      1.3608    
+
+  CORRELATION COEFFICIENT---------------- = 0.99741    
+       W/PRIOR--------------------------- = 0.99833    
+  NUMBER OF GAUSS-NEWTON ITERATIONS------ =       4
+
+
+  STATISTICS FOR EVALUATING ALTERNATIVE MODELS:
+
+    MAX LIKE OBJ FUNC OBSERVATIONS ONLY (MLOF)--------------- = -3.5201    
+    MAX LIKE OBJ FUNC OBSERVATIONS and PRIOR (MLOFOP)-------- = -5.9459    
+    LN DETERMINANT of Fisher Information Matrix (OBS ONLY)--- =  32.496    
+    LN DETERMINANT of Fisher Information Matrix (OBS & Prior) =  32.811    
+
+    MODEL EVALUATION MEASURES: 
+
+      OBSERVATIONS ONLY: 
+      AIC CRITERION-------------  =  4.4799    
+      AICc CRITERION------------  =  6.9799    
+      BIC CRITERION-------------  =  8.6580    
+      KASHYAP CRITERION---------  =  23.462    
+
+      OBSERVATIONS and PRIOR: 
+      AIC CRITERION-------------  =  2.0541    
+      AICc CRITERION------------  =  4.2763    
+      BIC CRITERION-------------  =  6.5961    
+      KASHYAP CRITERION---------  =  21.351    
+
+
+ SUMMARY OF PARAMETER VALUES AND STATISTICS FOR
+      ALL PARAMETER-ESTIMATION ITERATIONS
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+
+ SELECTED STATISTICS FROM MODIFIED GAUSS-NEWTON ITERATIONS
+
+        # PARAMs                  MAX.             MAX. CHANGE   DAMPING
+ ITER.  ESTIMATED  PARNAM         CALC. CHANGE     ALLOWED       PARAMETER
+ -----  --------- ------------  ---------------- -------------  ------------
+    1        3     Kx1            1.53460         2.00000        1.0000    
+    2        3     Kx1            1.08488         2.00000        1.0000    
+    3        3     Kx1           0.347511         2.00000        1.0000    
+    4        3     Kx1          -0.923019E-02     2.00000       0.98258    
+
+--------------------------------------------------------------------------------
+
+
+ PARAMETER VALUES FOR EACH ITERATION
+ - INDICATES DAMPING RESULTED FROM PARAMETER CONSTRAINTS FOR THAT ITERATION.
+ * INDICATES SOME PARAMETERS WERE OMITTED DURING THAT ITERATION.  THE VALUES
+   OF THOSE PARAMETERS ARE REPORTED EVEN THOUGH THEY WERE NOT UPDATED
+
+    ITER    Kx1          Kx5          RCH         
+       0      1.000        25.00       0.8000E-03
+       1      2.535        39.64       0.8306E-03
+       2      5.284        43.45       0.8744E-03
+       3      7.121        41.33       0.8949E-03
+       4      7.056        41.66       0.8952E-03
+
+ FINAL PARAMETER VALUES ARE TAKEN FROM THE ITERATION WITH THE LOWEST SUM OF
+   SQUARED WEIGHTED RESIDUALS WHICH IS NORMALLY THE LAST ITERATION, BUT
+   OCCASIONALLY IT IS NOT.
+
+   IN THIS CASE IT WAS THE LAST ITERATION.
+
+ FINAL REGRESSION STATISTICS ARE EVALUATED WITH THE FOLLOWING PARAMETER VALUES:
+
+            Kx1          Kx5          RCH         
+              7.056        41.66       0.8952E-03
+
+--------------------------------------------------------------------------------
+
+ SUMS OF SQUARED WEIGHTED RESIDUALS FOR EACH ITERATION
+
+         SUMS OF SQUARED WEIGHTED RESIDUALS
+         ITER.  OBSERVATIONS  PRIOR INFO.      TOTAL       # INCLUDED OBS
+              0    7195.0       0.81988E-02    7195.0         21 OF      21
+              1    504.24       0.93674E-03    504.24         21 OF      21
+              2    29.916       0.39602E-03    29.916         21 OF      21
+              3    17.764       0.14746E-02    17.765         21 OF      21
+              4    17.759       0.14315E-02    17.761         21 OF      21
+         LOWEST    17.759       0.14315E-02    17.761         21 OF      21
+
+         ITERATION WITH LOWEST SUM OF SQUARED WEIGHTED RESIDUALS:      4
+
+
+********************************************************************************
+********************************************************************************
+  Parameter Estimation CONVERGED: % change of PARAMETER VALUES less than TolPar
+********************************************************************************
+********************************************************************************
+
+             NUMBER OF PROCESS MODEL RUNS CONDUCTED FOR THE REGRESSION:      16
+  NUMBER OF PROCESS MODEL RUNS CONDUCTED TO CALCULATE FINAL STATISTICS:       7
+        TOTAL NUMBER OF PROCESS MODEL RUNS CONDUCTED FOR THIS ANALYSIS:      23
+
+        Model runs for final statistics are needed to obtain accurate
+        sensitivities for the final parameter values. If sensitivities
+        are caluclated by perturbation, then central differences are used
+        to obtain accurate sensitivies for the statistical evaluation
+        of the optimized model. Each central difference calculation
+        requires two process model runs.
+
+********************************************************************************
+             Normal termination of UCODE,   Version:   1.023
+********************************************************************************
+
+
+
+ Run end date and time (yyyy/mm/dd hh:mm:ss): 2011/08/31 16:41:16
+ Elapsed run time:  4.111 Seconds
+

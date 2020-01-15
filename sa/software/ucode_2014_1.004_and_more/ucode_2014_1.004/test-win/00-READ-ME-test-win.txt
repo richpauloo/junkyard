@@ -1,0 +1,34 @@
+Directories:  "chap*" have names that identify the chapter in the UCODE_2014
+documentation for which the exercise provides an example. The directory
+name also includes an indication of the type of problem considered.
+
+Directory: "concatenate_intconfpred" contains an excel spreadsheet that
+explains the types of errors that can occur when using the 
+concatenate_intconfpred.exe code to join nonlinear uncertainty output files.
+
+Directory: "convert_pest_prior_info" provides a simple example of how
+convert_pest_prior_info.exe converts prior information from pest input
+for use in ucode via the Linear_Prior_Information input block.
+
+Directory: "Exercises from Hill and Tiedeman 2007" 
+This directory includes the files for the main set of exercises in
+the textbook Hill and Tiedeman, 2007, Effective groundwater model 
+calibration, with analysis of data, sensitivities, predictions, and 
+uncertainties: Wiley. These files are provided here so users 
+of UCODE_2014 have an example that only uses the capabilities documented 
+in the UCODE_2005 documentation. The files from the UCODE_2005 distribution
+can be used for the same purpose.
+
+Directory: "simple-example" provides a simple application of ucode
+Click on the file:
+A-description-of-the-dupuit-example.htm
+within that directory for a descrition
+
+Directory: "ucode_2005_examples_run_with_ucode_2014" includes two of the
+examples distribued with UCODE_2005, but executed with UCODE_2014
+These examples are described in the UCODE_2005 manual which is included
+in the doc directory
+  ex1a (supporting files are in ex1a-files and in ..\test-data-win)
+  ex1b (supporting files are in ex1b-files and in ..\test-data-win)
+
+last update 2015-01-23

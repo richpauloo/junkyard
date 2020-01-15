@@ -1,0 +1,16 @@
+ "GROUP NAME" newhead       "NUMBER IN GROUP"          1
+ "PARAMETER NAME" "COMPOSITE SCALED SENSITIVITY" "LARGEST DSS FOR THE PARAMETER" "OBSERVATION WITH LARGEST DSS" "SECOND LARGEST DSS FOR THE PARAMETER" "OBSERVATION WITH SECOND LARGEST DSS"
+ RCH_1              22.0397512410243                      22.0397512410243     newhead                               0.00000000000000     not-applicable      
+ RCH_2              54.7553276086174                      54.7553276086174     newhead                               0.00000000000000     not-applicable      
+ K_RB              0.105157710201270                    -0.105157710201270     newhead                               0.00000000000000     not-applicable      
+ HK_1               28.2239390692142                     -28.2239390692142     newhead                               0.00000000000000     not-applicable      
+ VK_CB             0.817955974620879E-02                 0.817955974620879E-02 newhead                               0.00000000000000     not-applicable      
+ HK_2               3.50585993881720                     -3.50585993881720     newhead                               0.00000000000000     not-applicable      
+ "GROUP NAME" newflow       "NUMBER IN GROUP"          1
+ "PARAMETER NAME" "COMPOSITE SCALED SENSITIVITY" "LARGEST DSS FOR THE PARAMETER" "OBSERVATION WITH LARGEST DSS" "SECOND LARGEST DSS FOR THE PARAMETER" "OBSERVATION WITH SECOND LARGEST DSS"
+ RCH_1              5.54205353953289                     -5.54205353953289     newflow                               0.00000000000000     not-applicable      
+ RCH_2              4.49485110429806                     -4.49485110429806     newflow                               0.00000000000000     not-applicable      
+ K_RB              0.133793430627422E-05                 0.133793430627422E-05 newflow                               0.00000000000000     not-applicable      
+ HK_1              0.239998740358122E-03                -0.239998740358122E-03 newflow                               0.00000000000000     not-applicable      
+ VK_CB             0.112556115971629E-05                 0.112556115971629E-05 newflow                               0.00000000000000     not-applicable      
+ HK_2              0.314786198718071E-04                -0.314786198718071E-04 newflow                               0.00000000000000     not-applicable      

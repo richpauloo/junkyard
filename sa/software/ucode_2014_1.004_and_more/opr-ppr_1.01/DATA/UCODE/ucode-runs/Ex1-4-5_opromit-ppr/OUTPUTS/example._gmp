@@ -1,0 +1,10 @@
+"GROUP NAME"   "MEMBER NAME"        "PLOT SYMBOL"
+pred-x         AD10_X                         6
+pred-y         AD10_Y                         7
+pred-z         AD10_Z                         8
+pred-x         AD50_X                         6
+pred-y         AD50_Y                         7
+pred-z         AD50_Z                         8
+pred-x         A100_X                         6
+pred-y         A100_Y                         7
+pred-z         A100_Z                         8

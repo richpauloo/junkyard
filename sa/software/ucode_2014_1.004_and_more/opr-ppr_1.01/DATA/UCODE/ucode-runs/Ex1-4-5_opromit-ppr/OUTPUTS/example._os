@@ -1,0 +1,14 @@
+ "SIMULATED EQUIVALENT" "OBSERVED or PRIOR VALUE" "PLOT SYMBOL" "OBSERVATION or PRIOR NAME"
+      100.2099          101.8040                   1         hd01.ss             
+      126.9419          128.1170                   1         hd02.ss             
+      157.1846          156.6780                   1         hd03.ss             
+      126.9419          124.8930                   1         hd04.ss             
+      141.0754          140.9610                   1         hd05.ss             
+      127.0896          126.5370                   1         hd06.ss             
+      100.9342          101.1120                   1         hd07.ss             
+      157.1405          158.1350                   1         hd08.ss             
+      176.6494          176.3740                   1         hd09.ss             
+      141.1362          142.0200                   1         hd10.ss             
+     -4.417162         -4.400000                   3         flow01.ss           
+     0.9899981E-07     0.1000000E-06              10         PRIOR_VK_CB         
+     0.1169105E-02     0.1200000E-02              10         PRIOR_K_RB          

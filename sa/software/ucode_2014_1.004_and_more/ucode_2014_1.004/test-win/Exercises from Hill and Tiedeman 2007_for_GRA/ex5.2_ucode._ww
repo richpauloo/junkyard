@@ -1,0 +1,14 @@
+ "WEIGHTED SIMULATED EQUIVALENT" "WEIGHTED OBSERVED or PRIOR VALUE" "PLOT SYMBOL" "OBSERVATION or PRIOR NAME"
+     100.0848                   101.6730                               1       hd01.ss             
+     126.7839                   127.9601                               1       hd02.ss             
+     156.9872                   156.4845                               1       hd03.ss             
+     126.7839                   124.7342                               1       hd04.ss             
+     140.8996                   140.7841                               1       hd05.ss             
+     126.9312                   126.3821                               1       hd06.ss             
+     100.8073                   100.9838                               1       hd07.ss             
+     156.9432                   157.9327                               1       hd08.ss             
+     176.4247                   176.1500                               1       hd09.ss             
+     140.9602                   141.8428                               1       hd10.ss             
+    -10.03904                  -10.00000                               2       Flow01_1            
+     3.249019                   3.333333                               3       K_RB_PR             
+     3.300276                   3.333333                               3       VK_CB_PR            

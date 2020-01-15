@@ -1,0 +1,16 @@
+ "GROUP NAME" Heads         "NUMBER IN GROUP"         10
+ "PARAMETER NAME" "COMPOSITE SCALED SENSITIVITY" "LARGEST DSS FOR THE PARAMETER" "OBSERVATION WITH LARGEST DSS" "SECOND LARGEST DSS FOR THE PARAMETER" "OBSERVATION WITH SECOND LARGEST DSS"
+ HK_1               39.0211066358961                     -68.8661499970360     hd09.ss                              -52.7386832466142     hd03.ss             
+ K_RB              0.209813483124476                    -0.210308578376145     hd09.ss                             -0.210308528439056     hd05.ss             
+ VK_CB             0.232318722850052                    -0.678549942027726     hd07.ss                              0.183638994544927     hd09.ss             
+ HK_2               3.27901792134275                     -7.65340306792343     hd09.ss                              -4.18102573018678     hd08.ss             
+ RCH_1              16.3155137122656                      22.0580159413905     hd03.ss                               22.0336323518513     hd09.ss             
+ RCH_2              26.4803936776880                      54.4828727706596     hd09.ss                               35.1482003747928     hd08.ss             
+ "GROUP NAME" RIV_flows     "NUMBER IN GROUP"          1
+ "PARAMETER NAME" "COMPOSITE SCALED SENSITIVITY" "LARGEST DSS FOR THE PARAMETER" "OBSERVATION WITH LARGEST DSS" "SECOND LARGEST DSS FOR THE PARAMETER" "OBSERVATION WITH SECOND LARGEST DSS"
+ HK_1              0.541860227192870E-03                -0.541860227192870E-03 Flow01_1                              0.00000000000000     not-applicable      
+ K_RB              0.969930227276188E-02                 0.969930227276188E-02 Flow01_1                              0.00000000000000     not-applicable      
+ VK_CB              0.00000000000000                      0.00000000000000     not-applicable                        0.00000000000000     not-applicable      
+ HK_2              0.541863636788720E-04                -0.541863636788720E-04 Flow01_1                              0.00000000000000     not-applicable      
+ RCH_1              5.53402033636367                     -5.53402033636367     Flow01_1                              0.00000000000000     not-applicable      
+ RCH_2              4.49592416931819                     -4.49592416931819     Flow01_1                              0.00000000000000     not-applicable      

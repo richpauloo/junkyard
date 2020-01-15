@@ -1,0 +1,251 @@
+ 
+  Derivatives interface file is: ..\files-new-obs\new-obs.derint
+ 
+  Reading input from file: 01-ucode-new-obs.in
+ 
+ 
+  ******************************************************************************
+  ******************************************************************************
+ 
+                Output from program UCODE_2014, Version:   1.003
+ 
+               Constructed using the JUPITER API, Version:  1.7.3
+ 
+  ******************************************************************************
+  ******************************************************************************
+ 
+ 
+ -------------------------------------------------------------------------------
+  ECHO UCODE CONTROLS INPUT:
+ 
+  VERBOSE =  0
+ 
+  MODEL NAME =   example-new
+  MODEL LENGTH UNITS =   NA
+  MODEL TIME UNITS =   NA
+  MODEL MASS UNITS =   NA
+ 
+  OPTIMIZATION WILL NOT BE PERFORMED
+  NONLINEAR INTERVALS WILL NOT BE PERFORMED (BY DEFAULT)
+  SENSITIVITIES WILL BE CALCULATED
+  STARTRES - Residuals written at initial parameter values
+  STARTSENS Print dimensionless scaled sensitivities at starting values
+  INTERMEDSENS Do not print any sensitivities at intermed values
+  FINALSENS Print dimensionless scaled sensitivities at final values
+  DATA EXCHANGE FILES WILL BE PRODUCED
+
+
+ ECHO MODEL COMMAND LINES:
+
+ Command ID    Purpose       Command Line
+ ------------  ------------  --------------------------------------------------
+ modflow_sen   Forward&Der   ..\..\mf2k-files\new-obs\tc1.bat
+--------------------------------------------------------------------------------
+
+
+ OBSERVATIONS
+  Total number of observations read---------     2
+  Number of directly extracted observations-     2
+  Number of observations to be derived------     0
+  Number of observations to be used---------     2
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+  THERE ARE NO PRIOR EQUATIONS FOR THIS EVALUATION
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+--------------------------------------------------------------------------------
+
+ PARAMETER INFORMATION READ FROM INPUT:
+
+ No.  Param. name     Group        Value       Lower value   Upper value    Adj?
+ ---- ------------ ------------  ------------  ------------  ------------  -----
+    1 RCH_1        DefaultPar     47.4711       30.0000       80.0000       Y
+    2 RCH_2        DefaultPar     38.5037       20.0000       60.0000       Y
+    3 K_RB         DefaultPar    1.169105E-03  1.200000E-04  1.200000E-02   Y
+    4 HK_1         DefaultPar    4.619111E-04  3.000000E-05  3.000000E-03   Y
+    5 VK_CB        DefaultPar    9.899984E-08  1.000000E-08  1.000000E-06   Y
+    6 HK_2         DefaultPar    1.533214E-05  4.000000E-06  4.000000E-04   Y
+
+ No.  Param. name   LN   SCALEPVAL   PERTURB    MAXCHANGE    TOLPAR    SVDSET
+ ---- ------------  --  ----------  ----------  ---------  ---------    ------
+    1 RCH_1          0   1.000E-02   1.000E-02   2.00      1.000E-02          0
+    2 RCH_2          0   1.000E-02   1.000E-02   2.00      1.000E-02          0
+    3 K_RB           0   1.000E-06   1.000E-02   2.00      1.000E-02          0
+    4 HK_1           0   1.000E-07   1.000E-02   2.00      1.000E-02          0
+    5 VK_CB          0   1.000E-10   1.000E-02   2.00      1.000E-02          0
+    6 HK_2           0   1.000E-08   1.000E-02   2.00      1.000E-02          0
+
+ INFORMATION FOR ADJUSTABLE PARAMETERS READ FROM INPUT:
+
+ Param. name     Group          Value       Lower value    Upper value  Par. no.
+ ------------ ------------  -------------  -------------  -------------  -------
+ RCH_1        DefaultPar      47.4711        30.0000        80.0000           1
+ RCH_2        DefaultPar      38.5037        20.0000        60.0000           2
+ K_RB         DefaultPar     1.169105E-03   1.200000E-04   1.200000E-02       3
+ HK_1         DefaultPar     4.619111E-04   3.000000E-05   3.000000E-03       4
+ VK_CB        DefaultPar     9.899984E-08   1.000000E-08   1.000000E-06       5
+ HK_2         DefaultPar     1.533214E-05   4.000000E-06   4.000000E-04       6
+
+               Sens
+ Param. name   Method  LN   SCALEPVAL   PERTURB    MAXCHANGE    TOLPAR    SVDSET
+ ------------  ------  --  ----------  ----------  ---------  ----------  ------
+ RCH_1             0    0   1.000E-02   1.000E-02   2.00       1.000E-02      0
+ RCH_2             0    0   1.000E-02   1.000E-02   2.00       1.000E-02      0
+ K_RB              0    0   1.000E-06   1.000E-02   2.00       1.000E-02      0
+ HK_1              0    0   1.000E-07   1.000E-02   2.00       1.000E-02      0
+ VK_CB             0    0   1.000E-10   1.000E-02   2.00       1.000E-02      0
+ HK_2              0    0   1.000E-08   1.000E-02   2.00       1.000E-02      0
+ 
+  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ 
+  #Observations and  #Parameters:            2           6
+ 
+ WARNING:
+ 
+ UCODE_2014 is designed for problems that have fewer adjustable parameters 
+   than observations. The current problem has more adjustable parameters than 
+   observations. UCODE_2014 will execute one forward run and evaluate the 
+   residuals for the current observations, it will also calculate 
+   sensitivities and some of the resulting statistics if sensitivities=yes in 
+   the UCODE_Control_Data input block. However, the problem will need to be 
+   re-posed before optimizing parameters with UCODE_2014.
+ 
+
+********************************************************************************
+ END ECHO OF INPUT - REPORT RESULTS OF SIMULATION
+********************************************************************************
+
+
+ Method of obtaining sensitivities is: MODEL-CALCULATED SENSITIVITY
+
+  Process Model Run #:      1
+
+ -------------------------------------------------------------------
+ FIT OF SIMULATED EQUIVALENTS TO OBSERVATIONS
+
+ OBSERVATION            MEASURED      SIMULATED                            WEIGHTED
+    NAME                 VALUE          VALUE      RESIDUAL   WEIGHT**.5   RESIDUAL
+
+ newhead                 0.00000       131.871      -131.9       0.999      -131.7    
+ newflow                 0.00000      -2.21732       2.217        2.27       5.039    
+
+ STATISTICS FOR ALL RESIDUALS :
+ AVERAGE WEIGHTED RESIDUAL  :-0.633E+02
+ # RESIDUALS >= 0. :      1
+ # RESIDUALS < 0.  :      1
+ NUMBER OF RUNS  :    2  IN    2 OBSERVATIONS
+
+ COULD NOT CALCULATE THE RUNS STATISTIC
+
+ STATISTICS FOR THESE RESIDUALS:
+ MAXIMUM WEIGHTED RESIDUAL:  0.504E+01  Observation: newflow             
+ MINIMUM WEIGHTED RESIDUAL: -0.132E+03  Observation: newhead             
+ AVERAGE WEIGHTED RESIDUAL: -0.633E+02
+ # RESIDUALS >= 0.  :       1
+ # RESIDUALS <  0.  :       1
+ NUMBER OF RUNS:        2  IN        2 OBSERVATIONS
+
+ SUM OF SQUARED, WEIGHTED RESIDUALS:
+   DEPENDENT VARIABLES:    17371.91    
+
+ NUMBER OF INCLUDED OBSERVATIONS =       2 OF       2
+
+********************************************************************************
+********************************************************************************
+
+ CALCULATING SENSITIVITIES FOR THE INITIAL PARAMETERS
+
+ Method of obtaining sensitivities is: MODEL-CALCULATED SENSITIVITY
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+ SENSITIVITIES ARE FIT-INDEPENDENT STATISTICS
+
+ DIMENSIONLESS SCALED SENSITIVITIES (SCALED BY (PARAMETER_VALUE*(wt**.5))
+
+                   PARAMETER:  RCH_1         RCH_2         K_RB        
+ OBS #  OBSERVATION ---------  ------------  ------------  ------------
+     1  newhead                 22.040        54.755      -0.10516    
+     2  newflow                -5.5421       -4.4949       0.13379E-05
+
+ DIMENSIONLESS SCALED SENSITIVITIES (SCALED BY (PARAMETER_VALUE*(wt**.5))
+
+                   PARAMETER:  HK_1          VK_CB         HK_2        
+ OBS #  OBSERVATION ---------  ------------  ------------  ------------
+     1  newhead                -28.224       0.81796E-02   -3.5059    
+     2  newflow               -0.24000E-03   0.11256E-05  -0.31479E-04
+
+ COMPOSITE SCALED SENSITIVITIES ((SUM OF THE SQUARED DSS)/ND)**.5
+  DSS = DIMENSIONLESS SCALED SENSITIVITIES (SCALED BY (PARAMETER_VALUE*(wt**.5))
+  SENSITIVITIES ARE FIT-INDEPENDENT STATISTICS
+
+  PARAMETER    COMPOSITE SCALED SENSITIVITY    RATIO TO MAXIMUM
+  ----------   ----------------------------    ----------------
+  RCH_1                 1.60696E+01             4.13653E-01
+  RCH_2                 3.88481E+01             1.00000E+00
+  K_RB                  7.43577E-02             1.91406E-03
+  HK_1                  1.99573E+01             5.13728E-01
+  VK_CB                 5.78382E-03             1.48883E-04
+  HK_2                  2.47902E+00             6.38131E-02
+ 
+ Warning from UTLUCODE_INVERT, cannot take ln(-x)
+ Determinant is set to 1.E+30
+ This PREVENTS CALCULATION of the KASHYAP STATISTIC
+ 
+
+ SMALLEST AND LARGEST WEIGHTED RESIDUALS
+
+             SMALLEST WEIGHTED RESIDUALS
+                      WEIGHTED    PERCENT OF   
+ NAME                 RESIDUAL     OBJ FUNC
+ newhead                 -132.         99.85
+
+             LARGEST  WEIGHTED RESIDUALS
+                      WEIGHTED    PERCENT OF   
+ NAME                 RESIDUAL     OBJ FUNC
+ newflow                  5.04          0.15
+
+ CORRELATION BETWEEN ORDERED WEIGHTED RESIDUALS AND NORMAL ORDER STATISTICS
+ FOR OBSERVATIONS =     1.00    
+
+--------------------------------------------------------------------------------
+ COMMENTS ON THE INTERPRETATION OF THE CORRELATION BETWEEN
+ WEIGHTED RESIDUALS AND NORMAL ORDER STATISTICS:
+
+ Generally, IF the reported CORRELATION is LESS than the critical value,
+ at the selected significance level (usually 5 or 10%), the hypothesis
+ that the weighted residuals are INDEPENDENT AND NORMALLY DISTRIBUTED
+ would be REJECTED.  HOWEVER, in this case, conditions are outside of
+ the range of published critical values as discussed below.
+
+ The sum of the number of observations and prior information items is     2
+ which is less than 35, the minimum value for which critical values are
+ published.  Therefore, the critical values for the 5 and 10% significance
+ levels are less than 0.943 and 0.952, respectively.
+
+ CORRELATIONS GREATER than these critical values indicate that, probably, the 
+ weighted residuals ARE INDEPENDENT AND NORMALLY DISTRIBUTED.
+
+ Correlations LESS than these critical values MAY BE ACCEPTABLE, and
+ rejection of the hypothesis is not necessarily warranted.
+
+ The Kolmogorov-Smirnov test can be used to further evaluate the residuals.
+ --------------------------------------------------------------------------
+
+
+  NUMBER OF PROCESS MODEL RUNS CONDUCTED FOR THIS ANALYSIS:       1
+
+********************************************************************************
+               Normal termination of UCODE_2014,   Version:   1.003
+********************************************************************************
+
+
+
+ Run end date and time (yyyy/mm/dd hh:mm:ss): 2016/01/31 14:07:17
+ Elapsed run time:  0.170 Seconds
+

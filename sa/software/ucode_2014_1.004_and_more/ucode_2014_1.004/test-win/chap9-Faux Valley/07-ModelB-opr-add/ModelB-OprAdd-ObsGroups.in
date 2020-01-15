@@ -1,0 +1,75 @@
+#
+# -------------------------
+# BASIC OPTIONS INFORMATION
+# -------------------------
+#
+BEGIN OPTIONS KEYWORDS
+  MODE = OPRADD
+  OBSGROUPS = YES
+  PREDGROUPS = NO
+  VERBOSE = 3
+  CORRELTHRESH = .50
+END OPTIONS
+#
+# -------------------------
+# INPUT FILES INFORMATION
+# -------------------------
+#
+BEGIN READ_FILES KEYWORDS
+  SUNFNAM =   ModelB-PotentialNewObs-SA_ucode._su              sensitivities for new head and new flow
+  DMFNAM =    ModelB-SA-AllActive-WithPrior_ucode._dm          model data file
+  DMPFNAM =   ModelB-Prediction_ucode._dmp                     model data file
+  SUFNAM =    ModelB-SA-AllActive-WithPrior_ucode._su          existing observations sensitivity file
+  WTFNAM =    ModelB-SA-AllActive-WithPrior_ucode._wt          existing observations weight file
+  SPUFNAM =   ModelB-Prediction_ucode._spu                     prediction sensitivities file
+  suprifnam = ModelB-SA-AllActive-WithPrior_ucode._supri       sensitivities for prior information
+  wtprifnam = ModelB-SA-AllActive-WithPrior_ucode._wtpri       weights for prior information
+END READ_FILES KEYWORDS
+#
+# -------------------------
+# OBSERVATION INFORMATION
+# -------------------------
+#
+BEGIN OBSERVATION_GROUPS TABLE
+  NROW=2  NCOL=3     COLUMNLABELS
+  GroupNAME   UseFlag PlotSymbol    
+  HdsFlows_p03  yes       1 
+  HdsFlows_p08  yes       2 
+END OBSERVATION_GROUPS TABLE
+
+BEGIN OBSERVATION_DATA TABLE
+  NROW=20  NCOL=4     COLUMNLABELS
+  OBSNAME      GroupName    STATISTIC     STATFLAG
+  hd01_p03.ss  HdsFlows_p03  0.33      sd
+  hd02_p03.ss  HdsFlows_p03  0.33      sd
+  hd04_p03.ss  HdsFlows_p03  0.33      sd
+  hd05_p03.ss  HdsFlows_p03  0.33      sd
+  hd06_p03.ss  HdsFlows_p03  0.33      sd
+  hd07_p03.ss  HdsFlows_p03  0.33      sd
+  hd08_p03.ss  HdsFlows_p03  0.33      sd
+  hd09_p03.ss  HdsFlows_p03  0.33      sd
+  hd10_p03.ss  HdsFlows_p03  0.33      sd
+  hd01_p08.ss  HdsFlows_p08  0.33      sd
+  hd02_p08.ss  HdsFlows_p08  0.33      sd
+  hd03_p08.ss  HdsFlows_p08  0.33      sd
+  hd04_p08.ss  HdsFlows_p08  0.33      sd
+  hd05_p08.ss  HdsFlows_p08  0.33      sd
+  hd06_p08.ss  HdsFlows_p08  0.33      sd
+  hd07_p08.ss  HdsFlows_p08  0.33      sd
+  hd09_p08.ss  HdsFlows_p08  0.33      sd
+  hd10_p08.ss  HdsFlows_p08  0.33      sd
+  flow_p03.ss  HdsFlows_p03  0.4    sd
+  flow_p08.ss  HdsFlows_p08  0.4    sd
+END OBSERVATION_DATA TABLE
+#
+# -------------------------
+# PREDICTION INFORMATION
+# -------------------------
+#
+BEGIN PREDICTION_DATA TABLE
+  NROW = 3 NCOL = 1 COLUMNLABELS
+  PREDNAME   
+  PredDDSE_2     
+  PredHdWell_2   
+  FlowPred_2     
+END PREDICTION_DATA TABLE

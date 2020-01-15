@@ -1,0 +1,63 @@
+# -------------------------
+# UCODE INPUT EXAMPLE 1
+# -------------------------
+
+BEGIN Options	KEYWORDS
+  Verbose=0
+  Derivatives_Interface=..\files-new-obs\new-obs.derint
+END Options
+
+# ------------------------------
+# UCODE-CONTROL INFORMATION
+# ------------------------------
+
+BEGIN UCODE_CONTROL_DATA KEYWORDS
+ModelName=example-new
+#Performance
+  sensitivities=yes             # calculate sensitivities: yes/no
+#Printing and output files
+END UCODE_CONTROL_DATA 
+
+# --------------------------------
+# COMMAND FOR APPLICATION MODEL(S)
+# --------------------------------
+
+BEGIN MODEL_COMMAND_LINES FILES
+..\files-new-obs\obs-fwd-der.command
+END MODEL_COMMAND_LINES
+
+# ---------------------
+# PARAMETER INFORMATION
+# ---------------------
+
+BEGIN PARAMETER_DATA FILES
+..\files-new-obs\ss.opt.params
+END PARAMETER_DATA 
+
+# -----------------------
+# OBSERVATION INFORMATION
+# -----------------------
+
+BEGIN OBSERVATION_GROUPS FILES
+..\files-new-obs\groups.obs
+END OBSERVATION_GROUPS
+
+BEGIN OBSERVATION_DATA FILES
+..\files-new-obs\hed.obs
+..\files-new-obs\flo.obs
+END OBSERVATION_DATA 
+
+# -----------------------------
+# APPLICATION MODEL INFORMATION
+# -----------------------------
+
+BEGIN MODEL_INPUT_FILES	KEYWORDS
+  modinfile=..\..\mf2k-files\new-obs\tc1.sen  
+  templatefile=..\files-new-obs\tc1.sen.tpl
+END MODEL_INPUT_FILES
+
+BEGIN MODEL_OUTPUT_FILES  KEYWORDS
+  modoutfile=..\..\mf2k-files\new-obs\tc1._os  
+  instructionfile=..\files-new-obs\obs.instructions   
+  category=obs
+END MODEL_OUTPUT_FILES

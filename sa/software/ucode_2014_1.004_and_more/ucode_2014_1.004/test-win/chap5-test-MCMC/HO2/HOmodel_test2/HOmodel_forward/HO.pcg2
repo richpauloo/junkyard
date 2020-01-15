@@ -1,0 +1,10 @@
+        60        100         1    MXITER,ITER1,NPCOND
+    .000001000   0.00250000      0.97       002        00         0     0.5
+ HCLOSE,      RCLOSE,    RELAX,    NBPOL,     IPRPCG,   MUTPCG
+ 
+ 
+    .01000    5.0000      0.97       002        00         0     1.0
+                        
+
+
+                                 

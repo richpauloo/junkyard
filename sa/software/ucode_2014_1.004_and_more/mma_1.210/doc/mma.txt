@@ -1,0 +1,196 @@
+
+
+U.S. Geological Survey (USGS)                         MMA(1)
+
+NOTE: Any use of trade, product or firm names is for descriptive
+      purposes only and does not imply endorsement by the U.S.
+      Government.
+
+NAME
+     MMA, A Computer Code for Multi-Model Analysis
+    
+ABSTRACT
+
+This report documents the Multi-Model Analysis (MMA) computer code. MMA can be 
+used to evaluate results from alternative models of a single system using the 
+same set of observations for all models. As long as the observations, the 
+observation weighting, and system being represented are the same, the models 
+can differ in nearly any way imaginable. For example, they may include different 
+processes, different simulation software, different temporal definitions (for 
+example, steady-state and transient models could be considered), and so on. The 
+multiple models may be calibrated by nonlinear regression or another method. Any 
+calibration needs to be completed before application of MMA.
+
+MMA can be used to rank models and calculate posterior model probabilities. 
+These can be used to (1) determine the relative importance of the 
+characteristics embodied in the alternative models, (2) calculate model-averaged
+parameter estimates and predictions, and (3) quantify the uncertainty of 
+parameter estimates and predictions in a way that integrates the variations 
+represented by the alternative models. 
+
+There is a lack of consensus on what model analysis methods are best, so MMA 
+provides four default methods. Two are based on Kullback-Leibler information, 
+and use the AIC (Akaike Information Criterion) or AICc (second-order-bias-
+corrected AIC) model discrimination criteria. The other two default methods are 
+the BIC (Bayesian Information Criterion) and the KIC (Kashyap Information 
+Criterion) model discrimination criteria. Use of the KIC criterion is equivalent 
+to using the maximum-likelihood Bayesian model averaging (MLBMA) method. AIC, 
+AICc, and BIC can be derived from Frequentist or Bayesian arguments. The default 
+methods based on Kullback-Leibler information have a number of theoretical 
+advantages, including that they tend to favor more complicated models as more 
+data become available than do the other methods, which makes sense in many 
+situations. 
+
+Many applications of MMA will be well served by the default methods provided. To 
+use the default methods, the only required input for MMA is a list of 
+directories where the files for the alternate models are located.
+
+Evaluation and development of model-analysis methods are active areas of 
+research. To facilitate exploration and innovation, MMA allows the user broad 
+discretion to define alternatives to the default procedures. For example, MMA 
+allows the user to (a) rank models based on model criteria defined using a wide 
+range of provided and user-defined statistics in addition to the default AIC, 
+AICc, BIC, and KIC criteria, (b) create their own criteria using model measures 
+available from the code, and (c) define how each model criterion is used to 
+calculate related posterior model probabilities. 
+
+The default model criteria rate models based on model fit to observations, the 
+number of observations and estimated parameters, and, for KIC, the Fisher 
+information matrix. In addition, MMA allows the analysis to include an 
+evaluation of estimated parameter values. This is accomplished by allowing the 
+user to define unreasonable estimated parameter values or relative estimated 
+parameter values. An example of the latter is that it may be expected that one 
+parameter value will be less than another, as might be the case if two 
+parameters represented the hydraulic conductivity of distinct materials such as 
+fine and coarse sand. Models with parameter values that violate the user-defined 
+conditions are excluded from further consideration by MMA.
+
+Ground-water models are used as examples in this report, but MMA can be used to 
+evaluate any set of models for which the required files have been produced.
+
+MMA needs to read files from a separate directory for each alternative model 
+considered. The needed files are produced when using the sensitivity-analysis or 
+parameter-estimation mode of UCODE_2005, or the equivalent capability of another 
+program.  
+
+MMA is constructed using modules and conventions for data-exchange files from 
+the JUPITER API, and is intended for use on any computer operating system. MMA 
+consists of algorithms programmed in Fortran90, which efficiently performs 
+numerical calculations.
+
+
+HISTORY
+
+     MMA Version 1.210 09/1/2011
+        - Changed revision number to 1.210 
+        - Corrected error in code in which the values in the column of "XTWXOBS" 
+          of the *._mma file were incorrect
+        - Included latest versions of ucode and linear_uncertainty in the bin
+          directory
+        - Reran regressions for distribution files
+        - Differences in the results of the test problems include:
+            #mout files will have a different version number and date
+            _mma files due to revised calculation of "XTWXOBS"
+            _rank files due to revised calculation of "XTWXOBS" 
+            _anals files involving KIC due to revised calculation of "XTWXOBS"
+            Output files dependent on prior information because the 
+              interpretation of the uncertainty on prior information input
+              changed in ucode but the input files for the regression runs
+              distributed with MMA have not been changed. Those files include 
+              unusually large uncertainty on prior information.
+
+     MMA Version 1.200 09/18/2010
+        - Changed revision number to 1.200 
+        - Corrected error in code in which the standard deviations rather than 
+          the variances were summed in evaluating MMA's eq. 2.16a
+        - Improved checking for analyses having the same prior
+        - Revised input for regression examples to define prior in native space
+        - Reran all regressions for distribution files
+        - Compiled with JUPITER API 1.4.0
+        
+     MMA Version 1.100 10/26/2009
+        - Changed revision number to 1.100
+        - Added a new criterion named PriModProb which equals the prior model 
+          probability if it is input by the user, otherwise all included models 
+          are assigned equal probabilities (p=1/#models) that sum to one. Now 
+          prior model probability can be used as a criterion or as a term in 
+          the probability equation. This term now appears as a column in
+          the _mma and the _rank files.
+            The following input will rank models strictly by their prior model 
+            probability without regard to model fit.  
+              BEGIN ANALYSES TABLE
+              nrow=1  ncol=3 columnlabels
+              AnalysisLabel CritEqn         PrEqn
+              ChooseAName   PriModelProb    1.*valcrit
+              END ANALYSES
+            Model probabilities are specified in the MODEL_PATHS block using 
+            keyword PriorModProb. If this is not specified then the default is 
+            for all models to have equal probability.
+        - A new example run illustrates an analysis based solely on prior
+          model probabilities. It is in  mma_1.100\test-win\01-Run_MMA and is 
+          executed using mma_modprob.bat.  For this example the posterior 
+          probabilities resulting from the AICc analysis of “mma_extensive.bat” 
+          were used as prior model probabilities so the results of the two 
+          analyses are nearly identical.
+        - Added an additional default analysis based on prior model 
+          probabilities so now there are 5 default analyses.
+        - Revised allocation of some arrays to facilitate application with
+          very large numbers of observations.
+        - The highest ranked model is assigned a value of one and if two models 
+          have the same value they will be given the same rank. Models that did 
+          not converge are assigned a rank equal to the total number of models 
+          so there may be a gap in values between their rank and the lowest  
+          ranked model. Previously if two models had the same value they were 
+          assigned equal rank but in that case the highest ranked model would 
+          have a rank less than one.
+        - Corrected an error that occurred in some instances when only some of 
+          the estimated parameters were averaged or if they were not listed in 
+          the same order as in the parameter estimation.
+        - Corrected an error that occurred  in some instances in model averaging
+          if some of the models in the group to be averaged were not included 
+          due to non-convergence or unreasonable parameter values
+        - Corrected an error in which the final sum of squares weighted 
+          residuals was used instead of the lowest sum of squares weighted 
+          residuals in cases where the final sum of squares weighted residuals
+          was not the lowest
+        - Compiled with JUPITER API 1.3.1
+                               
+     MMA Version 1.000 8/10/2007 - Initial release.
+     
+
+DATA REQUIREMENTS
+     In order to use MMA, the main MMA input file needs to be created and
+     refer to data_exchange files as described in the MMA documentation. 
+     Input data are read from files.
+
+
+SYSTEM REQUIREMENTS
+     MMA is written primarily in Fortran 90. The code has been used on
+     UNIX-based computers and personal computers running various forms of the 
+     Microsoft Windows operating system.
+
+
+CONTACTS
+
+    Eileen Poeter
+    Emeritus Professor, Colorado School of Mines
+    Golden, Colorado 80401
+    USA
+
+    epoeter@mines.edu
+
+    Mary C. Hill
+    U.S. Geological Survey
+    National Research Program
+    3215 Marine St
+    Boulder, CO 80302
+    USA
+    
+    mchill@usgs.gov
+
+  
+    See
+
+      http://water.usgs.gov/software/ordering_documentation.html
+
+    for information on ordering printed copies of USGS publications.

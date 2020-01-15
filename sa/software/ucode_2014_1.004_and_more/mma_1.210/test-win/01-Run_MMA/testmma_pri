@@ -1,0 +1,66 @@
+#
+BEGIN OPTIONS
+  Verbose=0
+END OPTIONS
+
+BEGIN OUTPUT_CONTROL
+WritePreds = yes
+WRITEPARAMREGRESS = yes
+WRITEPARAMNATIVE = yes
+END OUTPUT_CONTROL
+
+BEGIN MODEL_GROUPS
+GroupName=ZPRIOR  avg=yes
+END MODEL_GROUPS
+
+BEGIN PARAM_EQNS TABLE
+nrow=1  ncol=3 columnlabels
+ParEqnName    ParEqn            GroupName
+Crit1_ZPRIORa       Kx5.gt.Kx1        ZPRIOR
+END PARAM_EQNS
+
+BEGIN PARAM_AVGS TABLE
+nrow=3  ncol=3 columnlabels
+ParamAvgName  GroupName Avg
+Kx1 ZPRIOR yes
+Kx5 ZPRIOR yes
+RCH ZPRIOR yes
+END PARAM_AVGS
+ 
+BEGIN MODEL_PATHS TABLE
+nrow=5  ncol=2 columnlabels
+PathAndRoot        GroupName         
+..\..\data-win\prior\z2\1\z zprior   
+..\..\data-win\prior\z2\2\z zprior   
+..\..\data-win\prior\z2\3\z zprior   
+..\..\data-win\prior\z2\4\z zprior   
+..\..\data-win\prior\z2\5\z zprior   
+END MODEL_PATHS
+
+BEGIN PREDS TABLE
+nrow=22  ncol=1 columnlabels
+Prediction
+o11off
+o12off
+o13off
+o14off
+o15off
+o21off
+o22off
+o23off
+o24off
+o25off
+o31off
+o32off
+o33off
+o34off
+o35off
+o41off
+o42off
+o43off
+o44off
+o45off
+qtrib
+qmain
+END PREDS
+

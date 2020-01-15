@@ -1,0 +1,128 @@
+# UCODE Main Input File used for MCMC prediction run
+#
+# ------------------------------
+# UCODE-OPTION INFORMATION
+# ------------------------------
+
+BEGIN OPTIONS KEYWORDS
+  Verbose= 3
+END OPTIONS
+
+
+# ------------------------------
+# UCODE-CONTROL INFORMATION
+# ------------------------------
+
+BEGIN UCODE_CONTROL_DATA KEYWORDS
+  ModelName=        HO
+  ModelLengthUnits= m
+  ModelMassUnits=   NA
+  ModelTimeUnits=   d 
+#Performance
+  MCMC=yes                    # run MCMC simulation: yes/no, when MCMC_PREDICTION is yes, MCMC must be yes
+  MCMC_PREDICTION=yes         # For each parameter sample, do prediciton run
+END UCODE_CONTROL_DATA
+
+
+# ------------------------------------
+# MCMC-CONTROLS INPUT BLOCK
+# ------------------------------------
+
+BEGIN MCMC_CONTROLS KEYWORDS
+#
+# When MCMC_PREDICTION = yes (specified in the UCODE_control_data input block), the parameter samples of each chain 
+# between iteration ItStartPred+1 and MaxSamples are used to make predictions.
+#
+# For MCMC prediction run, keywords Nchain, MaxSamples and PrintStep are needed, and they all have the same default values as in the MCMC run. 
+# Nchain and MaxSamples can be the same as and should NOT be larger than the values set for the associated MCMC run. 
+# PrintStep must be the same as the value set for the associated MCMC run.
+# ItStartPred should be smaller than MaxSamples, and larger than PrintStep. If not specified, ItStartPred=0.5*MaxSample.
+#
+# In this example a small value of MaxSamples=20 is specified to allow users to quickly see the logic of an 
+# MCMC run. Increase MaxSamples for all applications of MCMC. 
+#
+  Nchain=6                  #This can be the same as the value set for the associated MCMC run.
+  MaxSamples=20             #This can be the same as the value set for the associated MCMC run.  
+  PrintStep=1		    #This must be the same as the PrintStep used in the associated MCMC run.
+  ItStartPred=10            #Iteration number of parameter samples after which the samples are used to simulate predictions,
+END MCMC_CONTROLS           #samples before ItStartPred are accounted for from burn-in period.
+
+
+# --------------------------------
+# COMMAND FOR APPLICATION MODEL(S)
+# --------------------------------
+
+BEGIN MODEL_COMMAND_LINES KEYWORDS
+  Command='RunMF_pred.bat'
+  Purpose=forward
+  CommandId='MODFLOW 2005'
+END MODEL_COMMAND_LINES
+
+
+# ------------------------------------
+# MCMC-PRIOR INPUT BLOCK
+# ------------------------------------
+
+BEGIN MCMC_PRIOR_PDF TABLE
+#
+# For mcmc prediction run, only keyword ParamName is needed.
+#
+NRow=6  NCol=1   COLUMNLABELS
+ParamName  
+LAKERCH     
+KRB0      
+RCH       
+KV        
+K1        
+VANI1     
+END MCMC_PRIOR_PDF
+
+
+# -----------------------
+# PREDICTION INFORMATION
+# -----------------------
+
+BEGIN PREDICTION_GROUPS TABLE
+NROW=2   NCOL=2   COLUMNLABELS
+GroupName     UseFlag    
+notused	        NO
+pred	       YES
+END PREDICTION_GROUPS
+  
+BEGIN PREDICTION_DATA FILES
+HO.pred
+END PREDICTION_DATA
+
+
+# -----------------------------
+# APPLICATION MODEL INFORMATION
+# -----------------------------
+
+BEGIN MODEL_INPUT_FILES	KEYWORDS
+  modinfile=HOmodel_prediction\HO.pvl
+  templatefile=HO_pred.tpl
+END MODEL_INPUT_FILES
+
+BEGIN MODEL_OUTPUT_FILES  KEYWORDS
+  modoutfile=HOmodel_prediction\HO._obsout
+  instructionfile=HO_pred.inst
+  category=pred
+END MODEL_OUTPUT_FILES
+
+
+# -----------------------------
+# PARALLEL PROCESSING
+# -----------------------------
+BEGIN PARALLEL_CONTROL
+  Parallel=no
+  Wait=0.01
+  waitrunners=1.0  
+  OperatingSystem=Windows
+END PARALLEL_CONTROL
+
+BEGIN PARALLEL_RUNNERS TABLE
+nrow=2 ncol=3 columnlabels
+RunnerName                  RunnerDIR               RunTime
+runner1      ..\runner1\HO1\HO1\HO1\HOmodel_test1\     100
+runner2      ..\runner2\HO1\HO1\HO1\HOmodel_test1\     100
+END PARALLEL_RUNNERS

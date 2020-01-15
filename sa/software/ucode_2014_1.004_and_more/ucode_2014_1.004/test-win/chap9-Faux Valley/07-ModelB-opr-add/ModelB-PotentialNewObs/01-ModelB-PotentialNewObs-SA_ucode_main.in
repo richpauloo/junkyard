@@ -1,0 +1,89 @@
+BEGIN Options Keywords
+  Verbose = 3
+END Options
+ 
+BEGIN UCODE_Control_Data Keywords
+  ModelName = modB-potential
+  ModelLengthUnits = m
+  ModelTimeUnits = s
+  Sensitivities = true
+END UCODE_Control_Data
+ 
+BEGIN Model_Command_Lines Keywords
+  Command = "..\..\..\..\bin\mf2005.exe  .\modB-potential.nam"
+    Purpose = Forward
+    CommandID = ForwardModel
+END Model_Command_Lines
+ 
+BEGIN Parameter_Groups Table
+  NROW=5 NCOL=5 COLUMNLABELS
+  GroupName Adjustable Transform MaxChange SenMethod
+  HK           Yes       Yes        2.0        2
+  VANI         Yes        No        2.0        2
+  VKCB         Yes       Yes        2.0        2
+  RIV          Yes       Yes        2.0        2
+  RCH          Yes        No        2.0        2
+END Parameter_Groups
+ 
+BEGIN Parameter_Data Table
+  NROW=8 NCOL=5 COLUMNLABELS
+  ParamName GroupName StartValue              LowerValue UpperValue
+  HK_1_1       HK      2.5884866755483124E-04   9.6e-5      9.5e-4	
+  HK_1_2       HK      9.9971745299422890E-03   9.6e-4      9.5e-3	
+  HK_2         HK      3.1689814584268935E-05   4e-6        4e-4		
+  VANI         VANI    1.0000000000000000E+00   0.8         1.2		
+  VK_CB        VKCB    9.9999999943367862E-08   1e-8        1e-6		
+  K_RB         RIV     1.1999999999999559E-03   1.2e-4      1.2e-2	
+  RCH_1        RCH     5.0052952290500940E+01   16          48		
+  RCH_2        RCH     7.9809200181594747E+01   47          79		
+END Parameter_Data
+ 
+BEGIN Observation_Groups Table
+  NROW=4 NCOL=4 COLUMNLABELS
+  GroupName  Statistic StatFlag PlotSymbol
+  Heads-p03   .33         SD         1
+  Heads-p08   .33         SD         2 
+  RivFlow-p03  .4         SD         3
+  RivFlow-p08  .4         SD         4
+END Observation_Groups
+ 
+BEGIN Observation_Data Table
+  NROW=20 NCOL=3 COLUMNLABELS
+  ObsName GroupName        ObsValue
+  hd01_p03.ss  Heads-p03      100.00
+  hd02_p03.ss  Heads-p03      100.00
+  hd04_p03.ss  Heads-p03      100.00
+  hd05_p03.ss  Heads-p03      100.00
+  hd06_p03.ss  Heads-p03      100.00
+  hd07_p03.ss  Heads-p03      100.00
+  hd08_p03.ss  Heads-p03      100.00
+  hd09_p03.ss  Heads-p03      100.00
+  hd10_p03.ss  Heads-p03      100.00
+  hd01_p08.ss  Heads-p08      100.00
+  hd02_p08.ss  Heads-p08      100.00
+  hd03_p08.ss  Heads-p08      100.00
+  hd04_p08.ss  Heads-p08      100.00
+  hd05_p08.ss  Heads-p08      100.00
+  hd06_p08.ss  Heads-p08      100.00
+  hd07_p08.ss  Heads-p08      100.00
+  hd09_p08.ss  Heads-p08      100.00
+  hd10_p08.ss  Heads-p08      100.00
+  flow_p03.ss  RivFlow-p03    -5.00
+  flow_p08.ss  RivFlow-p08    -5.00
+END Observation_Data
+ 
+ 
+BEGIN Model_Input_Files Keywords
+  ModInFile = modB-potential.pval
+    TemplateFile = modB-potential.jtf
+END Model_Input_Files
+ 
+BEGIN Model_Output_Files Keywords
+  ModOutFile = "modB-potential.hob_out"
+    InstructionFile = "modB-potential.hob_out.jif"
+    Category = Obs
+  ModOutFile = "modB-potential.rvob_out"
+    InstructionFile = "modB-potential.rvob_out.jif"
+    Category = Obs
+END Model_Output_Files
+ 

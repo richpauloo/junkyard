@@ -1,0 +1,142 @@
+
+ ===========================
+ PROGRAM OPR-PPR VERSION 1.0
+ ===========================
+
+ SUCCESSFULLY OPENED FILE opradd.IN
+
+ READING INPUT FROM FILE: opradd.IN
+
+
+ Keyword                                 Value        Group =             
+ --------------------------------------  --------------------------------------
+ MODE                                    OPRADD
+ OBSGROUPS                               NO
+ PREDGROUPS                              NO
+ CORRELTHRESH                            .90
+ VERBOSE                                 1
+ ------------------------------------------------------------------------------
+
+ RUNFLAG=  1 (MODE=OPRADD; GROUPS=NO):  OPRADD INDIVIDUAL OBSERVATIONS
+
+ READING PREDICTION MODEL DATA FILE example._dmp                                                                                        
+
+  NUMBER OF PREDICTION GROUPS =           3
+  NUMBER OF PARAMETERS FOR PREDICTIVE EVALUATION =           7
+
+ READING REGRESSION/SENSITIVITY MODEL DATA FILE example._dm                                                                                         
+
+  PREDICTION DATA FILE example._dmp INDICATES    1 PREDICTION-ONLY PARAMETER(S)
+
+
+ OBSERVATIONS
+  Total number of observations read---------     2
+  Number of directly extracted observations-     2
+  Number of observations to be derived------     0
+  Number of observations to be used---------     2
+
+
+ NOTE: WEIGHTS FROM MAIN INPUT FILE ARE ECHOED ABOVE BUT ARE 
+ REPLACED BY ENTRIES IN FILE example-new._wt FOR THE CALCULATIONS.
+
+
+ TOTAL NUMBER OF PREDICTIONS IDENTIFIED FROM MAIN INPUT FILE =  9
+ (NOTE: THIS MUST EQUAL THE NO. OF ROWS IN THE PREDICTION SENSITIVITY FILE)
+
+
+ READING SENSITIVITIES FOR PREDICTIONS FROM FILE: example._spu
+
+
+ READING SENSITIVITIES FOR NPARPREDONLY PARAMETERS FROM FILE: example._suprip
+
+
+ READING WEIGHTS ON PRIOR FOR FOR NPARPREDONLY PARAMETERS FROM FILE: example._wtprip
+
+ SUCCESSFULLY CLOSED FILE opradd.IN
+
+ READING SENSITIVITIES FOR EXISTING OBSERVATIONS FROM FILE: example._su
+
+
+ SENSITIVITY ENTRIES FOR PRIOR WITH NPARPREDONLY APPENDED
+
+
+ READING WEIGHTS FOR EXISTING OBSERVATIONS FROM FILE: example._wt
+
+
+ FULL WEIGHT MATRIX WITH ALL ENTRIES (OBSERVATIONS, EXISTING PRIOR AND NON-REGRESSION PRIOR)
+
+
+ READING WEIGHTS FOR POTENTIAL OBS FROM FILE: example-new._wt
+
+
+ READING SENSITIVITIES FOR POTENTIAL OBS FROM FILE: example-new._su
+
+
+ MAKING BASE CASE Z(INV(XTWX)S)ZT CALCULATION
+
+
+ COMPLETED BASE CASE Z(INV(XTWX)S)ZT CALCULATION
+
+
+ ========================
+ OPR-PPR ANALYSIS SUMMARY
+ ========================
+
+ FORMING AND WRITING OPR STATISTIC FILES ....
+
+
+ ----------------------------------------------
+ ABSOLUTE CHANGE: PREDICTION STANDARD DEVIATIONS (OPR_ABSCHG STATISTIC)
+ ----------------------------------------------
+ "ROWNAME     "           "AD10_X              "  "AD10_Y              "  "AD10_Z              "  "AD50_X              "  "AD50_Y              "  "AD50_Z              "  "A100_X              "  "A100_Y              "  "A100_Z              "
+ newhead                        -25.35461807            -173.5233612            -14.62679482            -206.6328125            -1572.816284            -52.51532364            -15673.44336            -42736.80859            -167.4623566    
+ newflow                        -8.277660370           -0.3729761033E-06       -0.2054474875E-01        -64.28897095           -0.2470312566           -0.2742225491E-01        -1.441430807           -0.9283415675           -0.1049640104    
+ SUCCESSFULLY OPENED FILE opradd._OPR_ABSCHG
+ SUCCESSFULLY CLOSED FILE opradd._OPR_ABSCHG
+
+ ----------------------------------------------
+ ABSOLUTE CHANGE: PARAMETER STANDARD DEVIATIONS
+ ----------------------------------------------
+ "ROWNAME     "           "RCH_1       "  "RCH_2       "  "K_RB        "  "HK_1        "  "VK_CB       "  "HK_2        "  "POR_1&2     "
+ newhead                    -42.7382        -52.6107        -.335223E-03    -.784975E-04    -.727372E-06    -.131475E-03     0.00000    
+ newflow                    -.141104        -.934502E-01    -.808357E-06    -.481350E-05    -.356562E-10    -.548462E-08     0.00000    
+ SUCCESSFULLY OPENED FILE opradd._OPA_ABSCHG
+ SUCCESSFULLY CLOSED FILE opradd._OPA_ABSCHG
+
+ ----------------------------------------------
+ PERCENT CHANGE: PREDICTION STANDARD DEVIATIONS (OPR/PRR STATISTIC)
+ ----------------------------------------------
+ "ROWNAME     "           "AD10_X              "  "AD10_Y              "  "AD10_Z              "  "AD50_X              "  "AD50_Y              "  "AD50_Z              "  "A100_X              "  "A100_Y              "  "A100_Z              "
+ newhead                         19.79338837             78.83177948             85.81707764             20.12575150             76.10841370             83.82866669             77.37062073             80.34097290             82.42630768    
+ newflow                         6.462055206            0.1694432967E-06        0.1205383837             6.261657238            0.1195381582E-01        0.4377333820E-01        0.7115500979E-02        0.1745190471E-02        0.5166412517E-01
+ SUCCESSFULLY OPENED FILE opradd._OPR
+ SUCCESSFULLY CLOSED FILE opradd._OPR
+
+ ---------------------------------------------
+ PERCENT CHANGE: PARAMETER STANDARD DEVIATIONS
+ ---------------------------------------------
+ "ROWNAME     "           "RCH_1       "  "RCH_2       "  "K_RB        "  "HK_1        "  "VK_CB       "  "HK_2        "  "POR_1&2     "
+ newhead                    -71.6068        -88.2863        -5.12538        -46.6865        -70.7996        -80.7457         0.00000    
+ newflow                    -.236417        -.156819        -.123593E-01    -2.86283        -.347064E-02    -.336839E-02     0.00000    
+ SUCCESSFULLY OPENED FILE opradd._OPA
+ SUCCESSFULLY CLOSED FILE opradd._OPA
+
+ ---------------------------------------------
+ CORRELATIONS GREATER THAN "CORRELTHRESH"
+ ---------------------------------------------
+
+   24 PARAMETER CORRELATIONS GREATER THAN "CORRELTHRESH"    0.9000 REPORTED
+ SUCCESSFULLY OPENED FILE opradd._OPC
+ SUCCESSFULLY CLOSED FILE opradd._OPC
+
+ ------------------------------------------------
+ SUMMARY OF MOST AND LEAST IMPORTANT OBSERVATIONS
+ ------------------------------------------------
+ OBS/GRP: newflow                OPR-PPR:  12.9605    
+ OBS/GRP: newhead                OPR-PPR:  604.643    
+
+ NOTE: THIS TABLE IS CREATED BY SUMMING OPR OR PPR STATISTICS
+
+ ======================================
+ SUCCESSFUL PROGRAM EXECUTION - OPR-PPR
+ ======================================

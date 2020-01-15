@@ -1,0 +1,97 @@
+BEGIN Options Keywords
+  Verbose = 3
+END Options
+ 
+BEGIN UCODE_Control_Data Keywords
+  ModelName = modB
+  ModelLengthUnits = m
+  ModelTimeUnits = s
+  Sensitivities = True
+  Optimize = True
+#SVD input
+  SVD=yes
+  SVDRATIO=1e-2
+  SVDupdate=Option2_css_pcc
+  SVDupdate_PCC=0.99
+END UCODE_Control_Data
+ 
+BEGIN Reg_GN_Controls Keywords
+  MaxIter = 100
+  TolPar=1e10           ###Make large (1e10) to avoid initial GN iterations
+  MaxChange=1e-5        ###Make small (1e-5) to avoid initial GN iterations
+  SVDPerturbAmt=0.01
+  SVDMaxChange=2.
+  SVDTolPar=0.1
+END Reg_GN_Controls
+ 
+BEGIN Model_Command_Lines Keywords
+  Command = "..\..\bin\mf2005.exe modB.nam"
+    Purpose = Forward
+    CommandID = ForwardModel
+END Model_Command_Lines
+ 
+BEGIN Parameter_Groups Table
+  NROW=5 NCOL=5 COLUMNLABELS
+  GroupName Adjustable Transform MaxChange SenMethod
+  HK          Yes        Yes        2.0       1
+  VANI        Yes        Yes        2.0       1
+  VKCB        Yes        Yes        2.0       1
+  RIV         Yes        Yes        2.0       1
+  RCH         Yes        Yes        2.0       1
+END Parameter_Groups
+ 
+BEGIN Parameter_Data Table
+###UpperValue and LowerValue are for comparison only. 
+###UpperConstraint and LowerConstraint (and Constrain=yes)
+###  would be needed to constrain estimated values
+###Because SVDupdate=Option2_css_pcc, SVDset is not used.
+  NROW=8 NCOL=6 COLUMNLABELS
+  ParamName GroupName StartValue LowerValue UpperValue	 SVDset
+  HK_1_1       HK       0.0003     9.6e-5      9.5e-4		   7
+  HK_1_2       HK       0.003      9.6e-4      9.5e-3		   4
+  HK_2         HK       4E-5       4e-6        4e-4		   2
+  VANI         VANI     1          0.8         1.2		   1
+  VK_CB        VKCB     1E-7       1e-8        1e-6		   3
+  K_RB         RIV      0.0012     1.2e-4      1.2e-2		   5
+  RCH_1        RCH      32         16          48		   6
+  RCH_2        RCH      63         47          79		   8
+END Parameter_Data
+ 
+BEGIN Observation_Groups Table
+  NROW=3 NCOL=4 COLUMNLABELS
+  GroupName  Statistic StatFlag PlotSymbol
+  Heads-L1   .33         SD         1
+  Heads-L2   .33         SD         2 
+  RIV_flows  .1          CV         3
+END Observation_Groups
+ 
+BEGIN Observation_Data Table
+  NROW=11 NCOL=3 COLUMNLABELS
+  ObsName GroupName        ObsValue
+  hd01.ss  Heads-L1        100.25
+  hd02.ss  Heads-L1        149.41
+  hd03.ss  Heads-L1        163.46
+  hd04.ss  Heads-L1        153.75
+  hd05.ss  Heads-L1        160.36
+  hd06.ss  Heads-L2        148.90
+  hd07.ss  Heads-L2        103.77
+  hd08.ss  Heads-L2        163.87
+  hd09.ss  Heads-L2        180.67
+  hd10.ss  Heads-L2        160.80
+  Flow01_1 RIV_flows       -5.77
+END Observation_Data
+
+BEGIN Model_Input_Files Keywords
+  ModInFile = modB.pval
+    TemplateFile = modB.jtf
+END Model_Input_Files
+ 
+BEGIN Model_Output_Files Keywords
+  ModOutFile = modB.obh_out
+    InstructionFile = modB.obh_out.jif
+    Category = Obs
+  ModOutFile = modB.rvob_out
+    InstructionFile = modB.rvob_out.jif
+    Category = Obs
+END Model_Output_Files
+ 

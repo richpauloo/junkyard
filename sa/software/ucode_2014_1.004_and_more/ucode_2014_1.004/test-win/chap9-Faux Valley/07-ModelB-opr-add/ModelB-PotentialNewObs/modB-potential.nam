@@ -1,0 +1,21 @@
+# Name File for MODFLOW created on 2/12/2011 by ModelMuse
+LIST 11 modB-potential.lst REPLACE
+
+DIS 12 modB-potential.dis OLD
+BAS6 13 modB-potential.bas OLD
+OC 39 modB-potential.oc OLD
+DATA 37 modB-potential.fhd REPLACE
+DATA 38 modB-potential.fdn REPLACE
+PCG 18 modB-potential.pcg OLD
+LPF 14 modB-potential.lpf OLD
+GHB 19 modB-potential.ghb OLD
+RIV 21 modB-potential.riv OLD
+RVOB 48 modB-potential.ob_rvob OLD
+DATA 49 modB-potential.rvob_out REPLACE
+RCH 24 modB-potential.rch OLD
+WEL 59 modB-potential.wel OLD
+ZONE 15 modB-potential.zon OLD
+MULT 16 modB-potential.mlt OLD
+HOB 41 modB-potential.ob_hob OLD
+DATA 42 modB-potential.hob_out REPLACE
+PVAL 52 modB-potential.pval OLD

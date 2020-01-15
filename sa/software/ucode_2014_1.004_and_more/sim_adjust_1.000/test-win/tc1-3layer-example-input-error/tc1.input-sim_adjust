@@ -1,0 +1,71 @@
+'tc1-fwd._os'
+0  1  4  -888.  -1.E-50
+obs1.0     L    o    obs1.0d1
+obs1.1     L    o    obs1.1d1
+obs1.12    L    o    obs1.12d1
+obs2.0     L    o    obs2.0d1
+obs2.1     L    o    obs2.1d1
+obs2.2     L    n
+obs2.8     L    o    obs2.8d1
+obs2.12    L    o    obs2.12d1
+obs3.0     L    o    obs3.0d1
+obs3.1     L    o    obs3.1d1
+obs3.12    L    o    obs3.12d1
+obs4.0     L    o    obs4.0d1
+obs4.1     L    o    obs4.1d1
+obs4.12    L    o    obs4.12d1
+obs5.0     L    o    obs5.0d1
+obs5.1     L    o    obs5.1d1
+obs5.12    L    o    obs5.12d1
+obs1.0d1   X    o    obs1.0d2
+obs1.1d1   X    o    obs1.1d2
+obs1.12d1  X    o    obs1.12d2
+obs2.0d1   X    o    obs2.0d2
+obs2.1d1   X    o    obs2.1d2
+obs2.2d1   X    o    obs2.2d2
+obs2.8d1   X    o    obs2.8d2
+obs2.12d1  X    o    obs2.12d2
+obs3.0d1   X    o    obs3.0d2
+obs3.1d1   X    o    obs3.1d2
+obs3.12d1  X    n
+obs4.0d1   X    o    obs4.0d2
+obs4.1d1   X    o    obs4.1d2
+obs4.12d1  X    o    obs4.12d2
+obs5.0d1   X    o    obs5.0d2
+obs5.1d1   X    o    obs5.1d2
+obs5.12d1  X    o    obs5.12d2
+obs1.0d2   X    v    40.
+obs1.1d2   X    v    40.
+obs1.12d2  X    v    40.
+obs2.0d2   X    v    40.
+obs2.1d2   X    v    40.
+obs2.2d2   X    v    40.
+obs2.8d2   X    v    40.
+obs2.12d2  X    v    40.
+obs3.0d2   X    v    118.
+obs3.1d2   X    v    118.
+obs3.12d2  X    v    118.
+obs4.0d2   X    v    40.
+obs4.1d2   X    v    40.
+obs4.12d2  X    v    40.
+obs5.0d2   X    v    40.
+obs5.1d2   X    v    40.
+obs5.12d2  X    v    40.
+obs6.0     L    v    40.
+obs6.1     L    v    40.
+obs6.12    L    v    40.
+obs7.0     L    v    40.
+obs7.1     L    v    40.
+obs7.12    L    v    40.
+obs8.0     L    v    118.
+obs8.1     L    v    118.
+obs8.12    L    v    118.
+obs9.0     L    v    40.
+obs9.1     L    v    40.
+obs9.12    L    v    40.
+obs0.0     L    v    40.
+obs0.1     L    v    40.
+obs0.12    L    v    40.
+obsSS      L    n
+obsTR3     L    n
+obsTR12    L    n

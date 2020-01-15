@@ -1,0 +1,27 @@
+# ====================
+# Produced by MF2K2DX
+# ====================
+
+# The following blocks must be in this sequence:
+#   OPTIONS KEYWORDS
+#   READ_FILES  
+# MF2K2DX writes portions of the OPTIONS block here
+BEGIN OPTIONS KEYWORDS
+  mode = OPROMIT
+  obsgroups = no
+  predroups = no
+  verbose =  5
+END OPTIONS
+
+# MF2K2DX writes portions of the READ_FILES block here
+BEGIN READ_FILES
+  dmfnam  = exss-no_pred._dm                               modeldata
+  dmpfnam = exss-no_pred._dmp                              prediction data
+  sufnam  = exss-no_pred._su                               sensitivities - existing obs
+  wtfnam  = exss-no_pred._wt                               weights - existing obs
+  spufnam = exss-pred-only._spu                            sensitivities - predictions
+  suprifnam = exss-no_pred._supri                          sensitivities - existing prior
+  wtprifnam = exss-no_pred._wtpri                          weights - existing prior
+END READ_FILES
+
+# Additional BLOCKS should be added here as required

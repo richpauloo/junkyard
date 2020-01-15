@@ -1,0 +1,6 @@
+  "PARAMETER"  "PINC"  "1 IF PRESENT IN EACH OF MPR EQUATIONS"
+ Kx1              1     1 0
+ Kx5              1     0 1
+ RCH              1     0 0
+ KrMain          -1     0 0
+ KrTrib          -1     0 0

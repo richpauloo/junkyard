@@ -1,0 +1,36 @@
+
+ SELECTED STATISTICS FROM MODIFIED GAUSS-NEWTON ITERATIONS
+
+        # PARAMs                  MAX.             MAX. CHANGE   DAMPING
+ ITER.  ESTIMATED  PARNAM         CALC. CHANGE     ALLOWED       PARAMETER
+ -----  --------- ------------  ---------------- -------------  ------------
+    1        5     Kx2           0.960469         2.00000        1.0000    
+    2        5     Kx1           0.403131         2.00000        1.0000    
+    3        5     Kx1           0.994624E-01     2.00000        1.0000    
+    4        5     Kx4          -0.271869E-01     2.00000        1.0000    
+    5        5     Kx1           0.692832E-02     2.00000        1.0000    
+
+
+ PARAMETER VALUES FOR EACH ITERATION
+ - INDICATES DAMPING RESULTED FROM PARAMETER CONSTRAINTS FOR THAT ITERATION.
+ * INDICATES SOME PARAMETERS WERE OMITTED DURING THAT ITERATION.  THE VALUES
+   OF THOSE PARAMETERS ARE REPORTED EVEN THOUGH THEY WERE NOT UPDATED
+
+   ITER   Kx1          Kx2          Kx4          Kx5          RCH         
+      0     1.000        7.000        19.00        25.00       0.8000E-03
+      1     1.938        13.72        26.56        35.46       0.7950E-03
+      2     2.719        17.77        24.57        41.58       0.8023E-03
+      3     2.989        17.76        22.16        44.80       0.8058E-03
+      4     3.068        17.63        21.56        45.74       0.8070E-03
+      5     3.089        17.60        21.41        45.99       0.8073E-03
+
+ SUMS OF SQUARED WEIGHTED RESIDUALS FOR EACH ITERATION
+
+         SUMS OF SQUARED WEIGHTED RESIDUALS
+         ITER.  OBSERVATIONS  PRIOR INFO.      TOTAL       # INCLUDED OBS
+              0    1718.1        0.0000        1718.1         21 OF      21
+              1    59.141        0.0000        59.141         21 OF      21
+              2    13.815        0.0000        13.815         21 OF      21
+              3    13.538        0.0000        13.538         21 OF      21
+              4    13.520        0.0000        13.520         21 OF      21
+              5    13.520        0.0000        13.520         21 OF      21

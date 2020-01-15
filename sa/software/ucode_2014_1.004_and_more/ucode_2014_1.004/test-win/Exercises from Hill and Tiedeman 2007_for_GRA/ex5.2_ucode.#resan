@@ -1,0 +1,110 @@
+                               RESIDUAL_ANALYSIS
+
+                        CONSTRUCTED USING THE JUPITER API
+                         UCODE POST-PROCESSING PROGRAM
+                        TO PERFORM ANALYSIS OF RESIDUALS
+                                Version 1.009                                   
+
+ WEIGHTED RESIDUALS WILL BE READ FROM FILE ex5.2_ucode._w
+
+User selections:
+ Print covariance matrix for estimated parameters to fn.#rs?  no
+ Print square root of full weight matrix to fn.#rs?           no
+ Print sensitivities for optimum parameters to fn.#rs?        no
+ Compute Cook's D statistic?                                 yes
+ Print Cook's D for each observation to fn.#rs?               no
+ Compute DFBeta's?                                           yes
+ Calculate random numbers?                                   yes
+ Print random numbers to fn.#rs?                             yes
+ Print _rd file (random numbers)?                            yes
+ Print _rg file (correlated random numbers)?                 yes
+ Print covariance matrix for residuals to fn.#rs?             no
+ Print correlation matrix for residuals to fn.#rs?            no
+
+
+
+ NUMBER OF ESTIMATED PARAMETERS..............      6
+ NUMBER OF OBSERVATIONS .....................     11
+ NUMBER OF PRIOR EQUATIONS...................      2
+ NUMBER OF SETS OF RANDOM NUMBERS ...........      4
+ NUMBER FOR RANDOM NUMBER GENERATOR .........      104857
+ CALCULATED ERROR VARIANCE ..................   1.50705    
+
+  Default, or .rs File indicated NOT to print
+           COVARIANCE MATRIX FOR ESTIMATED PARAMETERS
+
+ WEIGHT MATRIX FOR OBSERVATIONS WILL BE READ FROM FILE: 
+                    ex5.2_ucode._wt and _wtpri
+
+  Default, or .rs File indicated NOT to print
+           SQUARE ROOT OF FULL WEIGHT MATRIX,
+           IT CAN BE FOUND IN _WT
+
+
+  Default, or .rs File indicated NOT to print
+           SENSITIVITIES FOR OPTIMUM PARAMETERS
+
+  Default, or .rs File indicated NOT to print
+           COOK'S D FOR EACH OBSERVATION in the #rs file
+
+
+********************************************************************************
+ ANALYSIS OF COOKS D
+ FOR PLOTTING, COOKS D STATISTICS ARE LISTED IN THE _RC OUTPUT FILE
+
+ INFLUENTIAL OBSERVATIONS WITH COOKS D > CRITICAL VALUE (4/(NOBS+MPR)) = 0.308
+
+ OBS# OBSERVATION      PLOT-SYMBOL      COOK'S D
+    7 hd07.ss                    1        0.58160917E+00
+   11 Flow01_1                   2        0.59131930E+03
+   12 K_RB_PR                    3        0.35031050E+02
+   13 VK_CB_PR                   3        0.66817448E+02
+
+ NUMBER OF INFLUENTIAL OBSERVATIONS IDENTIFIED:    4
+
+
+********************************************************************************
+ ANALYSIS USING DFBETAS
+ FOR PLOTTING, DFBETA STATISTICS ARE LISTED IN THE _RB OUTPUT FILE
+
+ PARAMETER NUMBERS AND NAMES:
+
+            1            2            3            4            5
+            HK_1         K_RB         VK_CB        HK_2         RCH_1       
+            6
+            RCH_2       
+ 
+ INFLUENTIAL OBSERVATIONS WITH DFBETA >
+                                      CRITICAL VALUE (2/(NOBS+MPR)**0.5) = 0.555
+
+ PARAMETERS INFLUENCED IDENTIFIED BY #
+
+                                     PARAMETER NUMBER
+
+ OBS# ID               PLOT-SYMBOL     1   2   3   4   5   6
+    7 hd07.ss                    1     #   -   -   #   #   #                
+   11 Flow01_1                   2     #   -   -   #   #   #                
+   12 K_RB_PR                    3     #   #   -   #   #   #                
+   13 VK_CB_PR                   3     #   -   #   #   #   #                
+
+ NUMBER OF INFLUENTIAL OBSERVATIONS IDENTIFIED:   18
+
+
+  Default, or .rs File indicated NOT to print
+           SETS OF RANDOM NUMBERS to the #rs file
+
+  Default, or .rs File indicated NOT to print
+           COVARIANCE MATRIX FOR RESIDUALS
+
+  Default, or .rs File indicated NOT to print
+           CORRELATION MATRIX FOR RESIDUALS
+
+ ********************************************************************************
+  Normal termination of RESIDUAL_ANALYSIS, Version: 1.009
+ ********************************************************************************
+
+
+
+ Run end date and time (yyyy/mm/dd hh:mm:ss): 2020/01/14 11:16:58
+ Elapsed run time:  0.056 Seconds
+

@@ -1,0 +1,77 @@
+BEGIN Options Keywords
+  Verbose = 3
+END Options
+ 
+BEGIN UCODE_Control_Data Keywords
+  ModelName = Hill_Tiedeman_Example
+  ModelLengthUnits = m
+  ModelTimeUnits = s
+  Sensitivities = True
+END UCODE_Control_Data
+ 
+BEGIN Model_Command_Lines Keywords
+  Command = "..\..\bin\mf2005.exe ex3.3.nam"
+    Purpose = Forward
+    CommandID = ForwardModel
+END Model_Command_Lines
+ 
+BEGIN Parameter_Groups Table
+  NROW=5 NCOL=6 COLUMNLABELS
+  GroupName Adjustable Transform MaxChange SenMethod  PerturbAmt
+  HK            Yes     No         2.0          1       0.01
+  RIV           Yes     No         2.0          1       0.01
+  VKCB          Yes     No         2.0          1       0.01
+  RCH           Yes     No         2.0          1       0.01
+  VANI          No      No         2.0          1       0.01
+END Parameter_Groups
+ 
+BEGIN Parameter_Data Table
+#  For a sensitivity run, constraints are not used. 
+  NROW=7 NCOL=9 COLUMNLABELS
+  ParamName GroupName StartValue LowerValue UpperValue Constrain LowerConstraint UpperConstraint   adjustable
+  HK_1          HK      0.0003      8E-5        0.0008  yes             3E-6            0.03         yes
+  K_RB          RIV     0.0012      0.0007      0.007   yes             1.2E-5          0.12         yes
+  VK_CB         VKCB    1E-7        5E-8        5E-7    yes             1E-9            1E-5         yes
+  HK_2          HK      4E-5        9E-6        9E-5    yes             4E-7            0.004        yes
+  RCH_1         RCH     63.072      32          126     no              -10.0E38        10.0E38      yes
+  RCH_2         RCH     31.536      16          63      no              -10.0E38        10.0E38      yes
+  VANI          VANI    1           1           1       no              -1E39           10.0E38      no
+END Parameter_Data
+ 
+BEGIN Observation_Groups Table
+  NROW=2 NCOL=4 COLUMNLABELS
+  GroupName Statistic StatFlag PlotSymbol
+  Heads 1.0025 VAR 1
+  RIV_flows 0.1 CV 2
+END Observation_Groups
+ 
+BEGIN Observation_Data Table
+  NROW=11 NCOL=3 COLUMNLABELS
+  ObsName GroupName ObsValue
+  hd01.ss Heads 101.8
+  hd02.ss Heads 128.12
+  hd03.ss Heads 156.68
+  hd04.ss Heads 124.89
+  hd05.ss Heads 140.96
+  hd06.ss Heads 126.54
+  hd07.ss Heads 101.11
+  hd08.ss Heads 158.13
+  hd09.ss Heads 176.37
+  hd10.ss Heads 142.02
+  Flow01_1 RIV_flows -4.4
+END Observation_Data
+ 
+BEGIN Model_Input_Files Keywords
+    ModInFile = ex3.3.pval
+    TemplateFile = ex3.3_pval.jtf
+END Model_Input_Files
+ 
+BEGIN Model_Output_Files Keywords
+    ModOutFile = ex3.3.obh_out
+    InstructionFile = ex3.3.obh_out.jif
+    Category = Obs
+  ModOutFile = ex3.3.rvob_out
+    InstructionFile = ex3.3.rvob_out.jif
+    Category = Obs
+END Model_Output_Files
+ 

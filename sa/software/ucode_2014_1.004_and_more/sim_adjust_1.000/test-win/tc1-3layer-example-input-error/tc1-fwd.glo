@@ -1,0 +1,896 @@
+                                  MODFLOW-2000
+      U.S. GEOLOGICAL SURVEY MODULAR FINITE-DIFFERENCE GROUND-WATER FLOW MODEL
+                           VERSION 1.15.00 08/06/2004
+
+
+ This model run produced both GLOBAL and LIST files.  This is the GLOBAL file.
+
+ GLOBAL LISTING FILE: tc1-fwd.glo
+                         UNIT   11
+
+ OPENING tc1-fwd.lst
+ FILE TYPE:LIST   UNIT   12   STATUS:REPLACE
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+#                                                                                                                                                                                                       
+# Obs-Sen-Pes process input files                                                                                                                                                                       
+
+ OPENING tc1-fwd.obs
+ FILE TYPE:OBS   UNIT   21   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING tc1-fwd.ohd
+ FILE TYPE:HOB   UNIT   22   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING tc1-fwd.orv
+ FILE TYPE:RVOB   UNIT   23   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+#                                                                                                                                                                                                       
+# Global input files                                                                                                                                                                                    
+
+ OPENING tc1-fwd.dis
+ FILE TYPE:DIS   UNIT   31   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING tc1-fwd.zon
+ FILE TYPE:ZONE   UNIT   32   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING tc1-fwd.mlt
+ FILE TYPE:MULT   UNIT   33   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+#                                                                                                                                                                                                       
+# Flow process input files                                                                                                                                                                              
+
+ OPENING tc1-fwd.bas
+ FILE TYPE:BAS6   UNIT   41   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING tc1-fwd.lpf
+ FILE TYPE:LPF   UNIT   42   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING tc1-fwd.wel
+ FILE TYPE:WEL   UNIT   43   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING tc1-fwd.pcg
+ FILE TYPE:PCG   UNIT   44   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING tc1-fwd.oc
+ FILE TYPE:OC   UNIT   45   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING tc1-fwd.ghb
+ FILE TYPE:GHB   UNIT   46   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING tc1-fwd.riv
+ FILE TYPE:RIV   UNIT   47   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING tc1-fwd.rch
+ FILE TYPE:RCH   UNIT   48   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ THE FREE FORMAT OPTION HAS BEEN SELECTED
+
+ DISCRETIZATION INPUT DATA READ FROM UNIT   31
+ # DIS file for test case tc1
+    3 LAYERS        18 ROWS        18 COLUMNS
+    5 STRESS PERIOD(S) IN SIMULATION
+ MODEL TIME UNIT IS SECONDS
+ MODEL LENGTH UNIT IS METERS
+ THE GROUND-WATER TRANSPORT PROCESS IS INACTIVE
+
+ THE OBSERVATION PROCESS IS ACTIVE
+ THE SENSITIVITY PROCESS IS INACTIVE
+ THE PARAMETER-ESTIMATION PROCESS IS INACTIVE
+
+ MODE: FORWARD WITH OBSERVATIONS
+
+
+ ZONE OPTION, INPUT READ FROM UNIT   32
+     1 ZONE ARRAYS
+
+ MULTIPLIER OPTION, INPUT READ FROM UNIT   33
+   3 MULTIPLIER ARRAYS
+  Confining bed flag for each layer:
+   0   1   0
+
+      10080  ELEMENTS OF GX ARRAY USED OUT OF      10080
+        972  ELEMENTS OF GZ ARRAY USED OUT OF        972
+       1296  ELEMENTS OF IG ARRAY USED OUT OF       1296
+
+                     DELR =   1000.00    
+
+                     DELC =   1000.00    
+
+ TOP ELEVATION OF LAYER 1 =   300.000    
+
+
+
+             MODEL LAYER BOTTOM EL. FOR LAYER   1
+ READING ON UNIT   31 WITH FORMAT: (FREE)              
+
+            1           2           3           4           5           6           7           8           9          10
+           11          12          13          14          15          16          17          18
+ ........................................................................................................................
+   1    110.0       140.0       160.0       180.0       200.0       220.0       240.0       260.0       280.0       280.0    
+        280.0       280.0       285.0       285.0       285.0       285.0       285.0       285.0    
+   2    110.0       140.0       160.0       180.0       200.0       220.0       240.0       260.0       280.0       280.0    
+        280.0       280.0       285.0       285.0       285.0       285.0       285.0       285.0    
+   3    110.0       140.0       160.0       180.0       200.0       220.0       240.0       260.0       280.0       280.0    
+        280.0       280.0       285.0       285.0       285.0       285.0       285.0       285.0    
+   4    110.0       140.0       160.0       180.0       200.0       220.0       240.0       260.0       280.0       280.0    
+        280.0       280.0       285.0       285.0       285.0       285.0       285.0       285.0    
+   5    110.0       140.0       160.0       180.0       200.0       220.0       240.0       260.0       280.0       280.0    
+        280.0       280.0       285.0       285.0       285.0       285.0       285.0       285.0    
+   6    110.0       140.0       160.0       180.0       200.0       220.0       240.0       260.0       280.0       280.0    
+        280.0       280.0       285.0       285.0       285.0       285.0       285.0       285.0    
+   7    110.0       140.0       160.0       180.0       200.0       220.0       240.0       260.0       280.0       280.0    
+        280.0       280.0       285.0       285.0       285.0       285.0       285.0       285.0    
+   8    110.0       140.0       160.0       180.0       200.0       220.0       240.0       260.0       280.0       280.0    
+        280.0       280.0       285.0       285.0       285.0       285.0       285.0       285.0    
+   9    110.0       140.0       160.0       180.0       200.0       220.0       240.0       260.0       280.0       280.0    
+        280.0       280.0       285.0       285.0       285.0       285.0       285.0       285.0    
+  10    110.0       140.0       160.0       180.0       200.0       220.0       240.0       260.0       280.0       280.0    
+        280.0       280.0       285.0       285.0       285.0       285.0       285.0       285.0    
+  11    110.0       140.0       160.0       180.0       200.0       220.0       240.0       260.0       280.0       280.0    
+        280.0       280.0       285.0       285.0       285.0       285.0       285.0       285.0    
+  12    110.0       140.0       160.0       180.0       200.0       220.0       240.0       260.0       280.0       280.0    
+        280.0       280.0       285.0       285.0       285.0       285.0       285.0       285.0    
+  13    110.0       140.0       160.0       180.0       200.0       220.0       240.0       260.0       280.0       280.0    
+        280.0       280.0       285.0       285.0       285.0       285.0       285.0       285.0    
+  14    110.0       140.0       160.0       180.0       200.0       220.0       240.0       260.0       280.0       280.0    
+        280.0       280.0       285.0       285.0       285.0       285.0       285.0       285.0    
+  15    110.0       140.0       160.0       180.0       200.0       220.0       240.0       260.0       280.0       280.0    
+        280.0       280.0       285.0       285.0       285.0       285.0       285.0       285.0    
+  16    110.0       140.0       160.0       180.0       200.0       220.0       240.0       260.0       280.0       280.0    
+        280.0       280.0       285.0       285.0       285.0       285.0       285.0       285.0    
+  17    110.0       140.0       160.0       180.0       200.0       220.0       240.0       260.0       280.0       280.0    
+        280.0       280.0       285.0       285.0       285.0       285.0       285.0       285.0    
+  18    110.0       140.0       160.0       180.0       200.0       220.0       240.0       260.0       280.0       280.0    
+        280.0       280.0       285.0       285.0       285.0       285.0       285.0       285.0    
+
+
+
+             MODEL LAYER BOTTOM EL. FOR LAYER   2
+ READING ON UNIT   31 WITH FORMAT: (FREE)              
+
+            1           2           3           4           5           6           7           8           9          10
+           11          12          13          14          15          16          17          18
+ ........................................................................................................................
+   1    100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+        100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+   2    100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+        100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+   3    100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+        100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+   4    100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+        100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+   5    100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+        100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+   6    100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+        100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+   7    100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+        100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+   8    100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+        100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+   9    100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+        100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+  10    100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       120.0       100.0    
+        100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+  11    100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+        100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+  12    100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+        100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+  13    100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+        100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+  14    100.0       100.0       100.0       100.0       100.0       120.0       100.0       100.0       100.0       100.0    
+        100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+  15    100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+        100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+  16    100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+        100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+  17    100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+        100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+  18    100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+        100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+
+
+
+           BOT. EL. OF QUASI-3D BED FOR LAYER   2
+ READING ON UNIT   31 WITH FORMAT: (FREE)              
+
+            1           2           3           4           5           6           7           8           9          10
+           11          12          13          14          15          16          17          18
+ ........................................................................................................................
+   1    90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+        90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+   2    90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+        90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+   3    90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+        90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+   4    90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+        90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+   5    90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+        90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+   6    90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+        90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+   7    90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+        90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+   8    90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+        90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+   9    90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+        90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+  10    90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       118.8       90.00    
+        90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+  11    90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+        90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+  12    90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+        90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+  13    90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+        90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+  14    90.00       90.00       90.00       90.00       90.00       118.8       90.00       90.00       90.00       90.00    
+        90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+  15    90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+        90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+  16    90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+        90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+  17    90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+        90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+  18    90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+        90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+
+
+
+             MODEL LAYER BOTTOM EL. FOR LAYER   3
+ READING ON UNIT   31 WITH FORMAT: (FREE)              
+
+            1           2           3           4           5           6           7           8           9          10
+           11          12          13          14          15          16          17          18
+ ........................................................................................................................
+   1    40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+        40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+   2    40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+        40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+   3    40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+        40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+   4    40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+        40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+   5    40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+        40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+   6    40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+        40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+   7    40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+        40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+   8    40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+        40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+   9    40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+        40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+  10    40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       118.0       40.00    
+        40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+  11    40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+        40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+  12    40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+        40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+  13    40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+        40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+  14    40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+        40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+  15    40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+        40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+  16    40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+        40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+  17    40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+        40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+  18    40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+        40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+
+
+ STRESS PERIOD     LENGTH       TIME STEPS     MULTIPLIER FOR DELT    SS FLAG
+ ----------------------------------------------------------------------------
+        1         1.000000          1                    1.000         SS
+        2         87162.00          1                    1.000         TR
+        3         261486.0          1                    1.000         TR
+        4         522972.0          1                    1.000         TR
+        5        2.3567450E+07      9                    1.200         TR
+
+ COMBINED STEADY-STATE AND TRANSIENT SIMULATION
+
+
+
+
+
+
+            MULT. ARRAY: MULTARR_3 
+ READING ON UNIT   33 WITH FORMAT: (18F3.0)            
+
+          1      2      3      4      5      6      7      8      9     10
+         11     12     13     14     15     16     17     18
+ .........................................................................
+   1     1.0    1.0    2.0    2.0    3.0    3.0    4.0    4.0    5.0    5.0
+         6.0    6.0    7.0    7.0    8.0    8.0    9.0    9.0
+   2     1.0    1.0    2.0    2.0    3.0    3.0    4.0    4.0    5.0    5.0
+         6.0    6.0    7.0    7.0    8.0    8.0    9.0    9.0
+   3     1.0    1.0    2.0    2.0    3.0    3.0    4.0    4.0    5.0    5.0
+         6.0    6.0    7.0    7.0    8.0    8.0    9.0    9.0
+   4     1.0    1.0    2.0    2.0    3.0    3.0    4.0    4.0    5.0    5.0
+         6.0    6.0    7.0    7.0    8.0    8.0    9.0    9.0
+   5     1.0    1.0    2.0    2.0    3.0    3.0    4.0    4.0    5.0    5.0
+         6.0    6.0    7.0    7.0    8.0    8.0    9.0    9.0
+   6     1.0    1.0    2.0    2.0    3.0    3.0    4.0    4.0    5.0    5.0
+         6.0    6.0    7.0    7.0    8.0    8.0    9.0    9.0
+   7     1.0    1.0    2.0    2.0    3.0    3.0    4.0    4.0    5.0    5.0
+         6.0    6.0    7.0    7.0    8.0    8.0    9.0    9.0
+   8     1.0    1.0    2.0    2.0    3.0    3.0    4.0    4.0    5.0    5.0
+         6.0    6.0    7.0    7.0    8.0    8.0    9.0    9.0
+   9     1.0    1.0    2.0    2.0    3.0    3.0    4.0    4.0    5.0    5.0
+         6.0    6.0    7.0    7.0    8.0    8.0    9.0    9.0
+  10     1.0    1.0    2.0    2.0    3.0    3.0    4.0    4.0    5.0    5.0
+         6.0    6.0    7.0    7.0    8.0    8.0    9.0    9.0
+  11     1.0    1.0    2.0    2.0    3.0    3.0    4.0    4.0    5.0    5.0
+         6.0    6.0    7.0    7.0    8.0    8.0    9.0    9.0
+  12     1.0    1.0    2.0    2.0    3.0    3.0    4.0    4.0    5.0    5.0
+         6.0    6.0    7.0    7.0    8.0    8.0    9.0    9.0
+  13     1.0    1.0    2.0    2.0    3.0    3.0    4.0    4.0    5.0    5.0
+         6.0    6.0    7.0    7.0    8.0    8.0    9.0    9.0
+  14     1.0    1.0    2.0    2.0    3.0    3.0    4.0    4.0    5.0    5.0
+         6.0    6.0    7.0    7.0    8.0    8.0    9.0    9.0
+  15     1.0    1.0    2.0    2.0    3.0    3.0    4.0    4.0    5.0    5.0
+         6.0    6.0    7.0    7.0    8.0    8.0    9.0    9.0
+  16     1.0    1.0    2.0    2.0    3.0    3.0    4.0    4.0    5.0    5.0
+         6.0    6.0    7.0    7.0    8.0    8.0    9.0    9.0
+  17     1.0    1.0    2.0    2.0    3.0    3.0    4.0    4.0    5.0    5.0
+         6.0    6.0    7.0    7.0    8.0    8.0    9.0    9.0
+  18     1.0    1.0    2.0    2.0    3.0    3.0    4.0    4.0    5.0    5.0
+         6.0    6.0    7.0    7.0    8.0    8.0    9.0    9.0
+
+  MULT. ARRAY: mlt_rch    =  3.170979E-10
+
+  MULT. ARRAY: FIFTIETH   =  2.000000E-02
+
+
+
+             ZONE ARRAY: ZONES_1   
+ READING ON UNIT   32 WITH FORMAT: (9I8)               
+
+        1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
+ ............................................................................
+   1    1   1   1   1   1   1   1   1   1   2   2   2   2   2   2   2   2   2
+   2    1   1   1   1   1   1   1   1   1   2   2   2   2   2   2   2   2   2
+   3    1   1   1   1   1   1   1   1   1   2   2   2   2   2   2   2   2   2
+   4    1   1   1   1   1   1   1   1   1   2   2   2   2   2   2   2   2   2
+   5    1   1   1   1   1   1   1   1   1   2   2   2   2   2   2   2   2   2
+   6    1   1   1   1   1   1   1   1   1   2   2   2   2   2   2   2   2   2
+   7    1   1   1   1   1   1   1   1   1   2   2   2   2   2   2   2   2   2
+   8    1   1   1   1   1   1   1   1   1   2   2   2   2   2   2   2   2   2
+   9    1   1   1   1   1   1   1   1   1   2   2   2   2   2   2   2   2   2
+  10    1   1   1   1   1   1   1   1   1   2   2   2   2   2   2   2   2   2
+  11    1   1   1   1   1   1   1   1   1   2   2   2   2   2   2   2   2   2
+  12    1   1   1   1   1   1   1   1   1   2   2   2   2   2   2   2   2   2
+  13    1   1   1   1   1   1   1   1   1   2   2   2   2   2   2   2   2   2
+  14    1   1   1   1   1   1   1   1   1   2   2   2   2   2   2   2   2   2
+  15    1   1   1   1   1   1   1   1   1   2   2   2   2   2   2   2   2   2
+  16    1   1   1   1   1   1   1   1   1   2   2   2   2   2   2   2   2   2
+  17    1   1   1   1   1   1   1   1   1   2   2   2   2   2   2   2   2   2
+  18    1   1   1   1   1   1   1   1   1   2   2   2   2   2   2   2   2   2
+
+ LPF1 -- LAYER PROPERTY FLOW PACKAGE, VERSION 1, 1/11/2000
+         INPUT READ FROM UNIT   42
+ # LPF input file for test case tc1
+ #
+ HEAD AT CELLS THAT CONVERT TO DRY=  -999.00    
+     9 Named Parameters     
+
+   LAYER FLAGS:
+ LAYER       LAYTYP        LAYAVG         CHANI        LAYVKA        LAYWET
+ ---------------------------------------------------------------------------
+    1             1             0     1.000E+00             1             0
+    2             1             0     1.000E+00             1             0
+    3             1             0     1.000E+00             1             0
+
+   INTERPRETATION OF LAYER FLAGS:
+                        INTERBLOCK     HORIZONTAL    DATA IN
+         LAYER TYPE   TRANSMISSIVITY   ANISOTROPY   ARRAY VKA   WETTABILITY
+ LAYER      (LAYTYP)      (LAYAVG)       (CHANI)      (LAYVKA)      (LAYWET)
+ ---------------------------------------------------------------------------
+    1   CONVERTIBLE      HARMONIC     1.000E+00    ANISOTROPY  NON-WETTABLE
+    2   CONVERTIBLE      HARMONIC     1.000E+00    ANISOTROPY  NON-WETTABLE
+    3   CONVERTIBLE      HARMONIC     1.000E+00    ANISOTROPY  NON-WETTABLE
+
+       4212 ELEMENTS IN X ARRAY ARE USED BY LPF
+         18 ELEMENTS IN IX ARRAY ARE USED BY LPF
+
+ PCG2 -- CONJUGATE GRADIENT SOLUTION PACKAGE, VERSION 2.4, 12/29/98
+ MAXIMUM OF      1 CALLS OF SOLUTION ROUTINE
+ MAXIMUM OF     50 INTERNAL ITERATIONS PER CALL TO SOLUTION ROUTINE
+ MATRIX PRECONDITIONING TYPE :    1
+       2044 ELEMENTS IN X ARRAY ARE USED BY PCG
+        350 ELEMENTS IN IX ARRAY ARE USED BY PCG
+       2916 ELEMENTS IN Z ARRAY ARE USED BY PCG
+
+ OBS1BAS6 -- OBSERVATION PROCESS, VERSION 1.0, 4/27/99
+ INPUT READ FROM UNIT  21
+ # OBS file for test case tc1
+ #
+ OBSERVATION GRAPH-DATA OUTPUT FILES
+ WILL BE PRINTED AND NAMED USING THE BASE: tc1-fwd
+
+ HEAD OBSERVATIONS -- INPUT READ FROM UNIT  22
+
+ NUMBER OF HEADS....................................:   66
+   NUMBER OF MULTILAYER HEADS.......................:    0
+   MAXIMUM NUMBER OF LAYERS FOR MULTILAYER HEADS....:    0
+
+ OBS1RIV6 -- OBSERVATION PROCESS (RIVER FLOW OBSERVATIONS)
+ VERSION 1.0, 10/15/98
+ INPUT READ FROM UNIT   23
+
+ NUMBER OF FLOW-OBSERVATION RIVER-CELL GROUPS.....:      1
+   NUMBER OF CELLS IN RIVER-CELL GROUPS...........:     18
+   NUMBER OF RIVER-CELL FLOWS.....................:      3
+
+       1159 ELEMENTS IN X ARRAY ARE USED FOR OBSERVATIONS
+         20 ELEMENTS IN Z ARRAY ARE USED FOR OBSERVATIONS
+        679 ELEMENTS IN IX ARRAY ARE USED FOR OBSERVATIONS
+
+ COMMON ERROR VARIANCE FOR ALL OBSERVATIONS SET TO:       1.000    
+
+       7415  ELEMENTS OF X ARRAY USED OUT OF       7415
+       2936  ELEMENTS OF Z ARRAY USED OUT OF       2936
+       1047  ELEMENTS OF IX ARRAY USED OUT OF       1047
+          0  ELEMENTS OF XHS ARRAY USED OUT OF          1
+
+ HEAD OBSERVATION VARIANCES ARE MULTIPLIED BY:       1.000    
+
+ OBSERVED HEAD DATA -- TIME OFFSETS ARE MULTIPLIED BY:   86400.    
+
+                    REFER.
+       OBSERVATION  STRESS    TIME                              STATISTIC   PLOT
+  OBS#    NAME      PERIOD   OFFSET    OBSERVATION  STATISTIC     TYPE      SYM.
+     1 obs1.0          -3    0.000       0.000       0.000      VARIANCE       1
+  TRANSIENT DATA AT THIS LOCATION, ITT =   2
+     1 obs1.0           1    0.000       101.8       1.003      VARIANCE       1
+     2 obs1.1           3    0.000     -0.2900E-01  0.2500E-02  VARIANCE       1
+     3 obs1.12          5    272.8     -0.1290      0.2500E-02  VARIANCE       1
+ 
+     4 obs2.0          -5    0.000       0.000       0.000      VARIANCE       1
+  TRANSIENT DATA AT THIS LOCATION, ITT =   2
+     4 obs2.0           1    0.000       128.1       1.003      VARIANCE       1
+     5 obs2.1           3    0.000     -0.4100E-01  0.2500E-02  VARIANCE       1
+     6 obs2.2           4    0.000     -0.5570      0.2500E-02  VARIANCE       1
+     7 obs2.8           5    97.59      -11.53      0.2500E-02  VARIANCE       1
+     8 obs2.12          5    272.8      -14.18      0.2500E-02  VARIANCE       1
+ 
+     9 obs3.0          -3    0.000       0.000       0.000      VARIANCE       1
+  TRANSIENT DATA AT THIS LOCATION, ITT =   2
+     9 obs3.0           1    0.000       156.7       1.003      VARIANCE       1
+    10 obs3.1           3    0.000      -4.381      0.2500E-02  VARIANCE       1
+    11 obs3.12          5    272.8      -42.54      0.2500E-02  VARIANCE       1
+ 
+    12 obs4.0          -3    0.000       0.000       0.000      VARIANCE       1
+  TRANSIENT DATA AT THIS LOCATION, ITT =   2
+    12 obs4.0           1    0.000       124.9       1.003      VARIANCE       1
+    13 obs4.1           3    0.000     -0.6700E-01  0.2500E-02  VARIANCE       1
+    14 obs4.12          5    272.8      -14.30      0.2500E-02  VARIANCE       1
+ 
+    15 obs5.0          -3    0.000       0.000       0.000      VARIANCE       1
+  TRANSIENT DATA AT THIS LOCATION, ITT =   2
+    15 obs5.0           1    0.000       141.0       1.003      VARIANCE       1
+    16 obs5.1           3    0.000     -0.6000E-01  0.2500E-02  VARIANCE       1
+    17 obs5.12          5    272.8      -21.68      0.2500E-02  VARIANCE       1
+ 
+    18 obs1.0d1        -3    0.000       0.000       0.000      VARIANCE       1
+  TRANSIENT DATA AT THIS LOCATION, ITT =   2
+    18 obs1.0d1         1    0.000       101.8       1.003      VARIANCE       1
+    19 obs1.1d1         3    0.000     -0.2900E-01  0.2500E-02  VARIANCE       1
+    20 obs1.12d1        5    272.8     -0.1290      0.2500E-02  VARIANCE       1
+ 
+    21 obs2.0d1        -5    0.000       0.000       0.000      VARIANCE       1
+  TRANSIENT DATA AT THIS LOCATION, ITT =   2
+    21 obs2.0d1         1    0.000       128.1       1.003      VARIANCE       1
+    22 obs2.1d1         3    0.000     -0.4100E-01  0.2500E-02  VARIANCE       1
+    23 obs2.2d1         4    0.000     -0.5570      0.2500E-02  VARIANCE       1
+    24 obs2.8d1         5    97.59      -11.53      0.2500E-02  VARIANCE       1
+    25 obs2.12d1        5    272.8      -14.18      0.2500E-02  VARIANCE       1
+ 
+    26 obs3.0d1        -3    0.000       0.000       0.000      VARIANCE       1
+  TRANSIENT DATA AT THIS LOCATION, ITT =   2
+    26 obs3.0d1         1    0.000       156.7       1.003      VARIANCE       1
+    27 obs3.1d1         3    0.000      -4.381      0.2500E-02  VARIANCE       1
+    28 obs3.12d1        5    272.8      -42.54      0.2500E-02  VARIANCE       1
+ 
+    29 obs4.0d1        -3    0.000       0.000       0.000      VARIANCE       1
+  TRANSIENT DATA AT THIS LOCATION, ITT =   2
+    29 obs4.0d1         1    0.000       124.9       1.003      VARIANCE       1
+    30 obs4.1d1         3    0.000     -0.6700E-01  0.2500E-02  VARIANCE       1
+    31 obs4.12d1        5    272.8      -14.30      0.2500E-02  VARIANCE       1
+ 
+    32 obs5.0d1        -3    0.000       0.000       0.000      VARIANCE       1
+  TRANSIENT DATA AT THIS LOCATION, ITT =   2
+    32 obs5.0d1         1    0.000       141.0       1.003      VARIANCE       1
+    33 obs5.1d1         3    0.000     -0.6000E-01  0.2500E-02  VARIANCE       1
+    34 obs5.12d1        5    272.8      -21.68      0.2500E-02  VARIANCE       1
+ 
+    35 obs1.0d2        -3    0.000       0.000       0.000      VARIANCE       1
+  TRANSIENT DATA AT THIS LOCATION, ITT =   2
+    35 obs1.0d2         1    0.000       101.8       1.003      VARIANCE       1
+    36 obs1.1d2         3    0.000     -0.2900E-01  0.2500E-02  VARIANCE       1
+    37 obs1.12d2        5    272.8     -0.1290      0.2500E-02  VARIANCE       1
+ 
+    38 obs2.0d2        -5    0.000       0.000       0.000      VARIANCE       1
+  TRANSIENT DATA AT THIS LOCATION, ITT =   2
+    38 obs2.0d2         1    0.000       128.1       1.003      VARIANCE       1
+    39 obs2.1d2         3    0.000     -0.4100E-01  0.2500E-02  VARIANCE       1
+    40 obs2.2d2         4    0.000     -0.5570      0.2500E-02  VARIANCE       1
+    41 obs2.8d2         5    97.59      -11.53      0.2500E-02  VARIANCE       1
+    42 obs2.12d2        5    272.8      -14.18      0.2500E-02  VARIANCE       1
+ 
+    43 obs3.0d2        -3    0.000       0.000       0.000      VARIANCE       1
+  TRANSIENT DATA AT THIS LOCATION, ITT =   2
+    43 obs3.0d2         1    0.000       156.7       1.003      VARIANCE       1
+    44 obs3.1d2         3    0.000      -4.381      0.2500E-02  VARIANCE       1
+    45 obs3.12d2        5    272.8      -42.54      0.2500E-02  VARIANCE       1
+ 
+    46 obs4.0d2        -3    0.000       0.000       0.000      VARIANCE       1
+  TRANSIENT DATA AT THIS LOCATION, ITT =   2
+    46 obs4.0d2         1    0.000       124.9       1.003      VARIANCE       1
+    47 obs4.1d2         3    0.000     -0.6700E-01  0.2500E-02  VARIANCE       1
+    48 obs4.12d2        5    272.8      -14.30      0.2500E-02  VARIANCE       1
+ 
+    49 obs5.0d2        -3    0.000       0.000       0.000      VARIANCE       1
+  TRANSIENT DATA AT THIS LOCATION, ITT =   2
+    49 obs5.0d2         1    0.000       141.0       1.003      VARIANCE       1
+    50 obs5.1d2         3    0.000     -0.6000E-01  0.2500E-02  VARIANCE       1
+    51 obs5.12d2        5    272.8      -21.68      0.2500E-02  VARIANCE       1
+ 
+    52 obs6.0          -3    0.000       0.000       0.000      VARIANCE       1
+  TRANSIENT DATA AT THIS LOCATION, ITT =   2
+    52 obs6.0           1    0.000       126.5       1.003      VARIANCE       1
+    53 obs6.1           3    0.000      0.4997E-02  0.2500E-02  VARIANCE       1
+    54 obs6.12          5    272.8      -14.37      0.2500E-02  VARIANCE       1
+ 
+    55 obs7.0          -3    0.000       0.000       0.000      VARIANCE       1
+  TRANSIENT DATA AT THIS LOCATION, ITT =   2
+    55 obs7.0           1    0.000       101.1       1.003      VARIANCE       1
+    56 obs7.1           3    0.000      0.4800E-01  0.2500E-02  VARIANCE       1
+    57 obs7.12          5    272.8     -0.5680      0.2500E-02  VARIANCE       1
+ 
+    58 obs8.0          -3    0.000       0.000       0.000      VARIANCE       1
+  TRANSIENT DATA AT THIS LOCATION, ITT =   2
+    58 obs8.0           1    0.000       158.1       1.003      VARIANCE       1
+    59 obs8.1           3    0.000      -5.533      0.2500E-02  VARIANCE       1
+    60 obs8.12          5    272.8      -43.22      0.2500E-02  VARIANCE       1
+ 
+    61 obs9.0          -3    0.000       0.000       0.000      VARIANCE       1
+  TRANSIENT DATA AT THIS LOCATION, ITT =   2
+    61 obs9.0           1    0.000       176.4       1.003      VARIANCE       1
+    62 obs9.1           3    0.000     -0.9918E-03  0.2500E-02  VARIANCE       1
+    63 obs9.12          5    272.8      -38.24      0.2500E-02  VARIANCE       1
+ 
+    64 obs0.0          -3    0.000       0.000       0.000      VARIANCE       1
+  TRANSIENT DATA AT THIS LOCATION, ITT =   2
+    64 obs0.0           1    0.000       142.0       1.003      VARIANCE       1
+    65 obs0.1           3    0.000     -0.1300E-01  0.2500E-02  VARIANCE       1
+    66 obs0.12          5    272.8      -19.92      0.2500E-02  VARIANCE       1
+ 
+
+                                                     HEAD CHANGE
+                                                      REFERENCE
+        OBSERVATION                   ROW     COL    OBSERVATION
+  OBS#     NAME       LAY  ROW  COL  OFFSET  OFFSET   (IF > 0)
+     1  obs1.0          1    3    1   0.000   0.000        0
+     2  obs1.1          1    3    1   0.000   0.000        1
+     3  obs1.12         1    3    1   0.000   0.000        1
+     4  obs2.0          1    4    4   0.000   0.000        0
+     5  obs2.1          1    4    4   0.000   0.000        4
+     6  obs2.2          1    4    4   0.000   0.000        4
+     7  obs2.8          1    4    4   0.000   0.000        4
+     8  obs2.12         1    4    4   0.000   0.000        4
+     9  obs3.0          1   10    9   0.000   0.000        0
+    10  obs3.1          1   10    9   0.000   0.000        9
+    11  obs3.12         1   10    9   0.000   0.000        9
+    12  obs4.0          1   13    4   0.000   0.000        0
+    13  obs4.1          1   13    4   0.000   0.000       12
+    14  obs4.12         1   13    4   0.000   0.000       12
+    15  obs5.0          1   14    6   0.000   0.000        0
+    16  obs5.1          1   14    6   0.000   0.000       15
+    17  obs5.12         1   14    6   0.000   0.000       15
+    18  obs1.0d1        2    3    1   0.000   0.000        0
+    19  obs1.1d1        2    3    1   0.000   0.000       18
+    20  obs1.12d1       2    3    1   0.000   0.000       18
+    21  obs2.0d1        2    4    4   0.000   0.000        0
+    22  obs2.1d1        2    4    4   0.000   0.000       21
+    23  obs2.2d1        2    4    4   0.000   0.000       21
+    24  obs2.8d1        2    4    4   0.000   0.000       21
+    25  obs2.12d1       2    4    4   0.000   0.000       21
+    26  obs3.0d1        2   10    9   0.000   0.000        0
+    27  obs3.1d1        2   10    9   0.000   0.000       26
+    28  obs3.12d1       2   10    9   0.000   0.000       26
+    29  obs4.0d1        2   13    4   0.000   0.000        0
+    30  obs4.1d1        2   13    4   0.000   0.000       29
+    31  obs4.12d1       2   13    4   0.000   0.000       29
+    32  obs5.0d1        2   14    6   0.000   0.000        0
+    33  obs5.1d1        2   14    6   0.000   0.000       32
+    34  obs5.12d1       2   14    6   0.000   0.000       32
+    35  obs1.0d2        3    3    1   0.000   0.000        0
+    36  obs1.1d2        3    3    1   0.000   0.000       35
+    37  obs1.12d2       3    3    1   0.000   0.000       35
+    38  obs2.0d2        3    4    4   0.000   0.000        0
+    39  obs2.1d2        3    4    4   0.000   0.000       38
+    40  obs2.2d2        3    4    4   0.000   0.000       38
+    41  obs2.8d2        3    4    4   0.000   0.000       38
+    42  obs2.12d2       3    4    4   0.000   0.000       38
+    43  obs3.0d2        3   10    9   0.000   0.000        0
+    44  obs3.1d2        3   10    9   0.000   0.000       43
+    45  obs3.12d2       3   10    9   0.000   0.000       43
+    46  obs4.0d2        3   13    4   0.000   0.000        0
+    47  obs4.1d2        3   13    4   0.000   0.000       46
+    48  obs4.12d2       3   13    4   0.000   0.000       46
+    49  obs5.0d2        3   14    6   0.000   0.000        0
+    50  obs5.1d2        3   14    6   0.000   0.000       49
+    51  obs5.12d2       3   14    6   0.000   0.000       49
+    52  obs6.0          3    4    4   0.000   0.000        0
+    53  obs6.1          3    4    4   0.000   0.000       52
+    54  obs6.12         3    4    4   0.000   0.000       52
+    55  obs7.0          3   10    1   0.000   0.000        0
+    56  obs7.1          3   10    1   0.000   0.000       55
+    57  obs7.12         3   10    1   0.000   0.000       55
+    58  obs8.0          3   10    9   0.000   0.000        0
+    59  obs8.1          3   10    9   0.000   0.000       58
+    60  obs8.12         3   10    9   0.000   0.000       58
+    61  obs9.0          3   10   18   0.000   0.000        0
+    62  obs9.1          3   10   18   0.000   0.000       61
+    63  obs9.12         3   10   18   0.000   0.000       61
+    64  obs0.0          3   18    6   0.000   0.000        0
+    65  obs0.1          3   18    6   0.000   0.000       64
+    66  obs0.12         3   18    6   0.000   0.000       64
+
+ RIVER-CELL FLOW OBSERVATION VARIANCES ARE MULTIPLIED BY:       1.000    
+
+ OBSERVED RIVER-CELL FLOW DATA
+ -- TIME OFFSETS ARE MULTIPLIED BY:   86400.    
+
+   GROUP NUMBER:      1   BOUNDARY TYPE: RIV   NUMBER OF CELLS IN GROUP:    -18
+   NUMBER OF FLOW OBSERVATIONS:      3
+
+                                        OBSERVED
+                    REFER.             RIVER FLOW
+       OBSERVATION  STRESS    TIME     GAIN (-) OR              STATISTIC   PLOT
+  OBS#    NAME      PERIOD   OFFSET     LOSS (+)    STATISTIC     TYPE      SYM.
+    67 obsSS            1    0.000      -4.400      0.4000      STD. DEV.      2
+    68 obsTR3           5   0.1000E-04  -4.100      0.3800      STD. DEV.      2
+    69 obsTR12          5    272.8      -2.200      0.2100      STD. DEV.      2
+
+       LAYER  ROW  COLUMN    FACTOR
+          1.    1.     1.     1.00
+          1.    2.     1.     1.00
+          1.    3.     1.     1.00
+          1.    4.     1.     1.00
+          1.    5.     1.     1.00
+          1.    6.     1.     1.00
+          1.    7.     1.     1.00
+          1.    8.     1.     1.00
+          1.    9.     1.     1.00
+          1.   10.     1.     1.00
+          1.   11.     1.     1.00
+          1.   12.     1.     1.00
+          1.   13.     1.     1.00
+          1.   14.     1.     1.00
+          1.   15.     1.     1.00
+          1.   16.     1.     1.00
+          1.   17.     1.     1.00
+          1.   18.     1.     1.00
+
+
+
+                                    SOLUTION BY THE CONJUGATE-GRADIENT METHOD
+                                   -------------------------------------------
+                    MAXIMUM NUMBER OF CALLS TO PCG ROUTINE =        1
+                        MAXIMUM ITERATIONS PER CALL TO PCG =       50
+                               MATRIX PRECONDITIONING TYPE =        1
+        RELAXATION FACTOR (ONLY USED WITH PRECOND. TYPE 1) =    0.10000E+01
+ PARAMETER OF POLYNOMIAL PRECOND. = 2 (2) OR IS CALCULATED :        2
+                         HEAD CHANGE CRITERION FOR CLOSURE =    0.10000E-04
+                     RESIDUAL CHANGE CRITERION FOR CLOSURE =    0.10000E-04
+            PCG HEAD AND RESIDUAL CHANGE PRINTOUT INTERVAL =      999
+     PRINTING FROM SOLVER IS LIMITED(1) OR SUPPRESSED (>1) =        2
+                                         DAMPING PARAMETER =    0.10000E+01
+
+ WETTING CAPABILITY IS NOT ACTIVE IN ANY LAYER
+
+ PARAMETERS DEFINED IN THE LPF PACKAGE
+
+ PARAMETER NAME:SS_1         TYPE:SS     CLUSTERS:   2
+ Parameter value from package file is:   1.30000E-03
+                LAYER:   1    MULTIPLIER ARRAY: FIFTIETH    ZONE ARRAY: ALL
+                LAYER:   2    MULTIPLIER ARRAY: FIFTIETH    ZONE ARRAY: ALL
+
+ PARAMETER NAME:SY_1         TYPE:SY     CLUSTERS:   2
+ Parameter value from package file is:   0.10000    
+                LAYER:   1    MULTIPLIER ARRAY: FIFTIETH    ZONE ARRAY: ALL
+                LAYER:   2    MULTIPLIER ARRAY: FIFTIETH    ZONE ARRAY: ALL
+
+ PARAMETER NAME:HK_1         TYPE:HK     CLUSTERS:   2
+ Parameter value from package file is:   3.00000E-04
+                LAYER:   1    MULTIPLIER ARRAY: NONE    ZONE ARRAY: ALL
+                LAYER:   2    MULTIPLIER ARRAY: NONE    ZONE ARRAY: ALL
+
+ PARAMETER NAME:VERT_ANI_1   TYPE:VANI   CLUSTERS:   2
+ Parameter value from package file is:    1.0000    
+                LAYER:   1    MULTIPLIER ARRAY: NONE    ZONE ARRAY: ALL
+                LAYER:   2    MULTIPLIER ARRAY: NONE    ZONE ARRAY: ALL
+
+ PARAMETER NAME:VERT_K_CB    TYPE:VKCB   CLUSTERS:   1
+ Parameter value from package file is:   1.00000E-07
+                LAYER:   2    MULTIPLIER ARRAY: NONE    ZONE ARRAY: ALL
+
+ PARAMETER NAME:SS_2         TYPE:SS     CLUSTERS:   1
+ Parameter value from package file is:   2.00000E-04
+                LAYER:   3    MULTIPLIER ARRAY: FIFTIETH    ZONE ARRAY: ALL
+
+ PARAMETER NAME:SY_2         TYPE:SY     CLUSTERS:   1
+ Parameter value from package file is:   2.30000E-02
+                LAYER:   3    MULTIPLIER ARRAY: FIFTIETH    ZONE ARRAY: ALL
+
+ PARAMETER NAME:HK_2         TYPE:HK     CLUSTERS:   1
+ Parameter value from package file is:   4.00000E-05
+                LAYER:   3    MULTIPLIER ARRAY: MULTARR_3    ZONE ARRAY: ALL
+
+ PARAMETER NAME:VERT_ANI_2   TYPE:VANI   CLUSTERS:   1
+ Parameter value from package file is:    1.0000    
+                LAYER:   3    MULTIPLIER ARRAY: NONE    ZONE ARRAY: ALL
+
+    HYD. COND. ALONG ROWS FOR LAYER   1 WILL BE DEFINED BY PARAMETERS
+ (PRINT FLAG=  21)
+
+  HORIZ. TO VERTICAL ANI. FOR LAYER   1 WILL BE DEFINED BY PARAMETERS
+ (PRINT FLAG=  21)
+
+         SPECIFIC STORAGE FOR LAYER   1 WILL BE DEFINED BY PARAMETERS
+ (PRINT FLAG=  21)
+
+           SPECIFIC YIELD FOR LAYER   1 WILL BE DEFINED BY PARAMETERS
+ (PRINT FLAG=  21)
+
+    HYD. COND. ALONG ROWS FOR LAYER   2 WILL BE DEFINED BY PARAMETERS
+ (PRINT FLAG=  21)
+
+  HORIZ. TO VERTICAL ANI. FOR LAYER   2 WILL BE DEFINED BY PARAMETERS
+ (PRINT FLAG=  21)
+
+         SPECIFIC STORAGE FOR LAYER   2 WILL BE DEFINED BY PARAMETERS
+ (PRINT FLAG=  21)
+
+           SPECIFIC YIELD FOR LAYER   2 WILL BE DEFINED BY PARAMETERS
+ (PRINT FLAG=  21)
+
+ QUASI3D VERT. HYD. COND. FOR LAYER   2 WILL BE DEFINED BY PARAMETERS
+ (PRINT FLAG=  21)
+
+    HYD. COND. ALONG ROWS FOR LAYER   3 WILL BE DEFINED BY PARAMETERS
+ (PRINT FLAG=  21)
+
+  HORIZ. TO VERTICAL ANI. FOR LAYER   3 WILL BE DEFINED BY PARAMETERS
+ (PRINT FLAG=  21)
+
+         SPECIFIC STORAGE FOR LAYER   3 WILL BE DEFINED BY PARAMETERS
+ (PRINT FLAG=  21)
+
+           SPECIFIC YIELD FOR LAYER   3 WILL BE DEFINED BY PARAMETERS
+ (PRINT FLAG=  21)
+
+
+     1 Well parameters
+
+ PARAMETER NAME:WELLS_TR     TYPE:Q   
+ Parameter value from package file is:   -1.1000    
+   NUMBER OF ENTRIES:      2
+
+ WELL NO.  LAYER   ROW   COL   STRESS FACTOR         
+ ----------------------------------------------------
+      1      1      9     10       1.000    
+      2      2      9     10       1.000    
+
+
+     1 River parameters
+
+ PARAMETER NAME:RIVERS       TYPE:RIV 
+ Parameter value from package file is:   1.20000E-03
+   NUMBER OF ENTRIES:     18
+
+ REACH NO.  LAYER   ROW   COL     STAGE    STRESS FACTOR     BOTTOM EL.         
+ -------------------------------------------------------------------------------
+      1      1      1      1       100.0           1000.           90.00    
+      2      1      2      1       100.0           1000.           90.00    
+      3      1      3      1       100.0           1000.           90.00    
+      4      1      4      1       100.0           1000.           90.00    
+      5      1      5      1       100.0           1000.           90.00    
+      6      1      6      1       100.0           1000.           90.00    
+      7      1      7      1       100.0           1000.           90.00    
+      8      1      8      1       100.0           1000.           90.00    
+      9      1      9      1       100.0           1000.           90.00    
+     10      1     10      1       100.0           1000.           90.00    
+     11      1     11      1       100.0           1000.           90.00    
+     12      1     12      1       100.0           1000.           90.00    
+     13      1     13      1       100.0           1000.           90.00    
+     14      1     14      1       100.0           1000.           90.00    
+     15      1     15      1       100.0           1000.           90.00    
+     16      1     16      1       100.0           1000.           90.00    
+     17      1     17      1       100.0           1000.           90.00    
+     18      1     18      1       100.0           1000.           90.00    
+
+
+     0 GHB parameters
+
+
+     2 Recharge parameters
+
+ PARAMETER NAME:RCH_ZONE_1   TYPE:RCH    CLUSTERS:   1
+ Parameter value from package file is:    63.100    
+                MULTIPLIER ARRAY: mlt_rch    ZONE ARRAY: zones_1
+                ZONE VALUES:    1
+
+ PARAMETER NAME:RCH_ZONE_2   TYPE:RCH    CLUSTERS:   1
+ Parameter value from package file is:    31.500    
+                MULTIPLIER ARRAY: mlt_rch    ZONE ARRAY: zones_1
+                ZONE VALUES:    2
+
+   13 PARAMETERS HAVE BEEN DEFINED IN ALL PACKAGES.
+ (SPACE IS ALLOCATED FOR  500 PARAMETERS.)
+
+ SMALLEST AND LARGEST WEIGHTED RESIDUALS
+
+      SMALLEST WEIGHTED RESIDUALS      |       LARGEST WEIGHTED RESIDUALS
+                WEIGHTED   PERCENT OF  |                 WEIGHTED   PERCENT OF
+ NAME           RESIDUAL    OBJ FUNC   |  NAME           RESIDUAL    OBJ FUNC
+ obs9.12        -758.        40.27     |  obs9.0          72.2         0.37
+ obs5.12d2      -425.        12.67     |  obs8.0          54.0         0.20
+ obs0.12        -390.        10.67     |  obs3.0d2        52.5         0.19
+ obs6.12        -281.         5.54     |  obs3.0d1        52.5         0.19
+ obs4.12d2      -280.         5.49     |  obs0.0          37.9         0.10
+
+ STATISTICS FOR ALL RESIDUALS :
+ AVERAGE WEIGHTED RESIDUAL  :-0.672E+02
+ # RESIDUALS >= 0. :     23
+ # RESIDUALS < 0.  :     24
+ NUMBER OF RUNS  :   22  IN   47 OBSERVATIONS
+
+ INTERPRETING THE CALCULATED RUNS STATISTIC VALUE OF    -0.587    
+ NOTE: THE FOLLOWING APPLIES ONLY IF 
+        # RESIDUALS >= 0 . IS GREATER THAN 10 AND 
+        # RESIDUALS < 0.   IS GREATER THAN 10
+ THE NEGATIVE VALUE MAY INDICATE TOO FEW RUNS:
+    IF THE VALUE IS LESS THAN -1.28, THERE IS LESS THAN A 10 PERCENT
+       CHANCE THE VALUES ARE RANDOM,
+    IF THE VALUE IS LESS THAN -1.645, THERE IS LESS THAN A 5 PERCENT
+       CHANCE THE VALUES ARE RANDOM,
+    IF THE VALUE IS LESS THAN -1.96, THERE IS LESS THAN A 2.5 PERCENT
+       CHANCE THE VALUES ARE RANDOM.
+
+
+ CORRELATION BETWEEN ORDERED WEIGHTED RESIDUALS AND NORMAL ORDER STATISTICS
+ FOR OBSERVATIONS =    0.665    
+
+ --------------------------------------------------------------------------
+ COMMENTS ON THE INTERPRETATION OF THE CORRELATION BETWEEN
+ WEIGHTED RESIDUALS AND NORMAL ORDER STATISTICS:
+
+ The critical value for correlation at the 5% significance level is 0.966
+
+ IF the reported CORRELATION is GREATER than the 5% critical value, ACCEPT
+ the hypothesis that the weighted residuals are INDEPENDENT AND NORMALLY
+ DISTRIBUTED at the 5% significance level.  The probability that this   
+ conclusion is wrong is less than 5%.
+
+ IF the reported correlation IS LESS THAN the 5% critical value REJECT the
+ hypothesis that the weighted residuals are INDEPENDENT AND NORMALLY
+ DISTRIBUTED at the 5% significance level.
+
+ The analysis can also be done using the 10% significance level.
+ The associated critical value is 0.972
+ --------------------------------------------------------------------------
+

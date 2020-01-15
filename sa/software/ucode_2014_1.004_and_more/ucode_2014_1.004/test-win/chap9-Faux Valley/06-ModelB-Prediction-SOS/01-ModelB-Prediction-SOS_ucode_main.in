@@ -1,0 +1,77 @@
+BEGIN Options Keywords
+  Verbose = 5
+END Options
+ 
+BEGIN UCODE_Control_Data Keywords
+  ModelName = modB-pred
+  ModelLengthUnits = m
+  ModelTimeUnits = s
+  sossurface=file
+  sosfile=01-ModelB-Prediction-SOS_ucode_sosfile.in
+END UCODE_Control_Data
+ 
+BEGIN Model_Command_Lines Keywords
+  Command = "..\..\..\bin\mf2005.exe modB-pred.nam"
+    Purpose = Forward
+    CommandID = ForwardModel
+END Model_Command_Lines
+ 
+BEGIN Parameter_Groups Table
+  NROW=5 NCOL=5 COLUMNLABELS
+  GroupName Adjustable Transform MaxChange SenMethod
+  HK           Yes       Yes        2.0        2
+  VANI         Yes        No        2.0        2
+  VKCB         Yes       Yes        2.0        2
+  RIV          Yes       Yes        2.0        2
+  RCH          Yes        No        2.0        2
+END Parameter_Groups
+ 
+#Starting values here are NOT used in SOS run
+#
+BEGIN Parameter_Data Table
+  NROW=8 NCOL=5 COLUMNLABELS
+  ParamName GroupName StartValue              LowerValue UpperValue
+  HK_1_1       HK      2.5884866755483124E-04   9.6e-5      9.5e-4	
+  HK_1_2       HK      9.9971745299422890E-03   9.6e-4      9.5e-3	
+  HK_2         HK      3.1689814584268935E-05   4e-6        4e-4		
+  VANI         VANI    1.0000000000000000E+00   0.8         1.2		
+  VK_CB        VKCB    9.9999999943367862E-08   1e-8        1e-6		
+  K_RB         RIV     1.1999999999999559E-03   1.2e-4      1.2e-2	
+  RCH_1        RCH     5.0052952290500940E+01   16          48		
+  RCH_2        RCH     7.9809200181594747E+01   47          79		
+END Parameter_Data
+ 
+BEGIN Observation_Groups Table
+  NROW=4 NCOL=5 COLUMNLABELS
+  GroupName MeasStatistic MeasStatFlag UseFlag PlotSymbol
+  Heads          .33           SD        Yes       6
+  Head_Changes   .45           SD        Yes       7
+  RIV_flows      .62           SD        Yes       8
+  ignore         1             SD        No        1
+END Observation_Groups
+
+BEGIN Observation_Data Table
+  NROW=6 NCOL=3 COLUMNLABELS
+  ObsName      GroupName ObsValue
+  PredDDSE_1     Ignore     1
+  PredDDSE_2  Head_Changes  1
+  PredHdWell_1   Ignore     1
+  PredHdWell_2   Heads      1
+  FlowPred_1     Ignore     1
+  FlowPred_2    RIV_flows   1
+END Observation_Data
+  
+BEGIN Model_Input_Files Keywords
+  ModInFile = modB-pred.pval
+    TemplateFile = modB-pred.jtf
+END Model_Input_Files
+ 
+BEGIN Model_Output_Files Keywords
+  ModOutFile = modB-pred.hob_out
+    InstructionFile = modB-pred.hob_out.jif
+    Category = Obs
+  ModOutFile = modB-pred.rvob_out
+    InstructionFile = modB-pred.rvob_out.jif
+    Category = Obs
+END Model_Output_Files
+ 

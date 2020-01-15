@@ -1,0 +1,85 @@
+#
+# -------------------------
+# BASIC OPTIONS INFORMATION
+# -------------------------
+#
+BEGIN OPTIONS KEYWORDS
+  MODE = OPROMIT
+  OBSGROUPS = NO
+  PREDGROUPS = NO
+  CORRELTHRESH = 0.90
+  VERBOSE = 1
+END OPTIONS
+#
+# -------------------------
+# INPUT FILES INFORMATION
+# -------------------------
+#
+BEGIN READ_FILES KEYWORDS
+  DMFNAM = example._dm                  model data file
+  DMPFNAM = example._dmp                prediction model data file
+  SUFNAM = example._su                  existing observations sensitivity file
+  WTFNAM = example._wt                  existing observations weight file
+  SPUFNAM = example._spu                prediction sensitivities file
+  SUPRIPFNAM = example._suprip	        sensitivities on prediction-only parameters
+  WTPRIPFNAM = example._wtprip	        weights on prediction-only parameters
+END READ_FILES KEYWORDS
+#
+# -------------------------
+# OBSERVATION INFORMATION
+# -------------------------
+#
+BEGIN OBSERVATION_DATA TABLE
+# STATISTIC and STATFLAG are dummy values;
+#  Weights for existing observations are 
+#  read from file ex1._wt
+#
+  NROW=11  NCOL=3     COLUMNLABELS
+  OBSNAME       STATISTIC  STATFLAG
+  hd01.ss         1.0025    wt
+  hd02.ss         1.0025    wt
+  hd03.ss         1.0025    wt
+  hd04.ss         1.0025    wt
+  hd05.ss         1.0025    wt
+  hd06.ss         1.0025    wt
+  hd07.ss         1.0025    wt
+  hd08.ss         1.0025    wt
+  hd09.ss         1.0025    wt
+  hd10.ss         1.0025    wt
+  flow01.ss       1.0025    wt
+END OBSERVATION_DATA TABLE
+#
+# -------------------------
+# PREDICTION INFORMATION
+# -------------------------
+#
+BEGIN PREDICTION_DATA TABLE
+  NROW = 9 NCOL = 1 COLUMNLABELS
+  PREDNAME   
+  AD10X      
+  AD10Y      
+  AD10Z      
+  AD50X      
+  AD50Y      
+  AD50Z      
+  A100X      
+  A100Y      
+  A100Z      
+END PREDICTION_DATA TABLE
+#
+# If the PredOnly_Prior Block were to be used to define the
+#  weights on prior information for prediction-only
+#  parameters, then the lines in the Read_Files Block (above)
+#  that start with SUPRIPFNAM and WTPRIPFNAM would be removed,
+#  and the five lines below that comprise the PredOnly_Prior
+#  block would be uncommented:
+#
+# ---------------------------
+# PREDICTION-ONLY PRIOR INFORMATION
+# ---------------------------
+#
+# BEGIN PREDONLY_PRIOR TABLE
+# NROW = 1 NCOL = 4 COLUMNLABELS
+# PARAMNAME   TRANSFORM   STATFLAG   STATISTIC
+# POR_1&2        NO          WT      0.1111111111111111D+04
+# END PREDONLY_PRIOR

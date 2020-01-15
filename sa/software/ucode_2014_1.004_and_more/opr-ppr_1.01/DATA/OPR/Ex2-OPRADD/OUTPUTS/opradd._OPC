@@ -1,0 +1,26 @@
+ ICORRELTHRESH = 24
+ GRP/OBS/PAR          PARNAM       PARNAM       BASECASE     CHANGED      PRECENT     
+ BASECASE             RCH_2        RCH_1        -.984447     -.984447      0.00000    
+ BASECASE             HK_1         RCH_1        0.956337     0.956337      0.00000    
+ BASECASE             VK_CB        RCH_1        -.967766     -.967766      0.00000    
+ BASECASE             HK_2         RCH_1        -.992790     -.992790      0.00000    
+ BASECASE             VK_CB        RCH_2        0.971397     0.971397      0.00000    
+ BASECASE             HK_2         RCH_2        0.996430     0.996430      0.00000    
+ BASECASE             HK_2         HK_1         -.930360     -.930360      0.00000    
+ BASECASE             HK_2         VK_CB        0.974491     0.974491      0.00000    
+ newhead              RCH_2        RCH_1        -.984447     -.968274     -1.64289    
+ newhead              HK_1         RCH_1        0.956337     0.958724     0.249616    
+ newhead              HK_2         RCH_1        -.992790     -.949099     -4.40081    
+ newhead              HK_1         RCH_2        -.898566     -.934510      4.00020    
+ newhead              HK_2         RCH_2        0.996430     0.970854     -2.56677    
+ newhead              HK_2         HK_1         -.930360     -.975731      4.87671    
+ newflow              RCH_2        RCH_1        -.984447     -.992192     0.786751    
+ newflow              HK_1         RCH_1        0.956337     0.970008      1.42955    
+ newflow              VK_CB        RCH_1        -.967766     -.970667     0.299758    
+ newflow              HK_2         RCH_1        -.992790     -.995741     0.297306    
+ newflow              HK_1         RCH_2        -.898566     -.940214      4.63497    
+ newflow              VK_CB        RCH_2        0.971397     0.972489     0.112454    
+ newflow              HK_2         RCH_2        0.996430     0.997568     0.114253    
+ newflow              VK_CB        HK_1         -.896490     -.924981      3.17807    
+ newflow              HK_2         HK_1         -.930360     -.959819      3.16644    
+ newflow              HK_2         VK_CB        0.974491     0.974489     -.183495E-03

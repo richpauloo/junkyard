@@ -1,0 +1,84 @@
+
+
+International Ground Water Modeling Center (IGWMC)             SIM_ADJUST(1)
+
+NOTE: Any use of trade, product or firm names is for descriptive
+      purposes only and does not imply endorsement by the U.S.
+      Government.
+
+NAME
+     SIM_ADJUST -- A Computer Code that Adjusts Simulated Equivalents for 
+                   Observations
+
+ABSTRACT
+     
+     This report documents the Sim_Adjust computer code. Sim_Adjust surmounts 
+     an obstacle that is sometimes encountered when using universal analysis 
+     computer code such as UCODE_2005 (Poeter and others, 2005), PEST (Doherty, 
+     2004), and OSTRICH (Matott, 2005; Fredrick,et al., 2006). These codes read 
+     simulated equivalents from a list in a file produced by a process model 
+     such as MODFLOW that represents a system of interest. At times values 
+     needed by the universal code are missing or assigned default values 
+     because the process model could not produce a useful solution. Sim_Adjust 
+     can be used to (1) read a file produced by a process model that contains 
+     simulated equivalents to observations in space or tab delimited columns of 
+     data that include a column of simulated values and a column of related 
+     observation names; (2) identify observations that have been omitted or 
+     assigned a default value by the process model, and (3) define alternate 
+     simulated values or defaults. The user may provide a constant replacement 
+     value, or may indicate that an alternative simulated value from the 
+     process model should be used. The user may also provide a sequence of 
+     alternatives. Indeed, a long chain of alternative values can be specified. 
+     For example, the heads from a series of cells may be specified to provide 
+     a simulated value for comparison with an observation in a cell that may 
+     become dry.
+     
+     Sim_Adjust reads an input file specifying the file name containing the 
+     simulated equivalents, its layout, and default values, followed by 
+     instructions defining the substitution procedure in the event that a 
+     simulated equivalent is missing or assigned a default by the process model.  
+     It then determines which simulated equivalents are missing or assigned a 
+     default in a file produced by a process model, and creates a similar file 
+     containing all simulated equivalents with their appropriate alternative 
+     values.
+     
+     Sim_Adjust is constructed using modules from the JUPITER API, and is 
+     intended for use on any computer operating system. Sim_Adjust consists 
+     of algorithms programmed in Fortran90, which efficiently performs 
+     numerical calculations.
+
+
+HISTORY
+
+     SIM_ADJUST Version 1.000 3/27/2008 - Initial release.
+
+
+DATA REQUIREMENTS
+     In order to use SIM_ADJUST, the process model needs to be constructed and
+     the main SIM_ADJUST input file needs to be created. Input data are read
+     from files.
+
+
+SYSTEM REQUIREMENTS
+     SIM_ADJUST is written primarily in Fortran 90. The code has been used on
+     UNIX-based computers and personal computers running various forms of the
+     Microsoft Windows operating system.
+
+
+CONTACTS
+
+    Eileen Poeter
+    International Ground Water Modeling Center and the Colorado School of Mines
+    Golden, Colorado 80401
+    USA
+
+    epoeter@mines.edu
+
+    Mary C. Hill
+    U.S. Geological Survey
+    National Research Program
+    3215 Marine St
+    Boulder, CO 80302
+    USA
+
+    mchill@usgs.gov

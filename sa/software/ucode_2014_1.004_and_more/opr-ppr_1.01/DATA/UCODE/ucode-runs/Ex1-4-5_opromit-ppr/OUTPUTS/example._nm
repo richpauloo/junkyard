@@ -1,0 +1,14 @@
+ "WEIGHTED RESIDUAL" "STANDARD NORMAL STATISTIC"  "PLOT SYMBOL" "OBSERVATION or PRIOR NAME"
+         -2.04634        -1.76935                        1            hd04.ss             
+        -0.551911        -1.19858                        1            hd06.ss             
+        -0.505968       -0.869825                        1            hd03.ss             
+        -0.275056       -0.615361                        1            hd09.ss             
+        -0.114257       -0.395823                        1            hd05.ss             
+         0.333396E-01   -0.193967                       10            PRIOR_VK_CB         
+         0.390045E-01     0.00000                        3            flow01.ss           
+         0.858187E-01    0.193967                       10            PRIOR_K_RB          
+         0.177578        0.395823                        1            hd07.ss             
+         0.882697        0.615361                        1            hd10.ss             
+         0.993259        0.869825                        1            hd08.ss             
+          1.17363         1.19858                        1            hd02.ss             
+          1.59211         1.76935                        1            hd01.ss             

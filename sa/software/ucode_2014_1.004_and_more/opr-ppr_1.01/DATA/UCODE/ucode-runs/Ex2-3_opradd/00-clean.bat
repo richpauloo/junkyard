@@ -1,0 +1,11 @@
+del *._*
+del *.#*
+del *.bak
+del *.err
+del mf2kerr.p00
+cd ..\..\mf2k-files\new-obs\
+del *._*
+del *.lst
+del *.glo
+del *.bak
+del out

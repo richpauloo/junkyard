@@ -1,0 +1,78 @@
+#
+# -------------------------
+# BASIC OPTIONS INFORMATION
+# -------------------------
+#
+BEGIN OPTIONS KEYWORDS
+  MODE = OPROMIT
+  OBSGROUPS = NO
+  PREDGROUPS = YES
+  CORRELTHRESH = 0.90
+  VERBOSE = 3
+END OPTIONS
+#
+# -------------------------
+# INPUT FILES INFORMATION
+# -------------------------
+#
+BEGIN READ_FILES KEYWORDS
+  DMFNAM = example._dm                  model data file
+  DMPFNAM = example._dmp                prediction model data file
+  SUFNAM = example._su                  existing observations sensitivity file
+  WTFNAM = example._wt                  existing observations weight file
+  SPUFNAM = example._spu                prediction sensitivities file
+  SUPRIPFNAM = example._suprip	        sensitivities on prediction-only parameters
+  WTPRIPFNAM = example._wtprip	        weights on prediction-only parameters
+END READ_FILES KEYWORDS
+#
+# -------------------------
+# OBSERVATION INFORMATION
+# -------------------------
+#
+BEGIN OBSERVATION_DATA TABLE
+# STATISTIC and STATFLAG are dummy values;
+#  Weights for existing observations are 
+#  read from file ex1._wt
+#
+  NROW=11  NCOL=3     COLUMNLABELS
+  OBSNAME       STATISTIC  STATFLAG
+  hd01.ss         1.0025    wt
+  hd02.ss         1.0025    wt
+  hd03.ss         1.0025    wt
+  hd04.ss         1.0025    wt
+  hd05.ss         1.0025    wt
+  hd06.ss         1.0025    wt
+  hd07.ss         1.0025    wt
+  hd08.ss         1.0025    wt
+  hd09.ss         1.0025    wt
+  hd10.ss         1.0025    wt
+  flow01.ss       1.0025    wt
+END OBSERVATION_DATA TABLE
+#
+# -----------------------------
+# PREDICTION GROUPS INFORMATION
+# -----------------------------
+#
+BEGIN PREDICTION_GROUPS KEYWORDS
+  GROUPNAME = PRED1  PLOTSYMBOL = 1  USEFLAG = YES
+  GROUPNAME = PRED2  PLOTSYMBOL = 2  USEFLAG = YES
+  GROUPNAME = PRED3  PLOTSYMBOL = 3  USEFLAG = YES
+END PREDICTION_GROUPS KEYWORDS
+#
+# -------------------------
+# PREDICTION INFORMATION
+# -------------------------
+#
+BEGIN PREDICTION_DATA TABLE
+  NROW = 9 NCOL = 2 COLUMNLABELS
+  PREDNAME   GROUPNAME
+  AD10X      PRED1
+  AD10Y      PRED1
+  AD10Z      PRED1
+  AD50X      PRED2
+  AD50Y      PRED2
+  AD50Z      PRED2
+  A100X      PRED3
+  A100Y      PRED3
+  A100Z      PRED3
+END PREDICTION_DATA TABLE

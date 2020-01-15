@@ -1,0 +1,2952 @@
+object TProject
+  ProjName = 'ex4.1'
+  Title = 'class project'
+  ModelDirectoryPred = '\'
+  ModelID = midModflow2005
+  ModflowNameFile = 'ex3.3.nam'
+  ModflowNameFilePred = 'ex3.3.nam'
+  ActiveApp = aaUcode
+  ParameterSetup.NumAtt = 19
+  ParameterSetup.ParAttributes = <
+    item
+      ParamAttType = patGroupName
+      ControlMethod = cmByItem
+    end
+    item
+      ParamAttType = patStartValue
+      ControlMethod = cmByItem
+    end
+    item
+      ParamAttType = patAdjustable
+      ControlMethod = cmByGroup
+    end
+    item
+      ParamAttType = patTransform
+      ControlMethod = cmByGroup
+    end
+    item
+      ParamAttType = patTolPar
+      ControlMethod = cmByDefault
+    end
+    item
+      ParamAttType = patMaxChange
+      ControlMethod = cmByGroup
+    end
+    item
+      ParamAttType = patPerturbAmt
+      ControlMethod = cmByDefault
+    end
+    item
+      ParamAttType = patReasRange
+      ControlMethod = cmByItem
+    end
+    item
+      ParamAttType = patLowerValue
+      ControlMethod = cmByItem
+    end
+    item
+      ParamAttType = patUpperValue
+      ControlMethod = cmByItem
+    end
+    item
+      ParamAttType = patSenMethod
+      ControlMethod = cmByGroup
+    end
+    item
+      ParamAttType = patConstraints
+      ControlMethod = cmByDefault
+    end
+    item
+      ParamAttType = patConstrain
+      ControlMethod = cmByDefault
+    end
+    item
+      ParamAttType = patLowerBound
+      ControlMethod = cmByDefault
+    end
+    item
+      ParamAttType = patUpperBound
+      ControlMethod = cmByDefault
+    end
+    item
+      ParamAttType = patScalePval
+      ControlMethod = cmByDefault
+    end
+    item
+      ParamAttType = patSosIncrement
+      ControlMethod = cmByDefault
+    end
+    item
+      ParamAttType = patNonLinearInterval
+      ControlMethod = cmByDefault
+    end
+    item
+      ParamAttType = patParamName
+      ControlMethod = cmByDefault
+    end>
+  ParGpSet = <
+    item
+      Name = 'HK'
+      AllAtts = <
+        item
+          ParamAttType = patGroupName
+          Text = 'HK'
+        end
+        item
+          ParamAttType = patStartValue
+        end
+        item
+          ParamAttType = patAdjustable
+          Text = 'Yes'
+        end
+        item
+          ParamAttType = patTransform
+          Text = 'No'
+        end
+        item
+          ParamAttType = patTolPar
+          Text = '0.01'
+        end
+        item
+          ParamAttType = patMaxChange
+          Text = '2.0'
+        end
+        item
+          ParamAttType = patPerturbAmt
+          Text = '0.01'
+        end
+        item
+          ParamAttType = patReasRange
+          Text = '-10**38 to 10**38'
+        end
+        item
+          ParamAttType = patLowerValue
+          Text = '-10.0E38'
+        end
+        item
+          ParamAttType = patUpperValue
+          Text = '10.0E38'
+        end
+        item
+          ParamAttType = patSenMethod
+          Text = '2'
+        end
+        item
+          ParamAttType = patConstraints
+          Text = 'No constraints'
+        end
+        item
+          ParamAttType = patConstrain
+          Text = 'No'
+        end
+        item
+          ParamAttType = patLowerBound
+          Text = '-10.0E38'
+        end
+        item
+          ParamAttType = patUpperBound
+          Text = '10.0E38'
+        end
+        item
+          ParamAttType = patScalePval
+          Text = 'Starting parameter value / 100'
+        end
+        item
+          ParamAttType = patSosIncrement
+          Text = '5'
+        end
+        item
+          ParamAttType = patNonLinearInterval
+          Text = 'No'
+        end
+        item
+          ParamAttType = patParamName
+          Text = 'HK'
+        end>
+    end
+    item
+      Name = 'VANI'
+      AllAtts = <
+        item
+          ParamAttType = patGroupName
+          Text = 'VANI'
+        end
+        item
+          ParamAttType = patStartValue
+        end
+        item
+          ParamAttType = patAdjustable
+          Text = 'No'
+        end
+        item
+          ParamAttType = patTransform
+          Text = 'No'
+        end
+        item
+          ParamAttType = patTolPar
+          Text = '0.01'
+        end
+        item
+          ParamAttType = patMaxChange
+          Text = '2.0'
+        end
+        item
+          ParamAttType = patPerturbAmt
+          Text = '0.01'
+        end
+        item
+          ParamAttType = patReasRange
+          Text = '-10**38 to 10**38'
+        end
+        item
+          ParamAttType = patLowerValue
+          Text = '-10.0E38'
+        end
+        item
+          ParamAttType = patUpperValue
+          Text = '10.0E38'
+        end
+        item
+          ParamAttType = patSenMethod
+          Text = '1'
+        end
+        item
+          ParamAttType = patConstraints
+          Text = 'No constraints'
+        end
+        item
+          ParamAttType = patConstrain
+          Text = 'No'
+        end
+        item
+          ParamAttType = patLowerBound
+          Text = '-10.0E38'
+        end
+        item
+          ParamAttType = patUpperBound
+          Text = '10.0E38'
+        end
+        item
+          ParamAttType = patScalePval
+          Text = 'Starting parameter value / 100'
+        end
+        item
+          ParamAttType = patSosIncrement
+          Text = '5'
+        end
+        item
+          ParamAttType = patNonLinearInterval
+          Text = 'No'
+        end
+        item
+          ParamAttType = patParamName
+          Text = 'VANI'
+        end>
+    end
+    item
+      Name = 'VKCB'
+      AllAtts = <
+        item
+          ParamAttType = patGroupName
+          Text = 'VKCB'
+        end
+        item
+          ParamAttType = patStartValue
+        end
+        item
+          ParamAttType = patAdjustable
+          Text = 'Yes'
+        end
+        item
+          ParamAttType = patTransform
+          Text = 'No'
+        end
+        item
+          ParamAttType = patTolPar
+          Text = '0.01'
+        end
+        item
+          ParamAttType = patMaxChange
+          Text = '2.0'
+        end
+        item
+          ParamAttType = patPerturbAmt
+          Text = '0.01'
+        end
+        item
+          ParamAttType = patReasRange
+          Text = '-10**38 to 10**38'
+        end
+        item
+          ParamAttType = patLowerValue
+          Text = '-10.0E38'
+        end
+        item
+          ParamAttType = patUpperValue
+          Text = '10.0E38'
+        end
+        item
+          ParamAttType = patSenMethod
+          Text = '2'
+        end
+        item
+          ParamAttType = patConstraints
+          Text = 'No constraints'
+        end
+        item
+          ParamAttType = patConstrain
+          Text = 'No'
+        end
+        item
+          ParamAttType = patLowerBound
+          Text = '-10.0E38'
+        end
+        item
+          ParamAttType = patUpperBound
+          Text = '10.0E38'
+        end
+        item
+          ParamAttType = patScalePval
+          Text = 'Starting parameter value / 100'
+        end
+        item
+          ParamAttType = patSosIncrement
+          Text = '5'
+        end
+        item
+          ParamAttType = patNonLinearInterval
+          Text = 'No'
+        end
+        item
+          ParamAttType = patParamName
+          Text = 'VKCB'
+        end>
+    end
+    item
+      Name = 'RIV'
+      AllAtts = <
+        item
+          ParamAttType = patGroupName
+          Text = 'RIV'
+        end
+        item
+          ParamAttType = patStartValue
+        end
+        item
+          ParamAttType = patAdjustable
+          Text = 'Yes'
+        end
+        item
+          ParamAttType = patTransform
+          Text = 'No'
+        end
+        item
+          ParamAttType = patTolPar
+          Text = '0.01'
+        end
+        item
+          ParamAttType = patMaxChange
+          Text = '2.0'
+        end
+        item
+          ParamAttType = patPerturbAmt
+          Text = '0.01'
+        end
+        item
+          ParamAttType = patReasRange
+          Text = '-10**38 to 10**38'
+        end
+        item
+          ParamAttType = patLowerValue
+          Text = '-10.0E38'
+        end
+        item
+          ParamAttType = patUpperValue
+          Text = '10.0E38'
+        end
+        item
+          ParamAttType = patSenMethod
+          Text = '2'
+        end
+        item
+          ParamAttType = patConstraints
+          Text = 'No constraints'
+        end
+        item
+          ParamAttType = patConstrain
+          Text = 'No'
+        end
+        item
+          ParamAttType = patLowerBound
+          Text = '-10.0E38'
+        end
+        item
+          ParamAttType = patUpperBound
+          Text = '10.0E38'
+        end
+        item
+          ParamAttType = patScalePval
+          Text = 'Starting parameter value / 100'
+        end
+        item
+          ParamAttType = patSosIncrement
+          Text = '5'
+        end
+        item
+          ParamAttType = patNonLinearInterval
+          Text = 'No'
+        end
+        item
+          ParamAttType = patParamName
+          Text = 'RIV'
+        end>
+    end
+    item
+      Name = 'RCH'
+      AllAtts = <
+        item
+          ParamAttType = patGroupName
+          Text = 'RCH'
+        end
+        item
+          ParamAttType = patStartValue
+        end
+        item
+          ParamAttType = patAdjustable
+          Text = 'Yes'
+        end
+        item
+          ParamAttType = patTransform
+          Text = 'No'
+        end
+        item
+          ParamAttType = patTolPar
+          Text = '0.01'
+        end
+        item
+          ParamAttType = patMaxChange
+          Text = '2.0'
+        end
+        item
+          ParamAttType = patPerturbAmt
+          Text = '0.01'
+        end
+        item
+          ParamAttType = patReasRange
+          Text = '-10**38 to 10**38'
+        end
+        item
+          ParamAttType = patLowerValue
+          Text = '-10.0E38'
+        end
+        item
+          ParamAttType = patUpperValue
+          Text = '10.0E38'
+        end
+        item
+          ParamAttType = patSenMethod
+          Text = '2'
+        end
+        item
+          ParamAttType = patConstraints
+          Text = 'No constraints'
+        end
+        item
+          ParamAttType = patConstrain
+          Text = 'No'
+        end
+        item
+          ParamAttType = patLowerBound
+          Text = '-10.0E38'
+        end
+        item
+          ParamAttType = patUpperBound
+          Text = '10.0E38'
+        end
+        item
+          ParamAttType = patScalePval
+          Text = 'Starting parameter value / 100'
+        end
+        item
+          ParamAttType = patSosIncrement
+          Text = '5'
+        end
+        item
+          ParamAttType = patNonLinearInterval
+          Text = 'No'
+        end
+        item
+          ParamAttType = patParamName
+          Text = 'RCH'
+        end>
+    end>
+  ParamSet = <
+    item
+      Name = 'HK_1'
+      AllAtts = <
+        item
+          ParamAttType = patGroupName
+          Text = 'HK'
+        end
+        item
+          ParamAttType = patStartValue
+          Text = '0.0003'
+        end
+        item
+          ParamAttType = patAdjustable
+          Text = 'No'
+        end
+        item
+          ParamAttType = patTransform
+          Text = 'No'
+        end
+        item
+          ParamAttType = patTolPar
+          Text = '0.01'
+        end
+        item
+          ParamAttType = patMaxChange
+          Text = '2.0'
+        end
+        item
+          ParamAttType = patPerturbAmt
+          Text = '0.01'
+        end
+        item
+          ParamAttType = patReasRange
+          Text = '-10**38 to 10**38'
+        end
+        item
+          ParamAttType = patLowerValue
+          Text = '-10.0E38'
+        end
+        item
+          ParamAttType = patUpperValue
+          Text = '10.0E38'
+        end
+        item
+          ParamAttType = patSenMethod
+          Text = '1'
+        end
+        item
+          ParamAttType = patConstraints
+          Text = 'No constraints'
+        end
+        item
+          ParamAttType = patConstrain
+          Text = 'No'
+        end
+        item
+          ParamAttType = patLowerBound
+          Text = '-10.0E38'
+        end
+        item
+          ParamAttType = patUpperBound
+          Text = '10.0E38'
+        end
+        item
+          ParamAttType = patScalePval
+          Text = 'Starting parameter value / 100'
+        end
+        item
+          ParamAttType = patSosIncrement
+          Text = '5'
+        end
+        item
+          ParamAttType = patNonLinearInterval
+          Text = 'No'
+        end
+        item
+          ParamAttType = patParamName
+          Text = 'ParamDefault'
+        end>
+    end
+    item
+      Name = 'HK_2'
+      AllAtts = <
+        item
+          ParamAttType = patGroupName
+          Text = 'HK'
+        end
+        item
+          ParamAttType = patStartValue
+          Text = '4E-5'
+        end
+        item
+          ParamAttType = patAdjustable
+          Text = 'No'
+        end
+        item
+          ParamAttType = patTransform
+          Text = 'No'
+        end
+        item
+          ParamAttType = patTolPar
+          Text = '0.01'
+        end
+        item
+          ParamAttType = patMaxChange
+          Text = '2.0'
+        end
+        item
+          ParamAttType = patPerturbAmt
+          Text = '0.01'
+        end
+        item
+          ParamAttType = patReasRange
+          Text = '-10**38 to 10**38'
+        end
+        item
+          ParamAttType = patLowerValue
+          Text = '-10.0E38'
+        end
+        item
+          ParamAttType = patUpperValue
+          Text = '10.0E38'
+        end
+        item
+          ParamAttType = patSenMethod
+          Text = '1'
+        end
+        item
+          ParamAttType = patConstraints
+          Text = 'No constraints'
+        end
+        item
+          ParamAttType = patConstrain
+          Text = 'No'
+        end
+        item
+          ParamAttType = patLowerBound
+          Text = '-10.0E38'
+        end
+        item
+          ParamAttType = patUpperBound
+          Text = '10.0E38'
+        end
+        item
+          ParamAttType = patScalePval
+          Text = 'Starting parameter value / 100'
+        end
+        item
+          ParamAttType = patSosIncrement
+          Text = '5'
+        end
+        item
+          ParamAttType = patNonLinearInterval
+          Text = 'No'
+        end
+        item
+          ParamAttType = patParamName
+          Text = 'ParamDefault'
+        end>
+    end
+    item
+      Name = 'VANI'
+      AllAtts = <
+        item
+          ParamAttType = patGroupName
+          Text = 'VANI'
+        end
+        item
+          ParamAttType = patStartValue
+          Text = '1'
+        end
+        item
+          ParamAttType = patAdjustable
+          Text = 'No'
+        end
+        item
+          ParamAttType = patTransform
+          Text = 'No'
+        end
+        item
+          ParamAttType = patTolPar
+          Text = '0.01'
+        end
+        item
+          ParamAttType = patMaxChange
+          Text = '2.0'
+        end
+        item
+          ParamAttType = patPerturbAmt
+          Text = '0.01'
+        end
+        item
+          ParamAttType = patReasRange
+          Text = '-10**38 to 10**38'
+        end
+        item
+          ParamAttType = patLowerValue
+          Text = '-10.0E38'
+        end
+        item
+          ParamAttType = patUpperValue
+          Text = '10.0E38'
+        end
+        item
+          ParamAttType = patSenMethod
+          Text = '1'
+        end
+        item
+          ParamAttType = patConstraints
+          Text = 'No constraints'
+        end
+        item
+          ParamAttType = patConstrain
+          Text = 'No'
+        end
+        item
+          ParamAttType = patLowerBound
+          Text = '-10.0E38'
+        end
+        item
+          ParamAttType = patUpperBound
+          Text = '10.0E38'
+        end
+        item
+          ParamAttType = patScalePval
+          Text = 'Starting parameter value / 100'
+        end
+        item
+          ParamAttType = patSosIncrement
+          Text = '5'
+        end
+        item
+          ParamAttType = patNonLinearInterval
+          Text = 'No'
+        end
+        item
+          ParamAttType = patParamName
+          Text = 'ParamDefault'
+        end>
+    end
+    item
+      Name = 'VK_CB'
+      AllAtts = <
+        item
+          ParamAttType = patGroupName
+          Text = 'VKCB'
+        end
+        item
+          ParamAttType = patStartValue
+          Text = '1E-7'
+        end
+        item
+          ParamAttType = patAdjustable
+          Text = 'No'
+        end
+        item
+          ParamAttType = patTransform
+          Text = 'No'
+        end
+        item
+          ParamAttType = patTolPar
+          Text = '0.01'
+        end
+        item
+          ParamAttType = patMaxChange
+          Text = '2.0'
+        end
+        item
+          ParamAttType = patPerturbAmt
+          Text = '0.01'
+        end
+        item
+          ParamAttType = patReasRange
+          Text = '-10**38 to 10**38'
+        end
+        item
+          ParamAttType = patLowerValue
+          Text = '-10.0E38'
+        end
+        item
+          ParamAttType = patUpperValue
+          Text = '10.0E38'
+        end
+        item
+          ParamAttType = patSenMethod
+          Text = '1'
+        end
+        item
+          ParamAttType = patConstraints
+          Text = 'No constraints'
+        end
+        item
+          ParamAttType = patConstrain
+          Text = 'No'
+        end
+        item
+          ParamAttType = patLowerBound
+          Text = '-10.0E38'
+        end
+        item
+          ParamAttType = patUpperBound
+          Text = '10.0E38'
+        end
+        item
+          ParamAttType = patScalePval
+          Text = 'Starting parameter value / 100'
+        end
+        item
+          ParamAttType = patSosIncrement
+          Text = '5'
+        end
+        item
+          ParamAttType = patNonLinearInterval
+          Text = 'No'
+        end
+        item
+          ParamAttType = patParamName
+          Text = 'ParamDefault'
+        end>
+    end
+    item
+      Name = 'K_RB'
+      AllAtts = <
+        item
+          ParamAttType = patGroupName
+          Text = 'RIV'
+        end
+        item
+          ParamAttType = patStartValue
+          Text = '0.0012'
+        end
+        item
+          ParamAttType = patAdjustable
+          Text = 'No'
+        end
+        item
+          ParamAttType = patTransform
+          Text = 'No'
+        end
+        item
+          ParamAttType = patTolPar
+          Text = '0.01'
+        end
+        item
+          ParamAttType = patMaxChange
+          Text = '2.0'
+        end
+        item
+          ParamAttType = patPerturbAmt
+          Text = '0.01'
+        end
+        item
+          ParamAttType = patReasRange
+          Text = '-10**38 to 10**38'
+        end
+        item
+          ParamAttType = patLowerValue
+          Text = '-10.0E38'
+        end
+        item
+          ParamAttType = patUpperValue
+          Text = '10.0E38'
+        end
+        item
+          ParamAttType = patSenMethod
+          Text = '1'
+        end
+        item
+          ParamAttType = patConstraints
+          Text = 'No constraints'
+        end
+        item
+          ParamAttType = patConstrain
+          Text = 'No'
+        end
+        item
+          ParamAttType = patLowerBound
+          Text = '-10.0E38'
+        end
+        item
+          ParamAttType = patUpperBound
+          Text = '10.0E38'
+        end
+        item
+          ParamAttType = patScalePval
+          Text = 'Starting parameter value / 100'
+        end
+        item
+          ParamAttType = patSosIncrement
+          Text = '5'
+        end
+        item
+          ParamAttType = patNonLinearInterval
+          Text = 'No'
+        end
+        item
+          ParamAttType = patParamName
+          Text = 'ParamDefault'
+        end>
+    end
+    item
+      Name = 'RCH_1'
+      AllAtts = <
+        item
+          ParamAttType = patGroupName
+          Text = 'RCH'
+        end
+        item
+          ParamAttType = patStartValue
+          Text = '63.072'
+        end
+        item
+          ParamAttType = patAdjustable
+          Text = 'No'
+        end
+        item
+          ParamAttType = patTransform
+          Text = 'No'
+        end
+        item
+          ParamAttType = patTolPar
+          Text = '0.01'
+        end
+        item
+          ParamAttType = patMaxChange
+          Text = '2.0'
+        end
+        item
+          ParamAttType = patPerturbAmt
+          Text = '0.01'
+        end
+        item
+          ParamAttType = patReasRange
+          Text = '-10**38 to 10**38'
+        end
+        item
+          ParamAttType = patLowerValue
+          Text = '-10.0E38'
+        end
+        item
+          ParamAttType = patUpperValue
+          Text = '10.0E38'
+        end
+        item
+          ParamAttType = patSenMethod
+          Text = '1'
+        end
+        item
+          ParamAttType = patConstraints
+          Text = 'No constraints'
+        end
+        item
+          ParamAttType = patConstrain
+          Text = 'No'
+        end
+        item
+          ParamAttType = patLowerBound
+          Text = '-10.0E38'
+        end
+        item
+          ParamAttType = patUpperBound
+          Text = '10.0E38'
+        end
+        item
+          ParamAttType = patScalePval
+          Text = 'Starting parameter value / 100'
+        end
+        item
+          ParamAttType = patSosIncrement
+          Text = '5'
+        end
+        item
+          ParamAttType = patNonLinearInterval
+          Text = 'No'
+        end
+        item
+          ParamAttType = patParamName
+          Text = 'ParamDefault'
+        end>
+    end
+    item
+      Name = 'RCH_2'
+      AllAtts = <
+        item
+          ParamAttType = patGroupName
+          Text = 'RCH'
+        end
+        item
+          ParamAttType = patStartValue
+          Text = '31.536'
+        end
+        item
+          ParamAttType = patAdjustable
+          Text = 'No'
+        end
+        item
+          ParamAttType = patTransform
+          Text = 'No'
+        end
+        item
+          ParamAttType = patTolPar
+          Text = '0.01'
+        end
+        item
+          ParamAttType = patMaxChange
+          Text = '2.0'
+        end
+        item
+          ParamAttType = patPerturbAmt
+          Text = '0.01'
+        end
+        item
+          ParamAttType = patReasRange
+          Text = '-10**38 to 10**38'
+        end
+        item
+          ParamAttType = patLowerValue
+          Text = '-10.0E38'
+        end
+        item
+          ParamAttType = patUpperValue
+          Text = '10.0E38'
+        end
+        item
+          ParamAttType = patSenMethod
+          Text = '1'
+        end
+        item
+          ParamAttType = patConstraints
+          Text = 'No constraints'
+        end
+        item
+          ParamAttType = patConstrain
+          Text = 'No'
+        end
+        item
+          ParamAttType = patLowerBound
+          Text = '-10.0E38'
+        end
+        item
+          ParamAttType = patUpperBound
+          Text = '10.0E38'
+        end
+        item
+          ParamAttType = patScalePval
+          Text = 'Starting parameter value / 100'
+        end
+        item
+          ParamAttType = patSosIncrement
+          Text = '5'
+        end
+        item
+          ParamAttType = patNonLinearInterval
+          Text = 'No'
+        end
+        item
+          ParamAttType = patParamName
+          Text = 'ParamDefault'
+        end>
+    end>
+  ObservationSetup.NumAtt = 16
+  ObservationSetup.ObsAttributes = <
+    item
+      DepAttType = datGroupName
+      ControlMethod = cmByItem
+    end
+    item
+      DepAttType = datObsValue
+      ControlMethod = cmByItem
+    end
+    item
+      DepAttType = datStatistic
+      ControlMethod = cmByGroup
+    end
+    item
+      DepAttType = datStatFlag
+      ControlMethod = cmByGroup
+    end
+    item
+      DepAttType = datRefValue
+      ControlMethod = cmByItem
+    end
+    item
+      DepAttType = datMeasStatistic
+      ControlMethod = cmByItem
+    end
+    item
+      DepAttType = datMeasStatFlag
+      ControlMethod = cmByItem
+    end
+    item
+      DepAttType = datUseFlag
+      ControlMethod = cmByDefault
+    end
+    item
+      DepAttType = datPlotSymbol
+      ControlMethod = cmByGroup
+    end
+    item
+      DepAttType = datEquation
+      ControlMethod = cmByDefault
+    end
+    item
+      DepAttType = datWtMultiplier
+      ControlMethod = cmByDefault
+    end
+    item
+      DepAttType = datCovMatrix
+      ControlMethod = cmByDefault
+    end
+    item
+      DepAttType = datNonDetect
+      ControlMethod = cmByDefault
+    end
+    item
+      DepAttType = datWtOSConstant
+      ControlMethod = cmByDefault
+    end
+    item
+      DepAttType = datObsName
+      ControlMethod = cmByDefault
+    end
+    item
+      DepAttType = datPredName
+      ControlMethod = cmByDefault
+    end>
+  ObsGpSet = <
+    item
+      Name = 'Heads'
+      AllAtts = <
+        item
+          DepAttType = datGroupName
+          Text = 'Unknown'
+        end
+        item
+          DepAttType = datObsValue
+        end
+        item
+          DepAttType = datStatistic
+          Text = '1.0025'
+        end
+        item
+          DepAttType = datStatFlag
+          Text = 'VAR'
+        end
+        item
+          DepAttType = datRefValue
+          Text = '0.0'
+        end
+        item
+          DepAttType = datMeasStatistic
+        end
+        item
+          DepAttType = datMeasStatFlag
+        end
+        item
+          DepAttType = datUseFlag
+          Text = 'Yes'
+        end
+        item
+          DepAttType = datPlotSymbol
+          Text = '1'
+        end
+        item
+          DepAttType = datEquation
+        end
+        item
+          DepAttType = datWtMultiplier
+          Text = '1.0'
+        end
+        item
+          DepAttType = datCovMatrix
+        end
+        item
+          DepAttType = datNonDetect
+          Text = 'No'
+        end
+        item
+          DepAttType = datWtOSConstant
+          Text = '0.0'
+        end
+        item
+          DepAttType = datObsName
+        end
+        item
+          DepAttType = datPredName
+        end>
+      DepCat = dcUnknown
+    end
+    item
+      Name = 'RIV_flows'
+      AllAtts = <
+        item
+          DepAttType = datGroupName
+          Text = 'Unknown'
+        end
+        item
+          DepAttType = datObsValue
+        end
+        item
+          DepAttType = datStatistic
+          Text = '0.1'
+        end
+        item
+          DepAttType = datStatFlag
+          Text = 'CV'
+        end
+        item
+          DepAttType = datRefValue
+          Text = '0.0'
+        end
+        item
+          DepAttType = datMeasStatistic
+        end
+        item
+          DepAttType = datMeasStatFlag
+        end
+        item
+          DepAttType = datUseFlag
+          Text = 'Yes'
+        end
+        item
+          DepAttType = datPlotSymbol
+          Text = '2'
+        end
+        item
+          DepAttType = datEquation
+        end
+        item
+          DepAttType = datWtMultiplier
+          Text = '1.0'
+        end
+        item
+          DepAttType = datCovMatrix
+        end
+        item
+          DepAttType = datNonDetect
+          Text = 'No'
+        end
+        item
+          DepAttType = datWtOSConstant
+          Text = '0.0'
+        end
+        item
+          DepAttType = datObsName
+        end
+        item
+          DepAttType = datPredName
+        end>
+      DepCat = dcUnknown
+    end>
+  ObsSet = <
+    item
+      Name = 'hd01.ss'
+      AllAtts = <
+        item
+          DepAttType = datGroupName
+          Text = 'Heads'
+        end
+        item
+          DepAttType = datObsValue
+          Text = '101.8 '
+        end
+        item
+          DepAttType = datStatistic
+        end
+        item
+          DepAttType = datStatFlag
+        end
+        item
+          DepAttType = datRefValue
+          Text = '0.0'
+        end
+        item
+          DepAttType = datMeasStatistic
+        end
+        item
+          DepAttType = datMeasStatFlag
+        end
+        item
+          DepAttType = datUseFlag
+          Text = 'Yes'
+        end
+        item
+          DepAttType = datPlotSymbol
+          Text = '1'
+        end
+        item
+          DepAttType = datEquation
+        end
+        item
+          DepAttType = datWtMultiplier
+          Text = '1.0'
+        end
+        item
+          DepAttType = datCovMatrix
+        end
+        item
+          DepAttType = datNonDetect
+          Text = 'No'
+        end
+        item
+          DepAttType = datWtOSConstant
+          Text = '0.0'
+        end
+        item
+          DepAttType = datObsName
+          Text = 'hd01.ss'
+        end
+        item
+          DepAttType = datPredName
+        end>
+      DepCat = dcUnknown
+    end
+    item
+      Name = 'hd02.ss'
+      AllAtts = <
+        item
+          DepAttType = datGroupName
+          Text = 'Heads'
+        end
+        item
+          DepAttType = datObsValue
+          Text = '128.12 '
+        end
+        item
+          DepAttType = datStatistic
+        end
+        item
+          DepAttType = datStatFlag
+        end
+        item
+          DepAttType = datRefValue
+          Text = '0.0'
+        end
+        item
+          DepAttType = datMeasStatistic
+        end
+        item
+          DepAttType = datMeasStatFlag
+        end
+        item
+          DepAttType = datUseFlag
+          Text = 'Yes'
+        end
+        item
+          DepAttType = datPlotSymbol
+          Text = '1'
+        end
+        item
+          DepAttType = datEquation
+        end
+        item
+          DepAttType = datWtMultiplier
+          Text = '1.0'
+        end
+        item
+          DepAttType = datCovMatrix
+        end
+        item
+          DepAttType = datNonDetect
+          Text = 'No'
+        end
+        item
+          DepAttType = datWtOSConstant
+          Text = '0.0'
+        end
+        item
+          DepAttType = datObsName
+          Text = 'hd02.ss'
+        end
+        item
+          DepAttType = datPredName
+        end>
+      DepCat = dcUnknown
+    end
+    item
+      Name = 'hd03.ss'
+      AllAtts = <
+        item
+          DepAttType = datGroupName
+          Text = 'Heads'
+        end
+        item
+          DepAttType = datObsValue
+          Text = '156.68 '
+        end
+        item
+          DepAttType = datStatistic
+        end
+        item
+          DepAttType = datStatFlag
+        end
+        item
+          DepAttType = datRefValue
+          Text = '0.0'
+        end
+        item
+          DepAttType = datMeasStatistic
+        end
+        item
+          DepAttType = datMeasStatFlag
+        end
+        item
+          DepAttType = datUseFlag
+          Text = 'Yes'
+        end
+        item
+          DepAttType = datPlotSymbol
+          Text = '1'
+        end
+        item
+          DepAttType = datEquation
+        end
+        item
+          DepAttType = datWtMultiplier
+          Text = '1.0'
+        end
+        item
+          DepAttType = datCovMatrix
+        end
+        item
+          DepAttType = datNonDetect
+          Text = 'No'
+        end
+        item
+          DepAttType = datWtOSConstant
+          Text = '0.0'
+        end
+        item
+          DepAttType = datObsName
+          Text = 'hd03.ss'
+        end
+        item
+          DepAttType = datPredName
+        end>
+      DepCat = dcUnknown
+    end
+    item
+      Name = 'hd04.ss'
+      AllAtts = <
+        item
+          DepAttType = datGroupName
+          Text = 'Heads'
+        end
+        item
+          DepAttType = datObsValue
+          Text = '124.89 '
+        end
+        item
+          DepAttType = datStatistic
+        end
+        item
+          DepAttType = datStatFlag
+        end
+        item
+          DepAttType = datRefValue
+          Text = '0.0'
+        end
+        item
+          DepAttType = datMeasStatistic
+        end
+        item
+          DepAttType = datMeasStatFlag
+        end
+        item
+          DepAttType = datUseFlag
+          Text = 'Yes'
+        end
+        item
+          DepAttType = datPlotSymbol
+          Text = '1'
+        end
+        item
+          DepAttType = datEquation
+        end
+        item
+          DepAttType = datWtMultiplier
+          Text = '1.0'
+        end
+        item
+          DepAttType = datCovMatrix
+        end
+        item
+          DepAttType = datNonDetect
+          Text = 'No'
+        end
+        item
+          DepAttType = datWtOSConstant
+          Text = '0.0'
+        end
+        item
+          DepAttType = datObsName
+          Text = 'hd04.ss'
+        end
+        item
+          DepAttType = datPredName
+        end>
+      DepCat = dcUnknown
+    end
+    item
+      Name = 'hd05.ss'
+      AllAtts = <
+        item
+          DepAttType = datGroupName
+          Text = 'Heads'
+        end
+        item
+          DepAttType = datObsValue
+          Text = '140.96 '
+        end
+        item
+          DepAttType = datStatistic
+        end
+        item
+          DepAttType = datStatFlag
+        end
+        item
+          DepAttType = datRefValue
+          Text = '0.0'
+        end
+        item
+          DepAttType = datMeasStatistic
+        end
+        item
+          DepAttType = datMeasStatFlag
+        end
+        item
+          DepAttType = datUseFlag
+          Text = 'Yes'
+        end
+        item
+          DepAttType = datPlotSymbol
+          Text = '1'
+        end
+        item
+          DepAttType = datEquation
+        end
+        item
+          DepAttType = datWtMultiplier
+          Text = '1.0'
+        end
+        item
+          DepAttType = datCovMatrix
+        end
+        item
+          DepAttType = datNonDetect
+          Text = 'No'
+        end
+        item
+          DepAttType = datWtOSConstant
+          Text = '0.0'
+        end
+        item
+          DepAttType = datObsName
+          Text = 'hd05.ss'
+        end
+        item
+          DepAttType = datPredName
+        end>
+      DepCat = dcUnknown
+    end
+    item
+      Name = 'hd06.ss'
+      AllAtts = <
+        item
+          DepAttType = datGroupName
+          Text = 'Heads'
+        end
+        item
+          DepAttType = datObsValue
+          Text = '126.54 '
+        end
+        item
+          DepAttType = datStatistic
+        end
+        item
+          DepAttType = datStatFlag
+        end
+        item
+          DepAttType = datRefValue
+          Text = '0.0'
+        end
+        item
+          DepAttType = datMeasStatistic
+        end
+        item
+          DepAttType = datMeasStatFlag
+        end
+        item
+          DepAttType = datUseFlag
+          Text = 'Yes'
+        end
+        item
+          DepAttType = datPlotSymbol
+          Text = '1'
+        end
+        item
+          DepAttType = datEquation
+        end
+        item
+          DepAttType = datWtMultiplier
+          Text = '1.0'
+        end
+        item
+          DepAttType = datCovMatrix
+        end
+        item
+          DepAttType = datNonDetect
+          Text = 'No'
+        end
+        item
+          DepAttType = datWtOSConstant
+          Text = '0.0'
+        end
+        item
+          DepAttType = datObsName
+          Text = 'hd06.ss'
+        end
+        item
+          DepAttType = datPredName
+        end>
+      DepCat = dcUnknown
+    end
+    item
+      Name = 'hd07.ss'
+      AllAtts = <
+        item
+          DepAttType = datGroupName
+          Text = 'Heads'
+        end
+        item
+          DepAttType = datObsValue
+          Text = '101.11 '
+        end
+        item
+          DepAttType = datStatistic
+        end
+        item
+          DepAttType = datStatFlag
+        end
+        item
+          DepAttType = datRefValue
+          Text = '0.0'
+        end
+        item
+          DepAttType = datMeasStatistic
+        end
+        item
+          DepAttType = datMeasStatFlag
+        end
+        item
+          DepAttType = datUseFlag
+          Text = 'Yes'
+        end
+        item
+          DepAttType = datPlotSymbol
+          Text = '1'
+        end
+        item
+          DepAttType = datEquation
+        end
+        item
+          DepAttType = datWtMultiplier
+          Text = '1.0'
+        end
+        item
+          DepAttType = datCovMatrix
+        end
+        item
+          DepAttType = datNonDetect
+          Text = 'No'
+        end
+        item
+          DepAttType = datWtOSConstant
+          Text = '0.0'
+        end
+        item
+          DepAttType = datObsName
+          Text = 'hd07.ss'
+        end
+        item
+          DepAttType = datPredName
+        end>
+      DepCat = dcUnknown
+    end
+    item
+      Name = 'hd08.ss'
+      AllAtts = <
+        item
+          DepAttType = datGroupName
+          Text = 'Heads'
+        end
+        item
+          DepAttType = datObsValue
+          Text = '158.13 '
+        end
+        item
+          DepAttType = datStatistic
+        end
+        item
+          DepAttType = datStatFlag
+        end
+        item
+          DepAttType = datRefValue
+          Text = '0.0'
+        end
+        item
+          DepAttType = datMeasStatistic
+        end
+        item
+          DepAttType = datMeasStatFlag
+        end
+        item
+          DepAttType = datUseFlag
+          Text = 'Yes'
+        end
+        item
+          DepAttType = datPlotSymbol
+          Text = '1'
+        end
+        item
+          DepAttType = datEquation
+        end
+        item
+          DepAttType = datWtMultiplier
+          Text = '1.0'
+        end
+        item
+          DepAttType = datCovMatrix
+        end
+        item
+          DepAttType = datNonDetect
+          Text = 'No'
+        end
+        item
+          DepAttType = datWtOSConstant
+          Text = '0.0'
+        end
+        item
+          DepAttType = datObsName
+          Text = 'hd08.ss'
+        end
+        item
+          DepAttType = datPredName
+        end>
+      DepCat = dcUnknown
+    end
+    item
+      Name = 'hd09.ss'
+      AllAtts = <
+        item
+          DepAttType = datGroupName
+          Text = 'Heads'
+        end
+        item
+          DepAttType = datObsValue
+          Text = '176.37 '
+        end
+        item
+          DepAttType = datStatistic
+        end
+        item
+          DepAttType = datStatFlag
+        end
+        item
+          DepAttType = datRefValue
+          Text = '0.0'
+        end
+        item
+          DepAttType = datMeasStatistic
+        end
+        item
+          DepAttType = datMeasStatFlag
+        end
+        item
+          DepAttType = datUseFlag
+          Text = 'Yes'
+        end
+        item
+          DepAttType = datPlotSymbol
+          Text = '1'
+        end
+        item
+          DepAttType = datEquation
+        end
+        item
+          DepAttType = datWtMultiplier
+          Text = '1.0'
+        end
+        item
+          DepAttType = datCovMatrix
+        end
+        item
+          DepAttType = datNonDetect
+          Text = 'No'
+        end
+        item
+          DepAttType = datWtOSConstant
+          Text = '0.0'
+        end
+        item
+          DepAttType = datObsName
+          Text = 'hd09.ss'
+        end
+        item
+          DepAttType = datPredName
+        end>
+      DepCat = dcUnknown
+    end
+    item
+      Name = 'hd10.ss'
+      AllAtts = <
+        item
+          DepAttType = datGroupName
+          Text = 'Heads'
+        end
+        item
+          DepAttType = datObsValue
+          Text = '142.02 '
+        end
+        item
+          DepAttType = datStatistic
+        end
+        item
+          DepAttType = datStatFlag
+        end
+        item
+          DepAttType = datRefValue
+          Text = '0.0'
+        end
+        item
+          DepAttType = datMeasStatistic
+        end
+        item
+          DepAttType = datMeasStatFlag
+        end
+        item
+          DepAttType = datUseFlag
+          Text = 'Yes'
+        end
+        item
+          DepAttType = datPlotSymbol
+          Text = '1'
+        end
+        item
+          DepAttType = datEquation
+        end
+        item
+          DepAttType = datWtMultiplier
+          Text = '1.0'
+        end
+        item
+          DepAttType = datCovMatrix
+        end
+        item
+          DepAttType = datNonDetect
+          Text = 'No'
+        end
+        item
+          DepAttType = datWtOSConstant
+          Text = '0.0'
+        end
+        item
+          DepAttType = datObsName
+          Text = 'hd10.ss'
+        end
+        item
+          DepAttType = datPredName
+        end>
+      DepCat = dcUnknown
+    end
+    item
+      Name = 'Flow01_1'
+      AllAtts = <
+        item
+          DepAttType = datGroupName
+          Text = 'RIV_flows'
+        end
+        item
+          DepAttType = datObsValue
+          Text = '-4.4 '
+        end
+        item
+          DepAttType = datStatistic
+        end
+        item
+          DepAttType = datStatFlag
+        end
+        item
+          DepAttType = datRefValue
+          Text = '0.0'
+        end
+        item
+          DepAttType = datMeasStatistic
+        end
+        item
+          DepAttType = datMeasStatFlag
+        end
+        item
+          DepAttType = datUseFlag
+          Text = 'Yes'
+        end
+        item
+          DepAttType = datPlotSymbol
+          Text = '1'
+        end
+        item
+          DepAttType = datEquation
+        end
+        item
+          DepAttType = datWtMultiplier
+          Text = '1.0'
+        end
+        item
+          DepAttType = datCovMatrix
+        end
+        item
+          DepAttType = datNonDetect
+          Text = 'No'
+        end
+        item
+          DepAttType = datWtOSConstant
+          Text = '0.0'
+        end
+        item
+          DepAttType = datObsName
+          Text = 'Flow01_1'
+        end
+        item
+          DepAttType = datPredName
+        end>
+      DepCat = dcUnknown
+    end>
+  PredictionSetup.NumAtt = 16
+  PredictionSetup.PredAttributes = <
+    item
+      DepAttType = datGroupName
+      ControlMethod = cmByItem
+    end
+    item
+      DepAttType = datObsValue
+      ControlMethod = cmByItem
+    end
+    item
+      DepAttType = datStatistic
+      ControlMethod = cmByItem
+    end
+    item
+      DepAttType = datStatFlag
+      ControlMethod = cmByItem
+    end
+    item
+      DepAttType = datRefValue
+      ControlMethod = cmByItem
+    end
+    item
+      DepAttType = datMeasStatistic
+      ControlMethod = cmByGroup
+    end
+    item
+      DepAttType = datMeasStatFlag
+      ControlMethod = cmByGroup
+    end
+    item
+      DepAttType = datUseFlag
+      ControlMethod = cmByDefault
+    end
+    item
+      DepAttType = datPlotSymbol
+      ControlMethod = cmByDefault
+    end
+    item
+      DepAttType = datEquation
+      ControlMethod = cmByDefault
+    end
+    item
+      DepAttType = datWtMultiplier
+      ControlMethod = cmByDefault
+    end
+    item
+      DepAttType = datCovMatrix
+      ControlMethod = cmByDefault
+    end
+    item
+      DepAttType = datNonDetect
+      ControlMethod = cmByDefault
+    end
+    item
+      DepAttType = datWtOSConstant
+      ControlMethod = cmByDefault
+    end
+    item
+      DepAttType = datObsName
+      ControlMethod = cmByDefault
+    end
+    item
+      DepAttType = datPredName
+      ControlMethod = cmByDefault
+    end>
+  PredGpSet = <
+    item
+      Name = 'Heads'
+      AllAtts = <
+        item
+          DepAttType = datGroupName
+          Text = 'Heads'
+        end
+        item
+          DepAttType = datObsValue
+        end
+        item
+          DepAttType = datStatistic
+        end
+        item
+          DepAttType = datStatFlag
+        end
+        item
+          DepAttType = datRefValue
+          Text = '0.0'
+        end
+        item
+          DepAttType = datMeasStatistic
+        end
+        item
+          DepAttType = datMeasStatFlag
+        end
+        item
+          DepAttType = datUseFlag
+          Text = 'Yes'
+        end
+        item
+          DepAttType = datPlotSymbol
+          Text = '1'
+        end
+        item
+          DepAttType = datEquation
+        end
+        item
+          DepAttType = datWtMultiplier
+          Text = '1.0'
+        end
+        item
+          DepAttType = datCovMatrix
+        end
+        item
+          DepAttType = datNonDetect
+          Text = 'No'
+        end
+        item
+          DepAttType = datWtOSConstant
+          Text = '0.0'
+        end
+        item
+          DepAttType = datObsName
+        end
+        item
+          DepAttType = datPredName
+        end>
+      DepCat = dcUnknown
+    end
+    item
+      Name = 'RIV_flows'
+      AllAtts = <
+        item
+          DepAttType = datGroupName
+          Text = 'RIV_flows'
+        end
+        item
+          DepAttType = datObsValue
+        end
+        item
+          DepAttType = datStatistic
+        end
+        item
+          DepAttType = datStatFlag
+        end
+        item
+          DepAttType = datRefValue
+          Text = '0.0'
+        end
+        item
+          DepAttType = datMeasStatistic
+        end
+        item
+          DepAttType = datMeasStatFlag
+        end
+        item
+          DepAttType = datUseFlag
+          Text = 'Yes'
+        end
+        item
+          DepAttType = datPlotSymbol
+          Text = '1'
+        end
+        item
+          DepAttType = datEquation
+        end
+        item
+          DepAttType = datWtMultiplier
+          Text = '1.0'
+        end
+        item
+          DepAttType = datCovMatrix
+        end
+        item
+          DepAttType = datNonDetect
+          Text = 'No'
+        end
+        item
+          DepAttType = datWtOSConstant
+          Text = '0.0'
+        end
+        item
+          DepAttType = datObsName
+        end
+        item
+          DepAttType = datPredName
+        end>
+      DepCat = dcUnknown
+    end>
+  PredSet = <
+    item
+      Name = 'hd01.ss'
+      AllAtts = <
+        item
+          DepAttType = datGroupName
+          Text = 'Heads'
+        end
+        item
+          DepAttType = datObsValue
+          Text = '101.8 '
+        end
+        item
+          DepAttType = datStatistic
+        end
+        item
+          DepAttType = datStatFlag
+        end
+        item
+          DepAttType = datRefValue
+          Text = '0.0'
+        end
+        item
+          DepAttType = datMeasStatistic
+        end
+        item
+          DepAttType = datMeasStatFlag
+        end
+        item
+          DepAttType = datUseFlag
+          Text = 'Yes'
+        end
+        item
+          DepAttType = datPlotSymbol
+          Text = '1'
+        end
+        item
+          DepAttType = datEquation
+        end
+        item
+          DepAttType = datWtMultiplier
+          Text = '1.0'
+        end
+        item
+          DepAttType = datCovMatrix
+        end
+        item
+          DepAttType = datNonDetect
+          Text = 'No'
+        end
+        item
+          DepAttType = datWtOSConstant
+          Text = '0.0'
+        end
+        item
+          DepAttType = datObsName
+        end
+        item
+          DepAttType = datPredName
+        end>
+      DepCat = dcUnknown
+    end
+    item
+      Name = 'hd02.ss'
+      AllAtts = <
+        item
+          DepAttType = datGroupName
+          Text = 'Heads'
+        end
+        item
+          DepAttType = datObsValue
+          Text = '128.12 '
+        end
+        item
+          DepAttType = datStatistic
+        end
+        item
+          DepAttType = datStatFlag
+        end
+        item
+          DepAttType = datRefValue
+          Text = '0.0'
+        end
+        item
+          DepAttType = datMeasStatistic
+        end
+        item
+          DepAttType = datMeasStatFlag
+        end
+        item
+          DepAttType = datUseFlag
+          Text = 'Yes'
+        end
+        item
+          DepAttType = datPlotSymbol
+          Text = '1'
+        end
+        item
+          DepAttType = datEquation
+        end
+        item
+          DepAttType = datWtMultiplier
+          Text = '1.0'
+        end
+        item
+          DepAttType = datCovMatrix
+        end
+        item
+          DepAttType = datNonDetect
+          Text = 'No'
+        end
+        item
+          DepAttType = datWtOSConstant
+          Text = '0.0'
+        end
+        item
+          DepAttType = datObsName
+        end
+        item
+          DepAttType = datPredName
+        end>
+      DepCat = dcUnknown
+    end
+    item
+      Name = 'hd03.ss'
+      AllAtts = <
+        item
+          DepAttType = datGroupName
+          Text = 'Heads'
+        end
+        item
+          DepAttType = datObsValue
+          Text = '156.68 '
+        end
+        item
+          DepAttType = datStatistic
+        end
+        item
+          DepAttType = datStatFlag
+        end
+        item
+          DepAttType = datRefValue
+          Text = '0.0'
+        end
+        item
+          DepAttType = datMeasStatistic
+        end
+        item
+          DepAttType = datMeasStatFlag
+        end
+        item
+          DepAttType = datUseFlag
+          Text = 'Yes'
+        end
+        item
+          DepAttType = datPlotSymbol
+          Text = '1'
+        end
+        item
+          DepAttType = datEquation
+        end
+        item
+          DepAttType = datWtMultiplier
+          Text = '1.0'
+        end
+        item
+          DepAttType = datCovMatrix
+        end
+        item
+          DepAttType = datNonDetect
+          Text = 'No'
+        end
+        item
+          DepAttType = datWtOSConstant
+          Text = '0.0'
+        end
+        item
+          DepAttType = datObsName
+        end
+        item
+          DepAttType = datPredName
+        end>
+      DepCat = dcUnknown
+    end
+    item
+      Name = 'hd04.ss'
+      AllAtts = <
+        item
+          DepAttType = datGroupName
+          Text = 'Heads'
+        end
+        item
+          DepAttType = datObsValue
+          Text = '124.89 '
+        end
+        item
+          DepAttType = datStatistic
+        end
+        item
+          DepAttType = datStatFlag
+        end
+        item
+          DepAttType = datRefValue
+          Text = '0.0'
+        end
+        item
+          DepAttType = datMeasStatistic
+        end
+        item
+          DepAttType = datMeasStatFlag
+        end
+        item
+          DepAttType = datUseFlag
+          Text = 'Yes'
+        end
+        item
+          DepAttType = datPlotSymbol
+          Text = '1'
+        end
+        item
+          DepAttType = datEquation
+        end
+        item
+          DepAttType = datWtMultiplier
+          Text = '1.0'
+        end
+        item
+          DepAttType = datCovMatrix
+        end
+        item
+          DepAttType = datNonDetect
+          Text = 'No'
+        end
+        item
+          DepAttType = datWtOSConstant
+          Text = '0.0'
+        end
+        item
+          DepAttType = datObsName
+        end
+        item
+          DepAttType = datPredName
+        end>
+      DepCat = dcUnknown
+    end
+    item
+      Name = 'hd05.ss'
+      AllAtts = <
+        item
+          DepAttType = datGroupName
+          Text = 'Heads'
+        end
+        item
+          DepAttType = datObsValue
+          Text = '140.96 '
+        end
+        item
+          DepAttType = datStatistic
+        end
+        item
+          DepAttType = datStatFlag
+        end
+        item
+          DepAttType = datRefValue
+          Text = '0.0'
+        end
+        item
+          DepAttType = datMeasStatistic
+        end
+        item
+          DepAttType = datMeasStatFlag
+        end
+        item
+          DepAttType = datUseFlag
+          Text = 'Yes'
+        end
+        item
+          DepAttType = datPlotSymbol
+          Text = '1'
+        end
+        item
+          DepAttType = datEquation
+        end
+        item
+          DepAttType = datWtMultiplier
+          Text = '1.0'
+        end
+        item
+          DepAttType = datCovMatrix
+        end
+        item
+          DepAttType = datNonDetect
+          Text = 'No'
+        end
+        item
+          DepAttType = datWtOSConstant
+          Text = '0.0'
+        end
+        item
+          DepAttType = datObsName
+        end
+        item
+          DepAttType = datPredName
+        end>
+      DepCat = dcUnknown
+    end
+    item
+      Name = 'hd06.ss'
+      AllAtts = <
+        item
+          DepAttType = datGroupName
+          Text = 'Heads'
+        end
+        item
+          DepAttType = datObsValue
+          Text = '126.54 '
+        end
+        item
+          DepAttType = datStatistic
+        end
+        item
+          DepAttType = datStatFlag
+        end
+        item
+          DepAttType = datRefValue
+          Text = '0.0'
+        end
+        item
+          DepAttType = datMeasStatistic
+        end
+        item
+          DepAttType = datMeasStatFlag
+        end
+        item
+          DepAttType = datUseFlag
+          Text = 'Yes'
+        end
+        item
+          DepAttType = datPlotSymbol
+          Text = '1'
+        end
+        item
+          DepAttType = datEquation
+        end
+        item
+          DepAttType = datWtMultiplier
+          Text = '1.0'
+        end
+        item
+          DepAttType = datCovMatrix
+        end
+        item
+          DepAttType = datNonDetect
+          Text = 'No'
+        end
+        item
+          DepAttType = datWtOSConstant
+          Text = '0.0'
+        end
+        item
+          DepAttType = datObsName
+        end
+        item
+          DepAttType = datPredName
+        end>
+      DepCat = dcUnknown
+    end
+    item
+      Name = 'hd07.ss'
+      AllAtts = <
+        item
+          DepAttType = datGroupName
+          Text = 'Heads'
+        end
+        item
+          DepAttType = datObsValue
+          Text = '101.11 '
+        end
+        item
+          DepAttType = datStatistic
+        end
+        item
+          DepAttType = datStatFlag
+        end
+        item
+          DepAttType = datRefValue
+          Text = '0.0'
+        end
+        item
+          DepAttType = datMeasStatistic
+        end
+        item
+          DepAttType = datMeasStatFlag
+        end
+        item
+          DepAttType = datUseFlag
+          Text = 'Yes'
+        end
+        item
+          DepAttType = datPlotSymbol
+          Text = '1'
+        end
+        item
+          DepAttType = datEquation
+        end
+        item
+          DepAttType = datWtMultiplier
+          Text = '1.0'
+        end
+        item
+          DepAttType = datCovMatrix
+        end
+        item
+          DepAttType = datNonDetect
+          Text = 'No'
+        end
+        item
+          DepAttType = datWtOSConstant
+          Text = '0.0'
+        end
+        item
+          DepAttType = datObsName
+        end
+        item
+          DepAttType = datPredName
+        end>
+      DepCat = dcUnknown
+    end
+    item
+      Name = 'hd08.ss'
+      AllAtts = <
+        item
+          DepAttType = datGroupName
+          Text = 'Heads'
+        end
+        item
+          DepAttType = datObsValue
+          Text = '158.13 '
+        end
+        item
+          DepAttType = datStatistic
+        end
+        item
+          DepAttType = datStatFlag
+        end
+        item
+          DepAttType = datRefValue
+          Text = '0.0'
+        end
+        item
+          DepAttType = datMeasStatistic
+        end
+        item
+          DepAttType = datMeasStatFlag
+        end
+        item
+          DepAttType = datUseFlag
+          Text = 'Yes'
+        end
+        item
+          DepAttType = datPlotSymbol
+          Text = '1'
+        end
+        item
+          DepAttType = datEquation
+        end
+        item
+          DepAttType = datWtMultiplier
+          Text = '1.0'
+        end
+        item
+          DepAttType = datCovMatrix
+        end
+        item
+          DepAttType = datNonDetect
+          Text = 'No'
+        end
+        item
+          DepAttType = datWtOSConstant
+          Text = '0.0'
+        end
+        item
+          DepAttType = datObsName
+        end
+        item
+          DepAttType = datPredName
+        end>
+      DepCat = dcUnknown
+    end
+    item
+      Name = 'hd09.ss'
+      AllAtts = <
+        item
+          DepAttType = datGroupName
+          Text = 'Heads'
+        end
+        item
+          DepAttType = datObsValue
+          Text = '176.37 '
+        end
+        item
+          DepAttType = datStatistic
+        end
+        item
+          DepAttType = datStatFlag
+        end
+        item
+          DepAttType = datRefValue
+          Text = '0.0'
+        end
+        item
+          DepAttType = datMeasStatistic
+        end
+        item
+          DepAttType = datMeasStatFlag
+        end
+        item
+          DepAttType = datUseFlag
+          Text = 'Yes'
+        end
+        item
+          DepAttType = datPlotSymbol
+          Text = '1'
+        end
+        item
+          DepAttType = datEquation
+        end
+        item
+          DepAttType = datWtMultiplier
+          Text = '1.0'
+        end
+        item
+          DepAttType = datCovMatrix
+        end
+        item
+          DepAttType = datNonDetect
+          Text = 'No'
+        end
+        item
+          DepAttType = datWtOSConstant
+          Text = '0.0'
+        end
+        item
+          DepAttType = datObsName
+        end
+        item
+          DepAttType = datPredName
+        end>
+      DepCat = dcUnknown
+    end
+    item
+      Name = 'hd10.ss'
+      AllAtts = <
+        item
+          DepAttType = datGroupName
+          Text = 'Heads'
+        end
+        item
+          DepAttType = datObsValue
+          Text = '142.02 '
+        end
+        item
+          DepAttType = datStatistic
+        end
+        item
+          DepAttType = datStatFlag
+        end
+        item
+          DepAttType = datRefValue
+          Text = '0.0'
+        end
+        item
+          DepAttType = datMeasStatistic
+        end
+        item
+          DepAttType = datMeasStatFlag
+        end
+        item
+          DepAttType = datUseFlag
+          Text = 'Yes'
+        end
+        item
+          DepAttType = datPlotSymbol
+          Text = '1'
+        end
+        item
+          DepAttType = datEquation
+        end
+        item
+          DepAttType = datWtMultiplier
+          Text = '1.0'
+        end
+        item
+          DepAttType = datCovMatrix
+        end
+        item
+          DepAttType = datNonDetect
+          Text = 'No'
+        end
+        item
+          DepAttType = datWtOSConstant
+          Text = '0.0'
+        end
+        item
+          DepAttType = datObsName
+        end
+        item
+          DepAttType = datPredName
+        end>
+      DepCat = dcUnknown
+    end
+    item
+      Name = 'Flow01_1'
+      AllAtts = <
+        item
+          DepAttType = datGroupName
+          Text = 'RIV_flows'
+        end
+        item
+          DepAttType = datObsValue
+          Text = '-4.4 '
+        end
+        item
+          DepAttType = datStatistic
+        end
+        item
+          DepAttType = datStatFlag
+        end
+        item
+          DepAttType = datRefValue
+          Text = '0.0'
+        end
+        item
+          DepAttType = datMeasStatistic
+        end
+        item
+          DepAttType = datMeasStatFlag
+        end
+        item
+          DepAttType = datUseFlag
+          Text = 'Yes'
+        end
+        item
+          DepAttType = datPlotSymbol
+          Text = '2'
+        end
+        item
+          DepAttType = datEquation
+        end
+        item
+          DepAttType = datWtMultiplier
+          Text = '1.0'
+        end
+        item
+          DepAttType = datCovMatrix
+        end
+        item
+          DepAttType = datNonDetect
+          Text = 'No'
+        end
+        item
+          DepAttType = datWtOSConstant
+          Text = '0.0'
+        end
+        item
+          DepAttType = datObsName
+        end
+        item
+          DepAttType = datPredName
+        end>
+      DepCat = dcUnknown
+    end>
+  PriorSetup.NumAtt = 10
+  PriorSetup.PriAttributes = <
+    item
+      PriAttType = piatGroupName
+      ControlMethod = cmByDefault
+    end
+    item
+      PriAttType = piatEquation
+      ControlMethod = cmByItem
+    end
+    item
+      PriAttType = piatPriValue
+      ControlMethod = cmByItem
+    end
+    item
+      PriAttType = piatStatistic
+      ControlMethod = cmByItem
+    end
+    item
+      PriAttType = piatStatFlag
+      ControlMethod = cmByItem
+    end
+    item
+      PriAttType = piatUseFlag
+      ControlMethod = cmByDefault
+    end
+    item
+      PriAttType = piatPlotSymbol
+      ControlMethod = cmByGroup
+    end
+    item
+      PriAttType = piatWtMultiplier
+      ControlMethod = cmByDefault
+    end
+    item
+      PriAttType = piatCovMatrix
+      ControlMethod = cmByDefault
+    end
+    item
+      PriAttType = piatPriorName
+      ControlMethod = cmByDefault
+    end>
+  PriGpSet = <
+    item
+      Name = 'DefaultPrior'
+      AllAtts = <
+        item
+          PriAttType = piatGroupName
+          Text = 'DefaultPrior'
+        end
+        item
+          PriAttType = piatEquation
+        end
+        item
+          PriAttType = piatPriValue
+        end
+        item
+          PriAttType = piatStatistic
+        end
+        item
+          PriAttType = piatStatFlag
+        end
+        item
+          PriAttType = piatUseFlag
+          Text = 'Yes'
+        end
+        item
+          PriAttType = piatPlotSymbol
+          Text = '1'
+        end
+        item
+          PriAttType = piatWtMultiplier
+          Text = '1.0'
+        end
+        item
+          PriAttType = piatCovMatrix
+        end
+        item
+          PriAttType = piatPriorName
+        end>
+    end>
+  PriSet = <>
+  MCLForward = '.\..\bin\mf2005.exe ex3.3.nam'
+  MIFiles = <
+    item
+      ModelFile = 'ex3.3.pval'
+      AppFile = 'ex3.3.jtf'
+    end>
+  MOFiles = <
+    item
+      ModelFile = 'ex3.3.obh_out'
+      AppFile = 'ex3.3.obh_out.jif'
+    end
+    item
+      ModelFile = 'ex3.3.rvob_out'
+      AppFile = 'ex3.3.rvob_out.jif'
+    end>
+  MIFilesPred = <>
+  MOFilesPred = <
+    item
+      ModelFile = 'ex3.3.obh_out'
+      AppFile = 'ex3.3.obh_out.jif'
+    end
+    item
+      ModelFile = 'ex3.3.rvob_out'
+      AppFile = 'ex3.3.rvob_out.jif'
+    end>
+  ProgramLocations.UcodeLocation = '..\bin\ucode_2005.exe'
+  ProgramLocations.Modflow2005Location = '.\..\bin\mf2005.exe'
+  ProgramLocations.Modflow2000Location = 'C:\WRDAPP\MF2K.1_18\bin\mf2k.exe'
+  ProgramLocations.GWChartLocation = '..\bin\bin-plotting\gw_chart\gw_chart.exe'
+  ProgramLocations.ResidAnalysisLocation = '..\bin\residual_analysis.exe'
+  UcProject.UcMode = umSensAnal
+  UcProject.MainInputFileName = 'ex4.1_ucode_main.in'
+  UcProject.MainInputFileNamePred = 'Default_Ucode_pred.in'
+  UcProject.OutputPrefix = 'ex4.1_ucode'
+  UcProject.OutputPrefixPred = 'Default_Ucode_pred_out'
+  UcProject.Verbose = 5
+  UcProject.UseModelDerivatives = False
+  UcProject.SkipLines = 0
+  UcProject.ModelName = 'C:\Data\WORK'
+  UcProject.ModelLengthUnits = 'm'
+  UcProject.ModelTimeUnits = 's'
+  UcProject.Sensitivities = True
+  UcProject.PredictionSensitivities = False
+  UcProject.Optimize = False
+  UcProject.Linearity = False
+  UcProject.Prediction = False
+  UcProject.NonLinearIntervals = False
+  UcProject.AdvLinOpt = opConf
+  UcProject.SosSurface = 'no'
+  UcProject.SosMethod = smKeywords
+  UcProject.StdErrOne = False
+  UcProject.EigenValues = True
+  UcProject.StartRes = 'yes'
+  UcProject.IntermedRes = 'no'
+  UcProject.FinalRes = 'yes'
+  UcProject.StartSens = 'dss'
+  UcProject.IntermedSens = 'none'
+  UcProject.FinalSens = 'dss'
+  UcProject.DataExchange = True
+  UcProject.CreateInitFiles = False
+  UcProject.Tolpar = 0.010000000000000000
+  UcProject.MaxIter = 5
+  UcProject.MaxChange = 2.000000000000000000
+  UcProject.MaxChangeRealm = 'Native'
+  UcProject.MqrtDirection = 85.400000000000010000
+  UcProject.MqrtFactor = 1.500000000000000000
+  UcProject.MqrtIncrement = 0.001000000000000000
+  UcProject.QuasiNewton = False
+  UcProject.QNiter = 5
+  UcProject.QNsosr = 0.010000000000000000
+  UcProject.OmitVals.Strings = (
+    '1.00000E+30'
+    '1.00000E+30'
+    '1.00000E+30'
+    '1.00000E+30'
+    '1.00000E+30'
+    '1.00000E+30'
+    '1.00000E+30'
+    '1.00000E+30'
+    '1.00000E+30')
+  UcProject.StatsOnNonconverge = True
+  UcProject.OmitInsensitive = False
+  UcProject.MinimumSensRatio = 0.005000000000000000
+  UcProject.ReincludeSensRatio = 0.020000000000000000
+  UcProject.TolParWtOS = 10.000000000000000000
+  UcProject.TrustRegion = 'no'
+  UcProject.UseMaxStep = False
+  UcProject.ConsecMax = 5
+  UseObsGps = True
+  UsePredGps = True
+  UseParGps = True
+  UsePriGps = False
+  UsePriorInfo = False
+end

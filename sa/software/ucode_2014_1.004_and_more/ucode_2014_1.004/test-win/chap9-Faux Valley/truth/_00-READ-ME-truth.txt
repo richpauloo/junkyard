@@ -1,0 +1,16 @@
+Directory "truth"
+
+This directory contains subdirectories with MODFLOW files for 
+the true Faux Valley system representation and parameter values.
+This system is discussed in Chapter 9 of the UCODE_2014 documentation.
+
+Subdirectory "Calibration conditions (no pumping)" contains MODFLOW
+files for simulating steady-state flow with no pumping.
+_00-RunModflow-tc1.bat runs the simulation.
+
+Subdirectory "Prediction conditions (with pumping)" contains MODFLOW
+files for simulating steady-state flow with pumping at the proposed
+production well. Files that differ from the calibration conditions
+have the prefix tc1-preds, or tc1-TRUTH-preds.
+_00-RunModflow-tc1-preds.bat runs the simulation.
+

@@ -1,0 +1,34 @@
+Directory "chap4-test-SVD"
+
+This directory contains files for UCODE forward, sensitivity, and calibration
+runs of Model B. This model is described in Chapter 9 of the UCODE_2014 documentation.
+The files are located within the chap4-test-SVD directory because two of the 
+three calibration runs demonstrate use of the SVD method.
+
+The batch files should be run SEQUENTIALLY not SIMULTANEOUSLY to avoid
+interference of the runs with one another
+
+_01-RunUcode_Forward.bat conducts a forward MODFLOW run at the starting
+parameter values for Model B.
+
+_02-RunUcode_SA.bat conducts a sensitivity analysis run at the starting
+parameter values. Results of this run are plotted in Table D-3.
+
+_03-RunUcode_Regression-PMP.bat (PMP is "process-model parameter") conducts
+a parameter estimation run for Model B without using SVD methods. Results
+of this run are discussed in Chapter 9 and Appendix D, and presented in
+Tables 7, 8, 9, D-2, and D-3 and in Figures 21 and 24a.
+
+_04-RunUcode_Regression-SVDupdate=SVDall.bat conducts a parameter
+estimation run for Model B using SDV with the SVDupdate method specified
+to be SVDall (the default value). Results of this run are discussed in
+Appendix D and presented in Tables D-2 and D-3.
+
+_05-RunUcode_Regression-SVDupdate=Option2.bat conducts a parameter
+estimation run for Model B using SDV with the SVDupdate method specified
+to be Option2_css_pcc. Results of this run are discussed in Appendix D
+and presented in Tables D-2 and D-3.
+
+_06-RunResidAnalysis.bat conducts a run of Residual_Analysis.exe
+to calculate Cook's D and DFBETAS. Results of this run are presented in 
+Table 9 and Figure 24b.

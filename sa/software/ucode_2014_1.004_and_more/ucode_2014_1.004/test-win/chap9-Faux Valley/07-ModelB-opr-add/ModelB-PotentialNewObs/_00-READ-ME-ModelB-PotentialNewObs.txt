@@ -1,0 +1,15 @@
+Directory "ModelB-PotentialNewObs"
+
+This directory contains files for a UCODE sensitivity analysis
+run of Model B with potential new observations defined. 
+
+_01-RunUcode_ModelB-PotentialNewObs-SA.bat conducts a sensitivity analysis
+run for the two potential new observations. The MODFLOW model 
+with prefix modB-potential simulates the conditions under which these
+new observations will be collected. This model is described in Chapter
+9 of the UCODE_2014 documentation in the section "Using the 
+Model to Evaluate Potential New Data Collection".
+
+This run generates the sensitivities for the potential observations,
+which are needed as input to the program OPR-PPR for mode=OPRADD.
+

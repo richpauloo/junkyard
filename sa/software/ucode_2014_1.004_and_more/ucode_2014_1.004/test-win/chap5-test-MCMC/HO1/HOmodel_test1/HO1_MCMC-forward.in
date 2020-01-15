@@ -1,0 +1,154 @@
+# UCODE Main Input File used to run MCMC
+#
+# ------------------------------
+# UCODE-OPTION INFORMATION
+# ------------------------------
+
+BEGIN OPTIONS KEYWORDS
+  Verbose= 0
+END OPTIONS
+
+
+# ------------------------------
+# UCODE-CONTROL INFORMATION
+# ------------------------------
+
+BEGIN UCODE_CONTROL_DATA KEYWORDS
+  ModelName=        HO
+  ModelLengthUnits= m
+  ModelMassUnits=   NA
+  ModelTimeUnits=   d 
+#Performance
+  MCMC=yes               # run MCMC simulation: yes/no
+  Use_wt=yes             #Use weight in UCODE regression run output file _wt to calculate likelihood function(yes/no). Default=no. 
+END UCODE_CONTROL_DATA
+
+
+# ------------------------------------
+# MCMC_CONTROLS INPUT BLOCK
+# ------------------------------------
+# The MCMC_CONTROLS input block can be omitted. If it is not found, defaults are used.
+
+BEGIN MCMC_CONTROLS KEYWORDS
+#
+# When MCMC = yes (specified in the UCODE_control_data input block), the MaxSamples parameter samples of each chain  
+# are generated and printed in output file with an iteration interval of PrintStep 
+# 
+# The following 11 keywords are needed for a MCMC run and they all have default values.
+#
+# When MCMC_PREDICTION = yes (specified in the UCODE_control_data input block) is activated for MCMC prediction run,
+# The following keywords Nchain, MaxSamples and PrintStep are needed and their setup is explained in HO1_MCMC-pred.in file. 
+#
+# In this example a small value of MaxSamples=20 is specified to allow users to quickly see the logic of an MCMC run. 
+# Increase MaxSamples for all applications of MCMC
+#
+  Nchain=6                 #number of Markov chains (must >3 and ideally =the number of parameters). Default=5
+  MaxSamples=20		   #maximum generation of parameter samples for each chain. Default=10000
+  Npair=3		   #number of pairs of chains to generate a candidate sample. Default=3
+  NCR=3			   #number of CR values. Default=3
+  JumpStep=5		   #step interval to reset jump rate. Default=5
+  UseRegResult=yes	   #use multinormal distribution based on regression results to start a MCMC run(yes/no). Default=no
+  GelmanR=1.2		   #Gelman-Rubin R statistic used to check MCMC convergence. Default=1.2
+  PrintStep=1		   #Step interval to print out GelmanR values, parameter samples and corresponding simulations. Default=10.
+  PrintModelOutput=yes     #Save the simulated values in files(yes/no). Default=no.
+  Restart=no		   #Restart a new MCMC run using the final values from the previous run (yes/no). Default=no.
+END MCMC_CONTROLS
+
+
+# --------------------------------
+# COMMAND FOR APPLICATION MODEL(S)
+# --------------------------------
+
+BEGIN MODEL_COMMAND_LINES KEYWORDS
+  Command='RunMF.bat'
+  Purpose=forward
+  CommandId='MODFLOW 2005'
+END MODEL_COMMAND_LINES
+
+
+# ------------------------------------
+# MCMC_PRIOR_PDF INPUT BLOCK
+# ------------------------------------
+
+#The MCMC_Prior_Groups input block has been omitted, so all parameters have uniform distribution as default. 
+
+BEGIN MCMC_Prior_PDF TABLE
+#
+# Default order for this block is ParamName GroupName MCLowerConstraint MCUpperConstraint PDFType PDFVar1 PDFVar2.  
+# By default the uniform prior is used for all parameters.
+# For uniform prior, keywords PDFVar1 and PDFVar2 can be omitted by using MCLowerConstraint and MCUpperConstraint as uniform distribution bound. 
+# Keywords MCLowerConstraint and MCUpperConstraint defining reasonable parameter bound are required. 
+#
+  NRow=6 NCol=3   COLUMNLABELS
+  ParamName     MCLowerConstraint   MCUpperConstraint    
+  LAKERCH     	  1.0d-8             1.0d0		 
+  KRB0            1.0d0	    	     1.0d6
+  RCH             1.0d-8    	     1.0d0
+  KV          	  1.0d-8      	     1.0d0
+  K1              1.0d-3    	     1.0d3
+  VANI1           1.0d-3    	     1.5d1
+END MCMC_Prior_PDF
+
+
+# -----------------------
+# OBSERVATION INFORMATION
+# -----------------------
+ 
+BEGIN OBSERVATION_GROUPS TABLE
+nrow=   3   ncol=3  columnlabels
+GroupName       PlotSymbol    CovMatrix  
+       1          1	        CovObsHead
+       2          2	        CovObsFlow
+       3          3               
+END OBSERVATION_GROUPS
+ 
+BEGIN OBSERVATION_DATA FILES
+HO.obs
+END OBSERVATION_DATA
+
+
+# ---------------------------------------------------------------------------------------
+# MATRIX FILES FOR COVARIANCE MATRIX OF MULTINORMAL PRIOR AND CORRELATED OBSERVATION ERRORS
+# ---------------------------------------------------------------------------------------
+# The matrix_files input block should be provided after all the input blocks except the model_input and model_output blocks. 
+
+BEGIN MATRIX_FILES TABLE
+  nrow= 2   ncol= 2  columnlabels
+  MatrixFile              NMatrices
+  obsmatrix_head.dat         1
+  obsmatrix_flow.dat         1
+END MATRIX_FILES
+
+
+# -----------------------------
+# APPLICATION MODEL INFORMATION
+# -----------------------------
+
+BEGIN MODEL_INPUT_FILES	KEYWORDS
+  modinfile=HOmodel_forward\HO.pvl
+  templatefile=HO.tpl
+END MODEL_INPUT_FILES
+
+BEGIN MODEL_OUTPUT_FILES  KEYWORDS
+  modoutfile=HOmodel_forward\HO._obsout
+  instructionfile=HO.inst
+  category=obs
+END MODEL_OUTPUT_FILES
+
+
+# -----------------------------
+# PARALLEL PROCESSING
+# -----------------------------
+BEGIN PARALLEL_CONTROL
+  Parallel=yes
+  Wait=0.01
+  waitrunners=1.0
+  OperatingSystem=Windows
+END PARALLEL_CONTROL
+
+BEGIN PARALLEL_RUNNERS TABLE
+nrow=2 ncol=3 columnlabels
+RunnerName                RunnerDIR               RunTime
+runner1     ..\runner1\HO1\HO1\HO1\HOmodel_test1\  100
+runner2     ..\runner2\HO1\HO1\HO1\HOmodel_test1\  100
+END PARALLEL_RUNNERS

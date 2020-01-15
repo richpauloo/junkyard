@@ -1,0 +1,35 @@
+# MODFLOW Name File for use by UCODE
+LIST         55      HOmodel_prediction\HO.lst
+
+BAS6        51       HOmodel_prediction\HO.bas
+DATA        15       HOmodel_prediction\bnd1
+DATA        18       HOmodel_prediction\bnd2
+DATA        17       HOmodel_prediction\bnd3
+
+MULT        32       HOmodel_prediction\mult
+DATA        33       HOmodel_prediction\mlake
+
+ZONE        59       HOmodel_prediction\zone
+DATA        60       HOmodel_prediction\zone.cal0
+DATA        61       HOmodel_prediction\zone.rch
+
+DIS         16       HOmodel_prediction\HO.dis
+DATA        19       HOmodel_prediction\top
+DATA        20       HOmodel_prediction\bot1
+DATA        21       HOmodel_prediction\bot2
+DATA        46       HOmodel_prediction\bot-cu
+DATA        22       HOmodel_prediction\bot3
+
+LPF          7       HOmodel_prediction\HO.lpf
+WEL          8       HOmodel_prediction\HO.wel-pumpA
+PCG          9       HOmodel_prediction\HO.pcg2
+RIV         13       HOmodel_prediction\HO.riv
+RCH         31       HOmodel_prediction\HO.rch
+
+OC          52       HOmodel_prediction\HO.oc
+
+DATA        44       HOmodel_prediction\HO._obsout
+HOB         23       HOmodel_prediction\HO.obh
+RVOB        14       HOmodel_prediction\HO.obr
+
+PVAL        40       HOmodel_prediction\HO.pvl

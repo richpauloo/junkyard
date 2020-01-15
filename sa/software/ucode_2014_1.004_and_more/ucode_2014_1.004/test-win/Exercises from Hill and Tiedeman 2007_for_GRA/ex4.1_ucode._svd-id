@@ -1,0 +1,44 @@
+  "PARAMETER NAME"  "SVD-ID statistic (see _svd for vector contributions to SVD-ID stat)"  "Number of SVD parameters = "        1
+ HK_1             0.5281990701809068    
+ K_RB             0.1060415911743752E-04
+ VK_CB            0.2034627379555484E-04
+ HK_2             0.3618880022836688E-01
+ RCH_1            0.2340120081733162    
+ RCH_2            0.2015691709844967    
+ 
+  "If a different SVDNumber is selected, SVD-ID statistic would be:"
+  "PARAMETER NAME"  "SVD-ID statistic "  "Number of SVD parameters = "        2
+ HK_1             0.5598221653540120    
+ K_RB             0.9470843266895739E-04
+ VK_CB            0.1508081272823901E-02
+ HK_2             0.2171006241066228    
+ RCH_1            0.5333104604092446    
+ RCH_2            0.6881639604246271    
+  "PARAMETER NAME"  "SVD-ID statistic "  "Number of SVD parameters = "        3
+ HK_1             0.9872390420241337    
+ K_RB             0.1140613603974981E-03
+ VK_CB            0.1508112518526262E-02
+ HK_2             0.2202541223984735    
+ RCH_1            0.9589362826714762    
+ RCH_2            0.8319483790269928    
+  "PARAMETER NAME"  "SVD-ID statistic "  "Number of SVD parameters = "        4
+ HK_1             0.9927920413373615    
+ K_RB             0.4236078368647299E-02
+ VK_CB            0.4661110229453130    
+ HK_2             0.6200129039076092    
+ RCH_1            0.9854402701213448    
+ RCH_2            0.9314076833197240    
+  "PARAMETER NAME"  "SVD-ID statistic "  "Number of SVD parameters = "        5
+ HK_1             0.9997959597688464    
+ K_RB             0.5193286930182944E-02
+ VK_CB            0.9995339043196907    
+ HK_2             0.9960607886586774    
+ RCH_1            0.9998902501378983    
+ RCH_2            0.9995258101847035    
+  "PARAMETER NAME"  "SVD-ID statistic "  "Number of SVD parameters = "        6
+ HK_1             0.9999999999999998    
+ K_RB              1.000000000000001    
+ VK_CB            0.9999999999999999    
+ HK_2             0.9999999999999992    
+ RCH_1             1.000000000000001    
+ RCH_2            0.9999999999999998    

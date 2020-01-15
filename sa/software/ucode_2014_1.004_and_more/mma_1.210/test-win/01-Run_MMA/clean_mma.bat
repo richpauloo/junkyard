@@ -1,0 +1,11 @@
+del testmma_ext._*
+del testmma_ext.#* 
+del testmma_min._*
+del testmma_min.#* 
+del testmma_pri._*
+del testmma_pri.#*
+del testmma_primix._*
+del testmma_primix.#*
+del testmma_modprob._*
+del testmma_modprob.#*
+del *.bak

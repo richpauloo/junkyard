@@ -1,0 +1,271 @@
+ 
+  Reading input from file: 02-ucode-prediction.in
+ 
+ 
+  ******************************************************************************
+  ******************************************************************************
+ 
+                Output from program UCODE_2014, Version:   1.003
+ 
+               Constructed using the JUPITER API, Version:  1.7.3
+ 
+  ******************************************************************************
+  ******************************************************************************
+ 
+ 
+ -------------------------------------------------------------------------------
+  ECHO UCODE CONTROLS INPUT:
+ 
+  VERBOSE =  0
+ 
+  PREDICTION WILL BE PERFORMED
+  THE FOLLOWING FILES WILL BE WRITTEN
+  _p contains predictions; _pv prediction variance
+  _gmp contains prediction names by group
+  _dmp contains the number of prediction groups and the
+   number of parameters considered for the predictive run
+  _spu unscaled sensitivities
+  _spsr _spsp _sppr & _sppp WILL BE WRITTEN, see the UCODE
+  manual for descriptions of these scaled sensitivities
+ 
+  OPTIMIZATION IS NOT PERFORMED DURING PREDICTION
+  MODEL NAME =   example
+  MODEL LENGTH UNITS =   NA
+  MODEL TIME UNITS =   NA
+  MODEL MASS UNITS =   NA
+ 
+  OPTIMIZATION WILL NOT BE PERFORMED
+  NONLINEAR INTERVALS WILL NOT BE PERFORMED (BY DEFAULT)
+  SENSITIVITIES WILL BE CALCULATED
+  DATA EXCHANGE FILES WILL BE PRODUCED
+
+
+ ECHO MODEL COMMAND LINES:
+
+ Command ID    Purpose       Command Line
+ ------------  ------------  --------------------------------------------------
+ modflow-pred  Forward       ..\..\mf2k-files\predictions\tc1.bat
+--------------------------------------------------------------------------------
+
+
+ PREDICTIONS
+  Total number of predictions read----------     9
+  Number of directly extracted predictions--     9
+  Number of predictions to be derived-------     0
+  Number of predictions to be used----------     9
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+  PRIOR EQUATIONS
+
+  # of PRIOR EQUATIONS = 1
+
+   NAME                       EQUATION
+
+   PRIOR_POR_1&2              POR_1&2
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+               NUM. OF         PLOT     WEIGHT    COV. MATRIX,
+ GROUP NAME    MEMBERS  USE?  SYMBOL  MULTIPLIER  IF CORRELATED
+ ------------  -------  ----  ------  ----------  -------------
+  
+  
+ PRIOR INFORMATION
+  (TRANSFORMED PARAMETERS AND WEIGHTS ARE REPORTED IN NATURAL LOG SPACE)
+
+ NAME                  GROUP         VALUE         WEIGHT
+ --------------------  ------------  ------------  ------------
+ PRIOR_POR_1&2         DefaultPrior   0.33000        1111.1    
+ COMPRESSEDMATRIX Prior Weight
+            1            1            1
+            1    0.1111111111111111D+04
+ COMPRESSEDMATRIX Prior Weight
+            1            1            1
+            1    0.3333333333333334D+02
+
+--------------------------------------------------------------------------------
+
+ PARAMETER INFORMATION READ FROM INPUT:
+
+ No.  Param. name     Group        Value       Lower value   Upper value    Adj?
+ ---- ------------ ------------  ------------  ------------  ------------  -----
+    1 RCH_1        DefaultPar     47.4706       30.0000       80.0000       Y
+    2 RCH_2        DefaultPar     38.5035       20.0000       60.0000       Y
+    3 K_RB         DefaultPar    1.169105E-03  1.200000E-04  1.200000E-02   Y
+    4 HK_1         DefaultPar    4.619068E-04  3.000000E-05  3.000000E-03   Y
+    5 VK_CB        DefaultPar    9.899981E-08  1.000000E-08  1.000000E-06   Y
+    6 HK_2         DefaultPar    1.533223E-05  4.000000E-06  4.000000E-04   Y
+    7 POR_1&2      DefaultPar    0.330000      0.270000      0.390000       Y
+
+ No.  Param. name   LN   SCALEPVAL   PERTURB    MAXCHANGE    TOLPAR    SVDSET
+ ---- ------------  --  ----------  ----------  ---------  ---------    ------
+    1 RCH_1          0   1.000E-02   1.000E-02   2.00      1.000E-02          0
+    2 RCH_2          0   1.000E-02   1.000E-02   2.00      1.000E-02          0
+    3 K_RB           0   1.000E-06   1.000E-02   2.00      1.000E-02          0
+    4 HK_1           0   1.000E-07   1.000E-02   2.00      1.000E-02          0
+    5 VK_CB          0   1.000E-10   1.000E-02   2.00      1.000E-02          0
+    6 HK_2           0   1.000E-08   1.000E-02   2.00      1.000E-02          0
+    7 POR_1&2        0   3.300E-02   1.000E-02   2.00      1.000E-02          0
+
+ INFORMATION FOR ADJUSTABLE PARAMETERS READ FROM INPUT:
+
+ Param. name     Group          Value       Lower value    Upper value  Par. no.
+ ------------ ------------  -------------  -------------  -------------  -------
+ RCH_1        DefaultPar      47.4706        30.0000        80.0000           1
+ RCH_2        DefaultPar      38.5035        20.0000        60.0000           2
+ K_RB         DefaultPar     1.169105E-03   1.200000E-04   1.200000E-02       3
+ HK_1         DefaultPar     4.619068E-04   3.000000E-05   3.000000E-03       4
+ VK_CB        DefaultPar     9.899981E-08   1.000000E-08   1.000000E-06       5
+ HK_2         DefaultPar     1.533223E-05   4.000000E-06   4.000000E-04       6
+ POR_1&2      DefaultPar     0.330000       0.270000       0.390000           7
+
+               Sens
+ Param. name   Method  LN   SCALEPVAL   PERTURB    MAXCHANGE    TOLPAR    SVDSET
+ ------------  ------  --  ----------  ----------  ---------  ----------  ------
+ RCH_1             2    0   1.000E-02   1.000E-02   2.00       1.000E-02      0
+ RCH_2             2    0   1.000E-02   1.000E-02   2.00       1.000E-02      0
+ K_RB              2    0   1.000E-06   1.000E-02   2.00       1.000E-02      0
+ HK_1              2    0   1.000E-07   1.000E-02   2.00       1.000E-02      0
+ VK_CB             2    0   1.000E-10   1.000E-02   2.00       1.000E-02      0
+ HK_2              2    0   1.000E-08   1.000E-02   2.00       1.000E-02      0
+ POR_1&2           2    0   3.300E-02   1.000E-02   2.00       1.000E-02      0
+ WARNING:
+ 
+ UCODE_2014 is designed for problems that have fewer adjustable parameters 
+   than observations. The current problem has more adjustable parameters than 
+   observations. UCODE_2014 will execute one forward run and evaluate the 
+   residuals for the current observations, it will also calculate 
+   sensitivities and some of the resulting statistics if sensitivities=yes in 
+   the UCODE_Control_Data input block. However, the problem will need to be 
+   re-posed before optimizing parameters with UCODE_2014.
+ 
+
+********************************************************************************
+ END ECHO OF INPUT - REPORT RESULTS OF SIMULATION
+********************************************************************************
+
+ Substituting Optimal parameter values for predictions: 
+  - indicates parameter was not adjustable
+  ! indicates parameter was omitted due to insensitivity or bounding contraints
+ RCH_1        RCH_2        K_RB         HK_1         VK_CB        HK_2        
+    47.47        38.50       0.1169E-02   0.4619E-03   0.9900E-07   0.1533E-04
+ HK_2         POR_1&2     
+   0.1533E-04   0.3300    
+
+  Process Model Run #:      1
+
+ CALCULATING PREDICTION SENSITIVITIES FOR OPTIMAL PARAMETERS 
+
+ Method of obtaining sensitivities is: PERTURBATION SENSITIVITY
+
+  Process Model Run #:      2
+
+  Process Model Run #:      3
+
+  Process Model Run #:      4
+
+  Process Model Run #:      5
+
+  Process Model Run #:      6
+
+  Process Model Run #:      7
+
+  Process Model Run #:      8
+
+  Process Model Run #:      9
+
+  Process Model Run #:     10
+
+  Process Model Run #:     11
+
+  Process Model Run #:     12
+
+  Process Model Run #:     13
+
+  Process Model Run #:     14
+
+  Process Model Run #:     15
+
+
+ ****************************************************
+ ****************************************************
+
+  VIEW PREDICTION SCALED SENSITIVITIES IN _sp* files 
+  described in the UCODE user's manual
+
+ ****************************************************
+ ****************************************************
+
+
+
+ PREDICTION SUMMARY STATISTICS:
+
+   == SUMMARY STATISTICS FOR PREDICTION GROUPS ==
+
+
+ ------------------  ------------------  ------------------  ------------------
+     GROUP NAME           LARGEST             SMALLEST            AVERAGE
+ ------------------  ------------------  ------------------  ------------------
+   pred-x                 15156.38            9797.618            12741.09    
+   pred-y                 5382.888            1609.381            3111.389    
+   pred-z                 89.37248            46.33025            66.13672    
+
+
+ ------------------  ------------------  ------------------  ------------------
+     GROUP NAME           DIFF-MAX            DIFF-MIN            DIFF-AVG
+ ------------------  ------------------  ------------------  ------------------
+   pred-x                 14812.38            4102.618            9984.426    
+   pred-y                 1518.888            1500.381            1506.722    
+   pred-z                 78.77248            7.469750            37.21656    
+
+
+ ------------------  ------------------  ------------------  ------------------
+     GROUP NAME          %DIFF-MAX           %DIFF-MIN           %DIFF-AVG
+ ------------------  ------------------  ------------------  ------------------
+   pred-x                 4305.924            72.03895            1624.244    
+   pred-y                 1376.496            39.30870            531.4236    
+   pred-z                 743.1366            13.88429            275.0458    
+
+
+ ------------------  ------------------  ------------------  ------------------
+     GROUP NAME           # < REF            # > REF
+ ------------------  ------------------  ------------------  ------------------
+   pred-x                        0                   3
+   pred-y                        0                   3
+   pred-z                        1                   2
+
+
+     *INTERPRETING STATISTICS FOR PREDICTION GROUPS*           
+
+  Statistics are presented for each PREDICTION GROUP             
+    Statistics are of three types:                               
+                                                                 
+     ABSOLUTE    - LARGEST, SMALLEST, AVERAGE                    
+     DEVIATIONAL - deviation from user specified reference value 
+                   DIFF-MAX, DIFF-MIN, DIFF-AVG                  
+     RELATIVE    - % deviation relative to reference value       
+                   %DIFF-MAX, %DIFF-MIN, %-DIFF-AVG            
+                                                                 
+  This summary table can be used to indicate the deviation of    
+  simulated predictions from reference values. HOWEVER - if      
+  there is no supportable basis for specifying a reference       
+  value, DEVIATIONAL and RELATIVE statistics are meaningless.    
+  THUS use only ABSOLUTE statistics for PREDICTIONS.             
+  (Refer to MOD-PREDICT documentation for discussion, (Tonkin et 
+  al., 2003, USGS OFR03-385)).                                   
+
+
+  NUMBER OF PROCESS MODEL RUNS CONDUCTED FOR THIS ANALYSIS:      15
+
+********************************************************************************
+               Normal termination of UCODE_2014,   Version:   1.003
+********************************************************************************
+
+
+
+ Run end date and time (yyyy/mm/dd hh:mm:ss): 2016/01/31 14:07:09
+ Elapsed run time:  1.140 Seconds
+

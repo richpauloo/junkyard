@@ -1,0 +1,15 @@
+
+                                 MODFLOW-2000
+   U.S. GEOLOGICAL SURVEY MODULAR FINITE-DIFFERENCE GROUND-WATER FLOW MODEL
+                            Version 1.17.01 09/22/2006                      
+
+Using NAME file: ..\..\mf2k-files\predictions\tc1.nam                                                                                                                                                                    
+Run start date and time (yyyy/mm/dd hh:mm:ss): 2016/01/31 14:07:09
+
+
+  TOTAL SUM OF SQUARED, WEIGHTED RESIDUALS: 0.214E+04
+
+Run end date and time (yyyy/mm/dd hh:mm:ss): 2016/01/31 14:07:09
+Elapsed run time:  0.020 Seconds
+
+Normal termination of MODFLOW-2000

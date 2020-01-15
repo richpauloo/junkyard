@@ -1,0 +1,56 @@
+#
+# -------------------------
+# BASIC OPTIONS INFORMATION
+# -------------------------
+#
+BEGIN OPTIONS KEYWORDS
+  MODE = PPR
+  PREDGROUPS = NO
+  VERBOSE = 3
+  CORRELTHRESH = .50
+  PERCENTREDUC = 10
+  ParGroups = No
+END OPTIONS
+#
+# -------------------------
+# INPUT FILES INFORMATION
+# -------------------------
+#
+BEGIN READ_FILES KEYWORDS
+  DMFNAM =    ModelB-SA-AllActive-WithPrior_ucode._dm          model data file
+  DMPFNAM =   ModelB-Prediction_ucode._dmp                     model data file
+  SUFNAM =    ModelB-SA-AllActive-WithPrior_ucode._su          existing observations sensitivity file
+  WTFNAM =    ModelB-SA-AllActive-WithPrior_ucode._wt          existing observations weight file
+  SPUFNAM =   ModelB-Prediction_ucode._spu                     prediction sensitivities file
+  suprifnam = ModelB-SA-AllActive-WithPrior_ucode._supri       sensitivities for prior information
+  wtprifnam = ModelB-SA-AllActive-WithPrior_ucode._wtpri       weights for prior information
+END READ_FILES KEYWORDS
+#
+# -------------------------
+# OBSERVATION INFORMATION
+# -------------------------
+#
+BEGIN PPR_PARAMETERS TABLE
+  NROW=8  NCOL=1     COLUMNLABELS
+  ParName   
+ HK_1_1 
+ HK_1_2 
+ HK_2   
+ VANI   
+ VK_CB  
+ K_RB   
+ RCH_1  
+ RCH_2  
+END PPR_PARAMETERS TABLE
+#
+# -------------------------
+# PREDICTION INFORMATION
+# -------------------------
+#
+BEGIN PREDICTION_DATA TABLE
+  NROW = 3 NCOL = 1 COLUMNLABELS
+  PREDNAME   
+  PredDDSE_2     
+  PredHdWell_2   
+  FlowPred_2     
+END PREDICTION_DATA TABLE

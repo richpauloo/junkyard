@@ -1,0 +1,98 @@
+# UCODE Main Input File for a forward run.
+# This run can generate _wt file which may be used by MCMC run.
+#
+# ------------------------------
+# UCODE-OPTION INFORMATION
+# ------------------------------
+
+BEGIN OPTIONS KEYWORDS
+  Verbose= 0
+END OPTIONS
+
+
+# ------------------------------
+# UCODE-CONTROL INFORMATION
+# ------------------------------
+
+BEGIN UCODE_CONTROL_DATA KEYWORDS
+  ModelName=        HO
+  ModelLengthUnits= m
+  ModelMassUnits=   NA
+  ModelTimeUnits=   d 
+#Performance -- forward occurs if nothing else has a yes
+  MCMC=no               # run MCMC simulation: yes/no
+END UCODE_CONTROL_DATA
+
+
+# --------------------------------
+# COMMAND FOR APPLICATION MODEL(S)
+# --------------------------------
+
+BEGIN MODEL_COMMAND_LINES KEYWORDS
+  Command='RunMF.bat'
+  Purpose=forward
+  CommandId='MODFLOW 2005'
+END MODEL_COMMAND_LINES
+
+
+# ------------------------------------
+# PARAMETER INPUT BLOCK
+# ------------------------------------
+
+BEGIN Parameter_Data TABLE
+Nrow=6   Ncol=3   COLUMNLABELS
+ParamName      StartValue   Adjustable
+  LAKERCH     	  1.0d-4      yes         		 
+  KRB0            1.0d3	      yes   	  
+  RCH             1.0d-4      yes   	  
+  KV          	  1.0d-4      yes     	  
+  K1              1.0d-0      yes   	  
+  VANI1           1.0d-1      yes   	  
+END Parameter_Data
+
+
+# -----------------------
+# OBSERVATION INFORMATION
+# -----------------------
+ 
+BEGIN OBSERVATION_GROUPS TABLE
+  nrow=   3   ncol=3  columnlabels
+  GroupName       PlotSymbol    CovMatrix  
+         1          1	        CovObsHead
+         2          2	        CovObsFlow
+         3          3               
+END OBSERVATION_GROUPS
+ 
+BEGIN OBSERVATION_DATA FILES
+  HO.obs
+END OBSERVATION_DATA
+
+
+# ---------------------------------------------------------------------------------------
+# MATRIX FILES FOR COVARIANCE MATRIX OF MULTINORMAL PRIOR AND CORRELATED OBSERVATION ERRORS
+# ---------------------------------------------------------------------------------------
+
+BEGIN MATRIX_FILES TABLE
+# The matrix_files input block should be provided after all the input blocks except the model_input and model_output blocks. 
+  nrow= 2   ncol= 2  columnlabels
+  MatrixFile              NMatrices
+  obsmatrix_head.dat         1
+  obsmatrix_flow.dat         1
+END MATRIX_FILES
+
+
+# -----------------------------
+# APPLICATION MODEL INFORMATION
+# -----------------------------
+
+BEGIN MODEL_INPUT_FILES	KEYWORDS
+  modinfile=HOmodel_forward\HO.pvl
+  templatefile=HO.tpl
+END MODEL_INPUT_FILES
+
+BEGIN MODEL_OUTPUT_FILES  KEYWORDS
+  modoutfile=HOmodel_forward\HO._obsout
+  instructionfile=HO.inst
+  category=obs
+END MODEL_OUTPUT_FILES
+

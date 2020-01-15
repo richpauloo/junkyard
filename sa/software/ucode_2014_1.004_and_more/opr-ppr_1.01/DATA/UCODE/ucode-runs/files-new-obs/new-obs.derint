@@ -1,0 +1,15 @@
+..\..\mf2k-files\new-obs\tc1._su
+1
+2  6
+row/dep
+"(20x,6f15.0)"
+PARAMETERS
+RCH_1       
+RCH_2       
+K_RB        
+HK_1        
+VK_CB       
+HK_2        
+DEPENDENTS
+newhead
+newflow

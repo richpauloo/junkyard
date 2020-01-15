@@ -1,0 +1,11 @@
+Directory "05-ModelB-SensAnalysis"
+
+This directory contains files for a UCODE sensitivity run of Model B.
+This model is described in Chapter 9 of the UCODE_2014 documentation.
+
+_01-RunUcode_ModelB-SA-AllActive-NoPrior conducts a post-calibration 
+sensitivity run for Model B, with the optimal estimates from the
+Model B calibration, with no prior, and with all parameters activated. 
+Output from this run is used to plot the composite scaled sensitivities
+(CSS) in Figure 25b and the parameter correlation coefficients (PCC)
+in Figure 25c.

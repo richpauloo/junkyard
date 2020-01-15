@@ -1,0 +1,11 @@
+BEGIN PARAMETER_DATA TABLE
+#     1       2           3         4          5         6         7        8        9        10      
+  nrow=6  ncol=10 columnlabels
+paramname STARTVALUE lowervalue uppervalue scalepval perturbamt transform TOLPAR adjustable senmethod 
+  RCH_1       63.072     30.0     80.0      1.0E-2      0.01       no      0.01     yes         0     
+  RCH_2       31.536     20.0     60.0      1.0E-2      0.01       no      0.01     yes         0     
+  K_RB       1.2E-3     1.2E-4   1.2E-2     1.0E-6      0.01       no      0.01     yes         0     
+  HK_1       3.0E-4     3.0E-5   3.0E-3     1.0E-7      0.01       no      0.01     yes         0     
+  VK_CB      1.0E-7     1.0E-8   1.0E-6     1.0E-10     0.01       no      0.01     yes         0     
+  HK_2       4.0E-5     4.0E-6   4.0E-4     1.0E-8      0.01       no      0.01     yes         0     
+END PARAMETER_DATA

@@ -1,0 +1,90 @@
+# -------------------------
+# UCODE INPUT EXAMPLE 1
+# -------------------------
+
+BEGIN Options	KEYWORDS
+  Verbose=0
+  Derivatives_Interface=..\files-regression\existing-obs.derint
+END Options
+
+# ------------------------------
+# UCODE-CONTROL INFORMATION
+# ------------------------------
+
+BEGIN UCODE_CONTROL_DATA KEYWORDS
+ModelName=example
+#Performance
+  optimize=yes             # estimate parameters: yes/no
+#Printing and output files
+END UCODE_CONTROL_DATA 
+
+# ------------------------------
+# REGRESSION-CONTROL INFORMATION
+# ------------------------------
+
+BEGIN REG_GN_CONTROLS KEYWORDS
+tolpar=0.01                # GN param conv crit. Also see parameter blocks
+tolsosr=0.0                # GN fit-change conv criteria. 
+maxiter=10                 # maximum # of Gauss-Newton updates
+maxchange=2.0              # max frac param change for GN updates
+maxchangerealm=regression  # criteria apply based on log-transform
+END REG_GN_CONTROLS 
+
+# --------------------------------
+# COMMAND FOR APPLICATION MODEL(S)
+# --------------------------------
+
+BEGIN MODEL_COMMAND_LINES FILES
+..\files-regression\obs-fwd-der.command
+END MODEL_COMMAND_LINES
+
+# ---------------------
+# PARAMETER INFORMATION
+# ---------------------
+
+BEGIN PARAMETER_DATA FILES
+..\files-regression\ss.params
+END PARAMETER_DATA 
+
+# -----------------------
+# OBSERVATION INFORMATION
+# -----------------------
+
+BEGIN OBSERVATION_GROUPS FILES
+..\files-regression\groups.obs
+END OBSERVATION_GROUPS
+
+BEGIN OBSERVATION_DATA FILES
+..\files-regression\head.obs
+..\files-regression\flow.obs
+END OBSERVATION_DATA 
+
+# -----------------------
+# PRIOR INFORMATION
+# -----------------------
+
+BEGIN PRIOR_INFORMATION_GROUPS KEYWORDS
+groupname=prior    useflag=yes   plotsymbol=10
+END PRIOR_INFORMATION_GROUPS
+
+BEGIN LINEAR_PRIOR_INFORMATION TABLE
+nrow=2 ncol=5  columnlabels  groupname=prior
+priorname      equation   PriorInfoValue    Statistic  StatFlag
+PRIOR_VK_CB    VK_CB           1.0E-7         0.3        CV
+PRIOR_K_RB     K_RB            1.2E-3         0.3        CV
+END LINEAR_PRIOR_INFORMATION
+
+# -----------------------------
+# APPLICATION MODEL INFORMATION
+# -----------------------------
+
+BEGIN MODEL_INPUT_FILES	KEYWORDS
+  modinfile=..\..\mf2k-files\existing-obs\tc1.sen  
+  templatefile=..\files-regression\tc1.sen.tpl
+END MODEL_INPUT_FILES
+
+BEGIN MODEL_OUTPUT_FILES  KEYWORDS
+  modoutfile=..\..\mf2k-files\existing-obs\tc1._os  
+  instructionfile=..\files-regression\obs.instructions   
+  category=obs
+END MODEL_OUTPUT_FILES

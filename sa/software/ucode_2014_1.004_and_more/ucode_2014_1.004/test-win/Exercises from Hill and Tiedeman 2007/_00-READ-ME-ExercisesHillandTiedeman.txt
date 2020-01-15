@@ -1,0 +1,31 @@
+Directory "Exercises from Hill and Tiedeman 2007"
+
+This directory contains files for conducting UCODE forward,
+sensitivity analysis, and parameter estimation runs, and a
+residual analysis run, for selected exercises of the
+textbook "Effective Groundwater Model Calibration"
+by Mary C. Hill and Claire R. Tiedeman (Wiley, 2007). The MODFLOW
+model used for the exercises is described on p. 21-25 of Hill and Tiedeman.
+
+_01-Forward-ex3.3_RunUcode.bat performs a UCODE forward run
+with the starting parameter values. This is the run of 
+exercise 3.3 on p. 40 of Hill and Tiedeman.
+
+_02-Sensitivity-ex4.2_RunUcode.bat performs a UCODE sensitivity
+analysis run with the starting parameter values. This is the run
+of exercise 4.1 on p. 60 of Hill and Tiedeman.
+
+_03-Regression-ex5.2_RunUcode.bat performs a UCODE regression 
+run to estimate the optimal parameter values. This is the run 
+of exercise 5.2c on p. 90 of Hill and Tiedeman.
+
+_04-Analysis-ex6.2e-residual_analysis.bat performs a 
+Residual_Analysis.exe run to (i) produce data for making graphs of 
+independent and correlated random numbers, and (ii) compute
+Cook's D and DFBETAS for the calibrated model. Exercise 6.2e on
+p. 119 of Hill and Tiedeman uses the output from (i).
+Exercise 7.1c on p. 146 uses the output from (ii).  
+
+This directory also contains the ModelMuse file for the flow model,
+ex3.3.gpt. ModelMuse can be downloaded from:
+http://water.usgs.gov/nrp/gwsoftware/ModelMuse/ModelMuse.html

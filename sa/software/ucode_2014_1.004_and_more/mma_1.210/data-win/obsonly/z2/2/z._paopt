@@ -1,0 +1,6 @@
+  "PARAMETER"  "OPTIMAL VALUE" "LOG TRANSFORM Native=0 Log=1" "PINC"
+ Kx1                  6.2859037386585541E+00    1    1
+ Kx5                  3.6118454041406501E+01    1    1
+ RCH                  8.3637286735823964E-04    0    1
+ KrMain               1.0000000000000001E-01    1   -1
+ KrTrib               2.0000000000000001E-01    1   -1

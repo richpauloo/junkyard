@@ -1,0 +1,5 @@
+ "Decomposition of the CSS (with prior if used in the regression) using SVD of the XTwX matrix scaled by parameter values and the number of observations plus the number of prior information equations"
+ "PARAMETER NAME" "COMPOSITE SCALED SENSITIVITY WITH PRIOR" "FROM SINGULAR VECTOR      1" "FROM SINGULAR VECTOR      2" "FROM SINGULAR VECTOR      3"
+ Kx1               4.416176256693422                         4.057339216691983            0.3217829322054262E-01        0.3266587467808982    
+ Kx5               7.993982510217267                         7.272750627480692            0.7143909259771365            0.6840956759443581E-02
+ RCH               24.84657221429265                         24.82023165448491            0.2562941550320122E-01        0.7111443045361416E-03

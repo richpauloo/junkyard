@@ -1,0 +1,196 @@
+ 
+  Reading input from file: zpredict.in
+ 
+ 
+  ******************************************************************************
+  ******************************************************************************
+ 
+                Output from program UCODE_2005, Version:   1.023
+ 
+               Constructed using the JUPITER API, Version:  1.5.0
+ 
+  ******************************************************************************
+  ******************************************************************************
+ 
+ 
+ -------------------------------------------------------------------------------
+  ECHO UCODE CONTROLS INPUT:
+ 
+  PREDICTION WILL BE PERFORMED
+  THE FOLLOWING FILES WILL BE WRITTEN
+  _p contains predictions; _pv prediction variance
+  _gmp contains prediction names by group
+  _dmp contains the number of prediction groups and the
+   number of parameters considered for the predictive run
+  _spu unscaled sensitivities
+  _spsr _spsp _sppr & _sppp WILL BE WRITTEN, see the UCODE
+  manual for descriptions of these scaled sensitivities
+ 
+  OPTIMIZATION IS NOT PERFORMED DURING PREDICTION
+  MODEL NAME =   3e
+  MODEL LENGTH UNITS =   NA
+  MODEL TIME UNITS =   NA
+  MODEL MASS UNITS =   NA
+ 
+  OPTIMIZATION WILL NOT BE PERFORMED
+  NONLINEAR INTERVALS WILL NOT BE PERFORMED (BY DEFAULT)
+  SENSITIVITIES WILL BE CALCULATED
+  DATA EXCHANGE FILES WILL BE PRODUCED
+ 
+ 
+  ECHO MODEL COMMAND LINES:
+ 
+  Command ID    Purpose       Command Line
+  ------------  ------------  --------------------------------------------------
+  modflowpredi  forward       mpredict.bat
+  
+
+ PARAMETER INFORMATION:
+
+ No.  Param. name     Group        Value       Lower value   Upper value    Adj?
+ ---- ------------ ------------  ------------  ------------  ------------  -----
+    1 Kx1          DefaultPar     2.80726       1.00000       25.0000       Y
+    2 Kx3          DefaultPar     17.7916       1.00000       25.0000       Y
+    3 Kx5          DefaultPar     45.8915       1.00000       25.0000       Y
+    4 RCH          DefaultPar    8.029212E-04  8.000000E-05  8.000000E-03   Y
+    5 KrMain       DefaultPar    0.100000      1.000000E-02   1.00000       N
+    6 KrTrib       DefaultPar    0.200000      2.000000E-02   2.00000       N
+
+ No.  Param. name   LN   SCALEPVAL   PERTURB    MAXCHANGE    TOLPAR
+ ---- ------------  --  ----------  ----------  ---------  ---------
+    1 Kx1            1   1.000E-06   1.000E-02   2.00      1.000E-02
+    2 Kx3            1   1.300E-05   1.000E-02   2.00      1.000E-02
+    3 Kx5            1   2.500E-05   1.000E-02   2.00      1.000E-02
+    4 RCH            0   8.000E-11   1.000E-02   2.00      1.000E-02
+    5 KrMain         1   1.000E-08   1.000E-02   2.00      1.000E-02
+    6 KrTrib         1   2.000E-08   1.000E-02   2.00      1.000E-02
+  
+
+ INFORMATION FOR ADJUSTABLE PARAMETERS:
+
+ Param. name     Group          Value       Lower value    Upper value  Par. no.
+ ------------ ------------  -------------  -------------  -------------  -------
+ Kx1          DefaultPar      2.80726        1.00000        25.0000           1
+ Kx3          DefaultPar      17.7916        1.00000        25.0000           2
+ Kx5          DefaultPar      45.8915        1.00000        25.0000           3
+ RCH          DefaultPar     8.029212E-04   8.000000E-05   8.000000E-03       4
+
+               Sens
+ Param. name   Method  LN   SCALEPVAL   PERTURB    MAXCHANGE    TOLPAR
+ ------------  ------  --  ----------  ----------  ---------  ----------
+ Kx1               2    1   1.000E-06   1.000E-02   2.00       1.000E-02
+ Kx3               2    1   1.300E-05   1.000E-02   2.00       1.000E-02
+ Kx5               2    1   2.500E-05   1.000E-02   2.00       1.000E-02
+ RCH               2    0   8.000E-11   1.000E-02   2.00       1.000E-02
+
+ PREDICTIONS
+  Total number of predictions read----------    22
+  Number of directly extracted predictions--    22
+  Number of predictions to be derived-------     0
+  Number of predictions to be used----------    22
+
+
+ Number of linear prior-information equations =    0
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+  THERE ARE NO PRIOR EQUATIONS FOR THIS EVALUATION
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+********************************************************************************
+ END ECHO OF INPUT - REPORT RESULTS OF SIMULATION
+********************************************************************************
+
+ 
+ Substituting Optimal parameter values for predictions: 
+  - indicates parameter was not adjustable
+  ! indicates parameter was omitted due to insensitivity or bounding contraints
+ 
+ Kx1          Kx3          Kx5          RCH         -KrMain      -KrTrib      
+    2.807        17.79        45.89       0.8029E-03   0.1000       0.2000    
+-KrTrib      
+   0.2000    
+ 
+
+ CALCULATING PREDICTION SENSITIVITIES FOR OPTIMAL PARAMETERS 
+
+ Method of obtaining sensitivities is: PERTURBATION SENSITIVITY
+
+
+ ****************************************************
+ ****************************************************
+
+  VIEW PREDICTION SCALED SENSITIVITIES IN _sp* files 
+  described in Chapter 14 of the UCODE_2005 report
+
+ ****************************************************
+ ****************************************************
+
+
+
+ PREDICTION SUMMARY STATISTICS:
+
+   == SUMMARY STATISTICS FOR PREDICTION GROUPS ==
+
+
+ ------------------  ------------------  ------------------  ------------------
+     GROUP NAME           LARGEST             SMALLEST            AVERAGE
+ ------------------  ------------------  ------------------  ------------------
+   head                   36.75965            11.77864            23.64481    
+   flow                  -3335.933           -3707.886           -3521.909    
+
+
+ ------------------  ------------------  ------------------  ------------------
+     GROUP NAME           DIFF-MAX            DIFF-MIN            DIFF-AVG
+ ------------------  ------------------  ------------------  ------------------
+   head                   35.75965            10.77864            22.64481    
+   flow                   3708.886            3336.933            3522.909    
+
+
+ ------------------  ------------------  ------------------  ------------------
+     GROUP NAME          %DIFF-MAX           %DIFF-MIN           %DIFF-AVG
+ ------------------  ------------------  ------------------  ------------------
+   head                   3575.965            1077.864            2264.481    
+   flow                   370888.6            333693.3            352290.9    
+
+
+ ------------------  ------------------  ------------------  ------------------
+     GROUP NAME           # < REF            # > REF
+ ------------------  ------------------  ------------------  ------------------
+   head                          0                  20
+   flow                          2                   0
+
+
+     *INTERPRETING STATISTICS FOR PREDICTION GROUPS*           
+
+  Statistics are presented for each PREDICTION GROUP             
+    Statistics are of three types:                               
+                                                                 
+     ABSOLUTE    - LARGEST, SMALLEST, AVERAGE                    
+     DEVIATIONAL - deviation from user specified reference value 
+                   DIFF-MAX, DIFF-MIN, DIFF-AVG                  
+     RELATIVE    - % deviation relative to reference value       
+                   %DIFF-MAX, %DIFF-MIN, %-DIFF-AVG            
+                                                                 
+  This summary table can be used to indicate the deviation of    
+  simulated predictions from reference values. HOWEVER - if      
+  there is no supportable basis for specifying a reference       
+  value, DEVIATIONAL and RELATIVE statistics are meaningless.    
+  THUS use only ABSOLUTE statistics for PREDICTIONS.             
+  (Refer to MOD-PREDICT documentation for discussion, (Tonkin et 
+  al., 2003, USGS OFR03-385)).                                   
+
+
+  NUMBER OF PROCESS MODEL RUNS CONDUCTED FOR THIS ANALYSIS:       9
+
+********************************************************************************
+             Normal termination of UCODE,   Version:   1.023
+********************************************************************************
+
+
+
+ Run end date and time (yyyy/mm/dd hh:mm:ss): 2011/08/31 16:40:23
+ Elapsed run time:  1.961 Seconds
+

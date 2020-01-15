@@ -1,0 +1,30 @@
+Directory "07-ModelB-opr-add"
+
+This directory contains files for two runs of the program OPR-PPR with 
+mode equal to OPRADD. In one run, potential new observations are considered
+individually. In the other, groups of potential new observations are
+considered. The directory also includes batch files for UCODE runs required
+prior to executing OPR-PPR with mode OPRADD.
+
+The necessary output files from several UCODE runs need to be generated and
+then copied into this directory before running the program OPR-PPR. The following 
+batch files accomplish this:
+
+_01-RunUcode_ModelB-SA-AllActive-WithPrior.bat
+_02-RunUcode_ModelB-Prediction.bat
+_03-RunUcode_ModelB-PotentialNewObs-SA.bat 
+
+Run these batch files in sequence. The _01 and _02 batch files run UCODE in
+the directory "02-ModelB-Prediction" under "chap9-FauxValley", and the
+_03 batch file runs UCODE in the directory "ModelB-PotentialNewObs"
+under the current directory. 
+See the READ-ME files in directories "02-ModelB-Prediction" and
+"ModelB-PotentialNewObs" for information about these UCODE runs.
+
+Then, execute the following two batch files that each run OPR-PPR: 
+
+_04-RunOPR-PPR_OprAdd-IndividualObs.bat
+_05-RunOPR-PPR_OprAdd-ObsGroups.bat
+
+Results in the ._OPR files from these two runs are plotted in Figure 27 of
+the UCODE_2014 documentation.

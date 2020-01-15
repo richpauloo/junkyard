@@ -1,0 +1,23 @@
+"GROUP NAME"   "MEMBER NAME"        "PLOT SYMBOL"
+head           o11off                         1
+head           o12off                         1
+head           o13off                         1
+head           o14off                         1
+head           o15off                         1
+head           o21off                         1
+head           o22off                         1
+head           o23off                         1
+head           o24off                         1
+head           o25off                         1
+head           o31off                         1
+head           o32off                         1
+head           o33off                         1
+head           o34off                         1
+head           o35off                         1
+head           o41off                         1
+head           o42off                         1
+head           o43off                         1
+head           o44off                         1
+head           o45off                         1
+flow           qtrib                          2
+flow           qmain                          2

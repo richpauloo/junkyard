@@ -1,0 +1,8 @@
+  "PARAMETER"  "PINC"  "1 IF PRESENT IN EACH OF MPR EQUATIONS"
+ HK_1             1     0 0
+ K_RB             1     1 0
+ VK_CB            1     0 1
+ HK_2             1     0 0
+ RCH_1            1     0 0
+ RCH_2            1     0 0
+ VANI            -1     0 0

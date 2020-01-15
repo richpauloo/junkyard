@@ -1,0 +1,86 @@
+BEGIN Options Keywords
+  Verbose = 3
+END Options
+ 
+BEGIN UCODE_Control_Data Keywords
+  ModelName = Hill_Tiedeman_Example
+  ModelLengthUnits = m
+  ModelTimeUnits = s
+  Sensitivities = True
+  Optimize = True
+END UCODE_Control_Data
+ 
+BEGIN Reg_GN_Controls Keywords
+  MaxIter = 10
+  OmitDefault = 1
+  TolPar = 0.01
+  TolSOSC =0.01
+#  TrustRegion = hookstep
+END Reg_GN_Controls
+ 
+BEGIN Model_Command_Lines Keywords
+  Command = "..\..\bin\mf2005.exe ex3.3.nam"
+    Purpose = Forward
+    CommandID = ForwardModel
+END Model_Command_Lines
+ 
+BEGIN Parameter_Groups Table
+  NROW=5 NCOL=6 COLUMNLABELS
+  GroupName Adjustable Transform MaxChange SenMethod  PerturbAmt
+  HK            Yes     No         2.0          1       0.01
+  RIV           Yes     No         2.0          1       0.01
+  VKCB          Yes     No         2.0          1       0.01
+  RCH           Yes     No         2.0          1       0.01    
+  VANI          No      No         2.0          1       0.01
+END Parameter_Groups
+ 
+BEGIN Parameter_Data Table
+  NROW=7 NCOL=5 COLUMNLABELS
+  ParamName GroupName StartValue LowerValue UpperValue
+  HK_1          HK      0.0003     8E-5         0.0008
+  K_RB          RIV     0.0012     0.0007       0.007
+  VK_CB         VKCB    1E-7       5E-8         5E-7
+  HK_2          HK      4E-5       9E-6         9E-5
+  RCH_1         RCH     63.072     32           126
+  RCH_2         RCH     31.536     16           63
+  VANI          VANI    1          1            1
+END Parameter_Data
+ 
+BEGIN Observation_Groups Table
+  NROW=2 NCOL=4 COLUMNLABELS
+  GroupName Statistic StatFlag PlotSymbol
+  Heads 1.0025 VAR 1
+  RIV_flows 0.1 CV 2
+END Observation_Groups
+ 
+BEGIN Observation_Data Files
+  obs_table.dat
+END Observation_Data
+ 
+BEGIN Prior_Information_Groups Table
+  NROW=1 NCOL=2 COLUMNLABELS
+  GroupName PlotSymbol
+  DefaultPrior 3
+END Prior_Information_Groups
+ 
+BEGIN Linear_Prior_Information Table
+  NROW=2 NCOL=5 COLUMNLABELS
+  PriorName Equation PriorInfoValue Statistic StatFlag
+  K_RB_PR       K_RB    0.0012          0.3     CV
+  VK_CB_PR      VK_CB   1E-7            0.3     CV
+END Linear_Prior_Information
+ 
+BEGIN Model_Input_Files Keywords
+    ModInFile = ex3.3.pval
+    TemplateFile = ex3.3_pval.jtf
+END Model_Input_Files
+ 
+BEGIN Model_Output_Files Keywords
+    ModOutFile = ex3.3.obh_out
+    InstructionFile = ex3.3.obh_out.jif
+    Category = Obs
+  ModOutFile = ex3.3.rvob_out
+    InstructionFile = ex3.3.rvob_out.jif
+    Category = Obs
+END Model_Output_Files
+ 

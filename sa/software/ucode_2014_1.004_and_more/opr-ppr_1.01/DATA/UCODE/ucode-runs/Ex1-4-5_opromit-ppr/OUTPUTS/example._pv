@@ -1,0 +1,10 @@
+  "PREDICTION VARIANCE" "PREDICTION NAME" "PREDICTION GROUP"
+     40000.00000000000     AD10_X               pred-x      
+     40000.00000000000     AD10_Y               pred-y      
+     100.0000000000000     AD10_Z               pred-z      
+     360000.0000000000     AD50_X               pred-x      
+     360000.0000000000     AD50_Y               pred-y      
+     225.0000000000000     AD50_Z               pred-z      
+     1000000.000000000     A100_X               pred-x      
+     1000000.000000000     A100_Y               pred-y      
+     625.0000000000000     A100_Z               pred-z      

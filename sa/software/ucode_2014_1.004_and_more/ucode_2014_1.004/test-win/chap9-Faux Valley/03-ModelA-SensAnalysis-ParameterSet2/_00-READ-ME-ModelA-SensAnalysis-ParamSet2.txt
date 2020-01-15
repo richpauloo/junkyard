@@ -1,0 +1,10 @@
+Directory "03-ModelA-SensAnalysis-ParameterSet2"
+
+This directory contains files for a UCODE sensitivity run of Model A.
+This model is described in Chapter 9 of the UCODE_2014 documentation.
+
+_01-RunUcode_ModelA-SA-ParSet2.bat conducts a sensitivity analysis run at
+parameter values equal to the lower limits of the parameter reasonable ranges.
+Results of this run are shown in plots on p. 107 of the UCODE_2014
+documentation.
+

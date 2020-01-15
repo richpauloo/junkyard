@@ -1,0 +1,60 @@
+ "ORDERED CORRELATED NUMBER"  "STANDARD NORMAL STATISTIC"  "PLOT SYMBOL"  "OBSERVATION or PRIOR NAME"  "RANDOM NUMBER SET NO. "  1
+           -1.42                         -1.77                        1      hd04.ss             
+           -1.08                         -1.20                        1      hd05.ss             
+          -0.440                        -0.870                        1      hd09.ss             
+          -0.171                        -0.615                        1      hd02.ss             
+          -0.122                        -0.396                        1      hd07.ss             
+           0.142E-01                    -0.194                        3      K_RB_PR             
+           0.159E-01                      0.00                        2      Flow01_1            
+           0.335E-01                     0.194                        3      VK_CB_PR            
+           0.164                         0.396                        1      hd06.ss             
+           0.210                         0.615                        1      hd03.ss             
+           0.798                         0.870                        1      hd08.ss             
+           0.857                          1.20                        1      hd01.ss             
+            1.44                          1.77                        1      hd10.ss             
+    
+ "ORDERED CORRELATED NUMBER"  "STANDARD NORMAL STATISTIC"  "PLOT SYMBOL"  "OBSERVATION or PRIOR NAME"  "RANDOM NUMBER SET NO. "  2
+           -2.19                         -1.77                        1      hd05.ss             
+           -1.58                         -1.20                        1      hd08.ss             
+          -0.465                        -0.870                        1      hd01.ss             
+          -0.405                        -0.615                        1      hd07.ss             
+          -0.308                        -0.396                        1      hd02.ss             
+          -0.855E-01                    -0.194                        1      hd04.ss             
+          -0.480E-01                      0.00                        3      K_RB_PR             
+          -0.141E-01                     0.194                        2      Flow01_1            
+           0.498E-02                     0.396                        3      VK_CB_PR            
+           0.184                         0.615                        1      hd09.ss             
+           0.551                         0.870                        1      hd06.ss             
+           0.976                          1.20                        1      hd03.ss             
+            2.58                          1.77                        1      hd10.ss             
+    
+ "ORDERED CORRELATED NUMBER"  "STANDARD NORMAL STATISTIC"  "PLOT SYMBOL"  "OBSERVATION or PRIOR NAME"  "RANDOM NUMBER SET NO. "  3
+           -1.32                         -1.77                        1      hd10.ss             
+           -1.22                         -1.20                        1      hd08.ss             
+           -1.04                        -0.870                        1      hd06.ss             
+          -0.935                        -0.615                        1      hd04.ss             
+          -0.623                        -0.396                        1      hd01.ss             
+          -0.200                        -0.194                        1      hd09.ss             
+          -0.388E-01                      0.00                        3      K_RB_PR             
+           0.137E-04                     0.194                        2      Flow01_1            
+           0.376E-01                     0.396                        3      VK_CB_PR            
+           0.416                         0.615                        1      hd07.ss             
+           0.859                         0.870                        1      hd02.ss             
+            1.69                          1.20                        1      hd03.ss             
+            1.77                          1.77                        1      hd05.ss             
+    
+ "ORDERED CORRELATED NUMBER"  "STANDARD NORMAL STATISTIC"  "PLOT SYMBOL"  "OBSERVATION or PRIOR NAME"  "RANDOM NUMBER SET NO. "  4
+           -1.63                         -1.77                        1      hd02.ss             
+          -0.986                         -1.20                        1      hd01.ss             
+          -0.692                        -0.870                        1      hd03.ss             
+          -0.415                        -0.615                        1      hd05.ss             
+          -0.321                        -0.396                        1      hd07.ss             
+          -0.122                        -0.194                        1      hd09.ss             
+          -0.871E-01                      0.00                        3      K_RB_PR             
+          -0.290E-01                     0.194                        2      Flow01_1            
+          -0.275E-02                     0.396                        3      VK_CB_PR            
+           0.250                         0.615                        1      hd10.ss             
+           0.276                         0.870                        1      hd04.ss             
+            1.01                          1.20                        1      hd08.ss             
+            1.28                          1.77                        1      hd06.ss             
+    

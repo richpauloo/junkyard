@@ -1,0 +1,11 @@
+Directory "04-ModelB-SOS"
+
+This directory contains files for a UCODE sum-of-squares (SOS) 
+surface run of Model B. This model is described in Chapter 9 of
+the UCODE_2014 documentation.
+
+_01-RunUcode_ModelB-SOS.bat conducts a run to calculate the 
+sum of squared weighted residuals objective-function values for 
+sets of parameter values listed in file 01-ModelB-SOS_ucode_sosfile.in.
+Results of this run are shown in Figure 25a.
+

@@ -1,0 +1,2219 @@
+                                  MODFLOW-2005     
+      U.S. GEOLOGICAL SURVEY MODULAR FINITE-DIFFERENCE GROUND-WATER FLOW MODEL
+                            VERSION 1.4.00 11/2/2007
+
+ LIST FILE: tc1-fwd.lst
+                         UNIT   12
+#                                                                                                                                                                                                                                                                                                           
+# Obs-Sen-Pes process input files                                                                                                                                                                                                                                                                           
+
+ OPENING tc1-fwd.ohd
+ FILE TYPE:HOB   UNIT   22   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING tc1-fwd.orv
+ FILE TYPE:RVOB   UNIT   23   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+#                                                                                                                                                                                                                                                                                                           
+# Global input files                                                                                                                                                                                                                                                                                        
+
+ OPENING tc1-fwd.dis
+ FILE TYPE:DIS   UNIT   31   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING tc1-fwd.zon
+ FILE TYPE:ZONE   UNIT   32   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING tc1-fwd.mlt
+ FILE TYPE:MULT   UNIT   33   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+#                                                                                                                                                                                                                                                                                                           
+# Flow process input files                                                                                                                                                                                                                                                                                  
+
+ OPENING tc1-fwd.bas
+ FILE TYPE:BAS6   UNIT   41   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING tc1-fwd.lpf
+ FILE TYPE:LPF   UNIT   42   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING tc1-fwd.wel
+ FILE TYPE:WEL   UNIT   43   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING tc1-fwd.pcg
+ FILE TYPE:PCG   UNIT   44   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING tc1-fwd.oc
+ FILE TYPE:OC   UNIT   45   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING tc1-fwd.ghb
+ FILE TYPE:GHB   UNIT   46   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING tc1-fwd.riv
+ FILE TYPE:RIV   UNIT   47   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ OPENING tc1-fwd.rch
+ FILE TYPE:RCH   UNIT   48   STATUS:OLD    
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+#data                                                                                                                                                                                                                                                                                                       
+
+ OPENING tc1-fwd._os
+ FILE TYPE:DATA   UNIT   49   STATUS:UNKNOWN
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+
+ BAS -- BASIC PACKAGE, VERSION 7, 5/2/2005 INPUT READ FROM UNIT   41
+
+ DISCRETIZATION INPUT DATA READ FROM UNIT   31
+ # DIS file for test case tc1
+ #
+    3 LAYERS        18 ROWS        18 COLUMNS
+    5 STRESS PERIOD(S) IN SIMULATION
+ MODEL TIME UNIT IS SECONDS
+ MODEL LENGTH UNIT IS METERS
+  Confining bed flag for each layer:
+   0   1   0
+
+                     DELR =   1000.00    
+
+                     DELC =   1000.00    
+
+ TOP ELEVATION OF LAYER 1 =   300.000    
+
+
+
+             MODEL LAYER BOTTOM EL. FOR LAYER   1
+ READING ON UNIT   31 WITH FORMAT: (FREE)              
+
+            1           2           3           4           5           6           7           8           9          10
+           11          12          13          14          15          16          17          18
+ ........................................................................................................................
+   1    110.0       140.0       160.0       180.0       200.0       220.0       240.0       260.0       280.0       280.0    
+        280.0       280.0       285.0       285.0       285.0       285.0       285.0       285.0    
+   2    110.0       140.0       160.0       180.0       200.0       220.0       240.0       260.0       280.0       280.0    
+        280.0       280.0       285.0       285.0       285.0       285.0       285.0       285.0    
+   3    110.0       140.0       160.0       180.0       200.0       220.0       240.0       260.0       280.0       280.0    
+        280.0       280.0       285.0       285.0       285.0       285.0       285.0       285.0    
+   4    110.0       140.0       160.0       180.0       200.0       220.0       240.0       260.0       280.0       280.0    
+        280.0       280.0       285.0       285.0       285.0       285.0       285.0       285.0    
+   5    110.0       140.0       160.0       180.0       200.0       220.0       240.0       260.0       280.0       280.0    
+        280.0       280.0       285.0       285.0       285.0       285.0       285.0       285.0    
+   6    110.0       140.0       160.0       180.0       200.0       220.0       240.0       260.0       280.0       280.0    
+        280.0       280.0       285.0       285.0       285.0       285.0       285.0       285.0    
+   7    110.0       140.0       160.0       180.0       200.0       220.0       240.0       260.0       280.0       280.0    
+        280.0       280.0       285.0       285.0       285.0       285.0       285.0       285.0    
+   8    110.0       140.0       160.0       180.0       200.0       220.0       240.0       260.0       280.0       280.0    
+        280.0       280.0       285.0       285.0       285.0       285.0       285.0       285.0    
+   9    110.0       140.0       160.0       180.0       200.0       220.0       240.0       260.0       280.0       280.0    
+        280.0       280.0       285.0       285.0       285.0       285.0       285.0       285.0    
+  10    110.0       140.0       160.0       180.0       200.0       220.0       240.0       260.0       280.0       280.0    
+        280.0       280.0       285.0       285.0       285.0       285.0       285.0       285.0    
+  11    110.0       140.0       160.0       180.0       200.0       220.0       240.0       260.0       280.0       280.0    
+        280.0       280.0       285.0       285.0       285.0       285.0       285.0       285.0    
+  12    110.0       140.0       160.0       180.0       200.0       220.0       240.0       260.0       280.0       280.0    
+        280.0       280.0       285.0       285.0       285.0       285.0       285.0       285.0    
+  13    110.0       140.0       160.0       180.0       200.0       220.0       240.0       260.0       280.0       280.0    
+        280.0       280.0       285.0       285.0       285.0       285.0       285.0       285.0    
+  14    110.0       140.0       160.0       180.0       200.0       220.0       240.0       260.0       280.0       280.0    
+        280.0       280.0       285.0       285.0       285.0       285.0       285.0       285.0    
+  15    110.0       140.0       160.0       180.0       200.0       220.0       240.0       260.0       280.0       280.0    
+        280.0       280.0       285.0       285.0       285.0       285.0       285.0       285.0    
+  16    110.0       140.0       160.0       180.0       200.0       220.0       240.0       260.0       280.0       280.0    
+        280.0       280.0       285.0       285.0       285.0       285.0       285.0       285.0    
+  17    110.0       140.0       160.0       180.0       200.0       220.0       240.0       260.0       280.0       280.0    
+        280.0       280.0       285.0       285.0       285.0       285.0       285.0       285.0    
+  18    110.0       140.0       160.0       180.0       200.0       220.0       240.0       260.0       280.0       280.0    
+        280.0       280.0       285.0       285.0       285.0       285.0       285.0       285.0    
+
+
+
+             MODEL LAYER BOTTOM EL. FOR LAYER   2
+ READING ON UNIT   31 WITH FORMAT: (FREE)              
+
+            1           2           3           4           5           6           7           8           9          10
+           11          12          13          14          15          16          17          18
+ ........................................................................................................................
+   1    100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+        100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+   2    100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+        100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+   3    100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+        100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+   4    100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+        100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+   5    100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+        100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+   6    100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+        100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+   7    100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+        100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+   8    100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+        100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+   9    100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+        100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+  10    100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       120.0       100.0    
+        100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+  11    100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+        100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+  12    100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+        100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+  13    100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+        100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+  14    100.0       100.0       100.0       100.0       100.0       120.0       100.0       100.0       100.0       100.0    
+        100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+  15    100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+        100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+  16    100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+        100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+  17    100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+        100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+  18    100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+        100.0       100.0       100.0       100.0       100.0       100.0       100.0       100.0    
+
+
+
+           BOT. EL. OF QUASI-3D BED FOR LAYER   2
+ READING ON UNIT   31 WITH FORMAT: (FREE)              
+
+            1           2           3           4           5           6           7           8           9          10
+           11          12          13          14          15          16          17          18
+ ........................................................................................................................
+   1    90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+        90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+   2    90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+        90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+   3    90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+        90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+   4    90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+        90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+   5    90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+        90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+   6    90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+        90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+   7    90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+        90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+   8    90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+        90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+   9    90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+        90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+  10    90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       118.8       90.00    
+        90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+  11    90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+        90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+  12    90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+        90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+  13    90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+        90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+  14    90.00       90.00       90.00       90.00       90.00       118.8       90.00       90.00       90.00       90.00    
+        90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+  15    90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+        90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+  16    90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+        90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+  17    90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+        90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+  18    90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+        90.00       90.00       90.00       90.00       90.00       90.00       90.00       90.00    
+
+
+
+             MODEL LAYER BOTTOM EL. FOR LAYER   3
+ READING ON UNIT   31 WITH FORMAT: (FREE)              
+
+            1           2           3           4           5           6           7           8           9          10
+           11          12          13          14          15          16          17          18
+ ........................................................................................................................
+   1    40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+        40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+   2    40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+        40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+   3    40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+        40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+   4    40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+        40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+   5    40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+        40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+   6    40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+        40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+   7    40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+        40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+   8    40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+        40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+   9    40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+        40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+  10    40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       118.0       40.00    
+        40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+  11    40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+        40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+  12    40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+        40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+  13    40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+        40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+  14    40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+        40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+  15    40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+        40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+  16    40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+        40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+  17    40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+        40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+  18    40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+        40.00       40.00       40.00       40.00       40.00       40.00       40.00       40.00    
+
+
+ STRESS PERIOD     LENGTH       TIME STEPS     MULTIPLIER FOR DELT    SS FLAG
+ ----------------------------------------------------------------------------
+        1         1.000000          1                    1.000         SS
+        2         87162.00          1                    1.000         TR
+        3         261486.0          1                    1.000         TR
+        4         522972.0          1                    1.000         TR
+        5        2.3567450E+07      9                    1.200         TR
+
+ COMBINED STEADY-STATE AND TRANSIENT SIMULATION
+
+
+
+ 
+ # MODULAR MODEL - TWO-LAYER EXAMPLE PROBLEM, TEST CASE TC1                      
+ #                                                                               
+ THE FREE FORMAT OPTION HAS BEEN SELECTED
+
+           BOUNDARY ARRAY =              1 FOR LAYER   1
+
+           BOUNDARY ARRAY =              1 FOR LAYER   2
+
+           BOUNDARY ARRAY =              1 FOR LAYER   3
+
+ AQUIFER HEAD WILL BE SET TO  0.0000     AT ALL NO-FLOW NODES (IBOUND=0).
+
+             INITIAL HEAD =   200.000     FOR LAYER   1
+
+             INITIAL HEAD =   200.000     FOR LAYER   2
+
+             INITIAL HEAD =   200.000     FOR LAYER   3
+
+ OUTPUT CONTROL IS SPECIFIED ONLY AT TIME STEPS FOR WHICH OUTPUT IS DESIRED
+ HEAD PRINT FORMAT CODE IS  14    DRAWDOWN PRINT FORMAT CODE IS   0
+ HEADS WILL BE SAVED ON UNIT    0    DRAWDOWNS WILL BE SAVED ON UNIT    0
+
+ ZONE OPTION, INPUT READ FROM UNIT   32
+     1 ZONE ARRAYS
+
+ MULTIPLIER OPTION, INPUT READ FROM UNIT   33
+   3 MULTIPLIER ARRAYS
+
+
+
+            MULT. ARRAY: MULTARR_3 
+ READING ON UNIT   33 WITH FORMAT: (18F3.0)            
+
+          1      2      3      4      5      6      7      8      9     10
+         11     12     13     14     15     16     17     18
+ .........................................................................
+   1     1.0    1.0    2.0    2.0    3.0    3.0    4.0    4.0    5.0    5.0
+         6.0    6.0    7.0    7.0    8.0    8.0    9.0    9.0
+   2     1.0    1.0    2.0    2.0    3.0    3.0    4.0    4.0    5.0    5.0
+         6.0    6.0    7.0    7.0    8.0    8.0    9.0    9.0
+   3     1.0    1.0    2.0    2.0    3.0    3.0    4.0    4.0    5.0    5.0
+         6.0    6.0    7.0    7.0    8.0    8.0    9.0    9.0
+   4     1.0    1.0    2.0    2.0    3.0    3.0    4.0    4.0    5.0    5.0
+         6.0    6.0    7.0    7.0    8.0    8.0    9.0    9.0
+   5     1.0    1.0    2.0    2.0    3.0    3.0    4.0    4.0    5.0    5.0
+         6.0    6.0    7.0    7.0    8.0    8.0    9.0    9.0
+   6     1.0    1.0    2.0    2.0    3.0    3.0    4.0    4.0    5.0    5.0
+         6.0    6.0    7.0    7.0    8.0    8.0    9.0    9.0
+   7     1.0    1.0    2.0    2.0    3.0    3.0    4.0    4.0    5.0    5.0
+         6.0    6.0    7.0    7.0    8.0    8.0    9.0    9.0
+   8     1.0    1.0    2.0    2.0    3.0    3.0    4.0    4.0    5.0    5.0
+         6.0    6.0    7.0    7.0    8.0    8.0    9.0    9.0
+   9     1.0    1.0    2.0    2.0    3.0    3.0    4.0    4.0    5.0    5.0
+         6.0    6.0    7.0    7.0    8.0    8.0    9.0    9.0
+  10     1.0    1.0    2.0    2.0    3.0    3.0    4.0    4.0    5.0    5.0
+         6.0    6.0    7.0    7.0    8.0    8.0    9.0    9.0
+  11     1.0    1.0    2.0    2.0    3.0    3.0    4.0    4.0    5.0    5.0
+         6.0    6.0    7.0    7.0    8.0    8.0    9.0    9.0
+  12     1.0    1.0    2.0    2.0    3.0    3.0    4.0    4.0    5.0    5.0
+         6.0    6.0    7.0    7.0    8.0    8.0    9.0    9.0
+  13     1.0    1.0    2.0    2.0    3.0    3.0    4.0    4.0    5.0    5.0
+         6.0    6.0    7.0    7.0    8.0    8.0    9.0    9.0
+  14     1.0    1.0    2.0    2.0    3.0    3.0    4.0    4.0    5.0    5.0
+         6.0    6.0    7.0    7.0    8.0    8.0    9.0    9.0
+  15     1.0    1.0    2.0    2.0    3.0    3.0    4.0    4.0    5.0    5.0
+         6.0    6.0    7.0    7.0    8.0    8.0    9.0    9.0
+  16     1.0    1.0    2.0    2.0    3.0    3.0    4.0    4.0    5.0    5.0
+         6.0    6.0    7.0    7.0    8.0    8.0    9.0    9.0
+  17     1.0    1.0    2.0    2.0    3.0    3.0    4.0    4.0    5.0    5.0
+         6.0    6.0    7.0    7.0    8.0    8.0    9.0    9.0
+  18     1.0    1.0    2.0    2.0    3.0    3.0    4.0    4.0    5.0    5.0
+         6.0    6.0    7.0    7.0    8.0    8.0    9.0    9.0
+
+  MULT. ARRAY: mlt_rch    =  3.170979E-10
+
+  MULT. ARRAY: FIFTIETH   =  2.000000E-02
+
+
+
+             ZONE ARRAY: ZONES_1   
+ READING ON UNIT   32 WITH FORMAT: (9I8)               
+
+        1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
+ ............................................................................
+   1    1   1   1   1   1   1   1   1   1   2   2   2   2   2   2   2   2   2
+   2    1   1   1   1   1   1   1   1   1   2   2   2   2   2   2   2   2   2
+   3    1   1   1   1   1   1   1   1   1   2   2   2   2   2   2   2   2   2
+   4    1   1   1   1   1   1   1   1   1   2   2   2   2   2   2   2   2   2
+   5    1   1   1   1   1   1   1   1   1   2   2   2   2   2   2   2   2   2
+   6    1   1   1   1   1   1   1   1   1   2   2   2   2   2   2   2   2   2
+   7    1   1   1   1   1   1   1   1   1   2   2   2   2   2   2   2   2   2
+   8    1   1   1   1   1   1   1   1   1   2   2   2   2   2   2   2   2   2
+   9    1   1   1   1   1   1   1   1   1   2   2   2   2   2   2   2   2   2
+  10    1   1   1   1   1   1   1   1   1   2   2   2   2   2   2   2   2   2
+  11    1   1   1   1   1   1   1   1   1   2   2   2   2   2   2   2   2   2
+  12    1   1   1   1   1   1   1   1   1   2   2   2   2   2   2   2   2   2
+  13    1   1   1   1   1   1   1   1   1   2   2   2   2   2   2   2   2   2
+  14    1   1   1   1   1   1   1   1   1   2   2   2   2   2   2   2   2   2
+  15    1   1   1   1   1   1   1   1   1   2   2   2   2   2   2   2   2   2
+  16    1   1   1   1   1   1   1   1   1   2   2   2   2   2   2   2   2   2
+  17    1   1   1   1   1   1   1   1   1   2   2   2   2   2   2   2   2   2
+  18    1   1   1   1   1   1   1   1   1   2   2   2   2   2   2   2   2   2
+
+ LPF -- LAYER-PROPERTY FLOW PACKAGE, VERSION 7, 5/2/2005
+         INPUT READ FROM UNIT   42
+ # LPF input file for test case tc1
+ #
+ HEAD AT CELLS THAT CONVERT TO DRY=  -999.00    
+     9 Named Parameters     
+
+   LAYER FLAGS:
+ LAYER       LAYTYP        LAYAVG         CHANI        LAYVKA        LAYWET
+ ---------------------------------------------------------------------------
+    1             1             0     1.000E+00             1             0
+    2             1             0     1.000E+00             1             0
+    3             1             0     1.000E+00             1             0
+
+   INTERPRETATION OF LAYER FLAGS:
+                        INTERBLOCK     HORIZONTAL    DATA IN
+         LAYER TYPE   TRANSMISSIVITY   ANISOTROPY   ARRAY VKA   WETTABILITY
+ LAYER      (LAYTYP)      (LAYAVG)       (CHANI)      (LAYVKA)      (LAYWET)
+ ---------------------------------------------------------------------------
+    1   CONVERTIBLE      HARMONIC     1.000E+00    ANISOTROPY  NON-WETTABLE
+    2   CONVERTIBLE      HARMONIC     1.000E+00    ANISOTROPY  NON-WETTABLE
+    3   CONVERTIBLE      HARMONIC     1.000E+00    ANISOTROPY  NON-WETTABLE
+
+ WETTING CAPABILITY IS NOT ACTIVE IN ANY LAYER
+
+ PARAMETERS DEFINED IN THE LPF PACKAGE
+
+ PARAMETER NAME:SS_1         TYPE:SS     CLUSTERS:   2
+ Parameter value from package file is:   1.30000E-03
+                LAYER:   1    MULTIPLIER ARRAY: FIFTIETH    ZONE ARRAY: ALL
+                LAYER:   2    MULTIPLIER ARRAY: FIFTIETH    ZONE ARRAY: ALL
+
+ PARAMETER NAME:SY_1         TYPE:SY     CLUSTERS:   2
+ Parameter value from package file is:   0.10000    
+                LAYER:   1    MULTIPLIER ARRAY: FIFTIETH    ZONE ARRAY: ALL
+                LAYER:   2    MULTIPLIER ARRAY: FIFTIETH    ZONE ARRAY: ALL
+
+ PARAMETER NAME:HK_1         TYPE:HK     CLUSTERS:   2
+ Parameter value from package file is:   3.00000E-04
+                LAYER:   1    MULTIPLIER ARRAY: NONE    ZONE ARRAY: ALL
+                LAYER:   2    MULTIPLIER ARRAY: NONE    ZONE ARRAY: ALL
+
+ PARAMETER NAME:VERT_ANI_1   TYPE:VANI   CLUSTERS:   2
+ Parameter value from package file is:    1.0000    
+                LAYER:   1    MULTIPLIER ARRAY: NONE    ZONE ARRAY: ALL
+                LAYER:   2    MULTIPLIER ARRAY: NONE    ZONE ARRAY: ALL
+
+ PARAMETER NAME:VERT_K_CB    TYPE:VKCB   CLUSTERS:   1
+ Parameter value from package file is:   1.00000E-07
+                LAYER:   2    MULTIPLIER ARRAY: NONE    ZONE ARRAY: ALL
+
+ PARAMETER NAME:SS_2         TYPE:SS     CLUSTERS:   1
+ Parameter value from package file is:   2.00000E-04
+                LAYER:   3    MULTIPLIER ARRAY: FIFTIETH    ZONE ARRAY: ALL
+
+ PARAMETER NAME:SY_2         TYPE:SY     CLUSTERS:   1
+ Parameter value from package file is:   2.30000E-02
+                LAYER:   3    MULTIPLIER ARRAY: FIFTIETH    ZONE ARRAY: ALL
+
+ PARAMETER NAME:HK_2         TYPE:HK     CLUSTERS:   1
+ Parameter value from package file is:   4.00000E-05
+                LAYER:   3    MULTIPLIER ARRAY: MULTARR_3    ZONE ARRAY: ALL
+
+ PARAMETER NAME:VERT_ANI_2   TYPE:VANI   CLUSTERS:   1
+ Parameter value from package file is:    1.0000    
+                LAYER:   3    MULTIPLIER ARRAY: NONE    ZONE ARRAY: ALL
+
+    HYD. COND. ALONG ROWS FOR LAYER   1 WILL BE DEFINED BY PARAMETERS
+ (PRINT FLAG=  21)
+
+    HYD. COND. ALONG ROWS is defined by the following parameters:
+ HK_1      
+
+    HYD. COND. ALONG ROWS =  3.000000E-04 FOR LAYER   1
+
+  HORIZ. TO VERTICAL ANI. FOR LAYER   1 WILL BE DEFINED BY PARAMETERS
+ (PRINT FLAG=  21)
+
+  HORIZ. TO VERTICAL ANI. is defined by the following parameters:
+ VERT_ANI_1
+
+  HORIZ. TO VERTICAL ANI. =   1.00000     FOR LAYER   1
+
+         SPECIFIC STORAGE FOR LAYER   1 WILL BE DEFINED BY PARAMETERS
+ (PRINT FLAG=  21)
+
+         SPECIFIC STORAGE is defined by the following parameters:
+ SS_1      
+
+         SPECIFIC STORAGE =  2.600000E-05 FOR LAYER   1
+
+           SPECIFIC YIELD FOR LAYER   1 WILL BE DEFINED BY PARAMETERS
+ (PRINT FLAG=  21)
+
+           SPECIFIC YIELD is defined by the following parameters:
+ SY_1      
+
+           SPECIFIC YIELD =  2.000000E-03 FOR LAYER   1
+
+    HYD. COND. ALONG ROWS FOR LAYER   2 WILL BE DEFINED BY PARAMETERS
+ (PRINT FLAG=  21)
+
+    HYD. COND. ALONG ROWS is defined by the following parameters:
+ HK_1      
+
+    HYD. COND. ALONG ROWS =  3.000000E-04 FOR LAYER   2
+
+  HORIZ. TO VERTICAL ANI. FOR LAYER   2 WILL BE DEFINED BY PARAMETERS
+ (PRINT FLAG=  21)
+
+  HORIZ. TO VERTICAL ANI. is defined by the following parameters:
+ VERT_ANI_1
+
+  HORIZ. TO VERTICAL ANI. =   1.00000     FOR LAYER   2
+
+         SPECIFIC STORAGE FOR LAYER   2 WILL BE DEFINED BY PARAMETERS
+ (PRINT FLAG=  21)
+
+         SPECIFIC STORAGE is defined by the following parameters:
+ SS_1      
+
+         SPECIFIC STORAGE =  2.600000E-05 FOR LAYER   2
+
+           SPECIFIC YIELD FOR LAYER   2 WILL BE DEFINED BY PARAMETERS
+ (PRINT FLAG=  21)
+
+           SPECIFIC YIELD is defined by the following parameters:
+ SY_1      
+
+           SPECIFIC YIELD =  2.000000E-03 FOR LAYER   2
+
+ QUASI3D VERT. HYD. COND. FOR LAYER   2 WILL BE DEFINED BY PARAMETERS
+ (PRINT FLAG=  21)
+
+ QUASI3D VERT. HYD. COND. is defined by the following parameters:
+ VERT_K_CB 
+
+ QUASI3D VERT. HYD. COND. =  1.000000E-07 FOR LAYER   2
+
+    HYD. COND. ALONG ROWS FOR LAYER   3 WILL BE DEFINED BY PARAMETERS
+ (PRINT FLAG=  21)
+
+    HYD. COND. ALONG ROWS is defined by the following parameters:
+ HK_2      
+
+
+              HYD. COND. ALONG ROWS FOR LAYER   3
+
+          1         2         3         4         5         6         7
+          8         9        10        11        12        13        14
+         15        16        17        18
+ ......................................................................
+   1   4.00E-05  4.00E-05  8.00E-05  8.00E-05  1.20E-04  1.20E-04  1.60E-04
+       1.60E-04  2.00E-04  2.00E-04  2.40E-04  2.40E-04  2.80E-04  2.80E-04
+       3.20E-04  3.20E-04  3.60E-04  3.60E-04
+   2   4.00E-05  4.00E-05  8.00E-05  8.00E-05  1.20E-04  1.20E-04  1.60E-04
+       1.60E-04  2.00E-04  2.00E-04  2.40E-04  2.40E-04  2.80E-04  2.80E-04
+       3.20E-04  3.20E-04  3.60E-04  3.60E-04
+   3   4.00E-05  4.00E-05  8.00E-05  8.00E-05  1.20E-04  1.20E-04  1.60E-04
+       1.60E-04  2.00E-04  2.00E-04  2.40E-04  2.40E-04  2.80E-04  2.80E-04
+       3.20E-04  3.20E-04  3.60E-04  3.60E-04
+   4   4.00E-05  4.00E-05  8.00E-05  8.00E-05  1.20E-04  1.20E-04  1.60E-04
+       1.60E-04  2.00E-04  2.00E-04  2.40E-04  2.40E-04  2.80E-04  2.80E-04
+       3.20E-04  3.20E-04  3.60E-04  3.60E-04
+   5   4.00E-05  4.00E-05  8.00E-05  8.00E-05  1.20E-04  1.20E-04  1.60E-04
+       1.60E-04  2.00E-04  2.00E-04  2.40E-04  2.40E-04  2.80E-04  2.80E-04
+       3.20E-04  3.20E-04  3.60E-04  3.60E-04
+   6   4.00E-05  4.00E-05  8.00E-05  8.00E-05  1.20E-04  1.20E-04  1.60E-04
+       1.60E-04  2.00E-04  2.00E-04  2.40E-04  2.40E-04  2.80E-04  2.80E-04
+       3.20E-04  3.20E-04  3.60E-04  3.60E-04
+   7   4.00E-05  4.00E-05  8.00E-05  8.00E-05  1.20E-04  1.20E-04  1.60E-04
+       1.60E-04  2.00E-04  2.00E-04  2.40E-04  2.40E-04  2.80E-04  2.80E-04
+       3.20E-04  3.20E-04  3.60E-04  3.60E-04
+   8   4.00E-05  4.00E-05  8.00E-05  8.00E-05  1.20E-04  1.20E-04  1.60E-04
+       1.60E-04  2.00E-04  2.00E-04  2.40E-04  2.40E-04  2.80E-04  2.80E-04
+       3.20E-04  3.20E-04  3.60E-04  3.60E-04
+   9   4.00E-05  4.00E-05  8.00E-05  8.00E-05  1.20E-04  1.20E-04  1.60E-04
+       1.60E-04  2.00E-04  2.00E-04  2.40E-04  2.40E-04  2.80E-04  2.80E-04
+       3.20E-04  3.20E-04  3.60E-04  3.60E-04
+  10   4.00E-05  4.00E-05  8.00E-05  8.00E-05  1.20E-04  1.20E-04  1.60E-04
+       1.60E-04  2.00E-04  2.00E-04  2.40E-04  2.40E-04  2.80E-04  2.80E-04
+       3.20E-04  3.20E-04  3.60E-04  3.60E-04
+  11   4.00E-05  4.00E-05  8.00E-05  8.00E-05  1.20E-04  1.20E-04  1.60E-04
+       1.60E-04  2.00E-04  2.00E-04  2.40E-04  2.40E-04  2.80E-04  2.80E-04
+       3.20E-04  3.20E-04  3.60E-04  3.60E-04
+  12   4.00E-05  4.00E-05  8.00E-05  8.00E-05  1.20E-04  1.20E-04  1.60E-04
+       1.60E-04  2.00E-04  2.00E-04  2.40E-04  2.40E-04  2.80E-04  2.80E-04
+       3.20E-04  3.20E-04  3.60E-04  3.60E-04
+  13   4.00E-05  4.00E-05  8.00E-05  8.00E-05  1.20E-04  1.20E-04  1.60E-04
+       1.60E-04  2.00E-04  2.00E-04  2.40E-04  2.40E-04  2.80E-04  2.80E-04
+       3.20E-04  3.20E-04  3.60E-04  3.60E-04
+  14   4.00E-05  4.00E-05  8.00E-05  8.00E-05  1.20E-04  1.20E-04  1.60E-04
+       1.60E-04  2.00E-04  2.00E-04  2.40E-04  2.40E-04  2.80E-04  2.80E-04
+       3.20E-04  3.20E-04  3.60E-04  3.60E-04
+  15   4.00E-05  4.00E-05  8.00E-05  8.00E-05  1.20E-04  1.20E-04  1.60E-04
+       1.60E-04  2.00E-04  2.00E-04  2.40E-04  2.40E-04  2.80E-04  2.80E-04
+       3.20E-04  3.20E-04  3.60E-04  3.60E-04
+  16   4.00E-05  4.00E-05  8.00E-05  8.00E-05  1.20E-04  1.20E-04  1.60E-04
+       1.60E-04  2.00E-04  2.00E-04  2.40E-04  2.40E-04  2.80E-04  2.80E-04
+       3.20E-04  3.20E-04  3.60E-04  3.60E-04
+  17   4.00E-05  4.00E-05  8.00E-05  8.00E-05  1.20E-04  1.20E-04  1.60E-04
+       1.60E-04  2.00E-04  2.00E-04  2.40E-04  2.40E-04  2.80E-04  2.80E-04
+       3.20E-04  3.20E-04  3.60E-04  3.60E-04
+  18   4.00E-05  4.00E-05  8.00E-05  8.00E-05  1.20E-04  1.20E-04  1.60E-04
+       1.60E-04  2.00E-04  2.00E-04  2.40E-04  2.40E-04  2.80E-04  2.80E-04
+       3.20E-04  3.20E-04  3.60E-04  3.60E-04
+
+  HORIZ. TO VERTICAL ANI. FOR LAYER   3 WILL BE DEFINED BY PARAMETERS
+ (PRINT FLAG=  21)
+
+  HORIZ. TO VERTICAL ANI. is defined by the following parameters:
+ VERT_ANI_2
+
+  HORIZ. TO VERTICAL ANI. =   1.00000     FOR LAYER   3
+
+         SPECIFIC STORAGE FOR LAYER   3 WILL BE DEFINED BY PARAMETERS
+ (PRINT FLAG=  21)
+
+         SPECIFIC STORAGE is defined by the following parameters:
+ SS_2      
+
+         SPECIFIC STORAGE =  4.000000E-06 FOR LAYER   3
+
+           SPECIFIC YIELD FOR LAYER   3 WILL BE DEFINED BY PARAMETERS
+ (PRINT FLAG=  21)
+
+           SPECIFIC YIELD is defined by the following parameters:
+ SY_2      
+
+           SPECIFIC YIELD =  4.600000E-04 FOR LAYER   3
+
+ WEL -- WELL PACKAGE, VERSION 7, 5/2/2005 INPUT READ FROM UNIT   43
+     1 Named Parameters         2 List entries
+ MAXIMUM OF      2 ACTIVE WELLS AT ONE TIME
+
+
+     1 Well parameters
+
+ PARAMETER NAME:WELLS_TR     TYPE:Q   
+ Parameter value from package file is:   -1.1000    
+   NUMBER OF ENTRIES:      2
+
+ WELL NO.  LAYER   ROW   COL   STRESS FACTOR         
+ ----------------------------------------------------
+      1      1      9     10       1.000    
+      2      2      9     10       1.000    
+
+ RIV -- RIVER PACKAGE, VERSION 7, 5/2/2005 INPUT READ FROM UNIT   47
+ # RIV file for test case tc1
+ #
+     1 Named Parameters        18 List entries
+ MAXIMUM OF     18 ACTIVE RIVER REACHES AT ONE TIME
+
+
+     1 River parameters
+
+ PARAMETER NAME:RIVERS       TYPE:RIV 
+ Parameter value from package file is:   1.20000E-03
+   NUMBER OF ENTRIES:     18
+
+ REACH NO.  LAYER   ROW   COL     STAGE    STRESS FACTOR     BOTTOM EL.         
+ -------------------------------------------------------------------------------
+      1      1      1      1       100.0           1000.           90.00    
+      2      1      2      1       100.0           1000.           90.00    
+      3      1      3      1       100.0           1000.           90.00    
+      4      1      4      1       100.0           1000.           90.00    
+      5      1      5      1       100.0           1000.           90.00    
+      6      1      6      1       100.0           1000.           90.00    
+      7      1      7      1       100.0           1000.           90.00    
+      8      1      8      1       100.0           1000.           90.00    
+      9      1      9      1       100.0           1000.           90.00    
+     10      1     10      1       100.0           1000.           90.00    
+     11      1     11      1       100.0           1000.           90.00    
+     12      1     12      1       100.0           1000.           90.00    
+     13      1     13      1       100.0           1000.           90.00    
+     14      1     14      1       100.0           1000.           90.00    
+     15      1     15      1       100.0           1000.           90.00    
+     16      1     16      1       100.0           1000.           90.00    
+     17      1     17      1       100.0           1000.           90.00    
+     18      1     18      1       100.0           1000.           90.00    
+
+ GHB -- GENERAL-HEAD BOUNDARY PACKAGE, VERSION 7, 5/2/2005
+         INPUT READ FROM UNIT   46
+ No named parameters
+ MAXIMUM OF     36 ACTIVE GHB CELLS AT ONE TIME
+
+
+     0 GHB parameters
+
+ RCH -- RECHARGE PACKAGE, VERSION 7, 5/2/2005 INPUT READ FROM UNIT   48
+     2 Named Parameters     
+ OPTION 1 -- RECHARGE TO TOP LAYER
+
+
+     2 Recharge parameters
+
+ PARAMETER NAME:RCH_ZONE_1   TYPE:RCH    CLUSTERS:   1
+ Parameter value from package file is:    63.100    
+                MULTIPLIER ARRAY: mlt_rch    ZONE ARRAY: zones_1
+                ZONE VALUES:    1
+
+ PARAMETER NAME:RCH_ZONE_2   TYPE:RCH    CLUSTERS:   1
+ Parameter value from package file is:    31.500    
+                MULTIPLIER ARRAY: mlt_rch    ZONE ARRAY: zones_1
+                ZONE VALUES:    2
+
+ PCG -- CONJUGATE-GRADIENT SOLUTION PACKAGE, VERSION 7, 5/2/2005
+ MAXIMUM OF      1 CALLS OF SOLUTION ROUTINE
+ MAXIMUM OF     50 INTERNAL ITERATIONS PER CALL TO SOLUTION ROUTINE
+ MATRIX PRECONDITIONING TYPE :    1
+
+
+
+                                    SOLUTION BY THE CONJUGATE-GRADIENT METHOD
+                                   -------------------------------------------
+                    MAXIMUM NUMBER OF CALLS TO PCG ROUTINE =        1
+                        MAXIMUM ITERATIONS PER CALL TO PCG =       50
+                               MATRIX PRECONDITIONING TYPE =        1
+        RELAXATION FACTOR (ONLY USED WITH PRECOND. TYPE 1) =    0.10000E+01
+ PARAMETER OF POLYNOMIAL PRECOND. = 2 (2) OR IS CALCULATED :        2
+                         HEAD CHANGE CRITERION FOR CLOSURE =    0.10000E-04
+                     RESIDUAL CHANGE CRITERION FOR CLOSURE =    0.10000E-04
+            PCG HEAD AND RESIDUAL CHANGE PRINTOUT INTERVAL =      999
+     PRINTING FROM SOLVER IS LIMITED(1) OR SUPPRESSED (>1) =        2
+                                         DAMPING PARAMETER =    0.10000E+01
+
+ OBS2BAS7 -- HEAD OBSERVATIONS, VERSION 2.0, 2/28/2006
+ INPUT READ FROM UNIT  22
+
+ NUMBER OF HEADS....................................:   66
+   NUMBER OF MULTILAYER HEADS.......................:    0
+   MAXIMUM NUMBER OF LAYERS FOR MULTILAYER HEADS....:    0
+ HEAD OBSERVATIONS WILL BE SAVED ON UNIT............:   49
+ SIMULATED EQUIVALENT HEAD AT DRY CELLS WILL BE:   -888.000    
+
+ OBSERVED HEAD DATA -- TIME OFFSETS ARE MULTIPLIED BY:   86400.    
+
+                    REFER.
+       OBSERVATION  STRESS    TIME
+  OBS#    NAME      PERIOD   OFFSET    OBSERVATION
+     1 obs1.0          -3    0.000       0.000    
+  TRANSIENT DATA AT THIS LOCATION, ITT =   2
+     1 obs1.0           1    0.000       101.8    
+ Observation within a steady-state time step has been moved to the end of the time step.
+     2 obs1.1           3    0.000     -0.2900E-01
+     3 obs1.12          5    272.8     -0.1290    
+ 
+     4 obs2.0          -5    0.000       0.000    
+  TRANSIENT DATA AT THIS LOCATION, ITT =   2
+     4 obs2.0           1    0.000       128.1    
+ Observation within a steady-state time step has been moved to the end of the time step.
+     5 obs2.1           3    0.000     -0.4100E-01
+     6 obs2.2           4    0.000     -0.5570    
+     7 obs2.8           5    97.59      -11.53    
+     8 obs2.12          5    272.8      -14.18    
+ 
+     9 obs3.0          -3    0.000       0.000    
+  TRANSIENT DATA AT THIS LOCATION, ITT =   2
+     9 obs3.0           1    0.000       156.7    
+ Observation within a steady-state time step has been moved to the end of the time step.
+    10 obs3.1           3    0.000      -4.381    
+    11 obs3.12          5    272.8      -42.54    
+ 
+    12 obs4.0          -3    0.000       0.000    
+  TRANSIENT DATA AT THIS LOCATION, ITT =   2
+    12 obs4.0           1    0.000       124.9    
+ Observation within a steady-state time step has been moved to the end of the time step.
+    13 obs4.1           3    0.000     -0.6700E-01
+    14 obs4.12          5    272.8      -14.30    
+ 
+    15 obs5.0          -3    0.000       0.000    
+  TRANSIENT DATA AT THIS LOCATION, ITT =   2
+    15 obs5.0           1    0.000       141.0    
+ Observation within a steady-state time step has been moved to the end of the time step.
+    16 obs5.1           3    0.000     -0.6000E-01
+    17 obs5.12          5    272.8      -21.68    
+ 
+    18 obs1.0d1        -3    0.000       0.000    
+  TRANSIENT DATA AT THIS LOCATION, ITT =   2
+    18 obs1.0d1         1    0.000       101.8    
+ Observation within a steady-state time step has been moved to the end of the time step.
+    19 obs1.1d1         3    0.000     -0.2900E-01
+    20 obs1.12d1        5    272.8     -0.1290    
+ 
+    21 obs2.0d1        -5    0.000       0.000    
+  TRANSIENT DATA AT THIS LOCATION, ITT =   2
+    21 obs2.0d1         1    0.000       128.1    
+ Observation within a steady-state time step has been moved to the end of the time step.
+    22 obs2.1d1         3    0.000     -0.4100E-01
+    23 obs2.2d1         4    0.000     -0.5570    
+    24 obs2.8d1         5    97.59      -11.53    
+    25 obs2.12d1        5    272.8      -14.18    
+ 
+    26 obs3.0d1        -3    0.000       0.000    
+  TRANSIENT DATA AT THIS LOCATION, ITT =   2
+    26 obs3.0d1         1    0.000       156.7    
+ Observation within a steady-state time step has been moved to the end of the time step.
+    27 obs3.1d1         3    0.000      -4.381    
+    28 obs3.12d1        5    272.8      -42.54    
+ 
+    29 obs4.0d1        -3    0.000       0.000    
+  TRANSIENT DATA AT THIS LOCATION, ITT =   2
+    29 obs4.0d1         1    0.000       124.9    
+ Observation within a steady-state time step has been moved to the end of the time step.
+    30 obs4.1d1         3    0.000     -0.6700E-01
+    31 obs4.12d1        5    272.8      -14.30    
+ 
+    32 obs5.0d1        -3    0.000       0.000    
+  TRANSIENT DATA AT THIS LOCATION, ITT =   2
+    32 obs5.0d1         1    0.000       141.0    
+ Observation within a steady-state time step has been moved to the end of the time step.
+    33 obs5.1d1         3    0.000     -0.6000E-01
+    34 obs5.12d1        5    272.8      -21.68    
+ 
+    35 obs1.0d2        -3    0.000       0.000    
+  TRANSIENT DATA AT THIS LOCATION, ITT =   2
+    35 obs1.0d2         1    0.000       101.8    
+ Observation within a steady-state time step has been moved to the end of the time step.
+    36 obs1.1d2         3    0.000     -0.2900E-01
+    37 obs1.12d2        5    272.8     -0.1290    
+ 
+    38 obs2.0d2        -5    0.000       0.000    
+  TRANSIENT DATA AT THIS LOCATION, ITT =   2
+    38 obs2.0d2         1    0.000       128.1    
+ Observation within a steady-state time step has been moved to the end of the time step.
+    39 obs2.1d2         3    0.000     -0.4100E-01
+    40 obs2.2d2         4    0.000     -0.5570    
+    41 obs2.8d2         5    97.59      -11.53    
+    42 obs2.12d2        5    272.8      -14.18    
+ 
+    43 obs3.0d2        -3    0.000       0.000    
+  TRANSIENT DATA AT THIS LOCATION, ITT =   2
+    43 obs3.0d2         1    0.000       156.7    
+ Observation within a steady-state time step has been moved to the end of the time step.
+    44 obs3.1d2         3    0.000      -4.381    
+    45 obs3.12d2        5    272.8      -42.54    
+ 
+    46 obs4.0d2        -3    0.000       0.000    
+  TRANSIENT DATA AT THIS LOCATION, ITT =   2
+    46 obs4.0d2         1    0.000       124.9    
+ Observation within a steady-state time step has been moved to the end of the time step.
+    47 obs4.1d2         3    0.000     -0.6700E-01
+    48 obs4.12d2        5    272.8      -14.30    
+ 
+    49 obs5.0d2        -3    0.000       0.000    
+  TRANSIENT DATA AT THIS LOCATION, ITT =   2
+    49 obs5.0d2         1    0.000       141.0    
+ Observation within a steady-state time step has been moved to the end of the time step.
+    50 obs5.1d2         3    0.000     -0.6000E-01
+    51 obs5.12d2        5    272.8      -21.68    
+ 
+    52 obs6.0          -3    0.000       0.000    
+  TRANSIENT DATA AT THIS LOCATION, ITT =   2
+    52 obs6.0           1    0.000       126.5    
+ Observation within a steady-state time step has been moved to the end of the time step.
+    53 obs6.1           3    0.000      0.4997E-02
+    54 obs6.12          5    272.8      -14.37    
+ 
+    55 obs7.0          -3    0.000       0.000    
+  TRANSIENT DATA AT THIS LOCATION, ITT =   2
+    55 obs7.0           1    0.000       101.1    
+ Observation within a steady-state time step has been moved to the end of the time step.
+    56 obs7.1           3    0.000      0.4800E-01
+    57 obs7.12          5    272.8     -0.5680    
+ 
+    58 obs8.0          -3    0.000       0.000    
+  TRANSIENT DATA AT THIS LOCATION, ITT =   2
+    58 obs8.0           1    0.000       158.1    
+ Observation within a steady-state time step has been moved to the end of the time step.
+    59 obs8.1           3    0.000      -5.533    
+    60 obs8.12          5    272.8      -43.22    
+ 
+    61 obs9.0          -3    0.000       0.000    
+  TRANSIENT DATA AT THIS LOCATION, ITT =   2
+    61 obs9.0           1    0.000       176.4    
+ Observation within a steady-state time step has been moved to the end of the time step.
+    62 obs9.1           3    0.000     -0.9918E-03
+    63 obs9.12          5    272.8      -38.24    
+ 
+    64 obs0.0          -3    0.000       0.000    
+  TRANSIENT DATA AT THIS LOCATION, ITT =   2
+    64 obs0.0           1    0.000       142.0    
+ Observation within a steady-state time step has been moved to the end of the time step.
+    65 obs0.1           3    0.000     -0.1300E-01
+    66 obs0.12          5    272.8      -19.92    
+ 
+
+                                                     HEAD CHANGE
+                                                      REFERENCE
+        OBSERVATION                   ROW     COL    OBSERVATION
+  OBS#     NAME       LAY  ROW  COL  OFFSET  OFFSET   (IF > 0)
+     1  obs1.0          1    3    1   0.000   0.000        0
+     2  obs1.1          1    3    1   0.000   0.000        1
+     3  obs1.12         1    3    1   0.000   0.000        1
+     4  obs2.0          1    4    4   0.000   0.000        0
+     5  obs2.1          1    4    4   0.000   0.000        4
+     6  obs2.2          1    4    4   0.000   0.000        4
+     7  obs2.8          1    4    4   0.000   0.000        4
+     8  obs2.12         1    4    4   0.000   0.000        4
+     9  obs3.0          1   10    9   0.000   0.000        0
+    10  obs3.1          1   10    9   0.000   0.000        9
+    11  obs3.12         1   10    9   0.000   0.000        9
+    12  obs4.0          1   13    4   0.000   0.000        0
+    13  obs4.1          1   13    4   0.000   0.000       12
+    14  obs4.12         1   13    4   0.000   0.000       12
+    15  obs5.0          1   14    6   0.000   0.000        0
+    16  obs5.1          1   14    6   0.000   0.000       15
+    17  obs5.12         1   14    6   0.000   0.000       15
+    18  obs1.0d1        2    3    1   0.000   0.000        0
+    19  obs1.1d1        2    3    1   0.000   0.000       18
+    20  obs1.12d1       2    3    1   0.000   0.000       18
+    21  obs2.0d1        2    4    4   0.000   0.000        0
+    22  obs2.1d1        2    4    4   0.000   0.000       21
+    23  obs2.2d1        2    4    4   0.000   0.000       21
+    24  obs2.8d1        2    4    4   0.000   0.000       21
+    25  obs2.12d1       2    4    4   0.000   0.000       21
+    26  obs3.0d1        2   10    9   0.000   0.000        0
+    27  obs3.1d1        2   10    9   0.000   0.000       26
+    28  obs3.12d1       2   10    9   0.000   0.000       26
+    29  obs4.0d1        2   13    4   0.000   0.000        0
+    30  obs4.1d1        2   13    4   0.000   0.000       29
+    31  obs4.12d1       2   13    4   0.000   0.000       29
+    32  obs5.0d1        2   14    6   0.000   0.000        0
+    33  obs5.1d1        2   14    6   0.000   0.000       32
+    34  obs5.12d1       2   14    6   0.000   0.000       32
+    35  obs1.0d2        3    3    1   0.000   0.000        0
+    36  obs1.1d2        3    3    1   0.000   0.000       35
+    37  obs1.12d2       3    3    1   0.000   0.000       35
+    38  obs2.0d2        3    4    4   0.000   0.000        0
+    39  obs2.1d2        3    4    4   0.000   0.000       38
+    40  obs2.2d2        3    4    4   0.000   0.000       38
+    41  obs2.8d2        3    4    4   0.000   0.000       38
+    42  obs2.12d2       3    4    4   0.000   0.000       38
+    43  obs3.0d2        3   10    9   0.000   0.000        0
+    44  obs3.1d2        3   10    9   0.000   0.000       43
+    45  obs3.12d2       3   10    9   0.000   0.000       43
+    46  obs4.0d2        3   13    4   0.000   0.000        0
+    47  obs4.1d2        3   13    4   0.000   0.000       46
+    48  obs4.12d2       3   13    4   0.000   0.000       46
+    49  obs5.0d2        3   14    6   0.000   0.000        0
+    50  obs5.1d2        3   14    6   0.000   0.000       49
+    51  obs5.12d2       3   14    6   0.000   0.000       49
+    52  obs6.0          3    4    4   0.000   0.000        0
+    53  obs6.1          3    4    4   0.000   0.000       52
+    54  obs6.12         3    4    4   0.000   0.000       52
+    55  obs7.0          3   10    1   0.000   0.000        0
+    56  obs7.1          3   10    1   0.000   0.000       55
+    57  obs7.12         3   10    1   0.000   0.000       55
+    58  obs8.0          3   10    9   0.000   0.000        0
+    59  obs8.1          3   10    9   0.000   0.000       58
+    60  obs8.12         3   10    9   0.000   0.000       58
+    61  obs9.0          3   10   18   0.000   0.000        0
+    62  obs9.1          3   10   18   0.000   0.000       61
+    63  obs9.12         3   10   18   0.000   0.000       61
+    64  obs0.0          3   18    6   0.000   0.000        0
+    65  obs0.1          3   18    6   0.000   0.000       64
+    66  obs0.12         3   18    6   0.000   0.000       64
+
+ OBS2RIV7 -- OBSERVATION PROCESS (RIVER FLOW OBSERVATIONS)
+ VERSION 2, 02/28/2006
+ INPUT READ FROM UNIT   23
+
+ NUMBER OF FLOW-OBSERVATION RIVER-CELL GROUPS.....:      1
+   NUMBER OF CELLS IN RIVER-CELL GROUPS...........:     18
+   NUMBER OF RIVER-CELL FLOWS.....................:      3
+ RIVER OBSERVATIONS WILL BE SAVED ON UNIT.........:     49
+
+ OBSERVED RIVER-CELL FLOW DATA
+ -- TIME OFFSETS ARE MULTIPLIED BY:   86400.    
+
+   GROUP NUMBER:      1   BOUNDARY TYPE: RIV   NUMBER OF CELLS IN GROUP:    -18
+   NUMBER OF FLOW OBSERVATIONS:      3
+
+                                        OBSERVED
+                    REFER.             RIVER FLOW
+       OBSERVATION  STRESS    TIME     GAIN (-) OR
+  OBS#    NAME      PERIOD   OFFSET     LOSS (+)
+     1 obsSS            1    0.000      -4.400    
+ Observation within a steady-state time step has been moved to the end of the time step.
+     2 obsTR3           5   0.1000E-04  -4.100    
+     3 obsTR12          5    272.8      -2.200    
+
+       LAYER  ROW  COLUMN    FACTOR
+          1.    1.     1.     1.00
+          1.    2.     1.     1.00
+          1.    3.     1.     1.00
+          1.    4.     1.     1.00
+          1.    5.     1.     1.00
+          1.    6.     1.     1.00
+          1.    7.     1.     1.00
+          1.    8.     1.     1.00
+          1.    9.     1.     1.00
+          1.   10.     1.     1.00
+          1.   11.     1.     1.00
+          1.   12.     1.     1.00
+          1.   13.     1.     1.00
+          1.   14.     1.     1.00
+          1.   15.     1.     1.00
+          1.   16.     1.     1.00
+          1.   17.     1.     1.00
+          1.   18.     1.     1.00
+1
+                            STRESS PERIOD NO.    1, LENGTH =   1.000000    
+                            -----------------------------------------------
+
+                              NUMBER OF TIME STEPS =     1
+
+                               MULTIPLIER FOR DELT =     1.000
+
+                            INITIAL TIME STEP SIZE =   1.000000    
+
+      0 WELLS
+
+ Parameter:  RIVERS
+ REACH NO.  LAYER   ROW   COL     STAGE      CONDUCTANCE     BOTTOM EL.         
+ -------------------------------------------------------------------------------
+      1      1      1      1       100.0           1.200           90.00    
+      2      1      2      1       100.0           1.200           90.00    
+      3      1      3      1       100.0           1.200           90.00    
+      4      1      4      1       100.0           1.200           90.00    
+      5      1      5      1       100.0           1.200           90.00    
+      6      1      6      1       100.0           1.200           90.00    
+      7      1      7      1       100.0           1.200           90.00    
+      8      1      8      1       100.0           1.200           90.00    
+      9      1      9      1       100.0           1.200           90.00    
+     10      1     10      1       100.0           1.200           90.00    
+     11      1     11      1       100.0           1.200           90.00    
+     12      1     12      1       100.0           1.200           90.00    
+     13      1     13      1       100.0           1.200           90.00    
+     14      1     14      1       100.0           1.200           90.00    
+     15      1     15      1       100.0           1.200           90.00    
+     16      1     16      1       100.0           1.200           90.00    
+     17      1     17      1       100.0           1.200           90.00    
+     18      1     18      1       100.0           1.200           90.00    
+
+     18 RIVER REACHES
+
+ BOUND. NO. LAYER   ROW   COL     STAGE      CONDUCTANCE         
+ ----------------------------------------------------------------
+      1      1      1     18       350.0          0.1000E-06
+      2      1      2     18       350.0          0.1000E-06
+      3      1      3     18       350.0          0.1000E-06
+      4      1      4     18       350.0          0.1000E-06
+      5      1      5     18       350.0          0.1000E-06
+      6      1      6     18       350.0          0.1000E-06
+      7      1      7     18       350.0          0.1000E-06
+      8      1      8     18       350.0          0.1000E-06
+      9      1      9     18       350.0          0.1000E-06
+     10      1     10     18       350.0          0.1000E-06
+     11      1     11     18       350.0          0.1000E-06
+     12      1     12     18       350.0          0.1000E-06
+     13      1     13     18       350.0          0.1000E-06
+     14      1     14     18       350.0          0.1000E-06
+     15      1     15     18       350.0          0.1000E-06
+     16      1     16     18       350.0          0.1000E-06
+     17      1     17     18       350.0          0.1000E-06
+     18      1     18     18       350.0          0.1000E-06
+     19      2      1     18       350.0          0.1000E-06
+     20      2      2     18       350.0          0.1000E-06
+     21      2      3     18       350.0          0.1000E-06
+     22      2      4     18       350.0          0.1000E-06
+     23      2      5     18       350.0          0.1000E-06
+     24      2      6     18       350.0          0.1000E-06
+     25      2      7     18       350.0          0.1000E-06
+     26      2      8     18       350.0          0.1000E-06
+     27      2      9     18       350.0          0.1000E-06
+     28      2     10     18       350.0          0.1000E-06
+     29      2     11     18       350.0          0.1000E-06
+     30      2     12     18       350.0          0.1000E-06
+     31      2     13     18       350.0          0.1000E-06
+     32      2     14     18       350.0          0.1000E-06
+     33      2     15     18       350.0          0.1000E-06
+     34      2     16     18       350.0          0.1000E-06
+     35      2     17     18       350.0          0.1000E-06
+     36      2     18     18       350.0          0.1000E-06
+
+     36 GHB CELLS
+
+
+
+ RECH array defined by the following parameters:
+ Parameter:  RCH_ZONE_1
+ Parameter:  RCH_ZONE_2
+
+
+                           RECHARGE
+
+            1           2           3           4           5           6
+            7           8           9          10          11          12
+           13          14          15          16          17          18
+ ........................................................................
+   1   2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08
+       2.0009E-08  2.0009E-08  2.0009E-08  9.9886E-09  9.9886E-09  9.9886E-09
+       9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09
+   2   2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08
+       2.0009E-08  2.0009E-08  2.0009E-08  9.9886E-09  9.9886E-09  9.9886E-09
+       9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09
+   3   2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08
+       2.0009E-08  2.0009E-08  2.0009E-08  9.9886E-09  9.9886E-09  9.9886E-09
+       9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09
+   4   2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08
+       2.0009E-08  2.0009E-08  2.0009E-08  9.9886E-09  9.9886E-09  9.9886E-09
+       9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09
+   5   2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08
+       2.0009E-08  2.0009E-08  2.0009E-08  9.9886E-09  9.9886E-09  9.9886E-09
+       9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09
+   6   2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08
+       2.0009E-08  2.0009E-08  2.0009E-08  9.9886E-09  9.9886E-09  9.9886E-09
+       9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09
+   7   2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08
+       2.0009E-08  2.0009E-08  2.0009E-08  9.9886E-09  9.9886E-09  9.9886E-09
+       9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09
+   8   2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08
+       2.0009E-08  2.0009E-08  2.0009E-08  9.9886E-09  9.9886E-09  9.9886E-09
+       9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09
+   9   2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08
+       2.0009E-08  2.0009E-08  2.0009E-08  9.9886E-09  9.9886E-09  9.9886E-09
+       9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09
+  10   2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08
+       2.0009E-08  2.0009E-08  2.0009E-08  9.9886E-09  9.9886E-09  9.9886E-09
+       9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09
+  11   2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08
+       2.0009E-08  2.0009E-08  2.0009E-08  9.9886E-09  9.9886E-09  9.9886E-09
+       9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09
+  12   2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08
+       2.0009E-08  2.0009E-08  2.0009E-08  9.9886E-09  9.9886E-09  9.9886E-09
+       9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09
+  13   2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08
+       2.0009E-08  2.0009E-08  2.0009E-08  9.9886E-09  9.9886E-09  9.9886E-09
+       9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09
+  14   2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08
+       2.0009E-08  2.0009E-08  2.0009E-08  9.9886E-09  9.9886E-09  9.9886E-09
+       9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09
+  15   2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08
+       2.0009E-08  2.0009E-08  2.0009E-08  9.9886E-09  9.9886E-09  9.9886E-09
+       9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09
+  16   2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08
+       2.0009E-08  2.0009E-08  2.0009E-08  9.9886E-09  9.9886E-09  9.9886E-09
+       9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09
+  17   2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08
+       2.0009E-08  2.0009E-08  2.0009E-08  9.9886E-09  9.9886E-09  9.9886E-09
+       9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09
+  18   2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08  2.0009E-08
+       2.0009E-08  2.0009E-08  2.0009E-08  9.9886E-09  9.9886E-09  9.9886E-09
+       9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09  9.9886E-09
+ 
+ SOLVING FOR HEAD 
+
+ CELL CONVERSIONS FOR ITER.=  1  LAYER=  1  STEP=  1  PERIOD=   1   (ROW,COL)
+    DRY(  1,  5)   DRY(  1,  6)   DRY(  1,  7)   DRY(  1,  8)   DRY(  1,  9)   
+    DRY(  1, 10)   DRY(  1, 11)   DRY(  1, 12)   DRY(  1, 13)   DRY(  1, 14)   
+    DRY(  1, 15)   DRY(  1, 16)   DRY(  1, 17)   DRY(  1, 18)   DRY(  2,  5)   
+    DRY(  2,  6)   DRY(  2,  7)   DRY(  2,  8)   DRY(  2,  9)   DRY(  2, 10)   
+    DRY(  2, 11)   DRY(  2, 12)   DRY(  2, 13)   DRY(  2, 14)   DRY(  2, 15)   
+    DRY(  2, 16)   DRY(  2, 17)   DRY(  2, 18)   DRY(  3,  5)   DRY(  3,  6)   
+    DRY(  3,  7)   DRY(  3,  8)   DRY(  3,  9)   DRY(  3, 10)   DRY(  3, 11)   
+    DRY(  3, 12)   DRY(  3, 13)   DRY(  3, 14)   DRY(  3, 15)   DRY(  3, 16)   
+    DRY(  3, 17)   DRY(  3, 18)   DRY(  4,  5)   DRY(  4,  6)   DRY(  4,  7)   
+    DRY(  4,  8)   DRY(  4,  9)   DRY(  4, 10)   DRY(  4, 11)   DRY(  4, 12)   
+    DRY(  4, 13)   DRY(  4, 14)   DRY(  4, 15)   DRY(  4, 16)   DRY(  4, 17)   
+    DRY(  4, 18)   DRY(  5,  5)   DRY(  5,  6)   DRY(  5,  7)   DRY(  5,  8)   
+    DRY(  5,  9)   DRY(  5, 10)   DRY(  5, 11)   DRY(  5, 12)   DRY(  5, 13)   
+    DRY(  5, 14)   DRY(  5, 15)   DRY(  5, 16)   DRY(  5, 17)   DRY(  5, 18)   
+    DRY(  6,  5)   DRY(  6,  6)   DRY(  6,  7)   DRY(  6,  8)   DRY(  6,  9)   
+    DRY(  6, 10)   DRY(  6, 11)   DRY(  6, 12)   DRY(  6, 13)   DRY(  6, 14)   
+    DRY(  6, 15)   DRY(  6, 16)   DRY(  6, 17)   DRY(  6, 18)   DRY(  7,  5)   
+    DRY(  7,  6)   DRY(  7,  7)   DRY(  7,  8)   DRY(  7,  9)   DRY(  7, 10)   
+    DRY(  7, 11)   DRY(  7, 12)   DRY(  7, 13)   DRY(  7, 14)   DRY(  7, 15)   
+    DRY(  7, 16)   DRY(  7, 17)   DRY(  7, 18)   DRY(  8,  5)   DRY(  8,  6)   
+    DRY(  8,  7)   DRY(  8,  8)   DRY(  8,  9)   DRY(  8, 10)   DRY(  8, 11)   
+    DRY(  8, 12)   DRY(  8, 13)   DRY(  8, 14)   DRY(  8, 15)   DRY(  8, 16)   
+    DRY(  8, 17)   DRY(  8, 18)   DRY(  9,  5)   DRY(  9,  6)   DRY(  9,  7)   
+    DRY(  9,  8)   DRY(  9,  9)   DRY(  9, 10)   DRY(  9, 11)   DRY(  9, 12)   
+    DRY(  9, 13)   DRY(  9, 14)   DRY(  9, 15)   DRY(  9, 16)   DRY(  9, 17)   
+    DRY(  9, 18)   DRY( 10,  5)   DRY( 10,  6)   DRY( 10,  7)   DRY( 10,  8)   
+    DRY( 10,  9)   DRY( 10, 10)   DRY( 10, 11)   DRY( 10, 12)   DRY( 10, 13)   
+    DRY( 10, 14)   DRY( 10, 15)   DRY( 10, 16)   DRY( 10, 17)   DRY( 10, 18)   
+    DRY( 11,  5)   DRY( 11,  6)   DRY( 11,  7)   DRY( 11,  8)   DRY( 11,  9)   
+    DRY( 11, 10)   DRY( 11, 11)   DRY( 11, 12)   DRY( 11, 13)   DRY( 11, 14)   
+    DRY( 11, 15)   DRY( 11, 16)   DRY( 11, 17)   DRY( 11, 18)   DRY( 12,  5)   
+    DRY( 12,  6)   DRY( 12,  7)   DRY( 12,  8)   DRY( 12,  9)   DRY( 12, 10)   
+    DRY( 12, 11)   DRY( 12, 12)   DRY( 12, 13)   DRY( 12, 14)   DRY( 12, 15)   
+    DRY( 12, 16)   DRY( 12, 17)   DRY( 12, 18)   DRY( 13,  5)   DRY( 13,  6)   
+    DRY( 13,  7)   DRY( 13,  8)   DRY( 13,  9)   DRY( 13, 10)   DRY( 13, 11)   
+    DRY( 13, 12)   DRY( 13, 13)   DRY( 13, 14)   DRY( 13, 15)   DRY( 13, 16)   
+    DRY( 13, 17)   DRY( 13, 18)   DRY( 14,  5)   DRY( 14,  6)   DRY( 14,  7)   
+    DRY( 14,  8)   DRY( 14,  9)   DRY( 14, 10)   DRY( 14, 11)   DRY( 14, 12)   
+    DRY( 14, 13)   DRY( 14, 14)   DRY( 14, 15)   DRY( 14, 16)   DRY( 14, 17)   
+    DRY( 14, 18)   DRY( 15,  5)   DRY( 15,  6)   DRY( 15,  7)   DRY( 15,  8)   
+    DRY( 15,  9)   DRY( 15, 10)   DRY( 15, 11)   DRY( 15, 12)   DRY( 15, 13)   
+    DRY( 15, 14)   DRY( 15, 15)   DRY( 15, 16)   DRY( 15, 17)   DRY( 15, 18)   
+    DRY( 16,  5)   DRY( 16,  6)   DRY( 16,  7)   DRY( 16,  8)   DRY( 16,  9)   
+    DRY( 16, 10)   DRY( 16, 11)   DRY( 16, 12)   DRY( 16, 13)   DRY( 16, 14)   
+    DRY( 16, 15)   DRY( 16, 16)   DRY( 16, 17)   DRY( 16, 18)   DRY( 17,  5)   
+    DRY( 17,  6)   DRY( 17,  7)   DRY( 17,  8)   DRY( 17,  9)   DRY( 17, 10)   
+    DRY( 17, 11)   DRY( 17, 12)   DRY( 17, 13)   DRY( 17, 14)   DRY( 17, 15)   
+    DRY( 17, 16)   DRY( 17, 17)   DRY( 17, 18)   DRY( 18,  5)   DRY( 18,  6)   
+    DRY( 18,  7)   DRY( 18,  8)   DRY( 18,  9)   DRY( 18, 10)   DRY( 18, 11)   
+    DRY( 18, 12)   DRY( 18, 13)   DRY( 18, 14)   DRY( 18, 15)   DRY( 18, 16)   
+    DRY( 18, 17)   DRY( 18, 18)   
+
+ OUTPUT CONTROL FOR STRESS PERIOD    1   TIME STEP   1
+    PRINT HEAD FOR ALL LAYERS
+
+ HEAD OBS#    9, ID obs3.0       IS DRY -- OMIT (OBS2BAS7SE)
+
+ HEAD OBS#   15, ID obs5.0       IS DRY -- OMIT (OBS2BAS7SE)
+1
+              HEAD IN LAYER   1 AT END OF TIME STEP   1 IN STRESS PERIOD    1
+  ---------------------------------------------------------------------------
+
+          1      2      3      4      5      6      7      8      9     10
+         11     12     13     14     15     16     17     18
+ .........................................................................
+   1   100.1  102.2  103.5  104.1 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+   2   100.1  102.2  103.5  104.1 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+   3   100.1  102.2  103.5  104.1 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+   4   100.1  102.2  103.5  104.1 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+   5   100.1  102.2  103.5  104.1 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+   6   100.1  102.2  103.5  104.1 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+   7   100.1  102.2  103.5  104.1 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+   8   100.1  102.2  103.5  104.1 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+   9   100.1  102.2  103.5  104.1 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+  10   100.1  102.2  103.5  104.1 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+  11   100.1  102.2  103.5  104.1 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+  12   100.1  102.2  103.5  104.1 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+  13   100.1  102.2  103.5  104.1 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+  14   100.1  102.2  103.5  104.1 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+  15   100.1  102.2  103.5  104.1 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+  16   100.1  102.2  103.5  104.1 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+  17   100.1  102.2  103.5  104.1 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+  18   100.1  102.2  103.5  104.1 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+1
+              HEAD IN LAYER   2 AT END OF TIME STEP   1 IN STRESS PERIOD    1
+  ---------------------------------------------------------------------------
+
+          1      2      3      4      5      6      7      8      9     10
+         11     12     13     14     15     16     17     18
+ .........................................................................
+   1   100.1  102.2  103.5  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+   2   100.1  102.2  103.5  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+   3   100.1  102.2  103.5  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+   4   100.1  102.2  103.5  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+   5   100.1  102.2  103.5  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+   6   100.1  102.2  103.5  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+   7   100.1  102.2  103.5  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+   8   100.1  102.2  103.5  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+   9   100.1  102.2  103.5  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+  10   100.1  102.2  103.5  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+  11   100.1  102.2  103.5  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+  12   100.1  102.2  103.5  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+  13   100.1  102.2  103.5  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+  14   100.1  102.2  103.5  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+  15   100.1  102.2  103.5  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+  16   100.1  102.2  103.5  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+  17   100.1  102.2  103.5  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+  18   100.1  102.2  103.5  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+1
+              HEAD IN LAYER   3 AT END OF TIME STEP   1 IN STRESS PERIOD    1
+  ---------------------------------------------------------------------------
+
+          1      2      3      4      5      6      7      8      9     10
+         11     12     13     14     15     16     17     18
+ .........................................................................
+   1   100.4  102.2  103.4  103.9  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+   2   100.4  102.2  103.4  103.9  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+   3   100.4  102.2  103.4  103.9  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+   4   100.4  102.2  103.4  103.9  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+   5   100.4  102.2  103.4  103.9  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+   6   100.4  102.2  103.4  103.9  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+   7   100.4  102.2  103.4  103.9  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+   8   100.4  102.2  103.4  103.9  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+   9   100.4  102.2  103.4  103.9  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+  10   100.4  102.2  103.4  103.9  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+  11   100.4  102.2  103.4  103.9  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+  12   100.4  102.2  103.4  103.9  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+  13   100.4  102.2  103.4  103.9  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+  14   100.4  102.2  103.4  103.9  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+  15   100.4  102.2  103.4  103.9  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+  16   100.4  102.2  103.4  103.9  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+  17   100.4  102.2  103.4  103.9  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+  18   100.4  102.2  103.4  103.9  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+1
+  VOLUMETRIC BUDGET FOR ENTIRE MODEL AT END OF TIME STEP  1 IN STRESS PERIOD   1
+  ------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUMES      L**3       RATES FOR THIS TIME STEP      L**3/T
+     ------------------                 ------------------------
+
+           IN:                                      IN:
+           ---                                      ---
+             STORAGE =           0.0000               STORAGE =           0.0000
+       CONSTANT HEAD =           0.0000         CONSTANT HEAD =           0.0000
+               WELLS =           0.0000                 WELLS =           0.0000
+       RIVER LEAKAGE =           0.0000         RIVER LEAKAGE =           0.0000
+     HEAD DEP BOUNDS =       4.4263E-04       HEAD DEP BOUNDS =       4.4263E-04
+            RECHARGE =           1.4406              RECHARGE =           1.4406
+
+            TOTAL IN =           1.4411              TOTAL IN =           1.4411
+
+          OUT:                                     OUT:
+          ----                                     ----
+             STORAGE =           0.0000               STORAGE =           0.0000
+       CONSTANT HEAD =           0.0000         CONSTANT HEAD =           0.0000
+               WELLS =           0.0000                 WELLS =           0.0000
+       RIVER LEAKAGE =           1.4412         RIVER LEAKAGE =           1.4412
+     HEAD DEP BOUNDS =           0.0000       HEAD DEP BOUNDS =           0.0000
+            RECHARGE =           0.0000              RECHARGE =           0.0000
+
+           TOTAL OUT =           1.4412             TOTAL OUT =           1.4412
+
+            IN - OUT =      -1.4031E-04              IN - OUT =      -1.4031E-04
+
+ PERCENT DISCREPANCY =          -0.01     PERCENT DISCREPANCY =          -0.01
+
+
+
+
+
+
+          TIME SUMMARY AT END OF TIME STEP   1 IN STRESS PERIOD    1
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH  1.0000     1.66667E-02 2.77778E-04 1.15741E-05 3.16881E-08
+ STRESS PERIOD TIME  1.0000     1.66667E-02 2.77778E-04 1.15741E-05 3.16881E-08
+         TOTAL TIME  1.0000     1.66667E-02 2.77778E-04 1.15741E-05 3.16881E-08
+1
+1
+                            STRESS PERIOD NO.    2, LENGTH =   87162.00    
+                            -----------------------------------------------
+
+                              NUMBER OF TIME STEPS =     1
+
+                               MULTIPLIER FOR DELT =     1.000
+
+                            INITIAL TIME STEP SIZE =   87162.00    
+
+ Parameter:  WELLS_TR
+ WELL NO.  LAYER   ROW   COL   STRESS RATE         
+ --------------------------------------------------
+      1      1      9     10      -1.100    
+      2      2      9     10      -1.100    
+
+      2 WELLS
+
+ Parameter:  RIVERS
+ REACH NO.  LAYER   ROW   COL     STAGE      CONDUCTANCE     BOTTOM EL.         
+ -------------------------------------------------------------------------------
+      1      1      1      1       100.0           1.200           90.00    
+      2      1      2      1       100.0           1.200           90.00    
+      3      1      3      1       100.0           1.200           90.00    
+      4      1      4      1       100.0           1.200           90.00    
+      5      1      5      1       100.0           1.200           90.00    
+      6      1      6      1       100.0           1.200           90.00    
+      7      1      7      1       100.0           1.200           90.00    
+      8      1      8      1       100.0           1.200           90.00    
+      9      1      9      1       100.0           1.200           90.00    
+     10      1     10      1       100.0           1.200           90.00    
+     11      1     11      1       100.0           1.200           90.00    
+     12      1     12      1       100.0           1.200           90.00    
+     13      1     13      1       100.0           1.200           90.00    
+     14      1     14      1       100.0           1.200           90.00    
+     15      1     15      1       100.0           1.200           90.00    
+     16      1     16      1       100.0           1.200           90.00    
+     17      1     17      1       100.0           1.200           90.00    
+     18      1     18      1       100.0           1.200           90.00    
+
+     18 RIVER REACHES
+
+ REUSING NON-PARAMETER GHB CELLS FROM LAST STRESS PERIOD
+
+     36 GHB CELLS
+
+ REUSING RECH FROM LAST STRESS PERIOD
+ 
+ SOLVING FOR HEAD 
+
+ CELL CONVERSIONS FOR ITER.=  1  LAYER=  1  STEP=  1  PERIOD=   2   (ROW,COL)
+    DRY(  1,  1)   DRY(  1,  2)   DRY(  1,  3)   DRY(  1,  4)   DRY(  2,  1)   
+    DRY(  2,  2)   DRY(  2,  3)   DRY(  2,  4)   DRY(  3,  1)   DRY(  3,  2)   
+    DRY(  3,  3)   DRY(  3,  4)   DRY(  4,  1)   DRY(  4,  2)   DRY(  4,  3)   
+    DRY(  4,  4)   DRY(  5,  1)   DRY(  5,  2)   DRY(  5,  3)   DRY(  5,  4)   
+    DRY(  6,  1)   DRY(  6,  2)   DRY(  6,  3)   DRY(  6,  4)   DRY(  7,  1)   
+    DRY(  7,  2)   DRY(  7,  3)   DRY(  7,  4)   DRY(  8,  1)   DRY(  8,  2)   
+    DRY(  8,  3)   DRY(  8,  4)   DRY(  9,  1)   DRY(  9,  2)   DRY(  9,  3)   
+    DRY(  9,  4)   DRY( 10,  1)   DRY( 10,  2)   DRY( 10,  3)   DRY( 10,  4)   
+    DRY( 11,  1)   DRY( 11,  2)   DRY( 11,  3)   DRY( 11,  4)   DRY( 12,  1)   
+    DRY( 12,  2)   DRY( 12,  3)   DRY( 12,  4)   DRY( 13,  1)   DRY( 13,  2)   
+    DRY( 13,  3)   DRY( 13,  4)   DRY( 14,  1)   DRY( 14,  2)   DRY( 14,  3)   
+    DRY( 14,  4)   DRY( 15,  1)   DRY( 15,  2)   DRY( 15,  3)   DRY( 15,  4)   
+    DRY( 16,  1)   DRY( 16,  2)   DRY( 16,  3)   DRY( 16,  4)   DRY( 17,  1)   
+    DRY( 17,  2)   DRY( 17,  3)   DRY( 17,  4)   DRY( 18,  1)   DRY( 18,  2)   
+    DRY( 18,  3)   DRY( 18,  4)   
+
+ CELL CONVERSIONS FOR ITER.=  1  LAYER=  2  STEP=  1  PERIOD=   2   (ROW,COL)
+    DRY( 10,  9)   DRY( 14,  6)   
+
+ CELL CONVERSIONS FOR ITER.=  1  LAYER=  3  STEP=  1  PERIOD=   2   (ROW,COL)
+    DRY( 10,  9)   
+
+ OUTPUT CONTROL FOR STRESS PERIOD    2   TIME STEP   1
+    PRINT HEAD FOR ALL LAYERS
+
+ HEAD OBS#    2, ID obs1.1       IS DRY -- OMIT (OBS2BAS7SE)
+
+ HEAD OBS#    5, ID obs2.1       IS DRY -- OMIT (OBS2BAS7SE)
+
+ HEAD OBS#   10, ID obs3.1       IS DRY -- OMIT (OBS2BAS7SE)
+
+ HEAD OBS#   13, ID obs4.1       IS DRY -- OMIT (OBS2BAS7SE)
+
+ HEAD OBS#   16, ID obs5.1       IS DRY -- OMIT (OBS2BAS7SE)
+
+ HEAD OBS#   27, ID obs3.1d1     IS DRY -- OMIT (OBS2BAS7SE)
+
+ HEAD OBS#   33, ID obs5.1d1     IS DRY -- OMIT (OBS2BAS7SE)
+
+ HEAD OBS#   44, ID obs3.1d2     IS DRY -- OMIT (OBS2BAS7SE)
+
+ HEAD OBS#   59, ID obs8.1       IS DRY -- OMIT (OBS2BAS7SE)
+1
+              HEAD IN LAYER   1 AT END OF TIME STEP   1 IN STRESS PERIOD    2
+  ---------------------------------------------------------------------------
+
+          1      2      3      4      5      6      7      8      9     10
+         11     12     13     14     15     16     17     18
+ .........................................................................
+   1  -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+   2  -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+   3  -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+   4  -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+   5  -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+   6  -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+   7  -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+   8  -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+   9  -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+  10  -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+  11  -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+  12  -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+  13  -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+  14  -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+  15  -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+  16  -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+  17  -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+  18  -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+1
+              HEAD IN LAYER   2 AT END OF TIME STEP   1 IN STRESS PERIOD    2
+  ---------------------------------------------------------------------------
+
+          1      2      3      4      5      6      7      8      9     10
+         11     12     13     14     15     16     17     18
+ .........................................................................
+   1   100.2  102.2  103.4  104.0  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+   2   100.2  102.2  103.4  104.0  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+   3   100.2  102.2  103.4  104.0  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+   4   100.2  102.2  103.4  104.0  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+   5   100.2  102.2  103.4  104.0  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+   6   100.2  102.2  103.4  104.0  104.1  104.1  104.1  104.1  104.0  104.0
+       104.0  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+   7   100.2  102.2  103.4  104.0  104.1  104.1  104.1  104.0  103.9  103.8
+       103.9  104.0  104.0  104.1  104.1  104.1  104.1  104.1
+   8   100.2  102.2  103.4  104.0  104.1  104.1  104.0  103.9  103.6  102.4
+       103.6  103.9  104.0  104.1  104.1  104.1  104.1  104.1
+   9   100.2  102.2  103.4  104.0  104.1  104.1  104.0  103.8  102.2   72.7
+       102.4  103.8  104.0  104.1  104.1  104.1  104.1  104.1
+  10   100.2  102.2  103.4  104.0  104.1  104.1  104.0  104.0 -999.0  102.3
+       103.6  103.9  104.0  104.1  104.1  104.1  104.1  104.1
+  11   100.2  102.2  103.4  104.0  104.1  104.1  104.1  104.0  104.0  103.8
+       103.9  104.0  104.0  104.1  104.1  104.1  104.1  104.1
+  12   100.2  102.2  103.4  104.0  104.1  104.1  104.1  104.1  104.0  104.0
+       104.0  104.0  104.1  104.1  104.1  104.1  104.1  104.1
+  13   100.2  102.2  103.4  104.0  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+  14   100.2  102.2  103.4  104.0  104.1 -999.0  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+  15   100.2  102.2  103.4  104.0  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+  16   100.2  102.2  103.4  104.0  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+  17   100.2  102.2  103.4  104.0  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+  18   100.2  102.2  103.4  104.0  104.1  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+1
+              HEAD IN LAYER   3 AT END OF TIME STEP   1 IN STRESS PERIOD    2
+  ---------------------------------------------------------------------------
+
+          1      2      3      4      5      6      7      8      9     10
+         11     12     13     14     15     16     17     18
+ .........................................................................
+   1   100.5  102.2  103.4  103.9  104.0  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+   2   100.5  102.2  103.4  103.9  104.0  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+   3   100.5  102.2  103.4  103.9  104.0  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+   4   100.5  102.2  103.4  103.9  104.0  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+   5   100.5  102.2  103.4  103.9  104.0  104.1  104.1  104.0  104.0  104.0
+       104.0  104.0  104.1  104.1  104.1  104.1  104.1  104.1
+   6   100.5  102.2  103.4  103.9  104.0  104.0  104.0  104.0  103.9  103.8
+       103.9  104.0  104.0  104.1  104.1  104.1  104.1  104.1
+   7   100.5  102.2  103.4  103.9  104.0  104.0  104.0  103.8  103.6  103.3
+       103.6  103.8  104.0  104.0  104.1  104.1  104.1  104.1
+   8   100.5  102.2  103.4  103.9  104.0  104.0  103.9  103.6  102.8  101.6
+       102.9  103.6  103.9  104.0  104.1  104.1  104.1  104.1
+   9   100.5  102.2  103.4  103.9  104.0  104.0  103.8  103.3  101.2   96.2
+       101.7  103.3  103.8  104.0  104.0  104.1  104.1  104.1
+  10   100.5  102.2  103.4  103.9  104.0  104.0  104.0  103.8 -999.0  101.3
+       102.8  103.6  103.9  104.0  104.1  104.1  104.1  104.1
+  11   100.5  102.2  103.4  103.9  104.0  104.0  104.0  104.0  103.8  103.3
+       103.6  103.8  104.0  104.0  104.1  104.1  104.1  104.1
+  12   100.5  102.2  103.4  103.9  104.0  104.1  104.1  104.0  104.0  103.8
+       103.9  104.0  104.0  104.1  104.1  104.1  104.1  104.1
+  13   100.5  102.2  103.4  103.9  104.0  104.1  104.1  104.1  104.0  104.0
+       104.0  104.0  104.1  104.1  104.1  104.1  104.1  104.1
+  14   100.5  102.2  103.4  103.9  104.0  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+  15   100.5  102.2  103.4  103.9  104.0  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+  16   100.5  102.2  103.4  103.9  104.0  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+  17   100.5  102.2  103.4  103.9  104.0  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+  18   100.5  102.2  103.4  103.9  104.0  104.1  104.1  104.1  104.1  104.1
+       104.1  104.1  104.1  104.1  104.1  104.1  104.1  104.1
+1
+  VOLUMETRIC BUDGET FOR ENTIRE MODEL AT END OF TIME STEP  1 IN STRESS PERIOD   2
+  ------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUMES      L**3       RATES FOR THIS TIME STEP      L**3/T
+     ------------------                 ------------------------
+
+           IN:                                      IN:
+           ---                                      ---
+             STORAGE =      102193.0078               STORAGE =           1.1724
+       CONSTANT HEAD =           0.0000         CONSTANT HEAD =           0.0000
+               WELLS =           0.0000                 WELLS =           0.0000
+       RIVER LEAKAGE =           0.0000         RIVER LEAKAGE =           0.0000
+     HEAD DEP BOUNDS =          38.5813       HEAD DEP BOUNDS =       4.4263E-04
+            RECHARGE =           1.4406              RECHARGE =           0.0000
+
+            TOTAL IN =      102233.0312              TOTAL IN =           1.1729
+
+          OUT:                                     OUT:
+          ----                                     ----
+             STORAGE =        6354.3989               STORAGE =       7.2903E-02
+       CONSTANT HEAD =           0.0000         CONSTANT HEAD =           0.0000
+               WELLS =       95878.2031                 WELLS =           1.1000
+       RIVER LEAKAGE =           1.4412         RIVER LEAKAGE =           0.0000
+     HEAD DEP BOUNDS =           0.0000       HEAD DEP BOUNDS =           0.0000
+            RECHARGE =           0.0000              RECHARGE =           0.0000
+
+           TOTAL OUT =      102234.0469             TOTAL OUT =           1.1729
+
+            IN - OUT =          -1.0156              IN - OUT =      -1.1563E-05
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+
+
+          TIME SUMMARY AT END OF TIME STEP   1 IN STRESS PERIOD    2
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH  87162.      1452.7      24.212      1.0088     2.76200E-03
+ STRESS PERIOD TIME  87162.      1452.7      24.212      1.0088     2.76200E-03
+         TOTAL TIME  87163.      1452.7      24.212      1.0088     2.76203E-03
+1
+1
+                            STRESS PERIOD NO.    3, LENGTH =   261486.0    
+                            -----------------------------------------------
+
+                              NUMBER OF TIME STEPS =     1
+
+                               MULTIPLIER FOR DELT =     1.000
+
+                            INITIAL TIME STEP SIZE =   261486.0    
+
+ Parameter:  WELLS_TR
+ WELL NO.  LAYER   ROW   COL   STRESS RATE         
+ --------------------------------------------------
+      1      1      9     10      -1.100    
+      2      2      9     10      -1.100    
+
+      2 WELLS
+
+ Parameter:  RIVERS
+ REACH NO.  LAYER   ROW   COL     STAGE      CONDUCTANCE     BOTTOM EL.         
+ -------------------------------------------------------------------------------
+      1      1      1      1       100.0           1.200           90.00    
+      2      1      2      1       100.0           1.200           90.00    
+      3      1      3      1       100.0           1.200           90.00    
+      4      1      4      1       100.0           1.200           90.00    
+      5      1      5      1       100.0           1.200           90.00    
+      6      1      6      1       100.0           1.200           90.00    
+      7      1      7      1       100.0           1.200           90.00    
+      8      1      8      1       100.0           1.200           90.00    
+      9      1      9      1       100.0           1.200           90.00    
+     10      1     10      1       100.0           1.200           90.00    
+     11      1     11      1       100.0           1.200           90.00    
+     12      1     12      1       100.0           1.200           90.00    
+     13      1     13      1       100.0           1.200           90.00    
+     14      1     14      1       100.0           1.200           90.00    
+     15      1     15      1       100.0           1.200           90.00    
+     16      1     16      1       100.0           1.200           90.00    
+     17      1     17      1       100.0           1.200           90.00    
+     18      1     18      1       100.0           1.200           90.00    
+
+     18 RIVER REACHES
+
+ REUSING NON-PARAMETER GHB CELLS FROM LAST STRESS PERIOD
+
+     36 GHB CELLS
+
+ REUSING RECH FROM LAST STRESS PERIOD
+ 
+ SOLVING FOR HEAD 
+
+ CELL CONVERSIONS FOR ITER.=  1  LAYER=  2  STEP=  1  PERIOD=   3   (ROW,COL)
+    DRY(  9, 10)   
+
+ NO OUTPUT CONTROL FOR STRESS PERIOD    3   TIME STEP   1
+
+ HEAD OBS#    6, ID obs2.2       IS DRY -- OMIT (OBS2BAS7SE)
+1
+  VOLUMETRIC BUDGET FOR ENTIRE MODEL AT END OF TIME STEP  1 IN STRESS PERIOD   3
+  ------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUMES      L**3       RATES FOR THIS TIME STEP      L**3/T
+     ------------------                 ------------------------
+
+           IN:                                      IN:
+           ---                                      ---
+             STORAGE =      128077.5469               STORAGE =       9.8990E-02
+       CONSTANT HEAD =           0.0000         CONSTANT HEAD =           0.0000
+               WELLS =           0.0000                 WELLS =           0.0000
+       RIVER LEAKAGE =           0.0000         RIVER LEAKAGE =           0.0000
+     HEAD DEP BOUNDS =         154.3254       HEAD DEP BOUNDS =       4.4264E-04
+            RECHARGE =           1.4406              RECHARGE =           0.0000
+
+            TOTAL IN =      128233.3125              TOTAL IN =       9.9433E-02
+
+          OUT:                                     OUT:
+          ----                                     ----
+             STORAGE =       32356.6250               STORAGE =       9.9440E-02
+       CONSTANT HEAD =           0.0000         CONSTANT HEAD =           0.0000
+               WELLS =       95878.2031                 WELLS =           0.0000
+       RIVER LEAKAGE =           1.4412         RIVER LEAKAGE =           0.0000
+     HEAD DEP BOUNDS =           0.0000       HEAD DEP BOUNDS =           0.0000
+            RECHARGE =           0.0000              RECHARGE =           0.0000
+
+           TOTAL OUT =      128236.2656             TOTAL OUT =       9.9440E-02
+
+            IN - OUT =          -2.9531              IN - OUT =      -7.4357E-06
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =          -0.01
+
+
+
+
+
+
+          TIME SUMMARY AT END OF TIME STEP   1 IN STRESS PERIOD    3
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 2.61486E+05  4358.1      72.635      3.0265     8.28599E-03
+ STRESS PERIOD TIME 2.61486E+05  4358.1      72.635      3.0265     8.28599E-03
+         TOTAL TIME 3.48649E+05  5810.8      96.847      4.0353     1.10480E-02
+1
+1
+                            STRESS PERIOD NO.    4, LENGTH =   522972.0    
+                            -----------------------------------------------
+
+                              NUMBER OF TIME STEPS =     1
+
+                               MULTIPLIER FOR DELT =     1.000
+
+                            INITIAL TIME STEP SIZE =   522972.0    
+
+ Parameter:  WELLS_TR
+ WELL NO.  LAYER   ROW   COL   STRESS RATE         
+ --------------------------------------------------
+      1      1      9     10      -1.100    
+      2      2      9     10      -1.100    
+
+      2 WELLS
+
+ Parameter:  RIVERS
+ REACH NO.  LAYER   ROW   COL     STAGE      CONDUCTANCE     BOTTOM EL.         
+ -------------------------------------------------------------------------------
+      1      1      1      1       100.0           1.200           90.00    
+      2      1      2      1       100.0           1.200           90.00    
+      3      1      3      1       100.0           1.200           90.00    
+      4      1      4      1       100.0           1.200           90.00    
+      5      1      5      1       100.0           1.200           90.00    
+      6      1      6      1       100.0           1.200           90.00    
+      7      1      7      1       100.0           1.200           90.00    
+      8      1      8      1       100.0           1.200           90.00    
+      9      1      9      1       100.0           1.200           90.00    
+     10      1     10      1       100.0           1.200           90.00    
+     11      1     11      1       100.0           1.200           90.00    
+     12      1     12      1       100.0           1.200           90.00    
+     13      1     13      1       100.0           1.200           90.00    
+     14      1     14      1       100.0           1.200           90.00    
+     15      1     15      1       100.0           1.200           90.00    
+     16      1     16      1       100.0           1.200           90.00    
+     17      1     17      1       100.0           1.200           90.00    
+     18      1     18      1       100.0           1.200           90.00    
+
+     18 RIVER REACHES
+
+ REUSING NON-PARAMETER GHB CELLS FROM LAST STRESS PERIOD
+
+     36 GHB CELLS
+
+ REUSING RECH FROM LAST STRESS PERIOD
+ 
+ SOLVING FOR HEAD 
+
+ NO OUTPUT CONTROL FOR STRESS PERIOD    4   TIME STEP   1
+ ALL CELLS INCLUDED IN THIS OBSERVATION ARE DRY
+1
+  VOLUMETRIC BUDGET FOR ENTIRE MODEL AT END OF TIME STEP  1 IN STRESS PERIOD   4
+  ------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUMES      L**3       RATES FOR THIS TIME STEP      L**3/T
+     ------------------                 ------------------------
+
+           IN:                                      IN:
+           ---                                      ---
+             STORAGE =      160719.8594               STORAGE =       6.2417E-02
+       CONSTANT HEAD =           0.0000         CONSTANT HEAD =           0.0000
+               WELLS =           0.0000                 WELLS =           0.0000
+       RIVER LEAKAGE =           0.0000         RIVER LEAKAGE =           0.0000
+     HEAD DEP BOUNDS =         385.8226       HEAD DEP BOUNDS =       4.4266E-04
+            RECHARGE =           1.4406              RECHARGE =           0.0000
+
+            TOTAL IN =      161107.1250              TOTAL IN =       6.2860E-02
+
+          OUT:                                     OUT:
+          ----                                     ----
+             STORAGE =       65232.4219               STORAGE =       6.2863E-02
+       CONSTANT HEAD =           0.0000         CONSTANT HEAD =           0.0000
+               WELLS =       95878.2031                 WELLS =           0.0000
+       RIVER LEAKAGE =           1.4412         RIVER LEAKAGE =           0.0000
+     HEAD DEP BOUNDS =           0.0000       HEAD DEP BOUNDS =           0.0000
+            RECHARGE =           0.0000              RECHARGE =           0.0000
+
+           TOTAL OUT =      161112.0625             TOTAL OUT =       6.2863E-02
+
+            IN - OUT =          -4.9375              IN - OUT =      -3.7998E-06
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =          -0.01
+
+
+
+
+
+
+          TIME SUMMARY AT END OF TIME STEP   1 IN STRESS PERIOD    4
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 5.22972E+05  8716.2      145.27      6.0529     1.65720E-02
+ STRESS PERIOD TIME 5.22972E+05  8716.2      145.27      6.0529     1.65720E-02
+         TOTAL TIME 8.71621E+05  14527.      242.12      10.088     2.76200E-02
+1
+1
+                            STRESS PERIOD NO.    5, LENGTH =  0.2356745E+08
+                            -----------------------------------------------
+
+                              NUMBER OF TIME STEPS =     9
+
+                               MULTIPLIER FOR DELT =     1.200
+
+                            INITIAL TIME STEP SIZE =   1133110.    
+
+ Parameter:  WELLS_TR
+ WELL NO.  LAYER   ROW   COL   STRESS RATE         
+ --------------------------------------------------
+      1      1      9     10      -1.100    
+      2      2      9     10      -1.100    
+
+      2 WELLS
+
+ Parameter:  RIVERS
+ REACH NO.  LAYER   ROW   COL     STAGE      CONDUCTANCE     BOTTOM EL.         
+ -------------------------------------------------------------------------------
+      1      1      1      1       100.0           1.200           90.00    
+      2      1      2      1       100.0           1.200           90.00    
+      3      1      3      1       100.0           1.200           90.00    
+      4      1      4      1       100.0           1.200           90.00    
+      5      1      5      1       100.0           1.200           90.00    
+      6      1      6      1       100.0           1.200           90.00    
+      7      1      7      1       100.0           1.200           90.00    
+      8      1      8      1       100.0           1.200           90.00    
+      9      1      9      1       100.0           1.200           90.00    
+     10      1     10      1       100.0           1.200           90.00    
+     11      1     11      1       100.0           1.200           90.00    
+     12      1     12      1       100.0           1.200           90.00    
+     13      1     13      1       100.0           1.200           90.00    
+     14      1     14      1       100.0           1.200           90.00    
+     15      1     15      1       100.0           1.200           90.00    
+     16      1     16      1       100.0           1.200           90.00    
+     17      1     17      1       100.0           1.200           90.00    
+     18      1     18      1       100.0           1.200           90.00    
+
+     18 RIVER REACHES
+
+ REUSING NON-PARAMETER GHB CELLS FROM LAST STRESS PERIOD
+
+     36 GHB CELLS
+
+ REUSING RECH FROM LAST STRESS PERIOD
+ 
+ SOLVING FOR HEAD 
+
+ NO OUTPUT CONTROL FOR STRESS PERIOD    5   TIME STEP   1
+ ALL CELLS INCLUDED IN THIS OBSERVATION ARE DRY
+ 
+ SOLVING FOR HEAD 
+
+ NO OUTPUT CONTROL FOR STRESS PERIOD    5   TIME STEP   2
+ 
+ SOLVING FOR HEAD 
+
+ NO OUTPUT CONTROL FOR STRESS PERIOD    5   TIME STEP   3
+ 
+ SOLVING FOR HEAD 
+
+ NO OUTPUT CONTROL FOR STRESS PERIOD    5   TIME STEP   4
+
+ HEAD OBS#    7, ID obs2.8       IS DRY -- OMIT (OBS2BAS7SE)
+ 
+ SOLVING FOR HEAD 
+
+ NO OUTPUT CONTROL FOR STRESS PERIOD    5   TIME STEP   5
+
+ HEAD OBS#    7, ID obs2.8       IS DRY -- OMIT (OBS2BAS7SE)
+ 
+ SOLVING FOR HEAD 
+
+ NO OUTPUT CONTROL FOR STRESS PERIOD    5   TIME STEP   6
+ 
+ SOLVING FOR HEAD 
+
+ NO OUTPUT CONTROL FOR STRESS PERIOD    5   TIME STEP   7
+ 
+ SOLVING FOR HEAD 
+
+ NO OUTPUT CONTROL FOR STRESS PERIOD    5   TIME STEP   8
+
+ HEAD OBS#    3, ID obs1.12      IS DRY -- OMIT (OBS2BAS7SE)
+
+ HEAD OBS#    8, ID obs2.12      IS DRY -- OMIT (OBS2BAS7SE)
+
+ HEAD OBS#   11, ID obs3.12      IS DRY -- OMIT (OBS2BAS7SE)
+
+ HEAD OBS#   14, ID obs4.12      IS DRY -- OMIT (OBS2BAS7SE)
+
+ HEAD OBS#   17, ID obs5.12      IS DRY -- OMIT (OBS2BAS7SE)
+
+ HEAD OBS#   28, ID obs3.12d1    IS DRY -- OMIT (OBS2BAS7SE)
+
+ HEAD OBS#   34, ID obs5.12d1    IS DRY -- OMIT (OBS2BAS7SE)
+
+ HEAD OBS#   45, ID obs3.12d2    IS DRY -- OMIT (OBS2BAS7SE)
+
+ HEAD OBS#   60, ID obs8.12      IS DRY -- OMIT (OBS2BAS7SE)
+ ALL CELLS INCLUDED IN THIS OBSERVATION ARE DRY
+ 
+ SOLVING FOR HEAD 
+
+ OUTPUT CONTROL FOR STRESS PERIOD    5   TIME STEP   9
+    PRINT HEAD FOR ALL LAYERS
+
+ HEAD OBS#    3, ID obs1.12      IS DRY -- OMIT (OBS2BAS7SE)
+
+ HEAD OBS#    8, ID obs2.12      IS DRY -- OMIT (OBS2BAS7SE)
+
+ HEAD OBS#   11, ID obs3.12      IS DRY -- OMIT (OBS2BAS7SE)
+
+ HEAD OBS#   14, ID obs4.12      IS DRY -- OMIT (OBS2BAS7SE)
+
+ HEAD OBS#   17, ID obs5.12      IS DRY -- OMIT (OBS2BAS7SE)
+
+ HEAD OBS#   28, ID obs3.12d1    IS DRY -- OMIT (OBS2BAS7SE)
+
+ HEAD OBS#   34, ID obs5.12d1    IS DRY -- OMIT (OBS2BAS7SE)
+
+ HEAD OBS#   45, ID obs3.12d2    IS DRY -- OMIT (OBS2BAS7SE)
+
+ HEAD OBS#   60, ID obs8.12      IS DRY -- OMIT (OBS2BAS7SE)
+ ALL CELLS INCLUDED IN THIS OBSERVATION ARE DRY
+1
+              HEAD IN LAYER   1 AT END OF TIME STEP   9 IN STRESS PERIOD    5
+  ---------------------------------------------------------------------------
+
+          1      2      3      4      5      6      7      8      9     10
+         11     12     13     14     15     16     17     18
+ .........................................................................
+   1  -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+   2  -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+   3  -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+   4  -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+   5  -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+   6  -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+   7  -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+   8  -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+   9  -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+  10  -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+  11  -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+  12  -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+  13  -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+  14  -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+  15  -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+  16  -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+  17  -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+  18  -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+      -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0
+1
+              HEAD IN LAYER   2 AT END OF TIME STEP   9 IN STRESS PERIOD    5
+  ---------------------------------------------------------------------------
+
+          1      2      3      4      5      6      7      8      9     10
+         11     12     13     14     15     16     17     18
+ .........................................................................
+   1   103.6  103.6  103.6  103.6  103.7  103.7  103.7  103.7  103.7  103.7
+       103.7  103.7  103.7  103.7  103.7  103.7  103.8  103.8
+   2   103.6  103.6  103.6  103.6  103.7  103.7  103.7  103.7  103.7  103.7
+       103.7  103.7  103.7  103.7  103.7  103.7  103.8  103.8
+   3   103.6  103.6  103.6  103.6  103.7  103.7  103.7  103.7  103.7  103.7
+       103.7  103.7  103.7  103.7  103.7  103.7  103.8  103.8
+   4   103.6  103.6  103.6  103.6  103.7  103.7  103.7  103.7  103.7  103.7
+       103.7  103.7  103.7  103.7  103.7  103.7  103.8  103.8
+   5   103.6  103.6  103.6  103.6  103.7  103.7  103.7  103.7  103.7  103.7
+       103.7  103.7  103.7  103.7  103.7  103.7  103.8  103.8
+   6   103.6  103.6  103.6  103.6  103.7  103.7  103.7  103.7  103.7  103.7
+       103.7  103.7  103.7  103.7  103.7  103.7  103.8  103.8
+   7   103.6  103.6  103.6  103.6  103.6  103.7  103.7  103.7  103.7  103.7
+       103.7  103.7  103.7  103.7  103.7  103.7  103.8  103.8
+   8   103.6  103.6  103.6  103.6  103.6  103.7  103.7  103.7  103.7  103.7
+       103.7  103.7  103.7  103.7  103.7  103.8  103.8  103.8
+   9   103.6  103.6  103.6  103.6  103.6  103.7  103.7  103.7  103.7 -999.0
+       103.7  103.7  103.7  103.7  103.7  103.8  103.8  103.8
+  10   103.6  103.6  103.6  103.6  103.6  103.7  103.7  103.7 -999.0  103.7
+       103.7  103.7  103.7  103.7  103.7  103.8  103.8  103.8
+  11   103.6  103.6  103.6  103.6  103.6  103.7  103.7  103.7  103.7  103.7
+       103.7  103.7  103.7  103.7  103.7  103.8  103.8  103.8
+  12   103.6  103.6  103.6  103.6  103.7  103.7  103.7  103.7  103.7  103.7
+       103.7  103.7  103.7  103.7  103.7  103.8  103.8  103.8
+  13   103.6  103.6  103.6  103.6  103.7  103.7  103.7  103.7  103.7  103.7
+       103.7  103.7  103.7  103.7  103.7  103.8  103.8  103.8
+  14   103.6  103.6  103.6  103.6  103.7 -999.0  103.7  103.7  103.7  103.7
+       103.7  103.7  103.7  103.7  103.7  103.8  103.8  103.8
+  15   103.6  103.6  103.6  103.6  103.7  103.7  103.7  103.7  103.7  103.7
+       103.7  103.7  103.7  103.7  103.7  103.8  103.8  103.8
+  16   103.6  103.6  103.6  103.6  103.7  103.7  103.7  103.7  103.7  103.7
+       103.7  103.7  103.7  103.7  103.7  103.8  103.8  103.8
+  17   103.6  103.6  103.6  103.6  103.7  103.7  103.7  103.7  103.7  103.7
+       103.7  103.7  103.7  103.7  103.7  103.8  103.8  103.8
+  18   103.6  103.6  103.6  103.6  103.7  103.7  103.7  103.7  103.7  103.7
+       103.7  103.7  103.7  103.7  103.7  103.8  103.8  103.8
+1
+              HEAD IN LAYER   3 AT END OF TIME STEP   9 IN STRESS PERIOD    5
+  ---------------------------------------------------------------------------
+
+          1      2      3      4      5      6      7      8      9     10
+         11     12     13     14     15     16     17     18
+ .........................................................................
+   1   103.6  103.6  103.6  103.6  103.7  103.7  103.7  103.7  103.7  103.7
+       103.7  103.7  103.7  103.7  103.7  103.7  103.8  103.8
+   2   103.6  103.6  103.6  103.6  103.7  103.7  103.7  103.7  103.7  103.7
+       103.7  103.7  103.7  103.7  103.7  103.7  103.8  103.8
+   3   103.6  103.6  103.6  103.6  103.7  103.7  103.7  103.7  103.7  103.7
+       103.7  103.7  103.7  103.7  103.7  103.7  103.8  103.8
+   4   103.6  103.6  103.6  103.6  103.7  103.7  103.7  103.7  103.7  103.7
+       103.7  103.7  103.7  103.7  103.7  103.7  103.8  103.8
+   5   103.6  103.6  103.6  103.6  103.7  103.7  103.7  103.7  103.7  103.7
+       103.7  103.7  103.7  103.7  103.7  103.7  103.8  103.8
+   6   103.6  103.6  103.6  103.6  103.7  103.7  103.7  103.7  103.7  103.7
+       103.7  103.7  103.7  103.7  103.7  103.7  103.8  103.8
+   7   103.6  103.6  103.6  103.6  103.7  103.7  103.7  103.7  103.7  103.7
+       103.7  103.7  103.7  103.7  103.7  103.7  103.8  103.8
+   8   103.6  103.6  103.6  103.6  103.7  103.7  103.7  103.7  103.7  103.7
+       103.7  103.7  103.7  103.7  103.7  103.7  103.8  103.8
+   9   103.6  103.6  103.6  103.6  103.7  103.7  103.7  103.7  103.7  103.7
+       103.7  103.7  103.7  103.7  103.7  103.7  103.8  103.8
+  10   103.6  103.6  103.6  103.6  103.7  103.7  103.7  103.7 -999.0  103.7
+       103.7  103.7  103.7  103.7  103.7  103.7  103.8  103.8
+  11   103.6  103.6  103.6  103.6  103.7  103.7  103.7  103.7  103.7  103.7
+       103.7  103.7  103.7  103.7  103.7  103.7  103.8  103.8
+  12   103.6  103.6  103.6  103.6  103.7  103.7  103.7  103.7  103.7  103.7
+       103.7  103.7  103.7  103.7  103.7  103.7  103.8  103.8
+  13   103.6  103.6  103.6  103.6  103.7  103.7  103.7  103.7  103.7  103.7
+       103.7  103.7  103.7  103.7  103.7  103.7  103.8  103.8
+  14   103.6  103.6  103.6  103.6  103.7  103.7  103.7  103.7  103.7  103.7
+       103.7  103.7  103.7  103.7  103.7  103.7  103.8  103.8
+  15   103.6  103.6  103.6  103.6  103.7  103.7  103.7  103.7  103.7  103.7
+       103.7  103.7  103.7  103.7  103.7  103.7  103.8  103.8
+  16   103.6  103.6  103.6  103.6  103.7  103.7  103.7  103.7  103.7  103.7
+       103.7  103.7  103.7  103.7  103.7  103.7  103.8  103.8
+  17   103.6  103.6  103.6  103.6  103.7  103.7  103.7  103.7  103.7  103.7
+       103.7  103.7  103.7  103.7  103.7  103.7  103.8  103.8
+  18   103.6  103.6  103.6  103.6  103.7  103.7  103.7  103.7  103.7  103.7
+       103.7  103.7  103.7  103.7  103.7  103.7  103.8  103.8
+1
+  VOLUMETRIC BUDGET FOR ENTIRE MODEL AT END OF TIME STEP  9 IN STRESS PERIOD   5
+  ------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUMES      L**3       RATES FOR THIS TIME STEP      L**3/T
+     ------------------                 ------------------------
+
+           IN:                                      IN:
+           ---                                      ---
+             STORAGE =      342510.0625               STORAGE =       1.5379E-03
+       CONSTANT HEAD =           0.0000         CONSTANT HEAD =           0.0000
+               WELLS =           0.0000                 WELLS =           0.0000
+       RIVER LEAKAGE =           0.0000         RIVER LEAKAGE =           0.0000
+     HEAD DEP BOUNDS =       10827.2910       HEAD DEP BOUNDS =       4.4324E-04
+            RECHARGE =           1.4406              RECHARGE =           0.0000
+
+            TOTAL IN =      353338.7812              TOTAL IN =       1.9811E-03
+
+          OUT:                                     OUT:
+          ----                                     ----
+             STORAGE =      257462.5156               STORAGE =       1.9810E-03
+       CONSTANT HEAD =           0.0000         CONSTANT HEAD =           0.0000
+               WELLS =       95878.2031                 WELLS =           0.0000
+       RIVER LEAKAGE =           1.4412         RIVER LEAKAGE =           0.0000
+     HEAD DEP BOUNDS =           0.0000       HEAD DEP BOUNDS =           0.0000
+            RECHARGE =           0.0000              RECHARGE =           0.0000
+
+           TOTAL OUT =      353342.1562             TOTAL OUT =       1.9810E-03
+
+            IN - OUT =          -3.3750              IN - OUT =       1.0268E-07
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.01
+
+
+
+
+
+
+          TIME SUMMARY AT END OF TIME STEP   9 IN STRESS PERIOD    5
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 4.87217E+06  81203.      1353.4      56.391     0.15439    
+ STRESS PERIOD TIME 2.35675E+07 3.92791E+05  6546.5      272.77     0.74681    
+         TOTAL TIME 2.44391E+07 4.07318E+05  6788.6      282.86     0.77443    
+1
+
+ HEAD AND DRAWDOWN OBSERVATIONS
+ OBSERVATION     OBSERVED      SIMULATED
+   NAME            VALUE         VALUE      DIFFERENCE
+ -------------------------------------------------------
+ obs1.0         101.804       100.067       1.73727    
+ obs1.1       -2.899933E-02  -888.000    
+ obs1.12      -0.128998      -888.000    
+ obs2.0         128.117       104.113       24.0042    
+ obs2.1       -4.100037E-02  -888.000    
+ obs2.2       -0.557007      -888.000    
+ obs2.8        -11.5310      -888.000    
+ obs2.12       -14.1840      -888.000    
+ obs3.0         156.678      -888.000    
+ obs3.1        -4.38100      -888.000    
+ obs3.12       -42.5400      -888.000    
+ obs4.0         124.893       104.113       20.7802    
+ obs4.1       -6.700134E-02  -888.000    
+ obs4.12       -14.3040      -888.000    
+ obs5.0         140.961      -888.000    
+ obs5.1       -5.999756E-02  -888.000    
+ obs5.12       -21.6760      -888.000    
+ obs1.0d1       101.804       100.069       1.73498    
+ obs1.1d1     -2.899933E-02  0.139725     -0.168724    
+ obs1.12d1    -0.128998       3.53152      -3.66052    
+ obs2.0d1       128.117       104.110       24.0067    
+ obs2.1d1     -4.100037E-02 -8.554077E-02  4.454041E-02
+ obs2.2d1     -0.557007     -0.261986     -0.295021    
+ obs2.8d1      -11.5310     -0.663094      -10.8679    
+ obs2.12d1     -14.1840     -0.474411      -13.7096    
+ obs3.0d1       156.678       104.087       52.5909    
+ obs3.1d1      -4.38100      -888.000    
+ obs3.12d1     -42.5400      -888.000    
+ obs4.0d1       124.893       104.110       20.7827    
+ obs4.1d1     -6.700134E-02 -8.559418E-02  1.859283E-02
+ obs4.12d1     -14.3040     -0.474197      -13.8298    
+ obs5.0d1       140.961       104.085       36.8756    
+ obs5.1d1     -5.999756E-02  -888.000    
+ obs5.12d1     -21.6760      -888.000    
+ obs1.0d2       101.804       100.423       1.38128    
+ obs1.1d2     -2.899933E-02  0.100449     -0.129448    
+ obs1.12d2    -0.128998       3.17930      -3.30830    
+ obs2.0d2       128.117       103.941       24.1758    
+ obs2.1d2     -4.100037E-02 -5.223846E-02  1.123810E-02
+ obs2.2d2     -0.557007     -0.187309     -0.369698    
+ obs2.8d2      -11.5310     -0.489319      -11.0417    
+ obs2.12d2     -14.1840     -0.303917      -13.8801    
+ obs3.0d2       156.678       104.087       52.5909    
+ obs3.1d2      -4.38100      -888.000    
+ obs3.12d2     -42.5400      -888.000    
+ obs4.0d2       124.893       103.941       20.9516    
+ obs4.1d2     -6.700134E-02 -5.261230E-02 -1.438904E-02
+ obs4.12d2     -14.3040     -0.303909      -14.0001    
+ obs5.0d2       140.961       104.082       36.8787    
+ obs5.1d2     -5.999756E-02 -1.990509E-02 -4.009247E-02
+ obs5.12d2     -21.6760     -0.415810      -21.2602    
+ obs6.0         126.537       103.941       22.5958    
+ obs6.1        4.997253E-03 -5.223846E-02  5.723572E-02
+ obs6.12       -14.3650     -0.303917      -14.0611    
+ obs7.0         101.112       100.423      0.689278    
+ obs7.1        4.800415E-02  0.100418     -5.241394E-02
+ obs7.12      -0.568001       3.17863      -3.74663    
+ obs8.0         158.135       104.087       54.0479    
+ obs8.1        -5.53299      -888.000    
+ obs8.12       -43.2170      -888.000    
+ obs9.0         176.374       104.092       72.2822    
+ obs9.1       -9.918213E-04 -4.776001E-03  3.784180E-03
+ obs9.12       -38.2420     -0.338005      -37.9040    
+ obs0.0         142.020       104.077       37.9431    
+ obs0.1       -1.300049E-02 -8.422852E-03 -4.577637E-03
+ obs0.12       -19.9210     -0.409912      -19.5111    
+
+ SUM OF SQUARED DIFFERENCE:    2.49094E+04
+
+ RIVER FLOW OBSERVATIONS
+ OBSERVATION     OBSERVED      SIMULATED
+   NAME            VALUE         VALUE      DIFFERENCE
+ -------------------------------------------------------
+ obsSS         -4.40000      -1.44122      -2.95878    
+ obsTR3        -4.10000       0.00000      -4.10000    
+ obsTR12       -2.20000       0.00000      -2.20000    
+
+ SUM OF SQUARED DIFFERENCE:    3.04044E+01
+
+ Run end date and time (yyyy/mm/dd hh:mm:ss): 2008/04/11  5:19:49
+ Elapsed run time:  0.343 Seconds
+

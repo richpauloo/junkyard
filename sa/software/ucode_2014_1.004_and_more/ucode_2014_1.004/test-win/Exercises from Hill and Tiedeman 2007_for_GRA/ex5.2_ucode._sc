@@ -1,0 +1,15 @@
+ "PARAMETER NAME" "COMPOSITE SCALED SENSITIVITY" "LARGEST DSS FOR THE PARAMETER" "OBSERVATION WITH LARGEST DSS" "SECOND LARGEST DSS FOR THE PARAMETER" "OBSERVATION WITH SECOND LARGEST DSS"
+ HK_1               37.2051653686486                     -68.8661499970360     hd09.ss                              -52.7386832466142     hd03.ss             
+ K_RB              0.200070681481417                    -0.210308578376145     hd09.ss                             -0.210308528439056     hd05.ss             
+ VK_CB             0.221507211018840                    -0.678549942027726     hd07.ss                              0.183638994544927     hd09.ss             
+ HK_2               3.12642091750885                     -7.65340306792343     hd09.ss                              -4.18102573018678     hd08.ss             
+ RCH_1              15.6454618980438                      22.0580159413905     hd03.ss                               22.0336323518513     hd09.ss             
+ RCH_2              25.2844289621995                      54.4828727706596     hd09.ss                               35.1482003747928     hd08.ss             
+ "WITH PRIOR:"
+ "PARAMETER NAME" "COMPOSITE SCALED SENSITIVITY WITH PRIOR" "LARGEST DSS FOR THE PARAMETER" "OBSERVATION WITH LARGEST DSS" "SECOND LARGEST DSS FOR THE PARAMETER" "OBSERVATION WITH SECOND LARGEST DSS"
+ HK_1               34.2237744975774                     -68.8661499970360     hd09.ss                              -52.7386832466142     hd03.ss             
+ K_RB              0.919717147175724                      3.24901895147517     K_RB_PR                             -0.210308578376145     hd09.ss             
+ VK_CB             0.937736246939428                      3.30027583769081     VK_CB_PR                            -0.678549942027726     hd07.ss             
+ HK_2               2.87588896340440                     -7.65340306792343     hd09.ss                              -4.18102573018678     hd08.ss             
+ RCH_1              14.3917317556205                      22.0580159413905     hd03.ss                               22.0336323518513     hd09.ss             
+ RCH_2              23.2582918669544                      54.4828727706596     hd09.ss                               35.1482003747928     hd08.ss             

@@ -1,0 +1,12 @@
+# MNW2: Multi-Node Well package file 
+ 1 -1 2 AUXILIARY IFACE # DataSet 1: MNWMAX, IWL2CB, MNWPRNT, OPTION
+Well  -2                # Data Set 2A: WELLID, NNODES
+THIEM  -1 1 1 0         # Data Set 2B: LOSSTYPE, PUMPLOC, Qlimit, PPFLAG, PUMPCAP
+ -1.0                   # Data Set 2C; Rw
+ 100.  50.  9 10 1.0    # Data Set 2D; Ztop, Zbotm, ROW, COL, Rw
+  40. -10.  9 10 1.0    # Data Set 2D; Ztop, Zbotm, ROW, COL, Rw
+  30.                   # Data Set 2E: Zpump
+ 0.     0               # Data Set 2F: Hlim, QCut
+ 0                      # Data Set 3, Stress Period 1: ITMP
+ 1                      # Data Set 3, Stress Period 2: ITMP
+Well  -2.2  0           # Data Set 4A: WELLID, QDes, IFACE

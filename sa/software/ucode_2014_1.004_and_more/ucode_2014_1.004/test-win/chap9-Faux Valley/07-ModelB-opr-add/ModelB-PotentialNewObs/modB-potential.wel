@@ -1,0 +1,7 @@
+# WEL: Well package file 
+ 1 -1 AUXILIARY IFACE # DataSet 2: MXACTC IGHBCB Option
+ 1 0 # Data Set 5: ITMP NP Stress period 1
+ 1 10 9 -1.0  0 # Data Set 6: Layer Row Column Bhead Q IFACE  Pumping in observation well 03
+ 1 0 # Data Set 5: ITMP NP Stress period 1
+ 2 10 9 -0.5  0 # Data Set 6: Layer Row Column Bhead Q IFACE  Pumping in observation well 08
+ 

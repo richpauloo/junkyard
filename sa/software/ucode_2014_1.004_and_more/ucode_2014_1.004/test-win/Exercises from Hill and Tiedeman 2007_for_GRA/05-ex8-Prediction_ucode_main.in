@@ -1,0 +1,74 @@
+BEGIN Options Keywords
+  Verbose = 3
+END Options
+ 
+BEGIN UCODE_Control_Data Keywords
+  ModelName = ex3-pred
+  ModelLengthUnits = m
+  ModelTimeUnits = s
+  Sensitivities = True
+  Prediction = True
+END UCODE_Control_Data
+ 
+BEGIN Model_Command_Lines Keywords
+  Command = "..\..\bin\mf2005.exe .\ex3-pred.nam"
+    Purpose = Forward
+    CommandID = ForwardModel
+END Model_Command_Lines
+ 
+BEGIN Parameter_Groups Table
+  NROW=5 NCOL=5 COLUMNLABELS
+  GroupName Adjustable Transform MaxChange SenMethod
+  HK           Yes        No        2.0        1
+  VANI          No        No        2.0        1
+  VKCB         Yes        No        2.0        1
+  RIV          Yes        No        2.0        1
+  RCH          Yes        No        2.0        1
+END Parameter_Groups
+ 
+BEGIN Parameter_Data Table
+  NROW=7 NCOL=5 COLUMNLABELS
+  ParamName GroupName StartValue             LowerValue UpperValue
+  HK_1          HK      4.6188026875502102E-04   8E-5         0.0008
+  K_RB          RIV     1.1696468225310631E-03   0.0007       0.007
+  VK_CB         VKCB    9.9008275130724236E-08   5E-8         5E-7
+  HK_2          HK      1.5365996990608211E-05   9E-6         9E-5
+  RCH_1         RCH     4.7463082373812021E+01   32           126
+  RCH_2         RCH     3.8512502175341282E+01   16           63
+  VANI          VANI    1.0000000000000000E+00   1            1     
+END Parameter_Data
+ 
+BEGIN Prediction_Groups Table
+  NROW=4 NCOL=5 COLUMNLABELS
+  GroupName MeasStatistic MeasStatFlag UseFlag PlotSymbol
+  Heads          .33           SD        Yes       6
+  Head_Changes   .45           SD        Yes       7
+  RIV_flows      .62           SD        Yes       8
+  ignore         1             SD        No        1
+END Prediction_Groups
+ 
+BEGIN Prediction_Data Table
+  NROW=6 NCOL=3 COLUMNLABELS
+  PredName     GroupName RefValue
+  PredDDSE_1     ignore     1
+  PredDDSE_2   Head_Changes 1
+  PredHdWell_1   ignore     1
+  PredHdWell_2    Heads     1
+  FlowPred_1     ignore     1
+  FlowPred_2    RIV_flows   1
+END Prediction_Data
+ 
+BEGIN Model_Input_Files Keywords
+  ModInFile = ex3-pred.pval
+    TemplateFile = ex3-pred_pval.jtf
+END Model_Input_Files
+ 
+BEGIN Model_Output_Files Keywords
+  ModOutFile = ex3-pred.hob_out
+    InstructionFile = ex3-pred.hob_out.jif
+    Category = Pred
+  ModOutFile = ex3-pred.rvob_out
+    InstructionFile = ex3-pred.rvob_out.jif
+    Category = Pred
+END Model_Output_Files
+ 

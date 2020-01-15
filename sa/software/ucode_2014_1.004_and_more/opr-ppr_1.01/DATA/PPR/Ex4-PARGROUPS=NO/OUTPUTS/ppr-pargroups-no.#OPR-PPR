@@ -1,0 +1,201 @@
+
+ ===========================
+ PROGRAM OPR-PPR VERSION 1.0
+ ===========================
+
+ SUCCESSFULLY OPENED FILE ppr-pargroups-no.IN
+
+ READING INPUT FROM FILE: ppr-pargroups-no.IN
+
+
+ Keyword                                 Value        Group =             
+ --------------------------------------  --------------------------------------
+ MODE                                    PPR
+ PARGROUPS                               NO
+ PREDGROUPS                              NO
+ PERCENTREDUC                            10
+ CORRELTHRESH                            0.90
+ VERBOSE                                 1
+ ------------------------------------------------------------------------------
+
+ RUNFLAG= 11 (MODE=PPR; GROUPS=NO):  PPR FOR INDIVIDUAL PARAMETERS
+   PERCENTREDUC EQUATES TO PARAMETER STDEV REDUCTION OF  10.00     PERCENT
+
+ READING PREDICTION MODEL DATA FILE example._dmp                                                                                        
+
+  NUMBER OF PREDICTION GROUPS =           3
+  NUMBER OF PARAMETERS FOR PREDICTIVE EVALUATION =           7
+
+ READING REGRESSION/SENSITIVITY MODEL DATA FILE example._dm                                                                                         
+
+  PREDICTION DATA FILE example._dmp INDICATES    1 PREDICTION-ONLY PARAMETER(S)
+
+        RCH_1       GROUP1
+        RCH_2       GROUP1
+         K_RB       GROUP1
+         HK_1       GROUP1
+        VK_CB       GROUP1
+         HK_2       GROUP1
+      POR_1&2       GROUP1
+
+ TOTAL NUMBER OF PREDICTIONS IDENTIFIED FROM MAIN INPUT FILE =  9
+ (NOTE: THIS MUST EQUAL THE NO. OF ROWS IN THE PREDICTION SENSITIVITY FILE)
+
+
+ READING SENSITIVITIES FOR PREDICTIONS FROM FILE: example._spu
+
+
+ READING SENSITIVITIES FOR NPARPREDONLY PARAMETERS FROM FILE: example._suprip
+
+
+ READING WEIGHTS ON PRIOR FOR FOR NPARPREDONLY PARAMETERS FROM FILE: example._wtprip
+
+ SUCCESSFULLY CLOSED FILE ppr-pargroups-no.IN
+
+ READING SENSITIVITIES FOR EXISTING OBSERVATIONS FROM FILE: example._su
+
+
+ SENSITIVITY ENTRIES FOR PRIOR WITH NPARPREDONLY APPENDED
+
+
+ READING WEIGHTS FOR EXISTING OBSERVATIONS FROM FILE: example._wt
+
+
+ FULL WEIGHT MATRIX WITH ALL ENTRIES (OBSERVATIONS, EXISTING PRIOR AND NON-REGRESSION PRIOR)
+
+
+ MAKING BASE CASE Z(INV(XTWX)S)ZT CALCULATION
+
+
+ COMPLETED BASE CASE Z(INV(XTWX)S)ZT CALCULATION
+
+
+ PPR CALCULATION FOR PARAMETER RCH_1
+
+
+ PRIOR WEIGHT CALCULATION FOR PARAMETER RCH_1 CONVERGED IN   11 ITERATIONS
+
+
+ PPR CALCULATION FOR PARAMETER RCH_2
+
+
+ PRIOR WEIGHT CALCULATION FOR PARAMETER RCH_2 CONVERGED IN   11 ITERATIONS
+
+
+ PPR CALCULATION FOR PARAMETER K_RB
+
+
+ PRIOR WEIGHT CALCULATION FOR PARAMETER K_RB CONVERGED IN    8 ITERATIONS
+
+
+ PPR CALCULATION FOR PARAMETER HK_1
+
+
+ PRIOR WEIGHT CALCULATION FOR PARAMETER HK_1 CONVERGED IN   10 ITERATIONS
+
+
+ PPR CALCULATION FOR PARAMETER VK_CB
+
+
+ PRIOR WEIGHT CALCULATION FOR PARAMETER VK_CB CONVERGED IN    9 ITERATIONS
+
+
+ PPR CALCULATION FOR PARAMETER HK_2
+
+
+ PRIOR WEIGHT CALCULATION FOR PARAMETER HK_2 CONVERGED IN   11 ITERATIONS
+
+
+ PPR CALCULATION FOR PARAMETER POR_1&2
+
+
+ PRIOR WEIGHT CALCULATION FOR PARAMETER POR_1&2 CONVERGED IN    7 ITERATIONS
+
+
+ ========================
+ OPR-PPR ANALYSIS SUMMARY
+ ========================
+
+ FORMING AND WRITING PPR STATISTIC FILES ....
+
+
+ ----------------------------------------------
+ ABSOLUTE CHANGE: PREDICTION STANDARD DEVIATIONS (OPR_ABSCHG STATISTIC)
+ ----------------------------------------------
+ "ROWNAME     "           "AD10_X              "  "AD10_Y              "  "AD10_Z              "  "AD50_X              "  "AD50_Y              "  "AD50_Z              "  "A100_X              "  "A100_Y              "  "A100_Z              "
+ RCH_1                          -7.157444477            -21.65018463            -1.647751212            -57.71878052            -203.3184509            -6.123476982            -1999.522583            -5239.115234            -19.70731735    
+ RCH_2                          -5.568442345            -21.72286034            -1.696971774            -45.12181473            -202.3398285            -6.241227150            -1993.655884            -5273.324707            -20.11444283    
+ K_RB                           -1.694205523            -2.468702316           -0.1733364910            -13.66169167            -23.78650093           -0.6706174612            -268.4770203            -660.4188232            -2.761726856    
+ HK_1                           -9.881861687            -19.02715302            -1.371416807            -79.14597321            -181.7070465            -5.210419178            -1787.961304            -4589.842285            -16.85191727    
+ VK_CB                          -6.182675362            -20.80739403            -1.599438310            -49.85540390            -194.7810364            -5.914247036            -1878.908936            -4966.468750            -18.39389229    
+ HK_2                           -6.533508778            -21.93167305            -1.687724352            -52.79056168            -205.2546082            -6.244491577            -2020.544800            -5315.102539            -20.11529732    
+ POR_1&2                        -1.233972907           -0.6881563365E-01       -0.6489580497E-02        -10.55445957           -0.9718431234           -0.8906921372E-02       -0.9353243513E-08       -0.5020410754E-09       -0.4663790017E-01
+ SUCCESSFULLY OPENED FILE ppr-pargroups-no._PPR_ABSCHG
+ SUCCESSFULLY CLOSED FILE ppr-pargroups-no._PPR_ABSCHG
+
+ ----------------------------------------------
+ ABSOLUTE CHANGE: PARAMETER STANDARD DEVIATIONS
+ ----------------------------------------------
+ "ROWNAME     "           "RCH_1       "  "RCH_2       "  "K_RB        "  "HK_1        "  "VK_CB       "  "HK_2        "  "POR_1&2     "
+ RCH_1                      -5.96846        -5.76532        -.638544E-04    -.153053E-04    -.958838E-07    -.160359E-04     0.00000    
+ RCH_2                      -5.77439        -5.95913        -.656485E-04    -.134337E-04    -.966423E-07    -.161602E-04     0.00000    
+ K_RB                       -.582700        -.598130        -.654046E-03    -.260836E-05    -.384513E-08    -.183712E-05     0.00000    
+ HK_1                       -5.43301        -4.76114        -.101464E-03    -.168138E-04    -.816886E-07    -.139901E-04     0.00000    
+ VK_CB                      -5.57033        -5.60558        -.244789E-04    -.133690E-04    -.102737E-06    -.154195E-04     0.00000    
+ HK_2                       -5.87803        -5.91430        -.737942E-04    -.144465E-04    -.972911E-07    -.162827E-04     0.00000    
+ POR_1&2                     0.00000         0.00000         0.00000         0.00000         0.00000         0.00000        -.368406E-02
+ SUCCESSFULLY OPENED FILE ppr-pargroups-no._PPA_ABSCHG
+ SUCCESSFULLY CLOSED FILE ppr-pargroups-no._PPA_ABSCHG
+
+ ----------------------------------------------
+ PERCENT CHANGE: PREDICTION STANDARD DEVIATIONS (OPR/PRR STATISTIC)
+ ----------------------------------------------
+ "ROWNAME     "           "AD10_X              "  "AD10_Y              "  "AD10_Z              "  "AD50_X              "  "AD50_Y              "  "AD50_Z              "  "A100_X              "  "A100_Y              "  "A100_Z              "
+ RCH_1                           5.587545395             9.835693359             9.667544365             5.621729851             9.838559151             9.774726868             9.870472908             9.849019051             9.700098991    
+ RCH_2                           4.347071648             9.868710518             9.956327438             4.394803047             9.791202545             9.962687492             9.841513634             9.913329124             9.900489807    
+ K_RB                            1.322602034             1.121533155             1.016984940             1.330629945             1.151026368             1.070486903             1.325314045             1.241522074             1.359344125    
+ HK_1                            7.714394569             8.644047737             8.046258926             7.708708763             8.792783737             8.317238808             8.826119423             8.628449440             8.294649124    
+ VK_CB                           4.826580524             9.452813148             9.384086609             4.855847836             9.425434113             9.440738678             9.275074959             9.336470604             9.053621292    
+ HK_2                            5.100462437             9.963573456             9.902070999             5.141727924             9.932248116             9.967898369             9.974247932             9.991867065             9.900911331    
+ POR_1&2                        0.9633158445            0.3126299009E-01        0.3807510808E-01         1.027989864            0.4702738300E-01        0.1421785727E-01        0.4617417559E-10        0.9436895709E-12        0.2295554802E-01
+ SUCCESSFULLY OPENED FILE ppr-pargroups-no._PPR
+ SUCCESSFULLY CLOSED FILE ppr-pargroups-no._PPR
+
+ ---------------------------------------------
+ PERCENT CHANGE: PARAMETER STANDARD DEVIATIONS
+ ---------------------------------------------
+ "ROWNAME     "           "RCH_1       "  "RCH_2       "  "K_RB        "  "HK_1        "  "VK_CB       "  "HK_2        "  "POR_1&2     "
+ RCH_1                      -10.0000        -9.67482        -.976300        -9.10284        -9.33296        -9.84847         0.00000    
+ RCH_2                      -9.67485        -10.0000        -1.00373        -7.98970        -9.40679        -9.92484         0.00000    
+ K_RB                       -.976300        -1.00373        -10.0000        -1.55133        -.374270        -1.12827         0.00000    
+ HK_1                       -9.10287        -7.98971        -1.55133        -10.0001        -7.95125        -8.59207         0.00000    
+ VK_CB                      -9.33296        -9.40676        -.374270        -7.95122        -10.0000        -9.46992         0.00000    
+ HK_2                       -9.84849        -9.92483        -1.12827        -8.59206        -9.46994        -10.0000         0.00000    
+ POR_1&2                     0.00000         0.00000         0.00000         0.00000         0.00000         0.00000        -9.99994    
+ SUCCESSFULLY OPENED FILE ppr-pargroups-no._PPA
+ SUCCESSFULLY CLOSED FILE ppr-pargroups-no._PPA
+
+ ---------------------------------------------
+ CORRELATIONS GREATER THAN "CORRELTHRESH"
+ ---------------------------------------------
+
+   64 PARAMETER CORRELATIONS GREATER THAN "CORRELTHRESH"    0.9000 REPORTED
+ SUCCESSFULLY OPENED FILE ppr-pargroups-no._PPC
+ SUCCESSFULLY CLOSED FILE ppr-pargroups-no._PPC
+
+ ----------------------------------------------------------------
+ SUMMARY OF MOST AND LEAST IMPORTANT POTENTIAL NEW PARAMETER DATA
+ ----------------------------------------------------------------
+ OBS/GRP: POR_1&2                OPR-PPR:  2.14484    
+ OBS/GRP: K_RB                   OPR-PPR:  10.9394    
+ OBS/GRP: HK_1                   OPR-PPR:  74.9726    
+ OBS/GRP: VK_CB                  OPR-PPR:  75.0507    
+ OBS/GRP: RCH_2                  OPR-PPR:  77.9761    
+ OBS/GRP: RCH_1                  OPR-PPR:  79.7454    
+ OBS/GRP: HK_2                   OPR-PPR:  79.8750    
+
+ NOTE: THIS TABLE IS CREATED BY SUMMING OPR OR PPR STATISTICS
+
+ ======================================
+ SUCCESSFUL PROGRAM EXECUTION - OPR-PPR
+ ======================================

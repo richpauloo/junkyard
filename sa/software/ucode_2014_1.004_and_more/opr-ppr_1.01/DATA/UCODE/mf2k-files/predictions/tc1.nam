@@ -1,0 +1,31 @@
+# NAME file for test case tc1
+#
+# NOTE: Backward slashes (\) in pathnames may need to be converted
+#       to forward slashes (/) in some computing environments
+#
+# Output files
+global          11  ..\..\mf2k-files\predictions\tc1.glo
+list            12  ..\..\mf2k-files\predictions\tc1.lst
+#
+# Obs-Sen-Pes process input files
+obs             21  ..\..\mf2k-files\predictions\tc1.obs
+adv2            26  ..\..\mf2k-files\predictions\tc1.adv
+sen             24  ..\..\mf2k-files\predictions\tc1.sen
+#
+# Global input files
+dis             31  ..\..\mf2k-files\predictions\tc1.dis
+zone            32  ..\..\mf2k-files\used-by-all\tc1.zon
+mult            33  ..\..\mf2k-files\used-by-all\tc1.mlt
+#
+# Flow process input files
+bas6            41  ..\..\mf2k-files\used-by-all\tc1.bas
+wel             43  ..\..\mf2k-files\predictions\tc1.wel
+lpf             42  ..\..\mf2k-files\used-by-all\tc1.lpf
+pcg             44  ..\..\mf2k-files\used-by-all\tc1.pcg
+oc              45  ..\..\mf2k-files\used-by-all\tc1.oc
+ghb             46  ..\..\mf2k-files\used-by-all\tc1.ghb
+riv             47  ..\..\mf2k-files\used-by-all\tc1.riv
+rch             48  ..\..\mf2k-files\used-by-all\tc1.rch
+# ADV output file
+data            38  ..\..\mf2k-files\predictions\tc1.advout
+

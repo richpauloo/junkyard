@@ -1,0 +1,33 @@
+
+ SELECTED STATISTICS FROM MODIFIED GAUSS-NEWTON ITERATIONS
+
+        # PARAMs                  MAX.             MAX. CHANGE   DAMPING
+ ITER.  ESTIMATED  PARNAM         CALC. CHANGE     ALLOWED       PARAMETER
+ -----  --------- ------------  ---------------- -------------  ------------
+    1        5     Kx1           0.916764         2.00000        1.0000    
+    2        5     Kx1           0.479767         2.00000        1.0000    
+    3        5     Kx1           0.756238E-01     2.00000        1.0000    
+    4        5     Kx1           0.712668E-02     2.00000        1.0000    
+
+
+ PARAMETER VALUES FOR EACH ITERATION
+ - INDICATES DAMPING RESULTED FROM PARAMETER CONSTRAINTS FOR THAT ITERATION.
+ * INDICATES SOME PARAMETERS WERE OMITTED DURING THAT ITERATION.  THE VALUES
+   OF THOSE PARAMETERS ARE REPORTED EVEN THOUGH THEY WERE NOT UPDATED
+
+   ITER   Kx1          Kx2          Kx4          Kx5          RCH         
+      0     1.000        7.000        19.00        25.00       0.8000E-03
+      1     1.917        9.254        29.35        29.53       0.7860E-03
+      2     2.836        8.547        32.82        30.81       0.8014E-03
+      3     3.051        8.631        31.91        31.59       0.8062E-03
+      4     3.073        8.667        31.79        31.76       0.8072E-03
+
+ SUMS OF SQUARED WEIGHTED RESIDUALS FOR EACH ITERATION
+
+         SUMS OF SQUARED WEIGHTED RESIDUALS
+         ITER.  OBSERVATIONS  PRIOR INFO.      TOTAL       # INCLUDED OBS
+              0    1330.6        0.0000        1330.6         21 OF      21
+              1    47.511        0.0000        47.511         21 OF      21
+              2    15.486        0.0000        15.486         21 OF      21
+              3    15.374        0.0000        15.374         21 OF      21
+              4    15.373        0.0000        15.373         21 OF      21

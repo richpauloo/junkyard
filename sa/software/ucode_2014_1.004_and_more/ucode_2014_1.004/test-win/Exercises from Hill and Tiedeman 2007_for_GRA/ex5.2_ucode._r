@@ -1,0 +1,14 @@
+ "RESIDUAL"      "PLOT SYMBOL" "OBSERVATION or PRIOR NAME"
+   1.590192              1       hd01.ss             
+   1.177701              1       hd02.ss             
+ -0.5033496              1       hd03.ss             
+  -2.052299              1       hd04.ss             
+ -0.1156073              1       hd05.ss             
+ -0.5497751              1       hd06.ss             
+  0.1767648              1       hd07.ss             
+  0.9907178              1       hd08.ss             
+ -0.2750958              1       hd09.ss             
+  0.8836932              1       hd10.ss             
+  0.1717720E-01          2       Flow01_1            
+  0.3035318E-04          3       K_RB_PR             
+  0.9917249E-09          3       VK_CB_PR            

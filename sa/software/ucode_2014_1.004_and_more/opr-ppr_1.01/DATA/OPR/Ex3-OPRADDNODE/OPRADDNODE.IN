@@ -1,0 +1,87 @@
+#
+# -------------------------
+# BASIC OPTIONS INFORMATION
+# -------------------------
+#
+BEGIN OPTIONS KEYWORDS
+  MODE = OPRADDNODE
+  OBSGROUPS = NO
+  PREDGROUPS = YES
+  CORRELTHRESH = 0.85
+  VERBOSE = 1
+END OPTIONS
+#
+# -------------------------
+# INPUT FILES INFORMATION
+# -------------------------
+#
+BEGIN READ_FILES KEYWORDS
+  DMFNAM = example._dm                  model data file
+  DMPFNAM = example._dmp                prediction model data file
+  SUFNAM = example._su                  existing observations sensitivity file
+  WTFNAM = example._wt                  existing observations weight file
+  SPUFNAM = example._spu                prediction sensitivities file
+  SUPRIPFNAM = example._suprip	        sensitivities on prediction-only parameters
+  WTPRIPFNAM = example._wtprip	        weights on prediction-only parameters
+END READ_FILES KEYWORDS
+#
+# ----------------------------
+# GRID SENSITIVITY INFORMATION
+# ----------------------------
+#
+BEGIN ADD_NODE_DATA
+  GRIDSENSFILE = tc1._grid-sensitivities                       grid_sensitivities file
+  GRIDWTSFILE = GRID._WT                                       grid_sens_weights file
+  PARFILE = tc1._b                                             MODFLOW2000_B FILE
+  FILEFORMAT = ascii                                           output file format (ASCII or BINARY - default BINARY)
+  NGRIDROW = 18
+  NGRIDCOL = 18
+  NGRIDLAY = 2
+  NTIMES = 1
+#  MAXNODECALCS = 20
+END ADD_NODE_DATA
+#
+# -----------------------------
+# PREDICTION GROUPS INFORMATION
+# -----------------------------
+#
+BEGIN PREDICTION_GROUPS KEYWORDS
+  GROUPNAME = PRED1  PLOTSYMBOL = 1  USEFLAG = YES
+  GROUPNAME = PRED2  PLOTSYMBOL = 2  USEFLAG = YES
+  GROUPNAME = PRED3  PLOTSYMBOL = 3  USEFLAG = YES
+END PREDICTION_GROUPS KEYWORDS
+#
+# -------------------------
+# PREDICTION INFORMATION
+# -------------------------
+#
+BEGIN PREDICTION_DATA TABLE
+  NROW = 9 NCOL = 2 COLUMNLABELS
+  PREDNAME   GROUPNAME
+  AD10X      PRED1
+  AD10Y      PRED1
+  AD10Z      PRED1
+  AD50X      PRED2
+  AD50Y      PRED2
+  AD50Z      PRED2
+  A100X      PRED3
+  A100Y      PRED3
+  A100Z      PRED3
+END PREDICTION_DATA TABLE
+#
+# If the PredOnly_Prior Block were to be used to define the
+#  weights on prior information for prediction-only
+#  parameters, then the lines in the Read_Files Block (above)
+#  that start with SUPRIPFNAM and WTPRIPFNAM would be removed,
+#  and the five lines below that comprise the PredOnly_Prior
+#  block would be uncommented:
+#
+# ---------------------------
+# PREDICTION-ONLY PRIOR INFORMATION
+# ---------------------------
+#
+#BEGIN PREDONLY_PRIOR TABLE
+#  NROW = 1 NCOL = 4 COLUMNLABELS
+#  PARAMNAME   TRANSFORM   STATFLAG   STATISTIC
+#  POR_1&2        NO          WT      0.1111111111111111D+04
+#END PREDONLY_PRIOR

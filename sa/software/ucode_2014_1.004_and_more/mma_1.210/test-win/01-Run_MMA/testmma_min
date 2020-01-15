@@ -1,0 +1,23 @@
+BEGIN OPTIONS
+  Verbose=0
+END OPTIONS
+
+BEGIN MODEL_PATHS TABLE
+nrow=15  ncol=1 columnlabels
+PathandRoot
+..\..\data-win\obsonly\z2\1\z
+..\..\data-win\obsonly\z2\2\z
+..\..\data-win\obsonly\z2\3\z
+..\..\data-win\obsonly\z2\4\z
+..\..\data-win\obsonly\z2\5\z
+..\..\data-win\obsonly\z3\1\z
+..\..\data-win\obsonly\z3\2\z
+..\..\data-win\obsonly\z3\3\z
+..\..\data-win\obsonly\z3\4\z
+..\..\data-win\obsonly\z3\5\z
+..\..\data-win\obsonly\z4\1\z
+..\..\data-win\obsonly\z4\2\z
+..\..\data-win\obsonly\z4\3\z
+..\..\data-win\obsonly\z4\4\z
+..\..\data-win\obsonly\z4\5\z
+END MODEL_PATHS

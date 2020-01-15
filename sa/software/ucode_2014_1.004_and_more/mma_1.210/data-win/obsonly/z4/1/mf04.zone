@@ -1,0 +1,8 @@
+# MODFLOW2000 Zone File
+# Groundwater Vistas writes all zones regardless of whether
+# they are being used.  These zones include:
+#     kxzone##, kzzone##, szone##, rzone, and etzone, where
+#     ## is the layer number
+  1
+kxzone1
+external        41         1 (50I3)                      -1     K Zones for Layer 1

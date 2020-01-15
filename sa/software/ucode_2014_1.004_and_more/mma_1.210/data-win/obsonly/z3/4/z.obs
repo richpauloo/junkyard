@@ -1,0 +1,26 @@
+BEGIN OBSERVATION_DATA TABLE
+NROW=21  NCOL=5  COLUMNLABELS 
+obsname    obsvalue     statistic  statflag    groupname plotsymbol
+o11        33.133743       0.75       sd        head       1
+o12        34.697639       0.75       sd        head       1
+o13        37.755314       0.75       sd        head       1
+o14        36.940140       0.75       sd        head       1
+o15        39.176247       0.75       sd        head       1
+o21        26.718655       0.75       sd        head       1
+o22        28.099237       0.75       sd        head       1
+o23        24.815695       0.75       sd        head       1
+o24        26.414865       0.75       sd        head       1
+o25        29.821600       0.75       sd        head       1
+o31        24.280413       0.75       sd        head       1
+o32        24.255974       0.75       sd        head       1
+o33        20.436047       0.75       sd        head       1
+o34        21.901144       0.75       sd        head       1
+o35        24.362831       0.75       sd        head       1
+o41        18.211733       0.75       sd        head       1
+o42        17.204298       0.75       sd        head       1
+o43        12.101462       0.75       sd        head       1
+o44        14.904396       0.75       sd        head       1
+o45        15.512458       0.75       sd        head       1
+qtrib       -5668.        2300.       sd        flow       2
+END OBSERVATION_DATA TABLE
+

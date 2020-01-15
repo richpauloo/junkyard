@@ -1,0 +1,14 @@
+BEGIN OBSERVATION_DATA TABLE
+NROW=10  NCOL=5  COLUMNLABELS  
+obsname       obsvalue     statistic  statflag  GroupName
+hd01.ss      101.8040         1.0025     var     heads
+hd02.ss      128.1170         1.0025     var     heads
+hd03.ss      156.6780         1.0025     var     heads
+hd04.ss      124.8930         1.0025     var     heads
+hd05.ss      140.9610         1.0025     var     heads
+hd06.ss      126.5370         1.0025     var     heads
+hd07.ss      101.1120         1.0025     var     heads
+hd08.ss      158.1350         1.0025     var     heads
+hd09.ss      176.3740         1.0025     var     heads
+hd10.ss      142.0200         1.0025     var     heads
+END OBSERVATION_DATA TABLE

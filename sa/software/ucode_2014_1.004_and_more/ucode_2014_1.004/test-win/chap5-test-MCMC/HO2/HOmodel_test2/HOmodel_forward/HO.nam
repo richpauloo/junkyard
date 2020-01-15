@@ -1,0 +1,35 @@
+# MODFLOW Name File for use by UCODE
+LIST         55      HOmodel_forward\HO.lst
+
+BAS6        51       HOmodel_forward\HO.bas
+DATA        15       HOmodel_forward\bnd1
+DATA        18       HOmodel_forward\bnd2
+DATA        17       HOmodel_forward\bnd3
+
+MULT        32       HOmodel_forward\mult
+DATA        33       HOmodel_forward\mlake
+
+ZONE        59       HOmodel_forward\zone
+DATA        60       HOmodel_forward\zone.cal0
+DATA        61       HOmodel_forward\zone.rch
+
+DIS         16       HOmodel_forward\HO.dis
+DATA        19       HOmodel_forward\top
+DATA        20       HOmodel_forward\bot1
+DATA        21       HOmodel_forward\bot2
+DATA        46       HOmodel_forward\bot-cu
+DATA        22       HOmodel_forward\bot3
+
+LPF          7       HOmodel_forward\HO.lpf
+WEL          8       HOmodel_forward\HO.wel-nopump
+PCG          9       HOmodel_forward\HO.pcg2
+RIV         13       HOmodel_forward\HO.riv
+RCH         31       HOmodel_forward\HO.rch
+
+OC          52       HOmodel_forward\HO.oc
+
+DATA        44       HOmodel_forward\HO._obsout
+HOB         23       HOmodel_forward\HO.obh
+RVOB        14       HOmodel_forward\HO.obr
+
+PVAL        40       HOmodel_forward\HO.pvl

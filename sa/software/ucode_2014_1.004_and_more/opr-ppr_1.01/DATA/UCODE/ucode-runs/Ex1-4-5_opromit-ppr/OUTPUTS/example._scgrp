@@ -1,0 +1,16 @@
+ "GROUP NAME" heads         "NUMBER IN GROUP"         10
+ "PARAMETER NAME" "COMPOSITE SCALED SENSITIVITY" "LARGEST DSS FOR THE PARAMETER" "OBSERVATION WITH LARGEST DSS" "SECOND LARGEST DSS FOR THE PARAMETER" "OBSERVATION WITH SECOND LARGEST DSS"
+ RCH_1              16.3170590340741                      22.0600193708715     hd03.ss                               22.0360055201244     hd09.ss             
+ RCH_2              26.4715095907449                      54.4627388654617     hd09.ss                               35.1368952302052     hd08.ss             
+ K_RB              0.209600762563299                    -0.209609496422849     hd01.ss                             -0.209609262893528     hd07.ss             
+ HK_1               39.0172342275063                     -68.8600330289809     hd09.ss                              -52.7334879103932     hd03.ss             
+ VK_CB             0.232577179666183                    -0.679335511503995     hd07.ss                              0.183988316011803     hd09.ss             
+ HK_2               3.27150002461948                     -7.63628916936871     hd09.ss                              -4.17105341752981     hd08.ss             
+ "GROUP NAME" flows         "NUMBER IN GROUP"          1
+ "PARAMETER NAME" "COMPOSITE SCALED SENSITIVITY" "LARGEST DSS FOR THE PARAMETER" "OBSERVATION WITH LARGEST DSS" "SECOND LARGEST DSS FOR THE PARAMETER" "OBSERVATION WITH SECOND LARGEST DSS"
+ RCH_1              5.54199506578842                     -5.54199506578842     flow01.ss                             0.00000000000000     not-applicable      
+ RCH_2              4.49482194260347                     -4.49482194260347     flow01.ss                             0.00000000000000     not-applicable      
+ K_RB              0.102980423548104E-03                 0.102980423548104E-03 flow01.ss                             0.00000000000000     not-applicable      
+ HK_1              0.564734688707985E-03                -0.564734688707985E-03 flow01.ss                             0.00000000000000     not-applicable      
+ VK_CB             0.414427389522308E-06                 0.414427389522308E-06 flow01.ss                             0.00000000000000     not-applicable      
+ HK_2              0.617411574330313E-04                -0.617411574330313E-04 flow01.ss                             0.00000000000000     not-applicable      

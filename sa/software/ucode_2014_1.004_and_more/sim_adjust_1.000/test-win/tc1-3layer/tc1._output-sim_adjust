@@ -1,0 +1,48 @@
+ “SIMULATED EQUIVALENT” "OBSERVATION NAME”
+   100.0667     obs1.0              
+  0.1397247     obs1.1              
+   3.531517     obs1.12             
+   104.1128     obs2.0              
+ -0.8554077E-01 obs2.1              
+ -0.2619858     obs2.2              
+ -0.6630936     obs2.8              
+ -0.4744186     obs2.12             
+   104.0871     obs3.0              
+   118.0000     obs3.1              
+   118.0000     obs3.12             
+   104.1128     obs4.0              
+ -0.8559418E-01 obs4.1              
+ -0.4742050     obs4.12             
+   104.0854     obs5.0              
+ -0.1990509E-01 obs5.1              
+ -0.4158173     obs5.12             
+   103.9412     obs6.0              
+ -0.5223846E-01 obs6.1              
+ -0.3039246     obs6.12             
+   100.4227     obs7.0              
+  0.1004181     obs7.1              
+   3.178619     obs7.12             
+   104.0871     obs8.0              
+   118.0000     obs8.1              
+   118.0000     obs8.12             
+   104.0918     obs9.0              
+ -0.4776001E-02 obs9.1              
+ -0.3380127     obs9.12             
+   104.0769     obs0.0              
+ -0.8422852E-02 obs0.1              
+ -0.4099197     obs0.12             
+  -1.441222     obsSS               
+   0.000000     obsTR3              
+   0.000000     obsTR12             
+
+
+ tc1-fwd._os
+      WAS EVALUATED FOR ITEMS OMITTED, OR ASSIGNED A DEFAULT VALUE,
+      BY THE PROCESS MODEL
+
+         0 OBSERVATIONS WERE ASSIGNED THE GLOBAL DEFAULT VALUE, -1.0000000E-50
+
+
+ Run end date and time (yyyy/mm/dd hh:mm:ss): 2008/04/11  5:19:16
+ Elapsed run time:  0.062 Seconds
+

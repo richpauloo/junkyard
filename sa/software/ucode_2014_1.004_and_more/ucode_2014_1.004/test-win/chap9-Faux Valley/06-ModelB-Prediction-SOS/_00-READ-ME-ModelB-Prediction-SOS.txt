@@ -1,0 +1,23 @@
+Directory "06-RunUcode_ModelB-Prediction-SOS"
+
+This directory contains files for a UCODE sum-of-squares (SOS) 
+surface run of Model B. This model is described in Chapter 9 of
+the UCODE_2014 documentation.
+
+_01-RunUcode_ModelB-Prediction-SOS.bat conducts a run to calculate the 
+predicted values at all sets of parameter values listed in file 
+01-ModelB-Prediction-SOS_ucode_sosfile.in.
+
+For this run, we are interested in the prediction values at the sets of parameter
+values, not in the SOSWR values that are the main output of the SOS run. These prediction
+values are obtained from the UCODE SOS run by setting VERBOSE=5 in the ucode main
+input file. Doing so will cause the extracted prediction values for each of the
+parameter sets to be listed in the main ucode output file. In this directory, 
+all of these prediction values have been assembled into the file
+"ModelB-pred-SOS_ucode_out.extract-predvalues", using a text editor. These values
+are used to construct Figures 26d-f in Chapter 9 of the UCODE_2014 documentation.
+
+(Note that the SOSWR values in the ._sos file for this run are not meaningful
+because meaningless values of ObsValue are entered for the predictions in the main ucode
+input file.)
+

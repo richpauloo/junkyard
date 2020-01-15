@@ -1,0 +1,18 @@
+Directory "08-ModelB-ppr"
+
+This directory contains files for a PPR run of the program OPR-PPR.
+
+The necessary output files from two ucode runs need to be generated and
+then copied into this directory before running the program OPR-PPR.
+The following batch files accomplish this:
+
+_01-RunUcode_ModelB-SA-AllActive-WithPrior.bat
+_02-RunUcode_ModelB-Prediction.bat
+
+Run these batch files in sequence, then execute the following batch file
+that runs the PPR mode of OPR-PPR: 
+
+_03-RunOPR-PPR_ppr.bat
+
+Results in the ._PPR files from this run are plotted in Figure 28 of
+the UCODE_2014 documentation.

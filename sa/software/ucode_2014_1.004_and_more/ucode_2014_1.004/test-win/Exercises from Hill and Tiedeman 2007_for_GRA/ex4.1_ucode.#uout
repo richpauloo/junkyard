@@ -1,0 +1,522 @@
+ 
+  VERBOSE=3 -- Warnings, notes, and selected input will be written
+ 
+  Reading input from file: 02-ex4.1_ucode_main.in
+ 
+ 
+  ******************************************************************************
+  ******************************************************************************
+ 
+                Output from program UCODE_2014, Version:   1.004
+ 
+               Constructed using the JUPITER API, Version:  1.7.3
+ 
+  ******************************************************************************
+  ******************************************************************************
+ 
+ 
+ -------------------------------------------------------------------------------
+  ECHO UCODE CONTROLS INPUT:
+ 
+  VERBOSE =  3
+ 
+  MODEL NAME =   Hill_Tiedema
+  MODEL LENGTH UNITS =   m
+  MODEL TIME UNITS =   s
+  MODEL MASS UNITS =   NA
+ 
+  OPTIMIZATION WILL NOT BE PERFORMED
+  NONLINEAR INTERVALS WILL NOT BE PERFORMED (BY DEFAULT)
+  SENSITIVITIES WILL BE CALCULATED
+  STARTRES - Residuals written at initial parameter values
+  STARTSENS Print dimensionless scaled sensitivities at starting values
+  INTERMEDSENS Do not print any sensitivities at intermed values
+  FINALSENS Print dimensionless scaled sensitivities at final values
+  DATA EXCHANGE FILES WILL BE PRODUCED
+
+
+ ECHO MODEL COMMAND LINES:
+
+ Command ID    Purpose       Command Line
+ ------------  ------------  --------------------------------------------------
+ ForwardModel  Forward       ..\..\bin\mf2005.exe ex3.3.nam
+ 
+ *******************************************************
+        NOTE DERIVED_PARAMETERS BLOCK NOT FOUND
+         NO DERIVED PARAMETERS ARE CONSIDERED
+         IF YOU INTENDED TO READ THIS BLOCK
+        CHECK THE SPELLING OF THE BLOCK NAME
+   JUPITER CODES IGNORE BLOCKS WITH MISSPELLED NAMES
+ *******************************************************
+ 
+--------------------------------------------------------------------------------
+
+
+ OBSERVATIONS
+  Total number of observations read---------    11
+  Number of directly extracted observations-    11
+  Number of observations to be derived------     0
+  Number of observations to be used---------    11
+
+  
+
+ OBSERVATION INFORMATION:
+
+ OBSERVATION NAME         GROUP       OBS. VALUE      WEIGHT
+ --------------------  ------------  ------------  ------------
+ hd01.ss               Heads           101.80       0.99751    
+ hd02.ss               Heads           128.12       0.99751    
+ hd03.ss               Heads           156.68       0.99751    
+ hd04.ss               Heads           124.89       0.99751    
+ hd05.ss               Heads           140.96       0.99751    
+ hd06.ss               Heads           126.54       0.99751    
+ hd07.ss               Heads           101.11       0.99751    
+ hd08.ss               Heads           158.13       0.99751    
+ hd09.ss               Heads           176.37       0.99751    
+ hd10.ss               Heads           142.02       0.99751    
+ Flow01_1              RIV_flows      -4.4000        5.1653    
+  
+
+ OBSERVATION-GROUP INFORMATION:
+
+               NUM. OF         PLOT     WEIGHT    COV. MATRIX     DEP.
+ GROUP NAME    MEMBERS  USE?  SYMBOL  MULTIPLIER  IF CORRELATED   TYPE
+ ------------  -------  ----  ------  ----------  -------------  ------
+ Heads              10   T         1    1.00                     OBS   
+ RIV_flows           1   T         2    1.00                     OBS   
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+  THERE ARE NO PRIOR EQUATIONS FOR THIS EVALUATION
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+
+ MODEL-INPUT AND CORRESPONDING TEMPLATE FILES:
+
+ Model-input file: ex3.3.pval   Template file: ex3.3_pval.jtf
+
+
+ MODEL-OUTPUT AND CORRESPONDING INSTRUCTION FILES:
+
+ Model-output file: ex3.3.obh_out   Instruction file: ex3.3.obh_out.jif   Category: OBS   
+ Model-output file: ex3.3.rvob_out   Instruction file: ex3.3.rvob_out.jif   Category: OBS   
+
+--------------------------------------------------------------------------------
+
+ PARAMETER INFORMATION READ FROM INPUT:
+
+ No.  Param. name     Group        Value       Lower value   Upper value    Adj?
+ ---- ------------ ------------  ------------  ------------  ------------  -----
+    1 HK_1         HK            3.000000E-04  8.000000E-05  8.000000E-04   Y
+    2 K_RB         RIV           1.200000E-03  7.000000E-04  7.000000E-03   Y
+    3 VK_CB        VKCB          1.000000E-07  5.000000E-08  5.000000E-07   Y
+    4 HK_2         HK            4.000000E-05  9.000000E-06  9.000000E-05   Y
+    5 RCH_1        RCH            63.0720       32.0000       126.000       Y
+    6 RCH_2        RCH            31.5360       16.0000       63.0000       Y
+    7 VANI         VANI           1.00000       1.00000       1.00000       N
+
+ No.  Param. name   LN   SCALEPVAL   PERTURB    MAXCHANGE    TOLPAR    SVDSET
+ ---- ------------  --  ----------  ----------  ---------  ---------    ------
+    1 HK_1           0   3.000E-06   1.000E-02   2.00      1.000E-02          0
+    2 K_RB           0   1.200E-05   1.000E-02   2.00      1.000E-02          0
+    3 VK_CB          0   1.000E-09   1.000E-02   2.00      1.000E-02          0
+    4 HK_2           0   4.000E-07   1.000E-02   2.00      1.000E-02          0
+    5 RCH_1          0   0.631       1.000E-02   2.00      1.000E-02          0
+    6 RCH_2          0   0.315       1.000E-02   2.00      1.000E-02          0
+    7 VANI           0   1.000E-02   1.000E-02   2.00      1.000E-02          0
+
+ INFORMATION FOR ADJUSTABLE PARAMETERS READ FROM INPUT:
+
+ Param. name     Group          Value       Lower value    Upper value  Par. no.
+ ------------ ------------  -------------  -------------  -------------  -------
+ HK_1         HK             3.000000E-04   8.000000E-05   8.000000E-04       1
+ K_RB         RIV            1.200000E-03   7.000000E-04   7.000000E-03       2
+ VK_CB        VKCB           1.000000E-07   5.000000E-08   5.000000E-07       3
+ HK_2         HK             4.000000E-05   9.000000E-06   9.000000E-05       4
+ RCH_1        RCH             63.0720        32.0000        126.000           5
+ RCH_2        RCH             31.5360        16.0000        63.0000           6
+
+               Sens
+ Param. name   Method  LN   SCALEPVAL   PERTURB    MAXCHANGE    TOLPAR    SVDSET
+ ------------  ------  --  ----------  ----------  ---------  ----------  ------
+ HK_1              1    0   3.000E-06   1.000E-02   2.00       1.000E-02      0
+ K_RB              1    0   1.200E-05   1.000E-02   2.00       1.000E-02      0
+ VK_CB             1    0   1.000E-09   1.000E-02   2.00       1.000E-02      0
+ HK_2              1    0   4.000E-07   1.000E-02   2.00       1.000E-02      0
+ RCH_1             1    0   0.631       1.000E-02   2.00       1.000E-02      0
+ RCH_2             1    0   0.315       1.000E-02   2.00       1.000E-02      0
+
+ Param. name   Constrain  Lower Constraint  Upper Constraint
+ ------------  ---------  ----------------  ----------------
+ HK_1             Y            3.0000E-06       3.0000E-02
+ K_RB             Y            1.2000E-05       0.1200    
+ VK_CB            Y            1.0000E-09       1.0000E-05
+ HK_2             Y            4.0000E-07       4.0000E-03
+ RCH_1            N
+ RCH_2            N
+ VANI             N
+
+********************************************************************************
+ END ECHO OF INPUT - REPORT RESULTS OF SIMULATION
+********************************************************************************
+
+
+  Process Model Run #:      1
+
+ -------------------------------------------------------------------
+ FIT OF SIMULATED EQUIVALENTS TO OBSERVATIONS
+
+ OBSERVATION            MEASURED      SIMULATED                            WEIGHTED
+    NAME                 VALUE          VALUE      RESIDUAL   WEIGHT**.5   RESIDUAL
+
+ hd01.ss                 101.800       100.225       1.575       0.999       1.573    
+ hd02.ss                 128.120       139.331      -11.21       0.999      -11.20    
+ hd03.ss                 156.680       174.363      -17.68       0.999      -17.66    
+ hd04.ss                 124.890       139.331      -14.44       0.999      -14.42    
+ hd05.ss                 140.960       157.132      -16.17       0.999      -16.15    
+ hd06.ss                 126.540       139.632      -13.09       0.999      -13.08    
+ hd07.ss                 101.110       102.868      -1.758       0.999      -1.756    
+ hd08.ss                 158.130       173.956      -15.83       0.999      -15.81    
+ hd09.ss                 176.370       190.300      -13.93       0.999      -13.91    
+ hd10.ss                 142.020       157.041      -15.02       0.999      -15.00    
+ Flow01_1               -4.40000      -4.86057      0.4606        2.27       1.047    
+
+ STATISTICS FOR ALL RESIDUALS :
+ AVERAGE WEIGHTED RESIDUAL  :-0.106E+02
+ # RESIDUALS >= 0. :      2
+ # RESIDUALS < 0.  :      9
+ NUMBER OF RUNS  :    3  IN   11 OBSERVATIONS
+
+ INTERPRETING THE CALCULATED RUNS STATISTIC VALUE OF    -0.896    
+ NOTE: THE FOLLOWING APPLIES ONLY IF 
+        # RESIDUALS >= 0. IS GREATER THAN 10 AND 
+        # RESIDUALS < 0.   IS GREATER THAN 10
+ THE NEGATIVE VALUE MAY INDICATE TOO FEW RUNS:
+    IF THE VALUE IS LESS THAN -1.28, THERE IS LESS THAN A 10 PERCENT
+       CHANCE THE VALUES ARE RANDOM,
+    IF THE VALUE IS LESS THAN -1.645, THERE IS LESS THAN A 5 PERCENT
+       CHANCE THE VALUES ARE RANDOM,
+    IF THE VALUE IS LESS THAN -1.96, THERE IS LESS THAN A 2.5 PERCENT
+       CHANCE THE VALUES ARE RANDOM.
+
+
+ STATISTICS FOR THESE RESIDUALS:
+ MAXIMUM WEIGHTED RESIDUAL:  0.157E+01  Observation: hd01.ss             
+ MINIMUM WEIGHTED RESIDUAL: -0.177E+02  Observation: hd03.ss             
+ AVERAGE WEIGHTED RESIDUAL: -0.106E+02
+ # RESIDUALS >= 0.  :       2
+ # RESIDUALS <  0.  :       9
+ NUMBER OF RUNS:        3  IN       11 OBSERVATIONS
+
+ SUM OF SQUARED, WEIGHTED RESIDUALS:
+   DEPENDENT VARIABLES:    1752.316    
+
+ NUMBER OF INCLUDED OBSERVATIONS =      11 OF      11
+
+********************************************************************************
+********************************************************************************
+
+ CALCULATING SENSITIVITIES FOR THE INITIAL PARAMETERS
+
+ Method of obtaining sensitivities is: PERTURBATION SENSITIVITY
+
+ PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
+ HK_1           0.30000E-03     0.30300E-03     0.30000E-05      FORWARD 
+
+ PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
+ K_RB           0.12000E-02     0.12120E-02     0.12000E-04      FORWARD 
+
+ PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
+ VK_CB          0.10000E-06     0.10100E-06     0.10000E-08      FORWARD 
+
+ PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
+ HK_2           0.40000E-04     0.40400E-04     0.40000E-06      FORWARD 
+
+ PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
+ RCH_1           63.072          63.703         0.63072          FORWARD 
+
+ PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
+ RCH_2           31.536          31.851         0.31536          FORWARD 
+
+  Process Model Run #:      2
+
+  Process Model Run #:      3
+
+  Process Model Run #:      4
+
+  Process Model Run #:      5
+
+  Process Model Run #:      6
+
+  Process Model Run #:      7
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+ SENSITIVITIES ARE FIT-INDEPENDENT STATISTICS
+
+ DIMENSIONLESS SCALED SENSITIVITIES (SCALED BY (PARAMETER_VALUE*(wt**.5))
+
+                   PARAMETER:  HK_1          K_RB          VK_CB       
+ OBS #  OBSERVATION ---------  ------------  ------------  ------------
+     1  hd01.ss                 0.0000      -0.22250        0.0000    
+     2  hd02.ss                -33.020      -0.22250      -0.28194    
+     3  hd03.ss                -57.433      -0.22250      -0.48767    
+     4  hd04.ss                -33.020      -0.22250      -0.28194    
+     5  hd05.ss                -46.111      -0.22250      -0.39014    
+     6  hd06.ss                -33.089      -0.22250      -0.62940    
+     7  hd07.ss                -2.3203      -0.22250       -2.3568    
+     8  hd08.ss                -57.068      -0.22250      -0.13259    
+     9  hd09.ss                -66.112      -0.22250      -0.56387E-01
+    10  hd10.ss                -45.901      -0.22250      -0.32613    
+    11  Flow01_1              -0.32512E-03  -0.19507E-02    0.0000    
+
+ DIMENSIONLESS SCALED SENSITIVITIES (SCALED BY (PARAMETER_VALUE*(wt**.5))
+
+                   PARAMETER:  HK_2          RCH_1         RCH_2       
+ OBS #  OBSERVATION ---------  ------------  ------------  ------------
+     1  hd01.ss                 0.0000       0.15011       0.74675E-01
+     2  hd02.ss                -5.4589        24.009        15.264    
+     3  hd03.ss                -15.615        38.314        35.937    
+     4  hd04.ss                -5.4589        24.009        15.264    
+     5  hd05.ss                -9.9226        32.948        24.102    
+     6  hd06.ss                -5.3415        23.972        15.602    
+     7  hd07.ss                 2.0764        1.8227        1.0416    
+     8  hd08.ss                -15.936        37.776        36.069    
+     9  hd09.ss                -23.201        38.093        52.062    
+    10  hd10.ss                -10.107        32.576        24.382    
+    11  Flow01_1              -0.10837E-03   -7.3876       -3.6813    
+
+ COMPOSITE SCALED SENSITIVITIES ((SUM OF THE SQUARED DSS)/ND)**.5
+  DSS = DIMENSIONLESS SCALED SENSITIVITIES (SCALED BY (PARAMETER_VALUE*(wt**.5))
+  SENSITIVITIES ARE FIT-INDEPENDENT STATISTICS
+
+  PARAMETER    COMPOSITE SCALED SENSITIVITY    RATIO TO MAXIMUM
+  ----------   ----------------------------    ----------------
+  HK_1                  4.09434E+01             1.00000E+00
+  K_RB                  2.12147E-01             5.18146E-03
+  VK_CB                 7.76174E-01             1.89572E-02
+  HK_2                  1.09922E+01             2.68474E-01
+  RCH_1                 2.74332E+01             6.70027E-01
+  RCH_2                 2.55883E+01             6.24967E-01
+
+ SMALLEST AND LARGEST WEIGHTED RESIDUALS
+
+             SMALLEST WEIGHTED RESIDUALS
+                      WEIGHTED    PERCENT OF   
+ NAME                 RESIDUAL     OBJ FUNC
+ hd03.ss                 -17.7         17.80
+ hd05.ss                 -16.2         14.89
+ hd08.ss                 -15.8         14.26
+ hd10.ss                 -15.0         12.84
+ hd04.ss                 -14.4         11.87
+
+             LARGEST  WEIGHTED RESIDUALS
+                      WEIGHTED    PERCENT OF   
+ NAME                 RESIDUAL     OBJ FUNC
+ hd01.ss                  1.57          0.14
+ Flow01_1                 1.05          0.06
+ hd07.ss                 -1.76          0.18
+ hd02.ss                 -11.2          7.16
+ hd06.ss                 -13.1          9.76
+
+ CORRELATION BETWEEN ORDERED WEIGHTED RESIDUALS AND NORMAL ORDER STATISTICS
+ FOR OBSERVATIONS =    0.802    
+
+--------------------------------------------------------------------------------
+ COMMENTS ON THE INTERPRETATION OF THE CORRELATION BETWEEN
+ WEIGHTED RESIDUALS AND NORMAL ORDER STATISTICS:
+
+ Generally, IF the reported CORRELATION is LESS than the critical value,
+ at the selected significance level (usually 5 or 10%), the hypothesis
+ that the weighted residuals are INDEPENDENT AND NORMALLY DISTRIBUTED
+ would be REJECTED.  HOWEVER, in this case, conditions are outside of
+ the range of published critical values as discussed below.
+
+ The sum of the number of observations and prior information items is    11
+ which is less than 35, the minimum value for which critical values are
+ published.  Therefore, the critical values for the 5 and 10% significance
+ levels are less than 0.943 and 0.952, respectively.
+
+ CORRELATIONS GREATER than these critical values indicate that, probably, the 
+ weighted residuals ARE INDEPENDENT AND NORMALLY DISTRIBUTED.
+
+ Correlations LESS than these critical values MAY BE ACCEPTABLE, and
+ rejection of the hypothesis is not necessarily warranted.
+
+ The Kolmogorov-Smirnov test can be used to further evaluate the residuals.
+ --------------------------------------------------------------------------
+
+
+================================================================================
+   START ANALYTICAL INFORMATION RELATED TO SENSITIVITY and PARAMETER MATRICES
+================================================================================
+
+
+          VARIANCE-COVARIANCE MATRIX FOR THE PARAMETERS
+          ---------------------------------------------
+
+       !!!!!CALCULATED FOR STARTING PARAMETER VALUES!!!!!!
+
+              HK_1         K_RB         VK_CB        HK_2         RCH_1        RCH_2       
+ ...........................................................................................
+ HK_1          8.67482E-07 -3.53432E-05 -9.80681E-10 -4.58092E-07  0.21089     -0.12902    
+ K_RB         -3.53432E-05  1.00459E-02 -1.95693E-08  2.04638E-05  -5.3505       5.5573    
+ VK_CB        -9.80681E-10 -1.95693E-08  3.36532E-12  9.76070E-10 -2.98254E-04  3.26798E-04
+ HK_2         -4.58092E-07  2.04638E-05  9.76070E-10  4.24136E-07 -0.12953      0.14051    
+ RCH_1         0.21089      -5.3505     -2.98254E-04 -0.12953       57059.      -40070.    
+ RCH_2        -0.12902       5.5573      3.26798E-04  0.14051      -40070.       48674.    
+
+        THE CORRELATION MATRIX IS FIT-INDEPENDENT
+
+          -------------------------------------
+          CORRELATION MATRIX FOR THE PARAMETERS
+          -------------------------------------
+
+       !!!!!CALCULATED FOR STARTING PARAMETER VALUES!!!!!!
+
+              HK_1         K_RB         VK_CB        HK_2         RCH_1        RCH_2       
+ ...........................................................................................
+ HK_1           1.0000     -0.37860     -0.57396     -0.75521      0.94789     -0.62790    
+ K_RB         -0.37860       1.0000     -0.10643      0.31350     -0.22348      0.25132    
+ VK_CB        -0.57396     -0.10643       1.0000      0.81699     -0.68063      0.80746    
+ HK_2         -0.75521      0.31350      0.81699       1.0000     -0.83267      0.97791    
+ RCH_1         0.94789     -0.22348     -0.68063     -0.83267       1.0000     -0.76034    
+ RCH_2        -0.62790      0.25132      0.80746      0.97791     -0.76034       1.0000    
+
+ THE CORRELATION OF THE FOLLOWING PARAMETER PAIRS >= .95
+     PARAMETER   PARAMETER   CORRELATION
+     HK_2          RCH_2             0.98
+
+ THE CORRELATION OF THE FOLLOWING PARAMETER PAIRS IS BETWEEN .90 AND .95
+     PARAMETER   PARAMETER   CORRELATION
+     HK_1          RCH_1             0.95
+
+ THE CORRELATION OF THE FOLLOWING PARAMETER PAIRS IS BETWEEN .85 AND .90
+     PARAMETER   PARAMETER   CORRELATION
+
+        NONE 
+
+ CORRELATIONS GREATER THAN 0.95 COULD INDICATE THAT THERE MAY NOT BE ENOUGH
+ INFORMATION IN THE OBSERVATIONS AND PRIOR USED IN THE REGRESSION TO ESTIMATE
+ PARAMETER VALUES INDIVIDUALLY.
+ TO CHECK THIS, START THE REGRESSION FROM SETS OF INITIAL PARAMETER VALUES
+ THAT DIFFER BY MORE THAT TWO STANDARD DEVIATIONS FROM THE ESTIMATED 
+ VALUES.  IF THE RESULTING ESTIMATES ARE WELL WITHIN ONE STANDARD DEVIATION
+ OF THE PREVIOUSLY ESTIMATED VALUE, THE ESTIMATES ARE PROBABLY
+ DETERMINED INDEPENDENTLY WITH THE OBSERVATIONS AND PRIOR USED IN
+ THE REGRESSION.  OTHERWISE, YOU MAY ONLY BE ESTIMATING THE RATIO
+ OR SUM OF THE HIGHLY CORRELATED PARAMETERS.
+
+================================================================================
+    END ANALYTICAL INFORMATION RELATED TO SENSITIVITY and PARAMETER MATRICES
+              ***** SEE FILES _mv _mc _svd _sc_svd _eig *****
+================================================================================
+
+
+
+ _________________
+
+ PARAMETER SUMMARY
+ _________________
+
+
+     !!!!!STATISTICS WERE CALCULATED FOR STARTING VALUES!!!!!
+ ________________________________________________________________________
+
+ PHYSICAL PARAMETER VALUES --- NONE OF THE PARAMETERS IS LOG TRANSFORMED
+ ________________________________________________________________________
+
+ PARAMETER:        HK_1       K_RB       VK_CB      HK_2       RCH_1     
+ * = LOG TRNS:                                                     
+
+
+ UPPER 95% C.I.     2.69E-03   2.59E-01   4.82E-06   1.71E-03   6.77E+02
+ FINAL VALUES       3.00E-04   1.20E-03   1.00E-07   4.00E-05   6.31E+01
+ LOWER 95% C.I.    -2.09E-03  -2.56E-01  -4.62E-06  -1.63E-03  -5.51E+02
+
+ STD. DEV.          9.31E-04   1.00E-01   1.83E-06   6.51E-04   2.39E+02
+
+ COEF. OF VAR. (STD. DEV. / FINAL VALUE); "--" IF FINAL VALUE = 0.0
+                    3.10E+00   8.35E+01   1.83E+01   1.63E+01   3.79E+00        
+
+     REASONABLE
+    UPPER LIMIT     8.00E-04   7.00E-03   5.00E-07   9.00E-05   1.26E+02
+     REASONABLE
+    LOWER LIMIT     8.00E-05   7.00E-04   5.00E-08   9.00E-06   3.20E+01
+
+ ESTIMATE ABOVE (1)
+ BELOW(-1)LIMITS        0          0          0          0          0
+ ENTIRE CONF. INT.
+ ABOVE(1)BELOW(-1)      0          0          0          0          0
+
+ ________________________________________________________________________
+
+ PHYSICAL PARAMETER VALUES --- NONE OF THE PARAMETERS IS LOG TRANSFORMED
+ ________________________________________________________________________
+
+ PARAMETER:        RCH_2     
+ * = LOG TRNS:         
+
+
+ UPPER 95% C.I.     5.99E+02
+ FINAL VALUES       3.15E+01
+ LOWER 95% C.I.    -5.36E+02
+
+ STD. DEV.          2.21E+02
+
+ COEF. OF VAR. (STD. DEV. / FINAL VALUE); "--" IF FINAL VALUE = 0.0
+                    7.00E+00                                                    
+
+     REASONABLE
+    UPPER LIMIT     6.30E+01
+     REASONABLE
+    LOWER LIMIT     1.60E+01
+
+ ESTIMATE ABOVE (1)
+ BELOW(-1)LIMITS        0
+ ENTIRE CONF. INT.
+ ABOVE(1)BELOW(-1)      0
+
+
+  LEAST-SQUARES OBJ FUNC (OBS. ONLY)----- =  1752.3    
+  NUMBER OF INCLUDED OBSERVATIONS-------- =      11 OF      11
+  NUMBER OF PRIOR ESTIMATES-------------- =       0
+  NUMBER OF ESTIMATED PARAMETERS--------- =       6
+
+  CALCULATED ERROR VARIANCE (CEV)-------- =  350.46    
+  95% CONFIDENCE INTERVAL ON CEV--------- =  136.58      2108.2    
+  STANDARD ERROR ------------------------ =  18.721    
+  95% CONFIDENCE INTERVAL ON STD ERR----- =  11.687      45.915    
+
+  CORRELATION COEFFICIENT---------------- = 0.99670    
+  NUMBER OF GAUSS-NEWTON ITERATIONS------ =       0
+
+
+  STATISTICS FOR EVALUATING ALTERNATIVE MODELS:
+
+    No prior used in this parameter estimation
+    MAX LIKE OBJ FUNC OBSERVATIONS ONLY (MLOFO)----------- =  55.779    
+    LN DETERMINANT of Fisher Information Matrix (OBS ONLY) =  55.394    
+
+    MODEL EVALUATION MEASURES: 
+
+      OBSERVATIONS ONLY (no prior used in this parameter estimation)
+      AIC CRITERION-------------  =  69.779    
+      AICc CRITERION------------  =  107.11    
+      BIC CRITERION-------------  =  72.564    
+      KASHYAP CRITERION---------  =  100.15    
+
+  NUMBER OF PROCESS MODEL RUNS CONDUCTED FOR THIS ANALYSIS:       7
+
+********************************************************************************
+               Normal termination of UCODE_2014,   Version:   1.004
+********************************************************************************
+
+
+
+ Run end date and time (yyyy/mm/dd hh:mm:ss): 2020/01/13 12:21:09
+ Elapsed run time:  1.671 Seconds
+

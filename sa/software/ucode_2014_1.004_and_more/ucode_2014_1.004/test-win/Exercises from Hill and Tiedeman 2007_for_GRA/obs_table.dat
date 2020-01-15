@@ -1,0 +1,15 @@
+BEGIN Observation_Data Table
+  NROW=11 NCOL=3 COLUMNLABELS
+  ObsName GroupName ObsValue
+  hd01.ss Heads 101.8
+  hd02.ss Heads 128.12
+  hd03.ss Heads 156.68
+  hd04.ss Heads 124.89
+  hd05.ss Heads 140.96
+  hd06.ss Heads 126.54
+  hd07.ss Heads 101.11
+  hd08.ss Heads 158.13
+  hd09.ss Heads 176.37
+  hd10.ss Heads 142.02
+  Flow01_1 RIV_flows -4.4
+END Observation_Data

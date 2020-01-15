@@ -1,0 +1,4 @@
+# Head-Observation Package input file for steady-state test case.
+    1    0    0                                                                      ITEM 1: NH MOBS MAXM
+   86400.0  1.0                                                                      ITEM 2: TOMULT EVH
+newhead         1    9   18    1  0.000000E+00  0.000000E+00  0.000000E+00  000.000  1.002500E+00    0    1

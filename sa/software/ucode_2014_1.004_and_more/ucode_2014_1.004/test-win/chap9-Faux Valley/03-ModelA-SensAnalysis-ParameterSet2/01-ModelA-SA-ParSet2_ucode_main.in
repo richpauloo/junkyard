@@ -1,0 +1,91 @@
+BEGIN Options Keywords
+  Verbose = 3
+END Options
+ 
+BEGIN UCODE_Control_Data Keywords
+  ModelName = modA
+  ModelLengthUnits = m
+  ModelTimeUnits = s
+  Sensitivities=yes  
+END UCODE_Control_Data
+ 
+BEGIN Model_Command_Lines Keywords
+  Command = "..\..\..\bin\mf2005.exe modA.nam"
+    Purpose = Forward
+    CommandID = ForwardModel
+END Model_Command_Lines
+ 
+BEGIN Parameter_Groups Table
+  NROW=5 NCOL=5 COLUMNLABELS
+  GroupName Adjustable Transform MaxChange SenMethod
+  HK           Yes        Yes      2.0        2
+  VANI         Yes        No       2.0        2
+  VKCB         Yes        Yes      2.0        2
+  RIV          Yes        Yes      2.0        2
+  RCH          Yes        No       2.0        2
+END Parameter_Groups
+ 
+BEGIN Parameter_Data Table
+###UpperValue and LowerValue are for comparison only. 
+###UpperConstraint and LowerConstraint (and Constrain=yes)would be needed to constrain estimated values
+  NROW=7 NCOL=5 COLUMNLABELS
+  ParamName GroupName StartValue LowerValue UpperValue
+  HK_1         HK       9.6e-5     9.6e-5      9.5e-4
+  K_RB         RIV      1.2e-4     1.2e-4      1.2e-2
+  VANI         VANI     0.8        0.8         1.2
+  VK_CB        VKCB     1e-8       1e-8        1e-6
+  HK_2         HK       4e-6       4e-6        4e-4
+  RCH_1        RCH      16         16          48
+  RCH_2        RCH      47         47          79
+END Parameter_Data
+
+BEGIN Parameter_Values Table
+NROW=7 NCOL=2 COLUMNLABELS
+ ParamName    StartValue
+  HK_1         9.6e-5      
+  K_RB         1.2e-4      
+  VANI         0.8         
+  VK_CB        1e-8        
+  HK_2         4e-6        
+  RCH_1        16          
+  RCH_2        47          
+END PARAMETER_VALUES
+ 
+BEGIN Observation_Groups Table
+  NROW=3 NCOL=4 COLUMNLABELS
+  GroupName  Statistic StatFlag PlotSymbol
+  Heads-L1   .33         SD         1
+  Heads-L2   .33         SD         2 
+  RIV_flows  .1          CV         3
+END Observation_Groups
+ 
+BEGIN Observation_Data Table
+  NROW=11 NCOL=3 COLUMNLABELS
+  ObsName GroupName        ObsValue
+  hd01.ss  Heads-L1        100.25
+  hd02.ss  Heads-L1        149.41
+  hd03.ss  Heads-L1        163.46
+  hd04.ss  Heads-L1        153.75
+  hd05.ss  Heads-L1        160.36
+  hd06.ss  Heads-L2        148.90
+  hd07.ss  Heads-L2        103.77
+  hd08.ss  Heads-L2        163.87
+  hd09.ss  Heads-L2        180.67
+  hd10.ss  Heads-L2        160.80
+  Flow01_1 RIV_flows       -5.77
+END Observation_Data
+ 
+BEGIN Model_Input_Files Keywords
+  ModInFile = modA.pval
+    TemplateFile = modA.jtf
+END Model_Input_Files
+ 
+BEGIN Model_Output_Files Keywords
+  ModOutFile = modA.obh_out
+    InstructionFile = modA.obh_out.jif
+    Category = Obs
+  ModOutFile = modA.rvob_out
+    InstructionFile = modA.rvob_out.jif
+    Category = Obs
+END Model_Output_Files
+ 

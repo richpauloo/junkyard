@@ -1,0 +1,9 @@
+PARAMETER   2
+         1         0
+RCH  RCH  0.00111   1
+NONE    ZONE.RCH   1 3
+LAKERCH  RCH  0.000603  1
+NONE    ZONE.RCH   2
+         2	0
+RCH        -1    # -1: no print of K array in listing file
+LAKERCH    -1

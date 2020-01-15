@@ -1,0 +1,343 @@
+                             LINEAR_UNCERTAINTY
+
+                        CONSTRUCTED USING THE JUPITER API
+                 UCODE_2005 POST-PROCESSING PROGRAM TO CALCULATE
+                  LINEAR CONFIDENCE AND PREDICTION INTERVALS
+                                  Version 1.007                                   
+
+ MODEL NAME..................................... = 2b
+ NUMBER OF INTERVALS............................ =        22
+ NUMBER OF PREDICTION GROUPS.................... =         2
+ NUMBER OF PARAMETERS ESTIMATED IN REGRESSION... =         3
+ NUMBER OF PARAMETERS CONSIDERED FOR PREDICTIONS =         3
+ NUMBER OF OBSERVATIONS USED IN REGRESSION...... =        21
+ NUMBER OF PRIOR INFORMATION.................... =         2
+ DEGREES OF FREEDOM............................. =        20
+
+ VARIANCE-COVARIANCE MATRIX FOR ESTIMATED PARAMETERS
+
+              Kx1          Kx5          RCH         
+ ...................................................
+ Kx1           2.80326E-02 -4.73119E-03  3.35433E-06
+ Kx5          -4.73119E-03  6.80760E-03  8.64669E-07
+ RCH           3.35433E-06  8.64669E-07  7.91194E-10
+
+   VALUES COMPUTED WITH OPTIMUM PARAMETERS FOR PREDICTIVE CONDITIONS
+        OBSERVATION                     OBSERVATION
+    NO.    NAME              VALUE         NO.    NAME              VALUE
+     1  o11off                33.820        12  o32off                22.325    
+     2  o12off                33.987        13  o33off                18.822    
+     3  o13off                34.228        14  o34off                17.151    
+     4  o14off                35.142        15  o35off                20.784    
+     5  o15off                35.959        16  o41off                17.950    
+     6  o21off                25.125        17  o42off                17.237    
+     7  o22off                25.310        18  o43off                12.939    
+     8  o23off                23.584        19  o44off                13.190    
+     9  o24off                24.781        20  o45off                14.242    
+    10  o25off                27.385        21  qtrib                -4036.1    
+    11  o31off                23.266        22  qmain                -3468.1    
+
+ SENSITIVITIES AT OPTIMUM PARAMETER VALUES FOR PREDICTIVE CONDITIONS
+
+ PARAMETER    o11off               o12off               o13off              
+ ----------   -------------------- -------------------- --------------------
+ Kx1                   -6.6340              -6.2165              -5.9895    
+ Kx5                   -9.8165              -10.248              -10.467    
+ RCH                    37327.               36450.               34917.    
+
+ PARAMETER    o14off               o15off               o21off              
+ ----------   -------------------- -------------------- --------------------
+ Kx1                   -6.7145              -7.2260              -3.6485    
+ Kx5                   -10.535              -10.859              -4.6735    
+ RCH                    34699.               35698.               29489.    
+
+ PARAMETER    o22off               o23off               o24off              
+ ----------   -------------------- -------------------- --------------------
+ Kx1                   -3.7770             -0.97250              -1.4265    
+ Kx5                   -4.2970              -3.7645              -5.3810    
+ RCH                    27567.               16764.               20345.    
+
+ PARAMETER    o25off               o31off               o32off              
+ ----------   -------------------- -------------------- --------------------
+ Kx1                   -3.7935              -3.7735              -3.3690    
+ Kx5                   -5.9910              -3.4275              -2.6170    
+ RCH                    24589.               24320.               21067.    
+
+ PARAMETER    o33off               o34off               o35off              
+ ----------   -------------------- -------------------- --------------------
+ Kx1                  -0.75000             -0.51500              -2.5465    
+ Kx5                  -0.83800              0.10600              -1.8270    
+ RCH                    12353.               14678.               18163.    
+
+ PARAMETER    o41off               o42off               o43off              
+ ----------   -------------------- -------------------- --------------------
+ Kx1                   -3.0550              -3.0705             -0.19800    
+ Kx5                  -0.49400             -0.71500E-01          0.25150    
+ RCH                    15833.               14526.               7255.8    
+
+ PARAMETER    o44off               o45off               qtrib               
+ ----------   -------------------- -------------------- --------------------
+ Kx1                   0.16500E-01         -0.88050               116.65    
+ Kx5                   0.73500E-01         -0.31000               640.30    
+ RCH                    8751.0               10591.             -0.11095E+08
+
+ PARAMETER    qmain               
+ ----------   --------------------
+ Kx1                   -116.65    
+ Kx5                   -640.30    
+ RCH                  -0.39047E+07
+
+ *******************************************************************************
+ *******************************************************************************
+
+ INDIVIDUAL 95% CONFIDENCE INTERVALS
+
+    UNCERTAINTY ON EACH PREDICTION IS CONSIDERED SEPARATELY
+    IF SIMULTANEOUS UNCERTAINTY IS DESIRED, GO TO NEXT TABLE
+
+    95% CONFIDENCE INTERVALS INDICATE THAT THERE IS
+        95% PROBABILITY THAT THE ACTUAL VALUE WILL BE 
+        WITHIN THE INDICATED RANGE
+
+    CRITICAL VALUE FOR THE INTERVALS =  2.0860    
+
+
+         OBSERVATION           SIMULATED
+  NO.       NAME               VALUE       STD. DEV.       CONFIDENCE INTERVAL
+     1   o11off                33.8196      0.284549       33.2260    ;  34.4132    
+     2   o12off                33.9868      0.283773       33.3948    ;  34.5787    
+     3   o13off                34.2276      0.296381       33.6093    ;  34.8458    
+     4   o14off                35.1425      0.327830       34.4586    ;  35.8264    
+     5   o15off                35.9592      0.362419       35.2032    ;  36.7152    
+     6   o21off                25.1254      0.297330       24.5051    ;  25.7456    
+     7   o22off                25.3103      0.264441       24.7587    ;  25.8619    
+     8   o23off                23.5838      0.303633       22.9504    ;  24.2171    
+     9   o24off                24.7813      0.353537       24.0438    ;  25.5188    
+    10   o25off                27.3852      0.174764       27.0206    ;  27.7497    
+    11   o31off                23.2663      0.254759       22.7349    ;  23.7977    
+    12   o32off                22.3248      0.247048       21.8095    ;  22.8401    
+    13   o33off                18.8218      0.235112       18.3314    ;  19.3123    
+    14   o34off                17.1507      0.361206       16.3972    ;  17.9042    
+    15   o35off                20.7843      0.231988       20.3004    ;  21.2682    
+    16   o41off                17.9496      0.330646       17.2598    ;  18.6393    
+    17   o42off                17.2369      0.358019       16.4900    ;  17.9837    
+    18   o43off                12.9389      0.192800       12.5367    ;  13.3410    
+    19   o44off                13.1901      0.250408       12.6678    ;  13.7125    
+    20   o45off                14.2418      0.200773       13.8230    ;  14.6607    
+    21   qtrib                -4036.13       280.887      -4622.06    ; -3450.20    
+    22   qmain                -3468.09       148.013      -3776.84    ; -3159.33    
+
+ *******************************************************************************
+ *******************************************************************************
+
+    3 d=NP SCHEFFE SIMULTANEOUS 95% CONFIDENCE INTERVALS
+
+    UNCERTAINTY ON EACH PREDICTION IS CONSIDERED JOINTLY
+    IF UNCERTAINTY OVER AN AREA IS DESIRED, GO TO NEXT TABLE
+
+    95% CONFIDENCE INTERVALS INDICATE THAT THERE IS
+        95% PROBABILITY THAT THE ACTUAL VALUE WILL BE 
+        WITHIN THE INDICATED RANGE
+
+    SCHEFFE CONFIDENCE INTERVALS ARE USED
+
+    CRITICAL VALUE FOR THE INTERVALS =  3.0496    
+
+
+         OBSERVATION           SIMULATED
+  NO.       NAME               VALUE       STD. DEV.       CONFIDENCE INTERVAL
+     1   o11off                33.8196      0.284549       32.9518    ;  34.6874    
+     2   o12off                33.9868      0.283773       33.1214    ;  34.8522    
+     3   o13off                34.2276      0.296381       33.3237    ;  35.1314    
+     4   o14off                35.1425      0.327830       34.1428    ;  36.1422    
+     5   o15off                35.9592      0.362419       34.8540    ;  37.0645    
+     6   o21off                25.1254      0.297330       24.2186    ;  26.0321    
+     7   o22off                25.3103      0.264441       24.5039    ;  26.1168    
+     8   o23off                23.5838      0.303633       22.6578    ;  24.5097    
+     9   o24off                24.7813      0.353537       23.7032    ;  25.8595    
+    10   o25off                27.3852      0.174764       26.8522    ;  27.9181    
+    11   o31off                23.2663      0.254759       22.4894    ;  24.0432    
+    12   o32off                22.3248      0.247048       21.5714    ;  23.0782    
+    13   o33off                18.8218      0.235112       18.1048    ;  19.5388    
+    14   o34off                17.1507      0.361206       16.0492    ;  18.2522    
+    15   o35off                20.7843      0.231988       20.0768    ;  21.4918    
+    16   o41off                17.9496      0.330646       16.9412    ;  18.9579    
+    17   o42off                17.2369      0.358019       16.1451    ;  18.3287    
+    18   o43off                12.9389      0.192800       12.3509    ;  13.5268    
+    19   o44off                13.1901      0.250408       12.4265    ;  13.9538    
+    20   o45off                14.2418      0.200773       13.6296    ;  14.8541    
+    21   qtrib                -4036.13       280.887      -4892.72    ; -3179.54    
+    22   qmain                -3468.09       148.013      -3919.47    ; -3016.71    
+
+ *******************************************************************************
+ *******************************************************************************
+
+ UNDEFINED NUMBER OF SIMULTANEOUS 95% CONFIDENCE INTERVALS
+
+    UNCERTAINTY IS CONSIDERED OVER AN AREA (I.E. AN INFINITE NUMBER OF POINTS)
+
+    95% CONFIDENCE INTERVALS INDICATE THAT THERE IS
+        95% PROBABILITY THAT THE ACTUAL VALUE WILL BE 
+        WITHIN THE INDICATED RANGE
+
+    CRITICAL VALUE FOR THE INTERVALS =  3.0496    
+
+
+         OBSERVATION           SIMULATED
+  NO.       NAME               VALUE       STD. DEV.       CONFIDENCE INTERVAL
+     1   o11off                33.8196      0.284549       32.9518    ;  34.6874    
+     2   o12off                33.9868      0.283773       33.1214    ;  34.8522    
+     3   o13off                34.2276      0.296381       33.3237    ;  35.1314    
+     4   o14off                35.1425      0.327830       34.1428    ;  36.1422    
+     5   o15off                35.9592      0.362419       34.8540    ;  37.0645    
+     6   o21off                25.1254      0.297330       24.2186    ;  26.0321    
+     7   o22off                25.3103      0.264441       24.5039    ;  26.1168    
+     8   o23off                23.5838      0.303633       22.6578    ;  24.5097    
+     9   o24off                24.7813      0.353537       23.7032    ;  25.8595    
+    10   o25off                27.3852      0.174764       26.8522    ;  27.9181    
+    11   o31off                23.2663      0.254759       22.4894    ;  24.0432    
+    12   o32off                22.3248      0.247048       21.5714    ;  23.0782    
+    13   o33off                18.8218      0.235112       18.1048    ;  19.5388    
+    14   o34off                17.1507      0.361206       16.0492    ;  18.2522    
+    15   o35off                20.7843      0.231988       20.0768    ;  21.4918    
+    16   o41off                17.9496      0.330646       16.9412    ;  18.9579    
+    17   o42off                17.2369      0.358019       16.1451    ;  18.3287    
+    18   o43off                12.9389      0.192800       12.3509    ;  13.5268    
+    19   o44off                13.1901      0.250408       12.4265    ;  13.9538    
+    20   o45off                14.2418      0.200773       13.6296    ;  14.8541    
+    21   qtrib                -4036.13       280.887      -4892.72    ; -3179.54    
+    22   qmain                -3468.09       148.013      -3919.47    ; -3016.71    
+
+ *******************************************************************************
+ *******************************************************************************
+
+ INDIVIDUAL 95% PREDICTION INTERVALS
+
+    UNCERTAINTY ON EACH PREDICTION IS CONSIDERED SEPARATELY
+    IF SIMULTANEOUS UNCERTAINTY IS DESIRED, GO TO NEXT TABLE
+
+    PREDICTION INTERVALS INCLUDE MEASUREMENT ERROR,
+        I.E. GIVEN THE VARIANCE LISTED IN THE
+        OBSERVATION INPUT FILES USED TO DEFINE THE
+        PREDICTIONS, THERE IS A 95% PROBABILITY
+        THAT THE MEASUREMENT WILL FALL WITHIN THE
+        INDICATED RANGE
+
+    CRITICAL VALUE FOR THE INTERVALS =  2.0860    
+
+
+         OBSERVATION           SIMULATED
+  NO.       NAME               VALUE       STD. DEV.       PREDICTION INTERVAL
+     1   o11off                33.8196      0.285251       33.2246    ;  34.4146    
+     2   o12off                33.9868      0.284477       33.3933    ;  34.5802    
+     3   o13off                34.2276      0.297055       33.6079    ;  34.8472    
+     4   o14off                35.1425      0.328440       34.4574    ;  35.8276    
+     5   o15off                35.9592      0.362971       35.2021    ;  36.7164    
+     6   o21off                25.1254      0.298002       24.5037    ;  25.7470    
+     7   o22off                25.3103      0.265196       24.7571    ;  25.8635    
+     8   o23off                23.5838      0.304291       22.9490    ;  24.2185    
+     9   o24off                24.7813      0.354102       24.0427    ;  25.5200    
+    10   o25off                27.3852      0.175905       27.0182    ;  27.7521    
+    11   o31off                23.2663      0.255543       22.7332    ;  23.7994    
+    12   o32off                22.3248      0.247856       21.8078    ;  22.8418    
+    13   o33off                18.8218      0.235961       18.3296    ;  19.3140    
+    14   o34off                17.1507      0.361759       16.3961    ;  17.9053    
+    15   o35off                20.7843      0.232848       20.2986    ;  21.2700    
+    16   o41off                17.9496      0.331251       17.2586    ;  18.6406    
+    17   o42off                17.2369      0.358577       16.4889    ;  17.9849    
+    18   o43off                12.9389      0.193834       12.5345    ;  13.3432    
+    19   o44off                13.1901      0.251206       12.6661    ;  13.7141    
+    20   o45off                14.2418      0.201767       13.8210    ;  14.6627    
+    21   qtrib                -4036.13       281.065      -4622.43    ; -3449.83    
+    22   qmain                -3468.09       148.351      -3777.55    ; -3158.63    
+
+ *******************************************************************************
+ *******************************************************************************
+
+    3 d=NP SCHEFFE SIMULTANEOUS 95% PREDICTION INTERVALS
+
+    UNCERTAINTY ON EACH PREDICTION IS CONSIDERED JOINTLY
+    IF UNCERTAINTY OVER AN AREA IS DESIRED, GO TO NEXT TABLE
+
+    PREDICTION INTERVALS INCLUDE MEASUREMENT ERROR,
+        I.E. GIVEN THE VARIANCE LISTED IN THE
+        OBSERVATION INPUT FILES USED TO DEFINE THE
+        PREDICTIONS, THERE IS A 95% PROBABILITY
+        THAT THE MEASUREMENT WILL FALL WITHIN THE
+        INDICATED RANGE
+
+    SCHEFFE PREDICTION INTERVALS ARE USED
+
+    CRITICAL VALUE FOR THE INTERVALS =  3.0496    
+
+
+         OBSERVATION           SIMULATED
+  NO.       NAME               VALUE       STD. DEV.       PREDICTION INTERVAL
+     1   o11off                33.8196      0.285251       32.9497    ;  34.6895    
+     2   o12off                33.9868      0.284477       33.1192    ;  34.8543    
+     3   o13off                34.2276      0.297055       33.3217    ;  35.1335    
+     4   o14off                35.1425      0.328440       34.1409    ;  36.1441    
+     5   o15off                35.9592      0.362971       34.8523    ;  37.0662    
+     6   o21off                25.1254      0.298002       24.2166    ;  26.0341    
+     7   o22off                25.3103      0.265196       24.5016    ;  26.1191    
+     8   o23off                23.5838      0.304291       22.6558    ;  24.5117    
+     9   o24off                24.7813      0.354102       23.7014    ;  25.8612    
+    10   o25off                27.3852      0.175905       26.8487    ;  27.9216    
+    11   o31off                23.2663      0.255543       22.4870    ;  24.0456    
+    12   o32off                22.3248      0.247856       21.5689    ;  23.0807    
+    13   o33off                18.8218      0.235961       18.1022    ;  19.5414    
+    14   o34off                17.1507      0.361759       16.0475    ;  18.2539    
+    15   o35off                20.7843      0.232848       20.0742    ;  21.4944    
+    16   o41off                17.9496      0.331251       16.9394    ;  18.9597    
+    17   o42off                17.2369      0.358577       16.1434    ;  18.3304    
+    18   o43off                12.9389      0.193834       12.3477    ;  13.5300    
+    19   o44off                13.1901      0.251206       12.4240    ;  13.9562    
+    20   o45off                14.2418      0.201767       13.6265    ;  14.8572    
+    21   qtrib                -4036.13       281.065      -4893.26    ; -3179.00    
+    22   qmain                -3468.09       148.351      -3920.50    ; -3015.68    
+
+ *******************************************************************************
+ *******************************************************************************
+
+ UNDEFINED NUMBER OF SIMULTANEOUS 95% PREDICTION INTERVALS
+
+    UNCERTAINTY IS CONSIDERED OVER AN AREA (I.E. AN INFINITE NUMBER OF POINTS)
+
+    PREDICTION INTERVALS INCLUDE MEASUREMENT ERROR,
+        I.E. GIVEN THE VARIANCE LISTED IN THE
+        OBSERVATION INPUT FILES USED TO DEFINE THE
+        PREDICTIONS, THERE IS A 95% PROBABILITY
+        THAT THE MEASUREMENT WILL FALL WITHIN THE
+        INDICATED RANGE
+
+    CRITICAL VALUE FOR THE INTERVALS =  3.0496    
+
+
+         OBSERVATION           SIMULATED
+  NO.       NAME               VALUE       STD. DEV.       PREDICTION INTERVAL
+     1   o11off                33.8196      0.285251       32.9497    ;  34.6895    
+     2   o12off                33.9868      0.284477       33.1192    ;  34.8543    
+     3   o13off                34.2276      0.297055       33.3217    ;  35.1335    
+     4   o14off                35.1425      0.328440       34.1409    ;  36.1441    
+     5   o15off                35.9592      0.362971       34.8523    ;  37.0662    
+     6   o21off                25.1254      0.298002       24.2166    ;  26.0341    
+     7   o22off                25.3103      0.265196       24.5016    ;  26.1191    
+     8   o23off                23.5838      0.304291       22.6558    ;  24.5117    
+     9   o24off                24.7813      0.354102       23.7014    ;  25.8612    
+    10   o25off                27.3852      0.175905       26.8487    ;  27.9216    
+    11   o31off                23.2663      0.255543       22.4870    ;  24.0456    
+    12   o32off                22.3248      0.247856       21.5689    ;  23.0807    
+    13   o33off                18.8218      0.235961       18.1022    ;  19.5414    
+    14   o34off                17.1507      0.361759       16.0475    ;  18.2539    
+    15   o35off                20.7843      0.232848       20.0742    ;  21.4944    
+    16   o41off                17.9496      0.331251       16.9394    ;  18.9597    
+    17   o42off                17.2369      0.358577       16.1434    ;  18.3304    
+    18   o43off                12.9389      0.193834       12.3477    ;  13.5300    
+    19   o44off                13.1901      0.251206       12.4240    ;  13.9562    
+    20   o45off                14.2418      0.201767       13.6265    ;  14.8572    
+    21   qtrib                -4036.13       281.065      -4893.26    ; -3179.00    
+    22   qmain                -3468.09       148.351      -3920.50    ; -3015.68    
+
+ Run end date and time (yyyy/mm/dd hh:mm:ss): 2011/08/31 16:41:21
+ Elapsed run time:  0.014 Seconds
+

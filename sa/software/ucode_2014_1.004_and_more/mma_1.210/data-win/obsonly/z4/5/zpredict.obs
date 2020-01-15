@@ -1,0 +1,26 @@
+BEGIN PREDICTION_DATA TABLE
+NROW=22  NCOL=5  COLUMNLABELS 
+predname    refvalue    statistic  statflag    groupname    plotsymbol
+o11off   1.0       4.0e-4      var        head       1 
+o12off   1.0       4.0e-4      var        head       1
+o13off   1.0       4.0e-4      var        head       1
+o14off   1.0       4.0e-4      var        head       1
+o15off   1.0       4.0e-4      var        head       1
+o21off   1.0       4.0e-4      var        head       1
+o22off   1.0       4.0e-4      var        head       1
+o23off   1.0       4.0e-4      var        head       1
+o24off   1.0       4.0e-4      var        head       1
+o25off   1.0       4.0e-4      var        head       1
+o31off   1.0       4.0e-4      var        head       1
+o32off   1.0       4.0e-4      var        head       1
+o33off   1.0       4.0e-4      var        head       1
+o34off   1.0       4.0e-4      var        head       1
+o35off   1.0       4.0e-4      var        head       1
+o41off   1.0       4.0e-4      var        head       1
+o42off   1.0       4.0e-4      var        head       1
+o43off   1.0       4.0e-4      var        head       1
+o44off   1.0       4.0e-4      var        head       1
+o45off   1.0       4.0e-4      var        head       1
+qtrib    1.0       100.        var        flow       2
+qmain    1.0       100.        var        flow       2
+END PREDICTION_DATA TABLE

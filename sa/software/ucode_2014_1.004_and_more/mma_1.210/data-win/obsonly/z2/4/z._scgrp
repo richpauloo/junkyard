@@ -1,0 +1,10 @@
+ "GROUP NAME" head        
+ "PARAMETER NAME" "COMPOSITE SCALED SENSITIVITY" "LARGEST DSS FOR THE PARAMETER" "OBSERVATION WITH LARGEST DSS" "SECOND LARGEST DSS FOR THE PARAMETER" "OBSERVATION WITH SECOND LARGEST DSS"
+ Kx1                4.52522238864216                     -8.96666666666692     o15                                  -7.13533333333341     o14                 
+ Kx5                8.19100762082553                     -15.3813333333310     o15                                  -14.8739999999973     o14                 
+ RCH                25.4436919180332                      38.8273333425898     o12                                   38.7240000092322     o15                 
+ "GROUP NAME" flow        
+ "PARAMETER NAME" "COMPOSITE SCALED SENSITIVITY" "LARGEST DSS FOR THE PARAMETER" "OBSERVATION WITH LARGEST DSS" "SECOND LARGEST DSS FOR THE PARAMETER" "OBSERVATION WITH SECOND LARGEST DSS"
+ Kx1               0.459782608695830E-01                 0.459782608695830E-01 qtrib                                 0.00000000000000                         
+ Kx5               0.356043478260802                     0.356043478260802     qtrib                                 0.00000000000000                         
+ RCH                4.09463043575880                     -4.09463043575880     qtrib                                 0.00000000000000                         

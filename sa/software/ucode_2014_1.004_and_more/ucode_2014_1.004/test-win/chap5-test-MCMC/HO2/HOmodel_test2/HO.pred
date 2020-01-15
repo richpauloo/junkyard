@@ -1,0 +1,15 @@
+#UCODE Prediction File
+BEGIN PREDICTION_DATA TABLE
+nrow=   10  ncol=6  columnlabels
+predname        refvalue   measstatistic  measstatflag  equation      groupname
+SS1_1        -1.47431101E+03  0.063         CV            _	       notused
+SS2_1        -1.25568899E+03  0.063         CV            _	       notused
+G2_1         -2.730E+03       0.063         CV      "SS1_1+SS2_1"      notused
+SS1_2        -1.47431101E+03  0.063         CV            _	       notused
+SS2_2        -1.25568899E+03  0.063         CV            _	       notused
+G2_2         -2.730E+03       0.063         CV      "SS1_2+SS2_2"      notused
+G2_change     2.00000E-01     0.063         CV    "(G2_1-G2_2)/G2_1"     pred
+H_1	      3.50E+00	      0.1	    SD		  _	       notused
+H_2	      1.90E+00	      0.1	    SD		  _	       notused
+DD            1.60E+00        0.1           SD         "H_1-H_2"         pred
+END PREDICTION_DATA

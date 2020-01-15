@@ -1,0 +1,11 @@
+# RCH: Recharge package file created on 2/12/2011 by ModelMuse version 2.8.0.0.
+# cm/yr
+PARAMETER 2 # PARAMETER NPRCH
+ 1 9 # DataSet 2: NRCHOP IRCHCB
+RCH_1 RCH 2.543066000000E+001  1 # Data Set 3: PARNAM PARTYP Parval NCLU
+R_Mult_1 R_Zone_1 1
+RCH_2 RCH 8.347103000000E+001  1 # Data Set 3: PARNAM PARTYP Parval NCLU
+R_Mult_2 R_Zone_2 1
+ 2 1 # Data Set 5: INRECH INIRCH Stress period 1
+RCH_1 12 # Data Set 7: PARNAM IRCHPF
+RCH_2 12 # Data Set 7: PARNAM IRCHPF

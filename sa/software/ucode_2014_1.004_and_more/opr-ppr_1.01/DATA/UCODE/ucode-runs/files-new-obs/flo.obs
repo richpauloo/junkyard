@@ -1,0 +1,5 @@
+BEGIN OBSERVATION_DATA TABLE
+NROW=1  NCOL=5  COLUMNLABELS 
+obsname         obsvalue  statistic  statflag  groupname 
+newflow          000.000   .440000     sd       newflow   
+END OBSERVATION_DATA

@@ -1,0 +1,7 @@
+BEGIN PREDICTION_GROUPS TABLE
+  nrow=3 ncol=3  columnlabels
+  groupname  plotsymbol  useflag   
+  pred-x         6        yes       
+  pred-y         7        yes       
+  pred-z         8        yes       
+END PREDICTION_GROUPS

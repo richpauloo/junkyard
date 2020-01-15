@@ -1,0 +1,80 @@
+# -------------------------
+# UCODE INPUT EXAMPLE 1
+# -------------------------
+
+BEGIN Options	KEYWORDS
+  Verbose=0
+END Options
+
+# ------------------------------
+# UCODE-CONTROL INFORMATION
+# ------------------------------
+
+BEGIN UCODE_CONTROL_DATA KEYWORDS
+ModelName=example
+#Performance
+  prediction=yes             # calculate predictions: yes/no
+  sensitivities=yes
+#Printing and output files
+# all defaults used
+END UCODE_CONTROL_DATA 
+
+# --------------------------------
+# COMMAND FOR APPLICATION MODEL(S)
+# --------------------------------
+
+BEGIN MODEL_COMMAND_LINES FILES
+..\files-predictions\preds-fwd.command
+END MODEL_COMMAND_LINES
+
+# ---------------------
+# PARAMETER INFORMATION
+# ---------------------
+
+BEGIN PARAMETER_DATA FILES
+..\files-predictions\ss.opt.params
+END PARAMETER_DATA 
+
+BEGIN PARAMETER_DATA_FOR_PREDICTION TABLE
+#     1           2             3          4          5         6          7        8
+nrow=1  ncol=9 columnlabels
+paramname  startvalue  lowervalue uppervalue   scalepval  perturbamt transform  tolpar adjustable
+POR_1&2     0.33           0.27       0.39       0.033       0.01D0        no     0.01   yes  	
+END PARAMETER_DATA_FOR_PREDICTION 
+
+# -----------------------
+# PREDICTION INFORMATION
+# -----------------------
+
+BEGIN PREDICTION_GROUPS FILES
+..\files-predictions\groups.pred
+END PREDICTION_GROUPS
+
+BEGIN PREDICTION_DATA FILES
+..\files-predictions\adv.pred
+END PREDICTION_DATA 
+
+# -----------------------
+# PRIOR INFORMATION
+# -----------------------
+
+BEGIN LINEAR_PRIOR_INFORMATION_FOR_PREDICTION TABLE
+nrow=1 ncol=5  columnlabels
+priorname      equation     PriorInfoValue    Statistic  StatFlag  
+PRIOR_POR_1&2  POR_1&2         0.33           0.03       SD       
+END LINEAR_PRIOR_INFORMATION_FOR_PREDICTION
+
+# -----------------------------
+# APPLICATION MODEL INFORMATION
+# -----------------------------
+
+BEGIN MODEL_INPUT_FILES	KEYWORDS
+  modinfile=..\..\mf2k-files\predictions\tc1.sen  
+  templatefile=..\files-predictions\tc1.sen.fwd+por.tpl
+END MODEL_INPUT_FILES
+
+BEGIN MODEL_OUTPUT_FILES  KEYWORDS
+  modoutfile=..\..\mf2k-files\predictions\tc1._os  
+  instructionfile=..\files-predictions\preds.instructions   
+  category=pred
+END MODEL_OUTPUT_FILES

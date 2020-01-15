@@ -1,0 +1,10 @@
+         3        40        25         1         4        2
+0 1 0
+CONSTANT   152.4  DELR
+CONSTANT   152.4  DELC
+EXTERNAL  19  1.0  (FREE)  -1    top1
+EXTERNAL  20  1.0  (FREE)  -1    bot1
+EXTERNAL  21  1.0  (FREE)  -1    bot2
+EXTERNAL  46  1.0  (FREE)  -1    bot-cu
+EXTERNAL  22  1.0  (FREE)  -1    bot3
+1.000E+00         1 1.000E+00  SS  PERLEN,NSTP,TSMULT,Ss/tr

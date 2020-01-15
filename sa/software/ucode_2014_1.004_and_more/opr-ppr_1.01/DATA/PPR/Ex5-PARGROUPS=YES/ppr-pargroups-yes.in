@@ -1,0 +1,46 @@
+#
+# -------------------------
+# BASIC OPTIONS INFORMATION
+# -------------------------
+#
+BEGIN OPTIONS KEYWORDS
+  MODE = PPR
+  PARGROUPS = YES
+  PREDGROUPS = NO
+  PERCENTREDUC = 10
+  NPARPERGROUP = 2
+  CORRELTHRESH = 0.95
+  VERBOSE = 1
+END OPTIONS
+#
+# -------------------------
+# INPUT FILES INFORMATION
+# -------------------------
+#
+BEGIN READ_FILES KEYWORDS
+  DMFNAM = example._dm                  model data file
+  DMPFNAM = example._dmp                prediction model data file
+  SUFNAM = example._su                  existing observations sensitivity file
+  WTFNAM = example._wt                  existing observations weight file
+  SPUFNAM = example._spu                prediction sensitivities file
+  SUPRIPFNAM = example._suprip	        prior sensitivities for parameters not in regression
+  WTPRIPFNAM = example._wtprip 	        prior weights for parameters not in regression
+END READ_FILES KEYWORDS
+#
+# -------------------------
+# PREDICTION INFORMATION
+# -------------------------
+#
+BEGIN PREDICTION_DATA TABLE
+  NROW = 9 NCOL = 1 COLUMNLABELS
+  PREDNAME   
+  AD10X      
+  AD10Y      
+  AD10Z      
+  AD50X      
+  AD50Y      
+  AD50Z      
+  A100X      
+  A100Y      
+  A100Z      
+END PREDICTION_DATA TABLE

@@ -1,0 +1,266 @@
+ 
+  VERBOSE=3 -- Warnings, notes, and selected input will be written
+ 
+  Reading input from file: 01-ex3.3_ucode_main.in
+ 
+ 
+  ******************************************************************************
+  ******************************************************************************
+ 
+                Output from program UCODE_2014, Version:   1.004
+ 
+               Constructed using the JUPITER API, Version:  1.7.3
+ 
+  ******************************************************************************
+  ******************************************************************************
+ 
+ 
+ -------------------------------------------------------------------------------
+  ECHO UCODE CONTROLS INPUT:
+ 
+  VERBOSE =  3
+ 
+  MODEL NAME =   Hill_Tiedema
+  MODEL LENGTH UNITS =   m
+  MODEL TIME UNITS =   s
+  MODEL MASS UNITS =   NA
+ 
+  OPTIMIZATION WILL NOT BE PERFORMED
+  NONLINEAR INTERVALS WILL NOT BE PERFORMED (BY DEFAULT)
+  SENSITIVITIES WILL NOT BE CALCULATED (BY DEFAULT)
+  ONLY RESIDUAL ANALYSIS FOR STARTING PARAMETER VALUES
+  DATA EXCHANGE FILES WILL BE PRODUCED
+
+
+ ECHO MODEL COMMAND LINES:
+
+ Command ID    Purpose       Command Line
+ ------------  ------------  --------------------------------------------------
+ ForwardModel  Forward       ..\..\bin\mf2005.exe ex3.3.nam
+ 
+ *******************************************************
+        NOTE DERIVED_PARAMETERS BLOCK NOT FOUND
+         NO DERIVED PARAMETERS ARE CONSIDERED
+         IF YOU INTENDED TO READ THIS BLOCK
+        CHECK THE SPELLING OF THE BLOCK NAME
+   JUPITER CODES IGNORE BLOCKS WITH MISSPELLED NAMES
+ *******************************************************
+ 
+--------------------------------------------------------------------------------
+
+
+ OBSERVATIONS
+  Total number of observations read---------    11
+  Number of directly extracted observations-    11
+  Number of observations to be derived------     0
+  Number of observations to be used---------    11
+
+  
+
+ OBSERVATION INFORMATION:
+
+ OBSERVATION NAME         GROUP       OBS. VALUE      WEIGHT
+ --------------------  ------------  ------------  ------------
+ hd01.ss               Heads           101.80       0.99751    
+ hd02.ss               Heads           128.12       0.99751    
+ hd03.ss               Heads           156.68       0.99751    
+ hd04.ss               Heads           124.89       0.99751    
+ hd05.ss               Heads           140.96       0.99751    
+ hd06.ss               Heads           126.54       0.99751    
+ hd07.ss               Heads           101.11       0.99751    
+ hd08.ss               Heads           158.13       0.99751    
+ hd09.ss               Heads           176.37       0.99751    
+ hd10.ss               Heads           142.02       0.99751    
+ Flow01_1              RIV_flows      -4.4000        5.1653    
+  
+
+ OBSERVATION-GROUP INFORMATION:
+
+               NUM. OF         PLOT     WEIGHT    COV. MATRIX     DEP.
+ GROUP NAME    MEMBERS  USE?  SYMBOL  MULTIPLIER  IF CORRELATED   TYPE
+ ------------  -------  ----  ------  ----------  -------------  ------
+ Heads              10   T         1    1.00                     OBS   
+ RIV_flows           1   T         2    1.00                     OBS   
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+  THERE ARE NO PRIOR EQUATIONS FOR THIS EVALUATION
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+
+ MODEL-INPUT AND CORRESPONDING TEMPLATE FILES:
+
+ Model-input file: ex3.3.pval   Template file: ex3.3_pval.jtf
+
+
+ MODEL-OUTPUT AND CORRESPONDING INSTRUCTION FILES:
+
+ Model-output file: ex3.3.obh_out   Instruction file: ex3.3.obh_out.jif   Category: OBS   
+ Model-output file: ex3.3.rvob_out   Instruction file: ex3.3.rvob_out.jif   Category: OBS   
+
+--------------------------------------------------------------------------------
+
+ PARAMETER INFORMATION READ FROM INPUT:
+
+ No.  Param. name     Group        Value       Lower value   Upper value    Adj?
+ ---- ------------ ------------  ------------  ------------  ------------  -----
+    1 HK_1         HK            3.000000E-04 -1.000000E+39  1.000000E+39   Y
+    2 K_RB         RIV           1.200000E-03 -1.000000E+39  1.000000E+39   N
+    3 VK_CB        VKCB          1.000000E-07 -1.000000E+39  1.000000E+39   N
+    4 HK_2         HK            4.000000E-05 -1.000000E+39  1.000000E+39   Y
+    5 RCH_1        RCH            63.0720     -1.000000E+39  1.000000E+39   N
+    6 RCH_2        RCH            31.5360     -1.000000E+39  1.000000E+39   N
+    7 VANI         VANI           1.00000     -1.000000E+39  1.000000E+39   N
+
+ No.  Param. name   LN   SCALEPVAL   PERTURB    MAXCHANGE    TOLPAR    SVDSET
+ ---- ------------  --  ----------  ----------  ---------  ---------    ------
+    1 HK_1           0   3.000E-06   1.000E-02   2.00      1.000E-02          0
+    2 K_RB           0   1.200E-05   1.000E-02   2.00      1.000E-02          0
+    3 VK_CB          0   1.000E-09   1.000E-02   2.00      1.000E-02          0
+    4 HK_2           0   4.000E-07   1.000E-02   2.00      1.000E-02          0
+    5 RCH_1          0   0.631       1.000E-02   2.00      1.000E-02          0
+    6 RCH_2          0   0.315       1.000E-02   2.00      1.000E-02          0
+    7 VANI           0   1.000E-02   1.000E-02   2.00      1.000E-02          0
+
+ INFORMATION FOR ADJUSTABLE PARAMETERS READ FROM INPUT:
+
+ Param. name     Group          Value       Lower value    Upper value  Par. no.
+ ------------ ------------  -------------  -------------  -------------  -------
+ HK_1         HK             3.000000E-04  -1.000000E+39   1.000000E+39       1
+ HK_2         HK             4.000000E-05  -1.000000E+39   1.000000E+39       4
+
+               Sens
+ Param. name   Method  LN   SCALEPVAL   PERTURB    MAXCHANGE    TOLPAR    SVDSET
+ ------------  ------  --  ----------  ----------  ---------  ----------  ------
+ HK_1              1    0   3.000E-06   1.000E-02   2.00       1.000E-02      0
+ HK_2              1    0   4.000E-07   1.000E-02   2.00       1.000E-02      0
+
+********************************************************************************
+ END ECHO OF INPUT - REPORT RESULTS OF SIMULATION
+********************************************************************************
+
+
+  Process Model Run #:      1
+
+ -------------------------------------------------------------------
+ FIT OF SIMULATED EQUIVALENTS TO OBSERVATIONS
+
+ OBSERVATION            MEASURED      SIMULATED                            WEIGHTED
+    NAME                 VALUE          VALUE      RESIDUAL   WEIGHT**.5   RESIDUAL
+
+ hd01.ss                 101.800       100.225       1.575       0.999       1.573    
+ hd02.ss                 128.120       139.331      -11.21       0.999      -11.20    
+ hd03.ss                 156.680       174.363      -17.68       0.999      -17.66    
+ hd04.ss                 124.890       139.331      -14.44       0.999      -14.42    
+ hd05.ss                 140.960       157.132      -16.17       0.999      -16.15    
+ hd06.ss                 126.540       139.632      -13.09       0.999      -13.08    
+ hd07.ss                 101.110       102.868      -1.758       0.999      -1.756    
+ hd08.ss                 158.130       173.956      -15.83       0.999      -15.81    
+ hd09.ss                 176.370       190.300      -13.93       0.999      -13.91    
+ hd10.ss                 142.020       157.041      -15.02       0.999      -15.00    
+ Flow01_1               -4.40000      -4.86057      0.4606        2.27       1.047    
+
+ STATISTICS FOR ALL RESIDUALS :
+ AVERAGE WEIGHTED RESIDUAL  :-0.106E+02
+ # RESIDUALS >= 0. :      2
+ # RESIDUALS < 0.  :      9
+ NUMBER OF RUNS  :    3  IN   11 OBSERVATIONS
+
+ INTERPRETING THE CALCULATED RUNS STATISTIC VALUE OF    -0.896    
+ NOTE: THE FOLLOWING APPLIES ONLY IF 
+        # RESIDUALS >= 0. IS GREATER THAN 10 AND 
+        # RESIDUALS < 0.   IS GREATER THAN 10
+ THE NEGATIVE VALUE MAY INDICATE TOO FEW RUNS:
+    IF THE VALUE IS LESS THAN -1.28, THERE IS LESS THAN A 10 PERCENT
+       CHANCE THE VALUES ARE RANDOM,
+    IF THE VALUE IS LESS THAN -1.645, THERE IS LESS THAN A 5 PERCENT
+       CHANCE THE VALUES ARE RANDOM,
+    IF THE VALUE IS LESS THAN -1.96, THERE IS LESS THAN A 2.5 PERCENT
+       CHANCE THE VALUES ARE RANDOM.
+
+
+ STATISTICS FOR THESE RESIDUALS:
+ MAXIMUM WEIGHTED RESIDUAL:  0.157E+01  Observation: hd01.ss             
+ MINIMUM WEIGHTED RESIDUAL: -0.177E+02  Observation: hd03.ss             
+ AVERAGE WEIGHTED RESIDUAL: -0.106E+02
+ # RESIDUALS >= 0.  :       2
+ # RESIDUALS <  0.  :       9
+ NUMBER OF RUNS:        3  IN       11 OBSERVATIONS
+
+ SUM OF SQUARED WEIGHTED RESIDUALS           :    1752.3    
+
+ SUM OF SQUARED WEIGHTED RESIDUALS WITH PRIOR:    1752.3    
+
+ SUM OF SQUARED, WEIGHTED RESIDUALS:
+   DEPENDENT VARIABLES:    1752.316    
+
+ NUMBER OF INCLUDED OBSERVATIONS =      11 OF      11
+
+********************************************************************************
+********************************************************************************
+
+ SUM OF SQUARED WEIGHTED RESIDUALS           :    1752.3    
+
+ SUM OF SQUARED WEIGHTED RESIDUALS WITH PRIOR:    1752.3    
+
+ SMALLEST AND LARGEST WEIGHTED RESIDUALS
+
+             SMALLEST WEIGHTED RESIDUALS
+                      WEIGHTED    PERCENT OF   
+ NAME                 RESIDUAL     OBJ FUNC
+ hd03.ss                 -17.7         17.80
+ hd05.ss                 -16.2         14.89
+ hd08.ss                 -15.8         14.26
+ hd10.ss                 -15.0         12.84
+ hd04.ss                 -14.4         11.87
+
+             LARGEST  WEIGHTED RESIDUALS
+                      WEIGHTED    PERCENT OF   
+ NAME                 RESIDUAL     OBJ FUNC
+ hd01.ss                  1.57          0.14
+ Flow01_1                 1.05          0.06
+ hd07.ss                 -1.76          0.18
+ hd02.ss                 -11.2          7.16
+ hd06.ss                 -13.1          9.76
+
+ CORRELATION BETWEEN ORDERED WEIGHTED RESIDUALS AND NORMAL ORDER STATISTICS
+ FOR OBSERVATIONS =    0.802    
+
+--------------------------------------------------------------------------------
+ COMMENTS ON THE INTERPRETATION OF THE CORRELATION BETWEEN
+ WEIGHTED RESIDUALS AND NORMAL ORDER STATISTICS:
+
+ Generally, IF the reported CORRELATION is LESS than the critical value,
+ at the selected significance level (usually 5 or 10%), the hypothesis
+ that the weighted residuals are INDEPENDENT AND NORMALLY DISTRIBUTED
+ would be REJECTED.  HOWEVER, in this case, conditions are outside of
+ the range of published critical values as discussed below.
+
+ The sum of the number of observations and prior information items is    11
+ which is less than 35, the minimum value for which critical values are
+ published.  Therefore, the critical values for the 5 and 10% significance
+ levels are less than 0.943 and 0.952, respectively.
+
+ CORRELATIONS GREATER than these critical values indicate that, probably, the 
+ weighted residuals ARE INDEPENDENT AND NORMALLY DISTRIBUTED.
+
+ Correlations LESS than these critical values MAY BE ACCEPTABLE, and
+ rejection of the hypothesis is not necessarily warranted.
+
+ The Kolmogorov-Smirnov test can be used to further evaluate the residuals.
+ --------------------------------------------------------------------------
+
+
+  NUMBER OF PROCESS MODEL RUNS CONDUCTED FOR THIS ANALYSIS:       1
+
+********************************************************************************
+               Normal termination of UCODE_2014,   Version:   1.004
+********************************************************************************
+
+
+
+ Run end date and time (yyyy/mm/dd hh:mm:ss): 2020/01/13 11:35:34
+ Elapsed run time:  0.297 Seconds
+

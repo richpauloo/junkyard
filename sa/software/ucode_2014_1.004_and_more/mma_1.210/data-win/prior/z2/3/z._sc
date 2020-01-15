@@ -1,0 +1,4 @@
+ "PARAMETER NAME" "COMPOSITE SCALED SENSITIVITY" "LARGEST DSS FOR THE PARAMETER" "OBSERVATION WITH LARGEST DSS" "SECOND LARGEST DSS FOR THE PARAMETER" "OBSERVATION WITH SECOND LARGEST DSS"
+ Kx1                4.85026108611845                     -10.4339999999977     o15                                  -9.01599999999834     o14                 
+ Kx5                7.84312147616886                     -14.5906666666601     o15                                  -14.3159999999936     o12                 
+ RCH                24.9768733110088                      39.1040000127611     o15                                   38.2220000124733     o12                 

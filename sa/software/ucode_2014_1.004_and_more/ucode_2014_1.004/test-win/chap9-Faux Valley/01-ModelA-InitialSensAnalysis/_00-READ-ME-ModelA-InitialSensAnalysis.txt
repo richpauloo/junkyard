@@ -1,0 +1,8 @@
+Directory "01-ModelA-InitialSensAnalysis"
+
+This directory contains files for a UCODE sensitivity run of Model A.
+This model is described in Chapter 9 of the UCODE_2014 documentation.
+
+_01-RunUcode_ModelA-SA.bat conducts a sensitivity analysis run at the starting
+parameter values for Model A. Results of this run are shown in Tables 6 and 11.
+

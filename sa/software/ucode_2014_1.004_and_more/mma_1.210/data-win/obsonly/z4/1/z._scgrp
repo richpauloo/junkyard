@@ -1,0 +1,14 @@
+ "GROUP NAME" head        
+ "PARAMETER NAME" "COMPOSITE SCALED SENSITIVITY" "LARGEST DSS FOR THE PARAMETER" "OBSERVATION WITH LARGEST DSS" "SECOND LARGEST DSS FOR THE PARAMETER" "OBSERVATION WITH SECOND LARGEST DSS"
+ Kx1                3.10622543004011                     -6.45866666666846     o15                                  -5.87333333333532     o14                 
+ Kx2                2.09635168805350                     -4.44733333333587     o15                                  -4.21400000000224     o14                 
+ Kx4                3.59911623720414                     -7.28133333333834     o15                                  -6.48666666667089     o14                 
+ Kx5                3.72426188361745                     -7.39999999999670     o12                                  -6.85466666666387     o13                 
+ RCH                24.9894321823627                      39.1106666533475     o15                                   37.4626666539091     o12                 
+ "GROUP NAME" flow        
+ "PARAMETER NAME" "COMPOSITE SCALED SENSITIVITY" "LARGEST DSS FOR THE PARAMETER" "OBSERVATION WITH LARGEST DSS" "SECOND LARGEST DSS FOR THE PARAMETER" "OBSERVATION WITH SECOND LARGEST DSS"
+ Kx1               0.638913043478513E-01                 0.638913043478513E-01 qtrib                                 0.00000000000000                         
+ Kx2               0.180217391304587E-01                 0.180217391304587E-01 qtrib                                 0.00000000000000                         
+ Kx4               0.158804347826182                     0.158804347826182     qtrib                                 0.00000000000000                         
+ Kx5               0.176804347826009                     0.176804347826009     qtrib                                 0.00000000000000                         
+ RCH                4.21649999856411                     -4.21649999856411     qtrib                                 0.00000000000000                         

@@ -1,0 +1,126 @@
+#
+# ------------------------------
+# UCODE-OPTION INFORMATION
+# ------------------------------
+BEGIN OPTIONS KEYWORDS
+Verbose= 3
+END OPTIONS
+#
+# ------------------------------
+# UCODE-CONTROL INFORMATION
+# ------------------------------
+BEGIN UCODE_CONTROL_DATA KEYWORDS
+  ModelName=        HO
+  ModelLengthUnits= m
+  ModelMassUnits=   NA
+  ModelTimeUnits=   d 
+#Performance
+  sensitivities=no           # calculate sensitiv1ities: yes/no
+  optimize=yes               # estimate parameters: yes/no
+END UCODE_CONTROL_DATA
+
+
+# ------------------------------
+# REGRESSION-CONTROL INFORMATION
+# ------------------------------
+BEGIN REG_GN_CONTROLS KEYWORDS
+  tolpar=  1.00000E-02        # GN param conv crit. Also see parameter blocks
+  tolsosc=  0.00000E+00       # GN fit-change conv c1riteria.
+  maxiter=    20               # maximum # of GaussNewton updates
+  maxchange=  2.00000E+00     # max frac param change for GN updates
+  maxchangerealm=Native      # how changes apply, log-trans params
+  MqrtDirection=  8.99200E+01  # angle (degrees) for Mrqt parameter
+  MqrtFactor=  1.50000E+00
+  MqrtIncrement=  1.00000E-03
+END REG_GN_CONTROLS
+
+
+# --------------------------------
+# COMMAND FOR APPLICATION MODEL(S)
+# --------------------------------
+
+BEGIN MODEL_COMMAND_LINES KEYWORDS
+  Command='RunMF.bat'
+  Purpose=forward
+  CommandId='MODFLOW 2005'
+END MODEL_COMMAND_LINES
+
+
+# ---------------------
+# PARAMETER INFORMATION
+# ---------------------
+
+BEGIN PARAMETER_DATA TABLE
+nrow=   6  ncol=6  columnlabels
+Paramname    Startvalue    Constrain  LowerConstraint  UpperConstraint     Adjustable  
+LAKERCH      0.000603           YES     1.00000E-08     1.00000E+00          Yes	 
+KRB0         1.72898E+04   	yes	1.00000E+02     1.00000E+08	     Yes       
+RCH          0.00111       	yes	1.00000E-08     1.00000E+00	     Yes       
+KV           7.58389E-03   	yes	1.00000E-06     1.00000E+00	     yes       
+K1           6.00000E+01   	yes	6.00000E-01	6.00000E+04	     Yes       
+VANI1        2.50000E+00   	yes	1.00000E+00     1.00000E+01	     Yes              
+END PARAMETER_DATA
+
+
+# -----------------------
+# OBSERVATION INFORMATION
+# -----------------------
+ 
+BEGIN OBSERVATION_GROUPS TABLE
+nrow=   3   ncol=3  columnlabels
+GroupName       PlotSymbol    CovMatrix  
+       1          1	        CovObsHead
+       2          2	        CovObsFlow
+       3          3               
+END OBSERVATION_GROUPS
+ 
+BEGIN OBSERVATION_DATA FILES
+HO.obs
+END OBSERVATION_DATA
+
+
+# ------------------------------------
+# LINEAR PRIOR INFORMATION INFORMATION
+# ------------------------------------
+
+BEGIN PRIOR_INFORMATION_GROUPS TABLE
+nrow=    1  ncol=2  columnlabels
+GroupName       PlotSymbol
+         4          4
+END PRIOR_INFORMATION_GROUPS
+
+BEGIN Linear_Prior_Information TABLE
+nrow=   2  ncol=6  columnlabels
+PriorName  PriorInfoValue   GroupName    Statistic      StatFlag   Equation
+PR_LAKERCH     0.000603            4         0.5         CV        LAKERCH
+PR_VANI1       2.50000000          4         0.6         SD        VANI1 
+END Linear_Prior_Information
+
+
+# ---------------------------------------------------------------------------------------
+# MATRIX FILES FOR COVARIANCE MATRIX OF MULTINORMAL PRIOR AND CORRELATED OBSERVATION ERRORS
+# ---------------------------------------------------------------------------------------
+# The matrix_files input block should be provided after all the input blocks except the model_input and model_output blocks. 
+
+BEGIN MATRIX_FILES TABLE
+  nrow= 2   ncol= 2  columnlabels
+  MatrixFile              NMatrices
+  obsmatrix_head.dat         1
+  obsmatrix_flow.dat         1
+END MATRIX_FILES
+
+
+# -----------------------------
+# APPLICATION MODEL INFORMATION
+# -----------------------------
+
+BEGIN MODEL_INPUT_FILES	KEYWORDS
+  modinfile=HOmodel_forward\HO.pvl
+  templatefile=HO.tpl
+END MODEL_INPUT_FILES
+
+BEGIN MODEL_OUTPUT_FILES  KEYWORDS
+  modoutfile=HOmodel_forward\HO._obsout
+  instructionfile=HO.inst
+  category=obs
+END MODEL_OUTPUT_FILES

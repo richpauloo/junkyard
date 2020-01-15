@@ -1,0 +1,24 @@
+Directory "05-RunUcode_ModelB-Prediction"
+
+This directory contains files for UCODE sensitivity analysis, 
+prediction, and prediction uncertainty runs for Model B. 
+This model is described in Chapter 9 of the UCODE_2014 documentation.
+
+_01-RunUcode_ModelB-SA-AllActive-WithPrior.bat conducts a sensitivity
+analysis run with parameters equal to their estimated values and
+with all parameters activated and and all parameters having prior
+information. These are the conditions needed for generating the parameter
+variance covariance matrix that is used in the calculation of 
+prediction uncertainty.	Parameter confidence intervals produced by
+this run are plotted in Figure 26a and 26b of the UCODE_2014
+documentation.
+
+_02-RunUcode_ModelB-Prediction.bat conducts a prediction sensitivity
+run for Model B, using the MODFLOW model with prediction conditions
+(pumping of 2.2 m^3/s at the proposed production well). This
+MODFLOW model has prefix modB-pred. Prediction scaled sensitivities
+from this run are plotted in Figure 26c.
+
+_03-RunLinUncertainty_ModelB.bat conducts a run of the program
+Linear_Uncertainty, which calculates the confidence intervals
+on predictions. These confidence intervals are plotted in Figure 22.

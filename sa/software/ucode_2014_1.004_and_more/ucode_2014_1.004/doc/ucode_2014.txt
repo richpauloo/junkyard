@@ -1,0 +1,261 @@
+U.S. Geological Survey (USGS)                         UCODE_2014(1)
+
+NOTE: Reference to commercial products does not constitute endorsement 
+            by the authors or IGWMC.
+
+NAME:
+UCODE_2014, with New Capabilities to 
+o	Define Parameters Unique to Predictions, 
+o	Calculate Weights using Simulated Values, 
+o	Estimate Parameters with SVD, 
+o	Evaluate Uncertainty with MCMC, 
+o	and More
+
+ABSTRACT
+The UCODE_2014 report documents additions to the computer 
+  program UCODE_2005 and implemented in UCODE_2014.  
+  UCODE_2005 is described below. The new capabilities
+  include support of parameters that are required for 
+  predictions but that had not been considered previously in 
+  model development. Examples of situations with such 
+  parameters are storage parameters when calibration conditions 
+  are steady-state and prediction conditions are transient, and 
+  transport parameters when calibration conditions involve only 
+  a flow field and prediction conditions include advective, 
+  advective-dispersive, or advective-dispersive-reactive transport. 
+  Second, weighting based on user-supplied coefficients of 
+  variation are supported more thoroughly in UCODE_2014 
+  than in previous versions of UCODE and, we believe, any other 
+  available software package. Third, the use of singular value 
+  decomposition (SVD) for parameter estimation has been 
+  integrated into UCODE_2014 and the transparency offered to 
+  SVD users by sensitivity analysis is stressed. The implementation 
+  of SVD in UCODE_2014 is useful for estimating parameters in 
+  some circumstances, and guidance is provided for migrating to 
+  PEST when its unique capabilities are of interest. Inclusion of 
+  Markov-chain Monte Carlo (MCMC) uncertainty measures 
+  means that UCODE_2014 has three methods of uncertainty 
+  evaluation that proceed from (i) linear uncertainty intervals 
+  that are very computationally frugal (commonly 10s to 100s of 
+  parallelizable model runs) and depend on the model not being 
+  too nonlinear and errors being approximately Gaussian, to (ii) 
+  nonlinear uncertainty intervals with moderate computational 
+  demands (commonly 1,000s of model runs) and depend on 
+  model smoothness and Gaussian errors, to (iii) MCMC 
+  uncertainty intervals that are computationally demanding 
+  (commonly 10,000s of model runs and more) and few 
+  restrictive assumptions. Having this range of methods in one 
+  program encourages application and exploration of the entire 
+  range of methods.  
+
+Auxiliary programs introduced since UCODE_2005 are 
+  described briefly. This includes three auxiliary programs: 
+  MMA for multi-model analysis, OPR-PPR for value of 
+  information measures, and Sim-Adjust for when simulated 
+  equivalents to observations cannot be calculated.  Three 
+  graphical interfaces are also described: ModelMate for 
+  constructing and running applications of UCODE_2014, 
+  GW_Chart for evaluating model fit, sensitivity analysis results, 
+  and uncertainty measures, including support for the new 
+  capabilities, and enhancements to Model Viewer for plotting 
+  objective-function surfaces using the UCODE _sos 
+  data-exchange files. Two minor auxiliary codes were added: 
+ "concatenate_intconfpred" which concatenates results from 
+ multiple nonlinear uncertainty runs to facilitate plotting of 
+ nonlinear confidence intervals that were calculated in separate 
+ runs; and "convert_pest_prior_info" which reads a pest file, 
+ finds the prior items and uses them to create a UCODE 
+ Linear_Prior_Information input block.
+
+Instructions are provided for using UCODE_2014 with 
+  programs constructed using MATLAB and models run using 
+  graphical interfaces, using HYDRUS as an example. 
+
+Example and test cases include surface-water and groundwater 
+  problems.
+
+UCODE_2014 is constructed in a modular fashion using 
+  JUPITER API conventions and modules. 
+
+
+UCODE_2014 IS AN ADVANCEMENT OF UCODE_2005, THUS A DESCRIPTION OF UCODE_2005 
+IS INCLUDED BELOW UNDER THE HEADING" "DESCRIPTION OF UCODE_2005"
+
+HISTORY OF UCODE_2014
+
+  UCODE_2014 Version 1.004 02/16/2016
+    - Updated ucode version # to 1.004
+    - Corrected a problem with the previous revision for printing residuals and 
+      sensitivities for situations when the number of observations is less than 
+      the number of parameters because this is useful when investigating the 
+      value of potential new observations. Warning messages are included to 
+      alert the user that this combination of observations and parameters would 
+      not work in a parameter estimation. The previous version over wrote some
+      underscore files from regression runs when making prediction runs.
+    - In addition, more signififcant figures are printed in the _pcc file. 
+
+  UCODE_2014 Version 1.003 01/31/2016
+    - Updated ucode version # to 1.003
+    - Adjusted ucode to print residuals and sensitivities for situations when 
+      the number of observations is less than the number of parameters because 
+      this is useful when investigating the values of potential new 
+      observations. Warning messages are included to alert the user that this
+      combination of observations and parameters would not work in a parameter 
+      estimation
+    - The ucode distribution now includes a number of programs that use results 
+      from UCODE. These programs use the sensitivities and statistics calculated 
+      by UCODE to provide uncertainty measures (e.g. linear uncertainty, and 
+      MMA - multi-model analysis), to evaluate observations and parameters 
+      important to predictions (e.g. OPR-PPR), and to accommodate conditions 
+      for which simulated values cannot be produced as originally expected 
+      (e.g. Sim_Adjust). These capabilities can be very useful in practice.
+    - Most of these programs are described in the UCODE_2005 documentation 
+      report and are included in the UCODE directory of this distribution. 
+      Three are described in separate reports and are included in separate 
+      directories. These three are OPR-PPR, MMA, and Sim_Adjust. 
+    
+  UCODE_2014 Version 1.002 08/29/2015
+    - Updated ucode version # to 1.002
+    - Minor corrections were made to the UCODE_2014_User_Manual.pdf which is now
+      called UCODE_2014_User_Manual-version02.pdf
+    - Corrected bug in MCMC simulation that occurred when both the non-uniform 
+      and multivariate normal prior distributions are used
+         
+  UCODE_2014 Version 1.001 06/13/2015
+    - Updated ucode version # to 1.001
+    - Added the value of the DETERMINANT OF CORRELATION MATRIX to the _dm file
+    - Added the value of the CONDITION NUMBER to the _dm file. The condition
+      number is the maximum singular value divided by the minimum singular value
+    - Added a check for perturbed value having an omit default value and if so
+      setting the associated residual/sensitivity to have a weight of zero
+    - Removed printing of warning that there are more adjustable parameters
+      than observations when running in prediction mode
+    - Corrected a typo on a matrix dimension that would have caused a memory
+      overflow and termination if a large number of observations were used and 
+      no prior information was included.
+    - Corrected issue in which parallel function was disablled as UCODE 
+      transitioned from a sensitivity evaluation to an SVD optimization. 
+        
+  UCODE_2014 Version 1.000 01/08/2015
+    - First release
+
+DESCRIPTION OF UCODE_2005:
+
+UCODE_2005 and its six post-processors can be used with existing 
+     process models to perform sensitivity analysis, data needs
+     assessment, calibration, prediction, and uncertainty analysis.  Any
+     process model or set of models can be used; the only requirements
+     are that models have numerical (ASCII or text only) input and
+     output files, that the numbers in these files have sufficient
+     significant digits, that all required models can be run from a
+     single batch file or script, and that simulated values are
+     continuous functions of the parameter values.  Process models
+     can include pre-processors and post-processors as well as one or
+     more models related to the processes of interest (physical,
+     chemical, and so on), making UCODE_2005 extremely powerful.
+     An estimated parameter can be a quantity that appears in the
+     input files of the process model(s), or a quantity used in an
+     equation that produces a value that appears in the input files.
+     In the latter situation, the equation is user-defined.
+
+     UCODE_2005 can compare observations and simulated equivalents. 
+     The simulated equivalents can be any simulated value written in the
+     process-model output files or can be calculated from simulated
+     values with user-defined equations. The quantities can be model
+     results, or dependent variables. For example, for ground-water
+     models they can be heads, flows, concentrations, and so on. Prior,
+     or direct, information on estimated parameters also can be
+     considered. Statistics are calculated to quantify the comparison
+     of observations and simulated equivalents, including a weighted
+     least-squares objective function. In addition, data-exchange files
+     are produced that facilitate graphical analysis.
+
+     UCODE_2005 can be used fruitfully in model calibration through
+     its sensitivity analysis capabilities and its ability to
+     estimate parameter values that result in the best possible fit to
+     the observations. Parameters are estimated using nonlinear
+     regression: a weighted least-squares objective function is minimized
+     with respect to the parameter values using a modified Gauss-Newton
+     method or a double-dogleg technique.  Sensitivities needed for the
+     method can be read from files produced by process models that can
+     calculate sensitivities, such as MODFLOW-2000, or can be calculated
+     by UCODE_2005 using a more general, but less accurate, forward- or
+     central-difference perturbation technique. Problems resulting from
+     inaccurate sensitivities and solutions related to the perturbation
+     techniques are discussed in the report. Statistics are calculated
+     and printed for use in (1) diagnosing inadequate data and identifying
+     parameters that probably cannot be estimated; (2) evaluating
+     estimated parameter values; and (3) evaluating how well the model
+     represents the simulated processes.
+
+     Results from UCODE_2005 and codes RESIDUAL_ANALYSIS and
+     RESIDUAL_ANALYSIS_ADV can be used to evaluate how accurately the
+     model represents the processes it simulates. Results from
+     LINEAR_UNCERTAINTY can be used to quantify the uncertainty of model
+     simulated values if the model is sufficiently linear. Results from
+     MODEL_LINEARITY and MODEL_LINEARITY_ADV can be used to evaluate 
+     model linearity and, thereby, the accuracy of the LINEAR_UNCERTAINTY
+     results. UCODE_2005 can also be used to calculate nonlinear confidence
+     and prediction intervals, which quantify the uncertainty of model
+     simulated values when the model is not linear. CORFAC_PLUS can be
+     used to produce factors that allow intervals to account for model
+     intrinsic nonlinearity and small-scale variations in system
+     characteristics that are not explicitly accounted for in the model
+     or the observation weighting.
+
+     The six post-processing programs of UCODE_2005 can use the results of 
+     other programs that produce the required data-exchange files.
+
+     UCODE_2005 and the other six codes are intended for use on any computer
+     operating system. The programs consist of algorithms programmed in
+     Fortran 90/95, which efficiently performs numerical calculations.
+     The model runs required to obtain perturbation sensitivities can be
+     performed using multiple processors. The programs are constructed
+     in a modular fashion using JUPITER API conventions and modules. For
+     example, the data-exchange files and input blocks are JUPITER API
+     conventions and many of those used by UCODE_2005 are read or written
+     by JUPITER API modules. UCODE-2005 includes capabilities likely to be
+     required by many applications (programs) constructed using the JUPITER
+     API, and can be used as a starting point for such programs.
+   
+
+VERSIONS OF UCODE_2014:    
+
+     UCODE_2014 Version 1.000 02/12/2015 - Initial release.
+
+
+DATA REQUIREMENTS
+     In order to use UCODE_2014, the process model needs to be constructed 
+     and the main UCODE_2014 input file needs to be created. Input data are
+     read from files.
+
+
+SYSTEM REQUIREMENTS
+     UCODE_2014 is written primarily in Fortran 90. The code has been used on
+     UNIX-based computers and personal computers running various forms of the
+     Microsoft Windows operating system.
+
+
+CONTACTS
+
+    Eileen Poeter, PhD, PE
+    Poeter Engineering
+    Past Director Integrated Ground Water Modeling Center
+    Emeritus Professor, Colorado School of Mines
+    Golden, Colorado 80401
+    USA
+
+    epoeter@mines.edu
+
+    Mary C. Hill, PhD, PE
+    Professor, University of Kansas
+    320B Lindley
+    Department of Geology
+    University of Kansas
+    Lawrence, KS  66049
+
+    mchill@ku.edu
+
+    See       
+      http://water.usgs.gov/software/ordering_documentation.html
+      for information on ordering printed copies of USGS publications.

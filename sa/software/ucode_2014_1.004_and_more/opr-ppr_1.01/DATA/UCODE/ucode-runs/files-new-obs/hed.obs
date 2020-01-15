@@ -1,0 +1,5 @@
+BEGIN OBSERVATION_DATA TABLE
+NROW=1  NCOL=5  COLUMNLABELS  
+obsname       obsvalue     statistic  statflag  GroupName
+newhead       000.000         1.0025     var     newhead
+END OBSERVATION_DATA TABLE

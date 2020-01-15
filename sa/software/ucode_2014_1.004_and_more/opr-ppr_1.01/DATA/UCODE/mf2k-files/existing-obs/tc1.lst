@@ -1,0 +1,591 @@
+                                  MODFLOW-2000
+      U.S. GEOLOGICAL SURVEY MODULAR FINITE-DIFFERENCE GROUND-WATER FLOW MODEL
+                           VERSION 1.17.01 09/22/2006
+
+
+ This model run produced both GLOBAL and LIST files.  This is the LIST file.
+
+ 
+ # MODULAR MODEL - TWO-LAYER EXAMPLE PROBLEM, TEST CASE TC1                      
+ #                                                                               
+ THE FREE FORMAT OPTION HAS BEEN SELECTED
+    2 LAYERS        18 ROWS        18 COLUMNS
+    1 STRESS PERIOD(S) IN SIMULATION
+
+ BAS6 -- BASIC PACKAGE, VERSION 6, 1/11/2000 INPUT READ FROM UNIT   41
+         10 ELEMENTS IN IR ARRAY ARE USED BY BAS
+
+ RIV6 -- RIVER PACKAGE, VERSION 6, 1/11/2000 INPUT READ FROM UNIT   47
+ # RIV file for test case tc1
+ #
+     1 Named Parameters        18 List entries
+ MAXIMUM OF     18 ACTIVE RIVER REACHES AT ONE TIME
+        216 ELEMENTS IN RX ARRAY ARE USED BY RIV
+
+ GHB6 -- GHB PACKAGE, VERSION 6, 1/11/2000 INPUT READ FROM UNIT   46
+ No named parameters
+ MAXIMUM OF     36 ACTIVE GHB CELLS AT ONE TIME
+        180 ELEMENTS IN RX ARRAY ARE USED BY GHB
+
+ RCH6 -- RECHARGE PACKAGE, VERSION 6, 1/11/2000 INPUT READ FROM UNIT   48
+     2 Named Parameters     
+ OPTION 1 -- RECHARGE TO TOP LAYER
+        324 ELEMENTS IN RX ARRAY ARE USED BY RCH
+        324 ELEMENTS IN IR ARRAY ARE USED BY RCH
+
+        720  ELEMENTS OF RX ARRAY USED OUT OF        720
+          0  ELEMENTS OF RZ ARRAY USED OUT OF          1
+        334  ELEMENTS OF IR ARRAY USED OUT OF        334
+1
+ # MODULAR MODEL - TWO-LAYER EXAMPLE PROBLEM, TEST CASE TC1                      
+ #                                                                               
+
+           BOUNDARY ARRAY =              1 FOR LAYER   1
+
+           BOUNDARY ARRAY =              1 FOR LAYER   2
+
+ AQUIFER HEAD WILL BE SET TO  0.0000     AT ALL NO-FLOW NODES (IBOUND=0).
+
+             INITIAL HEAD =   200.000     FOR LAYER   1
+
+             INITIAL HEAD =   200.000     FOR LAYER   2
+
+ OUTPUT CONTROL IS SPECIFIED ONLY AT TIME STEPS FOR WHICH OUTPUT IS DESIRED
+ HEAD PRINT FORMAT CODE IS  14    DRAWDOWN PRINT FORMAT CODE IS   0
+ HEADS WILL BE SAVED ON UNIT    0    DRAWDOWNS WILL BE SAVED ON UNIT    0
+
+    HYD. COND. ALONG ROWS is defined by the following parameters:
+ HK_1      
+
+    HYD. COND. ALONG ROWS =  4.618869E-04 FOR LAYER   1
+
+  HORIZ. TO VERTICAL ANI. is defined by the following parameters:
+ VERT_ANI_1
+
+  HORIZ. TO VERTICAL ANI. =   1.00000     FOR LAYER   1
+
+ QUASI3D VERT. HYD. COND. is defined by the following parameters:
+ VK_CB     
+
+ QUASI3D VERT. HYD. COND. =  9.898107E-08 FOR LAYER   1
+
+    HYD. COND. ALONG ROWS is defined by the following parameters:
+ HK_2      
+
+
+              HYD. COND. ALONG ROWS FOR LAYER   2
+
+          1         2         3         4         5         6         7
+          8         9        10        11        12        13        14
+         15        16        17        18
+ ......................................................................
+   1   1.54E-05  1.54E-05  3.08E-05  3.08E-05  4.61E-05  4.61E-05  6.15E-05
+       6.15E-05  7.69E-05  7.69E-05  9.23E-05  9.23E-05  1.08E-04  1.08E-04
+       1.23E-04  1.23E-04  1.38E-04  1.38E-04
+   2   1.54E-05  1.54E-05  3.08E-05  3.08E-05  4.61E-05  4.61E-05  6.15E-05
+       6.15E-05  7.69E-05  7.69E-05  9.23E-05  9.23E-05  1.08E-04  1.08E-04
+       1.23E-04  1.23E-04  1.38E-04  1.38E-04
+   3   1.54E-05  1.54E-05  3.08E-05  3.08E-05  4.61E-05  4.61E-05  6.15E-05
+       6.15E-05  7.69E-05  7.69E-05  9.23E-05  9.23E-05  1.08E-04  1.08E-04
+       1.23E-04  1.23E-04  1.38E-04  1.38E-04
+   4   1.54E-05  1.54E-05  3.08E-05  3.08E-05  4.61E-05  4.61E-05  6.15E-05
+       6.15E-05  7.69E-05  7.69E-05  9.23E-05  9.23E-05  1.08E-04  1.08E-04
+       1.23E-04  1.23E-04  1.38E-04  1.38E-04
+   5   1.54E-05  1.54E-05  3.08E-05  3.08E-05  4.61E-05  4.61E-05  6.15E-05
+       6.15E-05  7.69E-05  7.69E-05  9.23E-05  9.23E-05  1.08E-04  1.08E-04
+       1.23E-04  1.23E-04  1.38E-04  1.38E-04
+   6   1.54E-05  1.54E-05  3.08E-05  3.08E-05  4.61E-05  4.61E-05  6.15E-05
+       6.15E-05  7.69E-05  7.69E-05  9.23E-05  9.23E-05  1.08E-04  1.08E-04
+       1.23E-04  1.23E-04  1.38E-04  1.38E-04
+   7   1.54E-05  1.54E-05  3.08E-05  3.08E-05  4.61E-05  4.61E-05  6.15E-05
+       6.15E-05  7.69E-05  7.69E-05  9.23E-05  9.23E-05  1.08E-04  1.08E-04
+       1.23E-04  1.23E-04  1.38E-04  1.38E-04
+   8   1.54E-05  1.54E-05  3.08E-05  3.08E-05  4.61E-05  4.61E-05  6.15E-05
+       6.15E-05  7.69E-05  7.69E-05  9.23E-05  9.23E-05  1.08E-04  1.08E-04
+       1.23E-04  1.23E-04  1.38E-04  1.38E-04
+   9   1.54E-05  1.54E-05  3.08E-05  3.08E-05  4.61E-05  4.61E-05  6.15E-05
+       6.15E-05  7.69E-05  7.69E-05  9.23E-05  9.23E-05  1.08E-04  1.08E-04
+       1.23E-04  1.23E-04  1.38E-04  1.38E-04
+  10   1.54E-05  1.54E-05  3.08E-05  3.08E-05  4.61E-05  4.61E-05  6.15E-05
+       6.15E-05  7.69E-05  7.69E-05  9.23E-05  9.23E-05  1.08E-04  1.08E-04
+       1.23E-04  1.23E-04  1.38E-04  1.38E-04
+  11   1.54E-05  1.54E-05  3.08E-05  3.08E-05  4.61E-05  4.61E-05  6.15E-05
+       6.15E-05  7.69E-05  7.69E-05  9.23E-05  9.23E-05  1.08E-04  1.08E-04
+       1.23E-04  1.23E-04  1.38E-04  1.38E-04
+  12   1.54E-05  1.54E-05  3.08E-05  3.08E-05  4.61E-05  4.61E-05  6.15E-05
+       6.15E-05  7.69E-05  7.69E-05  9.23E-05  9.23E-05  1.08E-04  1.08E-04
+       1.23E-04  1.23E-04  1.38E-04  1.38E-04
+  13   1.54E-05  1.54E-05  3.08E-05  3.08E-05  4.61E-05  4.61E-05  6.15E-05
+       6.15E-05  7.69E-05  7.69E-05  9.23E-05  9.23E-05  1.08E-04  1.08E-04
+       1.23E-04  1.23E-04  1.38E-04  1.38E-04
+  14   1.54E-05  1.54E-05  3.08E-05  3.08E-05  4.61E-05  4.61E-05  6.15E-05
+       6.15E-05  7.69E-05  7.69E-05  9.23E-05  9.23E-05  1.08E-04  1.08E-04
+       1.23E-04  1.23E-04  1.38E-04  1.38E-04
+  15   1.54E-05  1.54E-05  3.08E-05  3.08E-05  4.61E-05  4.61E-05  6.15E-05
+       6.15E-05  7.69E-05  7.69E-05  9.23E-05  9.23E-05  1.08E-04  1.08E-04
+       1.23E-04  1.23E-04  1.38E-04  1.38E-04
+  16   1.54E-05  1.54E-05  3.08E-05  3.08E-05  4.61E-05  4.61E-05  6.15E-05
+       6.15E-05  7.69E-05  7.69E-05  9.23E-05  9.23E-05  1.08E-04  1.08E-04
+       1.23E-04  1.23E-04  1.38E-04  1.38E-04
+  17   1.54E-05  1.54E-05  3.08E-05  3.08E-05  4.61E-05  4.61E-05  6.15E-05
+       6.15E-05  7.69E-05  7.69E-05  9.23E-05  9.23E-05  1.08E-04  1.08E-04
+       1.23E-04  1.23E-04  1.38E-04  1.38E-04
+  18   1.54E-05  1.54E-05  3.08E-05  3.08E-05  4.61E-05  4.61E-05  6.15E-05
+       6.15E-05  7.69E-05  7.69E-05  9.23E-05  9.23E-05  1.08E-04  1.08E-04
+       1.23E-04  1.23E-04  1.38E-04  1.38E-04
+
+  HORIZ. TO VERTICAL ANI. is defined by the following parameters:
+ VERT_ANI_2
+
+  HORIZ. TO VERTICAL ANI. =   1.00000     FOR LAYER   2
+1
+                            STRESS PERIOD NO.    1, LENGTH =   1.000000    
+                            -----------------------------------------------
+
+                              NUMBER OF TIME STEPS =     1
+
+                               MULTIPLIER FOR DELT =     1.000
+
+                            INITIAL TIME STEP SIZE =   1.000000    
+
+ Parameter:  K_RB
+ REACH NO.  LAYER   ROW   COL     STAGE      CONDUCTANCE     BOTTOM EL.         
+ -------------------------------------------------------------------------------
+      1      1      1      1       100.0           1.169           90.00    
+      2      1      2      1       100.0           1.169           90.00    
+      3      1      3      1       100.0           1.169           90.00    
+      4      1      4      1       100.0           1.169           90.00    
+      5      1      5      1       100.0           1.169           90.00    
+      6      1      6      1       100.0           1.169           90.00    
+      7      1      7      1       100.0           1.169           90.00    
+      8      1      8      1       100.0           1.169           90.00    
+      9      1      9      1       100.0           1.169           90.00    
+     10      1     10      1       100.0           1.169           90.00    
+     11      1     11      1       100.0           1.169           90.00    
+     12      1     12      1       100.0           1.169           90.00    
+     13      1     13      1       100.0           1.169           90.00    
+     14      1     14      1       100.0           1.169           90.00    
+     15      1     15      1       100.0           1.169           90.00    
+     16      1     16      1       100.0           1.169           90.00    
+     17      1     17      1       100.0           1.169           90.00    
+     18      1     18      1       100.0           1.169           90.00    
+
+     18 RIVER REACHES
+
+ BOUND. NO. LAYER   ROW   COL     STAGE      CONDUCTANCE         
+ ----------------------------------------------------------------
+      1      1      1     18       350.0          0.1000E-06
+      2      1      2     18       350.0          0.1000E-06
+      3      1      3     18       350.0          0.1000E-06
+      4      1      4     18       350.0          0.1000E-06
+      5      1      5     18       350.0          0.1000E-06
+      6      1      6     18       350.0          0.1000E-06
+      7      1      7     18       350.0          0.1000E-06
+      8      1      8     18       350.0          0.1000E-06
+      9      1      9     18       350.0          0.1000E-06
+     10      1     10     18       350.0          0.1000E-06
+     11      1     11     18       350.0          0.1000E-06
+     12      1     12     18       350.0          0.1000E-06
+     13      1     13     18       350.0          0.1000E-06
+     14      1     14     18       350.0          0.1000E-06
+     15      1     15     18       350.0          0.1000E-06
+     16      1     16     18       350.0          0.1000E-06
+     17      1     17     18       350.0          0.1000E-06
+     18      1     18     18       350.0          0.1000E-06
+     19      2      1     18       350.0          0.1000E-06
+     20      2      2     18       350.0          0.1000E-06
+     21      2      3     18       350.0          0.1000E-06
+     22      2      4     18       350.0          0.1000E-06
+     23      2      5     18       350.0          0.1000E-06
+     24      2      6     18       350.0          0.1000E-06
+     25      2      7     18       350.0          0.1000E-06
+     26      2      8     18       350.0          0.1000E-06
+     27      2      9     18       350.0          0.1000E-06
+     28      2     10     18       350.0          0.1000E-06
+     29      2     11     18       350.0          0.1000E-06
+     30      2     12     18       350.0          0.1000E-06
+     31      2     13     18       350.0          0.1000E-06
+     32      2     14     18       350.0          0.1000E-06
+     33      2     15     18       350.0          0.1000E-06
+     34      2     16     18       350.0          0.1000E-06
+     35      2     17     18       350.0          0.1000E-06
+     36      2     18     18       350.0          0.1000E-06
+
+     36 GHB CELLS
+
+
+
+ RECH array defined by the following parameters:
+ Parameter:  RCH_1
+ Parameter:  RCH_2
+
+
+                           RECHARGE
+
+            1           2           3           4           5           6
+            7           8           9          10          11          12
+           13          14          15          16          17          18
+ ........................................................................
+   1   1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08
+       1.5046E-08  1.5046E-08  1.5046E-08  1.2217E-08  1.2217E-08  1.2217E-08
+       1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08
+   2   1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08
+       1.5046E-08  1.5046E-08  1.5046E-08  1.2217E-08  1.2217E-08  1.2217E-08
+       1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08
+   3   1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08
+       1.5046E-08  1.5046E-08  1.5046E-08  1.2217E-08  1.2217E-08  1.2217E-08
+       1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08
+   4   1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08
+       1.5046E-08  1.5046E-08  1.5046E-08  1.2217E-08  1.2217E-08  1.2217E-08
+       1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08
+   5   1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08
+       1.5046E-08  1.5046E-08  1.5046E-08  1.2217E-08  1.2217E-08  1.2217E-08
+       1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08
+   6   1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08
+       1.5046E-08  1.5046E-08  1.5046E-08  1.2217E-08  1.2217E-08  1.2217E-08
+       1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08
+   7   1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08
+       1.5046E-08  1.5046E-08  1.5046E-08  1.2217E-08  1.2217E-08  1.2217E-08
+       1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08
+   8   1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08
+       1.5046E-08  1.5046E-08  1.5046E-08  1.2217E-08  1.2217E-08  1.2217E-08
+       1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08
+   9   1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08
+       1.5046E-08  1.5046E-08  1.5046E-08  1.2217E-08  1.2217E-08  1.2217E-08
+       1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08
+  10   1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08
+       1.5046E-08  1.5046E-08  1.5046E-08  1.2217E-08  1.2217E-08  1.2217E-08
+       1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08
+  11   1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08
+       1.5046E-08  1.5046E-08  1.5046E-08  1.2217E-08  1.2217E-08  1.2217E-08
+       1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08
+  12   1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08
+       1.5046E-08  1.5046E-08  1.5046E-08  1.2217E-08  1.2217E-08  1.2217E-08
+       1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08
+  13   1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08
+       1.5046E-08  1.5046E-08  1.5046E-08  1.2217E-08  1.2217E-08  1.2217E-08
+       1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08
+  14   1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08
+       1.5046E-08  1.5046E-08  1.5046E-08  1.2217E-08  1.2217E-08  1.2217E-08
+       1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08
+  15   1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08
+       1.5046E-08  1.5046E-08  1.5046E-08  1.2217E-08  1.2217E-08  1.2217E-08
+       1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08
+  16   1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08
+       1.5046E-08  1.5046E-08  1.5046E-08  1.2217E-08  1.2217E-08  1.2217E-08
+       1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08
+  17   1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08
+       1.5046E-08  1.5046E-08  1.5046E-08  1.2217E-08  1.2217E-08  1.2217E-08
+       1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08
+  18   1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08  1.5046E-08
+       1.5046E-08  1.5046E-08  1.5046E-08  1.2217E-08  1.2217E-08  1.2217E-08
+       1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08  1.2217E-08
+ 
+ SOLVING FOR HEAD 
+
+
+     1 CALLS TO PCG ROUTINE FOR TIME STEP   1 IN STRESS PERIOD    1
+    35 TOTAL ITERATIONS
+
+ MAXIMUM HEAD CHANGE FOR EACH ITERATION (1 INDICATES THE FIRST INNER ITERATION):
+
+    HEAD CHANGE    HEAD CHANGE    HEAD CHANGE    HEAD CHANGE    HEAD CHANGE 
+   LAYER,ROW,COL  LAYER,ROW,COL  LAYER,ROW,COL  LAYER,ROW,COL  LAYER,ROW,COL
+ ---------------------------------------------------------------------------
+  1   604.8      0  -593.9      0  -125.5      0  -49.65      0  -18.40    
+   (  2,  1, 18)  (  2,  1, 18)  (  1, 14, 18)  (  2,  1, 18)  (  2,  2,  7)
+  0  -11.13      0  -7.376      0  -4.921      0  -2.351      0  -1.466    
+   (  2,  1, 18)  (  2,  9, 14)  (  2, 18, 15)  (  2,  6, 10)  (  2,  2, 12)
+  0 -0.6470      0 -0.6159      0 -0.2716      0  0.2081      0 -0.2612    
+   (  2, 18,  9)  (  2,  3, 10)  (  2,  3, 14)  (  2,  4, 18)  (  2,  1, 18)
+  0 -0.7336E-01  0 -0.3975E-01  0 -0.2275E-01  0 -0.1286E-01  0 -0.9248E-02
+   (  2, 14, 15)  (  2, 18,  3)  (  2,  4,  7)  (  2, 18, 12)  (  2, 18,  2)
+  0 -0.4676E-02  0 -0.3129E-02  0 -0.1845E-02  0 -0.2076E-02  0  0.1433E-02
+   (  2, 18,  2)  (  1, 18, 18)  (  2,  9, 13)  (  2,  1, 18)  (  2,  2, 14)
+  0 -0.1039E-02  0 -0.5037E-03  0 -0.3194E-03  0 -0.1514E-03  0 -0.8778E-04
+   (  2, 10, 18)  (  1, 17,  8)  (  2,  1,  6)  (  2,  6,  8)  (  2, 11, 17)
+  0  0.4038E-04  0 -0.4360E-04  0 -0.2217E-04  0  0.1801E-04  0 -0.7915E-05
+   (  2,  1, 18)  (  2,  1, 18)  (  2,  3, 16)  (  2,  1, 18)  (  2,  1, 18)
+
+ MAXIMUM RESIDUAL FOR EACH ITERATION (1 INDICATES THE FIRST INNER ITERATION):
+
+    RESIDUAL       RESIDUAL       RESIDUAL       RESIDUAL       RESIDUAL    
+   LAYER,ROW,COL  LAYER,ROW,COL  LAYER,ROW,COL  LAYER,ROW,COL  LAYER,ROW,COL
+ ---------------------------------------------------------------------------
+  1   10.15      0   1.651      0  0.3351      0  0.1471      0  0.6797E-01
+   (  1,  1,  1)  (  1,  1,  1)  (  1,  1,  1)  (  1,  1,  3)  (  1,  1,  3)
+  0  0.4718E-01  0 -0.3802E-01  0 -0.3145E-01  0 -0.2231E-01  0 -0.1499E-01
+   (  2, 18, 16)  (  1, 18,  2)  (  1, 18,  2)  (  1, 18,  2)  (  1, 18,  2)
+  0 -0.9568E-02  0 -0.5794E-02  0 -0.3168E-02  0 -0.2452E-02  0  0.1597E-02
+   (  1, 18,  2)  (  1, 18,  2)  (  1, 18,  2)  (  1, 18,  2)  (  1,  2,  2)
+  0  0.9349E-03  0  0.5377E-03  0  0.3404E-03  0  0.2003E-03  0  0.1158E-03
+   (  1,  3,  2)  (  1,  3,  2)  (  1, 18,  5)  (  1,  4,  2)  (  1, 18,  4)
+  0 -0.6696E-04  0 -0.5733E-04  0 -0.3582E-04  0 -0.2753E-04  0  0.2192E-04
+   (  1, 17,  4)  (  1, 17,  4)  (  1, 17,  4)  (  1, 17,  4)  (  1, 17,  6)
+  0  0.1765E-04  0  0.9755E-05  0  0.6208E-05  0  0.2474E-05  0  0.1282E-05
+   (  1, 17,  6)  (  1, 17,  5)  (  1, 17,  5)  (  1, 17,  5)  (  1, 17,  4)
+  0  0.9588E-06  0  0.5247E-06  0  0.3110E-06  0  0.2660E-06  0 -0.1336E-06
+   (  1, 17,  4)  (  1, 17,  4)  (  1, 16,  7)  (  1, 16,  7)  (  1,  1,  3)
+
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD    1   TIME STEP   1
+    PRINT HEAD FOR ALL LAYERS
+1
+              HEAD IN LAYER   1 AT END OF TIME STEP   1 IN STRESS PERIOD    1
+  ---------------------------------------------------------------------------
+
+          1      2      3      4      5      6      7      8      9     10
+         11     12     13     14     15     16     17     18
+ .........................................................................
+   1   100.2  109.9  118.8  126.9  134.4  141.1  147.1  152.5  157.2  161.3
+       164.9  167.9  170.6  172.7  174.4  175.7  176.5  176.9
+   2   100.2  109.9  118.8  126.9  134.4  141.1  147.1  152.5  157.2  161.3
+       164.9  167.9  170.6  172.7  174.4  175.7  176.5  176.9
+   3   100.2  109.9  118.8  126.9  134.4  141.1  147.1  152.5  157.2  161.3
+       164.9  167.9  170.6  172.7  174.4  175.7  176.5  176.9
+   4   100.2  109.9  118.8  126.9  134.4  141.1  147.1  152.5  157.2  161.3
+       164.9  167.9  170.6  172.7  174.4  175.7  176.5  176.9
+   5   100.2  109.9  118.8  126.9  134.4  141.1  147.1  152.5  157.2  161.3
+       164.9  167.9  170.6  172.7  174.4  175.7  176.5  176.9
+   6   100.2  109.9  118.8  126.9  134.4  141.1  147.1  152.5  157.2  161.3
+       164.9  167.9  170.6  172.7  174.4  175.7  176.5  176.9
+   7   100.2  109.9  118.8  126.9  134.4  141.1  147.1  152.5  157.2  161.3
+       164.9  167.9  170.6  172.7  174.4  175.7  176.5  176.9
+   8   100.2  109.9  118.8  126.9  134.4  141.1  147.1  152.5  157.2  161.3
+       164.9  167.9  170.6  172.7  174.4  175.7  176.5  176.9
+   9   100.2  109.9  118.8  126.9  134.4  141.1  147.1  152.5  157.2  161.3
+       164.9  167.9  170.6  172.7  174.4  175.7  176.5  176.9
+  10   100.2  109.9  118.8  126.9  134.4  141.1  147.1  152.5  157.2  161.3
+       164.9  167.9  170.6  172.7  174.4  175.7  176.5  176.9
+  11   100.2  109.9  118.8  126.9  134.4  141.1  147.1  152.5  157.2  161.3
+       164.9  167.9  170.6  172.7  174.4  175.7  176.5  176.9
+  12   100.2  109.9  118.8  126.9  134.4  141.1  147.1  152.5  157.2  161.3
+       164.9  167.9  170.6  172.7  174.4  175.7  176.5  176.9
+  13   100.2  109.9  118.8  126.9  134.4  141.1  147.1  152.5  157.2  161.3
+       164.9  167.9  170.6  172.7  174.4  175.7  176.5  176.9
+  14   100.2  109.9  118.8  126.9  134.4  141.1  147.1  152.5  157.2  161.3
+       164.9  167.9  170.6  172.7  174.4  175.7  176.5  176.9
+  15   100.2  109.9  118.8  126.9  134.4  141.1  147.1  152.5  157.2  161.3
+       164.9  167.9  170.6  172.7  174.4  175.7  176.5  176.9
+  16   100.2  109.9  118.8  126.9  134.4  141.1  147.1  152.5  157.2  161.3
+       164.9  167.9  170.6  172.7  174.4  175.7  176.5  176.9
+  17   100.2  109.9  118.8  126.9  134.4  141.1  147.1  152.5  157.2  161.3
+       164.9  167.9  170.6  172.7  174.4  175.7  176.5  176.9
+  18   100.2  109.9  118.8  126.9  134.4  141.1  147.1  152.5  157.2  161.3
+       164.9  167.9  170.6  172.7  174.4  175.7  176.5  176.9
+1
+              HEAD IN LAYER   2 AT END OF TIME STEP   1 IN STRESS PERIOD    1
+  ---------------------------------------------------------------------------
+
+          1      2      3      4      5      6      7      8      9     10
+         11     12     13     14     15     16     17     18
+ .........................................................................
+   1   100.9  110.1  119.1  127.1  134.5  141.1  147.1  152.4  157.1  161.2
+       164.8  167.8  170.4  172.5  174.2  175.4  176.3  176.6
+   2   100.9  110.1  119.1  127.1  134.5  141.1  147.1  152.4  157.1  161.2
+       164.8  167.8  170.4  172.5  174.2  175.4  176.3  176.6
+   3   100.9  110.1  119.1  127.1  134.5  141.1  147.1  152.4  157.1  161.2
+       164.8  167.8  170.4  172.5  174.2  175.4  176.3  176.6
+   4   100.9  110.1  119.1  127.1  134.5  141.1  147.1  152.4  157.1  161.2
+       164.8  167.8  170.4  172.5  174.2  175.4  176.3  176.6
+   5   100.9  110.1  119.1  127.1  134.5  141.1  147.1  152.4  157.1  161.2
+       164.8  167.8  170.4  172.5  174.2  175.4  176.3  176.6
+   6   100.9  110.1  119.1  127.1  134.5  141.1  147.1  152.4  157.1  161.2
+       164.8  167.8  170.4  172.5  174.2  175.4  176.3  176.6
+   7   100.9  110.1  119.1  127.1  134.5  141.1  147.1  152.4  157.1  161.2
+       164.8  167.8  170.4  172.5  174.2  175.4  176.3  176.6
+   8   100.9  110.1  119.1  127.1  134.5  141.1  147.1  152.4  157.1  161.2
+       164.8  167.8  170.4  172.5  174.2  175.4  176.3  176.6
+   9   100.9  110.1  119.1  127.1  134.5  141.1  147.1  152.4  157.1  161.2
+       164.8  167.8  170.4  172.5  174.2  175.4  176.3  176.6
+  10   100.9  110.1  119.1  127.1  134.5  141.1  147.1  152.4  157.1  161.2
+       164.8  167.8  170.4  172.5  174.2  175.4  176.3  176.6
+  11   100.9  110.1  119.1  127.1  134.5  141.1  147.1  152.4  157.1  161.2
+       164.8  167.8  170.4  172.5  174.2  175.4  176.3  176.6
+  12   100.9  110.1  119.1  127.1  134.5  141.1  147.1  152.4  157.1  161.2
+       164.8  167.8  170.4  172.5  174.2  175.4  176.3  176.6
+  13   100.9  110.1  119.1  127.1  134.5  141.1  147.1  152.4  157.1  161.2
+       164.8  167.8  170.4  172.5  174.2  175.4  176.3  176.6
+  14   100.9  110.1  119.1  127.1  134.5  141.1  147.1  152.4  157.1  161.2
+       164.8  167.8  170.4  172.5  174.2  175.4  176.3  176.6
+  15   100.9  110.1  119.1  127.1  134.5  141.1  147.1  152.4  157.1  161.2
+       164.8  167.8  170.4  172.5  174.2  175.4  176.3  176.6
+  16   100.9  110.1  119.1  127.1  134.5  141.1  147.1  152.4  157.1  161.2
+       164.8  167.8  170.4  172.5  174.2  175.4  176.3  176.6
+  17   100.9  110.1  119.1  127.1  134.5  141.1  147.1  152.4  157.1  161.2
+       164.8  167.8  170.4  172.5  174.2  175.4  176.3  176.6
+  18   100.9  110.1  119.1  127.1  134.5  141.1  147.1  152.4  157.1  161.2
+       164.8  167.8  170.4  172.5  174.2  175.4  176.3  176.6
+1
+  VOLUMETRIC BUDGET FOR ENTIRE MODEL AT END OF TIME STEP  1 IN STRESS PERIOD   1
+  ------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUMES      L**3       RATES FOR THIS TIME STEP      L**3/T
+     ------------------                 ------------------------
+
+           IN:                                      IN:
+           ---                                      ---
+             STORAGE =           0.0000               STORAGE =           0.0000
+       CONSTANT HEAD =           0.0000         CONSTANT HEAD =           0.0000
+       RIVER LEAKAGE =           0.0000         RIVER LEAKAGE =           0.0000
+     HEAD DEP BOUNDS =       6.2357E-04       HEAD DEP BOUNDS =       6.2357E-04
+            RECHARGE =           4.4166              RECHARGE =           4.4166
+
+            TOTAL IN =           4.4172              TOTAL IN =           4.4172
+
+          OUT:                                     OUT:
+          ----                                     ----
+             STORAGE =           0.0000               STORAGE =           0.0000
+       CONSTANT HEAD =           0.0000         CONSTANT HEAD =           0.0000
+       RIVER LEAKAGE =           4.4172         RIVER LEAKAGE =           4.4172
+     HEAD DEP BOUNDS =           0.0000       HEAD DEP BOUNDS =           0.0000
+            RECHARGE =           0.0000              RECHARGE =           0.0000
+
+           TOTAL OUT =           4.4172             TOTAL OUT =           4.4172
+
+            IN - OUT =       1.6554E-05              IN - OUT =       1.6554E-05
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+
+
+          TIME SUMMARY AT END OF TIME STEP   1 IN STRESS PERIOD    1
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH  1.0000     1.66667E-02 2.77778E-04 1.15741E-05 3.16881E-08
+ STRESS PERIOD TIME  1.0000     1.66667E-02 2.77778E-04 1.15741E-05 3.16881E-08
+         TOTAL TIME  1.0000     1.66667E-02 2.77778E-04 1.15741E-05 3.16881E-08
+1
+
+ DATA AT HEAD LOCATIONS
+
+        OBSERVATION     OBSER-     SIMUL.                          WEIGHTED
+   OBS#    NAME         VATION     EQUIV.    RESIDUAL  WEIGHT**.5  RESIDUAL
+                          *          *
+      1 1.0             102.       100.       1.59      0.999       1.59    
+      2 2.0             128.       127.       1.18      0.999       1.17    
+      3 3.0             157.       157.     -0.507      0.999     -0.506    
+      4 4.0             125.       127.      -2.05      0.999      -2.05    
+      5 5.0             141.       141.     -0.114      0.999     -0.114    
+      6 6.0             127.       127.     -0.553      0.999     -0.552    
+      7 7.0             101.       101.      0.178      0.999      0.178    
+      8 8.0             158.       157.      0.994      0.999      0.993    
+      9 9.0             176.       177.     -0.275      0.999     -0.275    
+     10 10.0            142.       141.      0.884      0.999      0.883    
+
+ * THE OBSERVATION (AND CORRESPONDING SIMULATED EQUIVALENT) IS HEAD OR TEMPORAL
+   CHANGE IN HEAD, AS SPECIFIED IN THE "HOB" INPUT FILE.  NEGATIVE TEMPORAL
+   CHANGES INDICATE DRAWDOWN.
+
+ STATISTICS FOR HEAD RESIDUALS :
+ MAXIMUM WEIGHTED RESIDUAL  :  1.59     OBS#      1
+ MINIMUM WEIGHTED RESIDUAL  : -2.05     OBS#      4
+ AVERAGE WEIGHTED RESIDUAL  : 0.133    
+ # RESIDUALS >= 0. :      5
+ # RESIDUALS < 0.  :      5
+ NUMBER OF RUNS  :    5  IN   10 OBSERVATIONS
+
+ SUM OF SQUARED WEIGHTED RESIDUALS (HEADS ONLY)   10.546    
+
+ DATA FOR FLOWS REPRESENTED USING THE RIVER PACKAGE
+
+        OBSERVATION      MEAS.      CALC.                          WEIGHTED
+   OBS#    NAME          FLOW       FLOW     RESIDUAL  WEIGHT**.5  RESIDUAL
+
+     11 SS             -4.40      -4.42      0.172E-01   2.50      0.429E-01
+
+ STATISTICS FOR RIVER FLOW RESIDUALS :
+ MAXIMUM WEIGHTED RESIDUAL  : 0.429E-01 OBS#     11
+ MINIMUM WEIGHTED RESIDUAL  : 0.429E-01 OBS#     11
+ AVERAGE WEIGHTED RESIDUAL  : 0.429E-01
+ # RESIDUALS >= 0. :      1
+ # RESIDUALS < 0.  :      0
+ NUMBER OF RUNS:      1  IN      1 OBSERVATIONS
+
+ SUM OF SQUARED WEIGHTED RESIDUALS (RIVER FLOWS ONLY)  0.18408E-02
+
+ SUM OF SQUARED WEIGHTED RESIDUALS (ALL DEPENDENT VARIABLES)   10.548    
+
+ STATISTICS FOR ALL RESIDUALS :
+ AVERAGE WEIGHTED RESIDUAL  : 0.124E+00
+ # RESIDUALS >= 0. :      6
+ # RESIDUALS < 0.  :      5
+ NUMBER OF RUNS  :    5  IN   11 OBSERVATIONS
+
+ INTERPRETING THE CALCULATED RUNS STATISTIC VALUE OF    -0.612    
+ NOTE: THE FOLLOWING APPLIES ONLY IF 
+        # RESIDUALS >= 0 . IS GREATER THAN 10 AND 
+        # RESIDUALS < 0.   IS GREATER THAN 10
+ THE NEGATIVE VALUE MAY INDICATE TOO FEW RUNS:
+    IF THE VALUE IS LESS THAN -1.28, THERE IS LESS THAN A 10 PERCENT
+       CHANCE THE VALUES ARE RANDOM,
+    IF THE VALUE IS LESS THAN -1.645, THERE IS LESS THAN A 5 PERCENT
+       CHANCE THE VALUES ARE RANDOM,
+    IF THE VALUE IS LESS THAN -1.96, THERE IS LESS THAN A 2.5 PERCENT
+       CHANCE THE VALUES ARE RANDOM.
+
+ 
+ SOLVING PARAMETER SENSITIVITY FOR RCH_1     
+ SUM OF POSITIVE RATES= 5.13699E-02    SUM OF NEGATIVE RATES= 5.13699E-02
+               PERCENT DISCREPANCY=    0.00
+ 
+ SOLVING PARAMETER SENSITIVITY FOR RCH_2     
+ SUM OF POSITIVE RATES= 5.13699E-02    SUM OF NEGATIVE RATES= 5.13699E-02
+               PERCENT DISCREPANCY=    0.00
+ 
+ SOLVING PARAMETER SENSITIVITY FOR K_RB      
+ SUM OF POSITIVE RATES= 3.77796E+03    SUM OF NEGATIVE RATES= 3.77796E+03
+               PERCENT DISCREPANCY=    0.00
+ 
+ SOLVING PARAMETER SENSITIVITY FOR HK_1      
+ SUM OF POSITIVE RATES= 8.70318E+03    SUM OF NEGATIVE RATES= 8.70318E+03
+               PERCENT DISCREPANCY=    0.00
+ 
+ SOLVING PARAMETER SENSITIVITY FOR VK_CB     
+ SUM OF POSITIVE RATES= 5.87479E+06    SUM OF NEGATIVE RATES= 5.87479E+06
+               PERCENT DISCREPANCY=    0.00
+ 
+ SOLVING PARAMETER SENSITIVITY FOR HK_2      
+ SUM OF POSITIVE RATES= 1.90587E+04    SUM OF NEGATIVE RATES= 1.90587E+04
+               PERCENT DISCREPANCY=    0.00
+
+ LARGEST (ABSOLUTE VALUE) SOLVER DISCREPANCY FOR SENSITIVITIES
+   WAS     0.00 PERCENT AND OCCURRED FOR PARAMETER "HK_1      "
+   IN STRESS PERIOD    1, TIME STEP    1
+
+ ORDERED DEPENDENT-VARIABLE WEIGHTED RESIDUALS
+ NUMBER OF RESIDUALS INCLUDED:        11
+     -2.05     -0.552     -0.506     -0.275     -0.114      0.429E-01  0.178    
+     0.883      0.993       1.17       1.59    
+
+ CORRELATION BETWEEN ORDERED WEIGHTED RESIDUALS AND NORMAL ORDER STATISTICS
+ FOR OBSERVATIONS =    0.941    
+
+ --------------------------------------------------------------------------
+ COMMENTS ON THE INTERPRETATION OF THE CORRELATION BETWEEN
+ WEIGHTED RESIDUALS AND NORMAL ORDER STATISTICS:
+
+ Generally, IF the reported CORRELATION is LESS than the critical value,
+ at the selected significance level (usually 5 or 10%), the hypothesis
+ that the weighted residuals are INDEPENDENT AND NORMALLY DISTRIBUTED
+ would be REJECTED.  HOWEVER, in this case, conditions are outside of
+ the range of published critical values as discussed below.
+
+ The sum of the number of observations and prior information items is    11
+ which is less than 35, the minimum value for which critical values are
+ published.  Therefore, the critical values for the 5 and 10% significance
+ levels are less than 0.943 and 0.952, respectively.
+
+ CORRELATIONS GREATER than these critical values indicate that, probably, the 
+ weighted residuals ARE INDEPENDENT AND NORMALLY DISTRIBUTED.
+
+ Correlations LESS than these critical values MAY BE ACCEPTABLE, and
+ rejection of the hypothesis is not necessarily warranted.
+
+ The Kolmogorov-Smirnov test can be used to further evaluate the residuals.
+ --------------------------------------------------------------------------
+

@@ -1,0 +1,17 @@
+GLOBAL 6 z.glocalib
+LIST 7 z.lstcalib
+BAS6  1 mf04.bas
+DIS  29 mf04.dis
+LPF 11 mf04.lpf
+ZONE 40 mf04.zone
+OBS 5 mf04.obs
+HOB 9 mf04.hob
+RVOB 10 mf04.rvob
+WEL 12 mf04.wel
+RIV 14 mf04.riv
+RCH 18 mf04.rch
+OC  22 mf04.oc
+PCG 19 mf04.pcg
+DATA 41 zc.dat
+DATA(BINARY) 50 mf04.cbb
+DATA(BINARY) 30 mf04.hds

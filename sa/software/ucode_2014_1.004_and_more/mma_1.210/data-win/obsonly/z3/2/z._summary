@@ -1,0 +1,42 @@
+
+ SELECTED STATISTICS FROM MODIFIED GAUSS-NEWTON ITERATIONS
+
+        # PARAMs                  MAX.             MAX. CHANGE   DAMPING
+ ITER.  ESTIMATED  PARNAM         CALC. CHANGE     ALLOWED       PARAMETER
+ -----  --------- ------------  ---------------- -------------  ------------
+    1        4     Kx3            1.21383         2.00000        1.0000    
+    2        4     Kx3           0.450586         2.00000        1.0000    
+    3        4     Kx1           0.166528         2.00000        1.0000    
+    4        4     Kx1           0.657672E-01     2.00000        1.0000    
+    5        4     Kx1           0.286948E-01     2.00000        1.0000    
+    6        4     Kx1           0.104096E-01     2.00000        1.0000    
+    7        4     Kx1           0.435158E-02     2.00000        1.0000    
+
+
+ PARAMETER VALUES FOR EACH ITERATION
+ - INDICATES DAMPING RESULTED FROM PARAMETER CONSTRAINTS FOR THAT ITERATION.
+ * INDICATES SOME PARAMETERS WERE OMITTED DURING THAT ITERATION.  THE VALUES
+   OF THOSE PARAMETERS ARE REPORTED EVEN THOUGH THEY WERE NOT UPDATED
+
+   ITER   Kx1          Kx3          Kx5          RCH         
+      0     1.000        13.00        25.00       0.8000E-03
+      1     1.645        28.78        28.35       0.8216E-03
+      2     2.112        41.75        25.95       0.8469E-03
+      3     2.464        40.97        28.90       0.8610E-03
+      4     2.626        40.50        29.34       0.8661E-03
+      5     2.701        40.16        29.74       0.8684E-03
+      6     2.730        40.08        29.82       0.8692E-03
+      7     2.741        40.04        29.87       0.8695E-03
+
+ SUMS OF SQUARED WEIGHTED RESIDUALS FOR EACH ITERATION
+
+         SUMS OF SQUARED WEIGHTED RESIDUALS
+         ITER.  OBSERVATIONS  PRIOR INFO.      TOTAL       # INCLUDED OBS
+              0    3711.2        0.0000        3711.2         21 OF      21
+              1    176.35        0.0000        176.35         21 OF      21
+              2    18.523        0.0000        18.523         21 OF      21
+              3    17.336        0.0000        17.336         21 OF      21
+              4    17.268        0.0000        17.268         21 OF      21
+              5    17.257        0.0000        17.257         21 OF      21
+              6    17.256        0.0000        17.256         21 OF      21
+              7    17.255        0.0000        17.255         21 OF      21

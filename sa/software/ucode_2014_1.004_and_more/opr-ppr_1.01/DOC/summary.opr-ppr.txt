@@ -1,0 +1,106 @@
+
+
+U.S. Geological Survey (USGS)                         opr-ppr(1)
+
+NOTE: Any use of trade, product or firm names is for descriptive
+      purposes only and does not imply endorsement by the U.S.
+      Government.
+
+NAME
+     opr-ppr - A Computer Program for Assessing Data Importance
+               to Model Predictions Using Linear Statistics
+
+ABSTRACT
+     The OPR-PPR program calculates the Observation-Prediction (OPR)
+     and Parameter-Prediction (PPR) statistics that can be used to 
+     evaluate the relative importance of various kinds of data to 
+     simulated predictions. The data considered fall into three categories: 
+     (1) existing observations, (2) potential observations, and (3) potential
+     information about parameters. The first two are addressed by the OPR 
+     statistic; the third is addressed by the PPR statistic. The statistics 
+     are based on linear theory and measure the leverage of the data, which 
+     depends on the location, the type, and possibly the time of the data 
+     being considered. For example, in a ground-water system the type of 
+     data might be a head measurement at a particular location and time. 
+     As a measure of leverage, the statistics do not take into account 
+     the value of the measurement. As linear measures, the OPR and PPR 
+     statistics require minimal computational effort once sensitivities 
+     have been calculated. Sensitivities need to be calculated for only 
+     one set of parameter values; commonly these are the values estimated 
+     through model calibration. OPR-PPR can calculate the OPR and PPR 
+     statistics for any mathematical model that produces the necessary 
+     OPR-PPR input files. In this report, OPR-PPR capabilities are presented 
+     in the context of using the ground-water model MODFLOW-2000 and the 
+     universal inverse program UCODE_2005.
+     
+     The method used to calculate the OPR and PPR statistics is based on 
+     the linear equation for prediction standard deviation. Using sensitivities 
+     and other information, OPR-PPR calculates (a) the percent increase in the 
+     prediction standard deviation that results when one or more existing 
+     observations are omitted from the calibration data set; (b) the percent 
+     decrease in the prediction standard deviation that results when one or 
+     more potential observations are added to the calibration data set; or 
+     (c) the percent decrease in the prediction standard deviation that results 
+     when potential information on one or more parameters is added.
+     Capabilities (a) and (b) correspond to an analysis of the data categories 
+     listed in items (1) and (2) above and are the two versions of the OPR 
+     statistic. Capability (c) corresponds to an analysis of the data category 
+     listed in item (3) above, and is the PPR statistic. The OPR statistic can 
+     be used to identify observations that are most important to one or more model 
+     prediction(s), to support the design of monitoring networks, and to guide the 
+     collection of new observation data. The PPR statistic can be used to guide 
+     collection of new data about model parameters or related system features. 
+     OPR-PPR is intended for use on any computer operating system. 
+     
+     The program consists of algorithms programmed in Fortran 90/95, which 
+     efficiently performs numerical calculations.  The program is constructed
+     in a modular fashion using the JUPITER API programming conventions and modules. 
+
+
+HISTORY
+
+      OPR-PPR Version 1.00 8/13/2007 - Initial release.
+      OPR-PPR Version 1.01 2/1/2016 - Minor changes for compatability with 
+      					Intel Fortran Compiler.
+
+
+SYSTEM REQUIREMENTS
+     OPR-PPR is written in Fortran 90. 
+
+
+DOCUMENTATION
+
+  The documentation for OPR-PPR is contained in the following report:
+
+  Tonkin Matthew J., Tiedeman Claire R., Ely D. Matthew, and Hill Mary C., 2007, 
+  OPR-PPR, a Computer Program for Assessing Data Importance to Model Predictions 
+  Using Linear Statistics: Reston Virginia, USGS, Techniques and Methods 
+  Report TM –6E2, 115 pages.
+
+  This report is only available online, at the following url:
+  
+  http://pubs.usgs.gov/tm/2007/tm6e2/
+  
+  The report is a Portable Document Format (PDF) file, which is readable
+  and printable on various computer platforms using Acrobat Reader from Adobe.
+  The Acrobat Reader is freely available from the following url:
+  
+      http://www.adobe.com/
+
+
+
+CONTACTS
+    Claire R. Tiedeman
+    U.S. Geological Survey
+    345 Middlefield Road MS496
+    Menlo Park, CA  94025
+    (650) 329-4583
+    tiedeman@usgs.gov
+    
+    Matthew J. Tonkin
+    S.S. Papadopulos & Assoc., Inc.
+    7944 Wisconsin Avenue
+    Bethesda, MD  20814
+    (301) 718-8900 x258
+    matt@sspa.com
+    

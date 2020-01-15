@@ -1,0 +1,101 @@
+
+BEGIN OPTIONS
+  Verbose=0
+END OPTIONS
+
+BEGIN OUTPUT_CONTROL
+WritePreds = yes
+WRITEPARAMREGRESS=yes
+WRITEPARAMNATIVE=yes
+END OUTPUT_CONTROL
+
+BEGIN MODEL_GROUPS
+GroupName=z2  avg=yes
+GroupName=z3  avg=yes
+GroupName=z4  avg=yes
+END MODEL_GROUPS
+
+BEGIN PARAM_EQNS TABLE
+nrow=6  ncol=3 columnlabels
+ParEqnName    ParEqn            GroupName
+Crit1_Z2a       Kx5.gt.Kx1        z2
+Crit1_Z3a       Kx5.gt.Kx3        z3
+Crit1_Z3b       Kx3.gt.Kx1        z3
+Crit1_Z4a       Kx5.gt.Kx4        z4
+Crit1_Z4b       Kx4.gt.Kx2        z4
+Crit1_Z4c       Kx2.gt.Kx1        z4
+END PARAM_EQNS
+
+BEGIN PARAM_AVGS TABLE
+nrow=12  ncol=3 columnlabels
+ParamAvgName  GroupName Avg
+Kx1 z2 yes
+Kx5 z2 yes
+RCH z2 yes
+Kx1 z3 yes
+Kx3 z3 yes
+Kx5 z3 yes
+RCH z3 yes
+Kx1 z4 yes
+Kx2 z4 yes
+Kx4 z4 yes
+Kx5 z4 yes
+RCH z4 yes
+END PARAM_AVGS
+ 
+BEGIN MODEL_PATHS TABLE
+nrow=15  ncol=2 columnlabels
+PathAndRoot        GroupName      
+..\..\data-win\obsonly\z2\1\z    z2
+..\..\data-win\obsonly\z2\2\z    z2
+..\..\data-win\obsonly\z2\3\z    z2
+..\..\data-win\obsonly\z2\4\z    z2
+..\..\data-win\obsonly\z2\5\z    z2
+..\..\data-win\obsonly\z3\1\z    z3
+..\..\data-win\obsonly\z3\2\z    z3
+..\..\data-win\obsonly\z3\3\z    z3
+..\..\data-win\obsonly\z3\4\z    z3
+..\..\data-win\obsonly\z3\5\z    z3
+..\..\data-win\obsonly\z4\1\z    z4
+..\..\data-win\obsonly\z4\2\z    z4
+..\..\data-win\obsonly\z4\3\z    z4
+..\..\data-win\obsonly\z4\4\z    z4
+..\..\data-win\obsonly\z4\5\z    z4
+END MODEL_PATHS
+
+BEGIN PREDS TABLE
+nrow=22  ncol=1 columnlabels
+Prediction
+o11off
+o12off
+o13off
+o14off
+o15off
+o21off
+o22off
+o23off
+o24off
+o25off
+o31off
+o32off
+o33off
+o34off
+o35off
+o41off
+o42off
+o43off
+o44off
+o45off
+qtrib
+qmain
+END PREDS
+
+BEGIN ANALYSES TABLE
+nrow=3  ncol=3 columnlabels
+AnalysisLabel CritEqn PrEqn
+  AICcObs        AICcObs   exp(-0.5*(valcrit-mincrit))
+  KICObs         KICObs    exp(-0.5*(valcrit-mincrit))
+  SWSRlin        SWSRObs   1.+((mincrit-valcrit)/(maxcrit-mincrit))
+END ANALYSES
+
+

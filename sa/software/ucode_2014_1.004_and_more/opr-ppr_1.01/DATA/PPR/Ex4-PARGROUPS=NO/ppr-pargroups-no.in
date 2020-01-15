@@ -1,0 +1,79 @@
+#
+# -------------------------
+# BASIC OPTIONS INFORMATION
+# -------------------------
+#
+BEGIN OPTIONS KEYWORDS
+  MODE = PPR
+  PARGROUPS = NO
+  PREDGROUPS = NO
+  PERCENTREDUC = 10
+  CORRELTHRESH = 0.90
+  VERBOSE = 1
+END OPTIONS
+#
+# -------------------------
+# INPUT FILES INFORMATION
+# -------------------------
+#
+BEGIN READ_FILES KEYWORDS
+  DMFNAM = example._dm                  model data file
+  DMPFNAM = example._dmp                prediction model data file
+  SUFNAM = example._su                  existing observations sensitivity file
+  WTFNAM = example._wt                  existing observations weight file
+  SPUFNAM = example._spu                prediction sensitivities file
+  SUPRIPFNAM = example._suprip	        prior sensitivities for parameters not in regression
+  WTPRIPFNAM = example._wtprip 	        prior weights for parameters not in regression
+END READ_FILES KEYWORDS
+#
+# ---------------------------
+# POTENTIAL_PRIOR INFORMATION
+# ---------------------------
+#
+BEGIN PPR_PARAMETERS TABLE
+  NROW = 7 NCOL = 1 COLUMNLABELS
+  PARNAME
+  RCH_1
+  RCH_2
+  K_RB
+  HK_1
+  VK_CB
+  HK_2
+  POR_1&2
+END PPR_PARAMETERS TABLE
+#
+# -------------------------
+# PREDICTION INFORMATION
+# -------------------------
+#
+BEGIN PREDICTION_DATA TABLE
+  NROW = 9 NCOL = 1 COLUMNLABELS
+  PREDNAME
+  AD10X
+  AD10Y
+  AD10Z
+  AD50X
+  AD50Y
+  AD50Z
+  A100X
+  A100Y
+  A100Z
+END PREDICTION_DATA TABLE
+#
+# If the PredOnly_Prior Block were to be used to define the
+#  weights on prior information for prediction-only
+#  parameters, then the lines in the Read_Files Block (above)
+#  that start with SUPRIPFNAM and WTPRIPFNAM would be removed,
+#  and the five lines below that comprise the PredOnly_Prior
+#  block would be uncommented:
+#
+# ---------------------------
+# PREDICTION-ONLY PRIOR INFORMATION
+# ---------------------------
+#
+# BEGIN PREDONLY_PRIOR TABLE
+# NROW = 1 NCOL = 4 COLUMNLABELS
+# PARAMNAME   TRANSFORM   STATFLAG   STATISTIC
+# POR_1&2        NO          WT      0.1111111111111111D+04
+# END PREDONLY_PRIOR
+

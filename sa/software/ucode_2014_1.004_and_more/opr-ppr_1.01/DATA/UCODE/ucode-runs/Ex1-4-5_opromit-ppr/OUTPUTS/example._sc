@@ -1,0 +1,15 @@
+ "PARAMETER NAME" "COMPOSITE SCALED SENSITIVITY" "LARGEST DSS FOR THE PARAMETER" "OBSERVATION WITH LARGEST DSS" "SECOND LARGEST DSS FOR THE PARAMETER" "OBSERVATION WITH SECOND LARGEST DSS"
+ RCH_1              15.6471834948129                      22.0600193708715     hd03.ss                               22.0360055201244     hd09.ss             
+ RCH_2              25.2759526831059                      54.4627388654617     hd09.ss                               35.1368952302052     hd08.ss             
+ K_RB              0.199846488193525                    -0.209609496422849     hd01.ss                             -0.209609262893528     hd07.ss             
+ HK_1               37.2014731721496                     -68.8600330289809     hd09.ss                              -52.7334879103932     hd03.ss             
+ VK_CB             0.221753639923991                    -0.679335511503995     hd07.ss                              0.183988316011803     hd09.ss             
+ HK_2               3.11925288424626                     -7.63628916936871     hd09.ss                              -4.17105341752981     hd08.ss             
+ "WITH PRIOR:"
+ "PARAMETER NAME" "COMPOSITE SCALED SENSITIVITY WITH PRIOR" "LARGEST DSS FOR THE PARAMETER" "OBSERVATION WITH LARGEST DSS" "SECOND LARGEST DSS FOR THE PARAMETER" "OBSERVATION WITH SECOND LARGEST DSS"
+ RCH_1              14.3933153943173                      22.0600193708715     hd03.ss                               22.0360055201244     hd09.ss             
+ RCH_2              23.2504948242211                      54.4627388654617     hd09.ss                               35.1368952302052     hd08.ss             
+ K_RB              0.919267091442981                      3.24751458858222     PRIOR_K_RB                          -0.209609496422849     hd01.ss             
+ HK_1               34.2203781707735                     -68.8600330289809     hd09.ss                              -52.7334879103932     hd03.ss             
+ VK_CB             0.937709162914963                      3.29999374541467     PRIOR_VK_CB                         -0.679335511503995     hd07.ss             
+ HK_2               2.86929533180675                     -7.63628916936871     hd09.ss                              -4.17105341752981     hd08.ss             

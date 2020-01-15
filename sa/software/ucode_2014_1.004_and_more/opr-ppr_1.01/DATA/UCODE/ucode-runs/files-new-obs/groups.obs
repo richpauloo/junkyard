@@ -1,0 +1,6 @@
+BEGIN OBSERVATION_GROUPS TABLE
+  nrow=2 ncol=4  columnlabels
+  groupname  plotsymbol  useflag   WTMULTIPLIER
+  newhead        4         yes         1.0
+  newflow        5         yes         1.0
+END OBSERVATION_GROUPS

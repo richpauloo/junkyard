@@ -1,0 +1,171 @@
+
+ ===========================
+ PROGRAM OPR-PPR VERSION 1.0
+ ===========================
+
+ SUCCESSFULLY OPENED FILE opromit.IN
+
+ READING INPUT FROM FILE: opromit.IN
+
+
+ Keyword                                 Value        Group =             
+ --------------------------------------  --------------------------------------
+ MODE                                    OPROMIT
+ OBSGROUPS                               NO
+ PREDGROUPS                              NO
+ CORRELTHRESH                            0.90
+ VERBOSE                                 1
+ ------------------------------------------------------------------------------
+
+ RUNFLAG= -1 (MODE=OPROMIT; GROUPS=NO):  OPROMIT INDIVIDUAL OBSERVATIONS
+
+ READING PREDICTION MODEL DATA FILE example._dmp                                                                                        
+
+  NUMBER OF PREDICTION GROUPS =           3
+  NUMBER OF PARAMETERS FOR PREDICTIVE EVALUATION =           7
+
+ READING REGRESSION/SENSITIVITY MODEL DATA FILE example._dm                                                                                         
+
+  PREDICTION DATA FILE example._dmp INDICATES    1 PREDICTION-ONLY PARAMETER(S)
+
+
+ OBSERVATIONS
+  Total number of observations read---------    11
+  Number of directly extracted observations-    11
+  Number of observations to be derived------     0
+  Number of observations to be used---------    11
+
+
+ TOTAL NUMBER OF PREDICTIONS IDENTIFIED FROM MAIN INPUT FILE =  9
+ (NOTE: THIS MUST EQUAL THE NO. OF ROWS IN THE PREDICTION SENSITIVITY FILE)
+
+
+ READING SENSITIVITIES FOR PREDICTIONS FROM FILE: example._spu
+
+
+ READING SENSITIVITIES FOR NPARPREDONLY PARAMETERS FROM FILE: example._suprip
+
+
+ READING WEIGHTS ON PRIOR FOR FOR NPARPREDONLY PARAMETERS FROM FILE: example._wtprip
+
+ SUCCESSFULLY CLOSED FILE opromit.IN
+
+ READING SENSITIVITIES FOR EXISTING OBSERVATIONS FROM FILE: example._su
+
+
+ SENSITIVITY ENTRIES FOR PRIOR WITH NPARPREDONLY APPENDED
+
+
+ READING WEIGHTS FOR EXISTING OBSERVATIONS FROM FILE: example._wt
+
+
+ FULL WEIGHT MATRIX WITH ALL ENTRIES (OBSERVATIONS, EXISTING PRIOR AND NON-REGRESSION PRIOR)
+
+
+ MAKING BASE CASE Z(INV(XTWX)S)ZT CALCULATION
+
+
+ COMPLETED BASE CASE Z(INV(XTWX)S)ZT CALCULATION
+
+
+ ========================
+ OPR-PPR ANALYSIS SUMMARY
+ ========================
+
+ FORMING AND WRITING OPR STATISTIC FILES ....
+
+
+ ----------------------------------------------
+ ABSOLUTE CHANGE: PREDICTION STANDARD DEVIATIONS (OPR_ABSCHG STATISTIC)
+ ----------------------------------------------
+ "ROWNAME     "           "AD10_X              "  "AD10_Y              "  "AD10_Z              "  "AD50_X              "  "AD50_Y              "  "AD50_Z              "  "A100_X              "  "A100_Y              "  "A100_Z              "
+ hd01.ss                         74.76233673             106.9545670             7.570813179             601.6669312             1028.358398             29.14476967             11312.49023             28089.27734             115.1338501    
+ hd02.ss                         11.55370617             24.22883415             1.773256660             92.33203125             230.3633881             6.676914692             2162.804932             5648.136719             19.86302185    
+ hd03.ss                        0.3001873195             2.437338829            0.2002142072             2.437014103             22.33136940            0.7181419134             198.8999481             551.3839111             1.940990329    
+ hd04.ss                         11.55370235             24.22877884             1.773252249             92.33199310             230.3628845             6.676898479             2162.800293             5648.123535             19.86297226    
+ hd05.ss                         6.019310951             37.68647003             3.067430973             49.39582062             346.6071777             11.09836483             3443.104004             9228.496094             36.21002197    
+ hd06.ss                         12.89165306             27.83049965             2.055148840             103.6104813             263.9856873             7.734663486             2635.094482             6797.863281             25.65528297    
+ hd07.ss                         22.73068047             1.017283559            0.5939814728E-03         172.1241608             15.55233002            0.4063739255E-01         6.474276066             11.04401493             4.601013184    
+ hd08.ss                        0.9122087806E-01        0.5382671021E-02        0.6174411101E-04        0.7230620384            0.7200179994E-01        0.6591019337E-03         1.350156903             2.199136496            0.1089097466E-01
+ hd09.ss                         8.424944878             15.76943493             1.812927961             64.25984955             127.3109894             5.759521008             1215.494995             3852.800537             17.25998306    
+ hd10.ss                         3.562362671             25.54270172             2.093327522             29.21359444             234.3350220             7.544881344             2271.827393             6146.485840             23.60937691    
+ flow01.ss                       351619.3125             11.78912830             6480.948242             2775653.000             245822.7656             14335.30859             1855430.125             2390747.750             50498.68750    
+ SUCCESSFULLY OPENED FILE opromit._OPR_ABSCHG
+ SUCCESSFULLY CLOSED FILE opromit._OPR_ABSCHG
+
+ ----------------------------------------------
+ ABSOLUTE CHANGE: PARAMETER STANDARD DEVIATIONS
+ ----------------------------------------------
+ "ROWNAME     "           "RCH_1       "  "RCH_2       "  "K_RB        "  "HK_1        "  "VK_CB       "  "HK_2        "  "POR_1&2     "
+ hd01.ss                     26.1089         26.1479        0.154254E-01    0.109598E-03    0.189766E-06    0.794126E-04     0.00000    
+ hd02.ss                     6.16353         6.17200        0.356176E-04    0.166159E-04    0.134399E-06    0.178631E-04     0.00000    
+ hd03.ss                    0.707902        0.708715        0.778333E-04    0.909205E-06    0.177149E-07    0.181458E-05     0.00000    
+ hd04.ss                     6.16352         6.17199        0.356176E-04    0.166159E-04    0.134399E-06    0.178630E-04     0.00000    
+ hd05.ss                     10.8115         10.8268        0.981383E-04    0.221441E-04    0.163613E-06    0.281033E-04     0.00000    
+ hd06.ss                     7.14574         7.15593        0.630620E-04    0.203882E-04    0.112187E-06    0.206383E-04     0.00000    
+ hd07.ss                    0.103706E-03    0.101581E-03    0.155765E-03    0.302934E-05    0.320052E-06    0.443942E-06     0.00000    
+ hd08.ss                    0.121130E-03    0.125323E-03    0.626316E-04    0.102054E-06    0.767800E-10    0.341050E-08     0.00000    
+ hd09.ss                     6.66826         6.67639        0.190760E-03    0.470916E-05    0.953494E-07    0.118690E-04     0.00000    
+ hd10.ss                     7.38757         7.39835        0.591329E-05    0.141343E-04    0.126425E-06    0.190198E-04     0.00000    
+ flow01.ss                   31775.9         25850.4        0.777076        0.309974        0.659069E-04    0.102320E-01     0.00000    
+ SUCCESSFULLY OPENED FILE opromit._OPA_ABSCHG
+ SUCCESSFULLY CLOSED FILE opromit._OPA_ABSCHG
+
+ ----------------------------------------------
+ PERCENT CHANGE: PREDICTION STANDARD DEVIATIONS (OPR/PRR STATISTIC)
+ ----------------------------------------------
+ "ROWNAME     "           "AD10_X              "  "AD10_Y              "  "AD10_Z              "  "AD50_X              "  "AD50_Y              "  "AD50_Z              "  "A100_X              "  "A100_Y              "  "A100_Z              "
+ hd01.ss                         58.36411667             48.58953094             44.41882324             58.60153580             49.76214981             46.52293777             55.84315109             52.80506516             56.66979980    
+ hd02.ss                         9.019539833             11.00717545             10.40389919             8.993013382             11.14725971             10.65816212             10.67650414             10.61793900             9.776738167    
+ hd03.ss                        0.2343448400             1.107284665             1.174679637            0.2373618037             1.080612540             1.146348715            0.9818527699             1.036547303            0.9553710222    
+ hd04.ss                         9.019536972             11.00715065             10.40387344             8.993009567             11.14723492             10.65813637             10.67648029             10.61791420             9.776714325    
+ hd05.ss                         4.699047565             17.12098885             17.99696732             4.811085224             16.77228546             17.71599388             16.99659157             17.34866142             17.82286263    
+ hd06.ss                         10.06402493             12.64341450             12.05779266             10.09151840             12.77423954             12.34661579             13.00792122             12.77931213             12.62773609    
+ hd07.ss                         17.74497986            0.4621526301            0.3484957153E-02         16.76465797            0.7525755763            0.6486827880E-01        0.3195971251E-01        0.2076165751E-01         2.264655590    
+ hd08.ss                        0.7121267915E-01        0.2445351100E-02        0.3622597433E-03        0.7042524964E-01        0.3484159708E-02        0.1052104984E-02        0.6664935034E-02        0.4134159535E-02        0.5360624753E-02
+ hd09.ss                         6.577034950             7.164064884             10.63665485             6.258820534             6.160564899             9.193754196             6.000187397             7.242883682             8.495502472    
+ hd10.ss                         2.781001568             11.60406685             12.28179073             2.845363855             11.33944702             12.04367161             11.21468353             11.55478573             11.62072468    
+ flow01.ss                       274495.8438             5.355808735             38024.46094             270344.7812             11895.33789             22883.03125             9159.173828             4494.369629             24855.85742    
+ SUCCESSFULLY OPENED FILE opromit._OPR
+ SUCCESSFULLY CLOSED FILE opromit._OPR
+
+ ---------------------------------------------
+ PERCENT CHANGE: PARAMETER STANDARD DEVIATIONS
+ ---------------------------------------------
+ "ROWNAME     "           "RCH_1       "  "RCH_2       "  "K_RB        "  "HK_1        "  "VK_CB       "  "HK_2        "  "POR_1&2     "
+ hd01.ss                     43.7448         43.8790         235.846         65.1836         18.4711         48.7714         0.00000    
+ hd02.ss                     10.3268         10.3573        0.544574         9.88232         13.0819         10.9706         0.00000    
+ hd03.ss                     1.18607         1.18930         1.19003        0.540751         1.72430         1.11443         0.00000    
+ hd04.ss                     10.3268         10.3573        0.544573         9.88231         13.0819         10.9706         0.00000    
+ hd05.ss                     18.1144         18.1685         1.50048         13.1702         15.9255         17.2597         0.00000    
+ hd06.ss                     11.9725         12.0084        0.964184         12.1259         10.9198         12.6751         0.00000    
+ hd07.ss                    0.173757E-03    0.170463E-03     2.38156         1.80171         31.1526        0.272648         0.00000    
+ hd08.ss                    0.202950E-03    0.210305E-03    0.957603        0.606965E-01    0.747347E-02    0.209457E-02     0.00000    
+ hd09.ss                     11.1725         11.2037         2.91661         2.80078         9.28094         7.28934         0.00000    
+ hd10.ss                     12.3777         12.4152        0.904110E-01     8.40639         12.3057         11.6810         0.00000    
+ flow01.ss                   53239.7         43379.7         11881.1         184357.         6415.12         6284.00         0.00000    
+ SUCCESSFULLY OPENED FILE opromit._OPA
+ SUCCESSFULLY CLOSED FILE opromit._OPA
+
+ ---------------------------------------------
+ CORRELATIONS GREATER THAN "CORRELTHRESH"
+ ---------------------------------------------
+
+  111 PARAMETER CORRELATIONS GREATER THAN "CORRELTHRESH"    0.9000 REPORTED
+ SUCCESSFULLY OPENED FILE opromit._OPC
+ SUCCESSFULLY CLOSED FILE opromit._OPC
+
+ ------------------------------------------------
+ SUMMARY OF MOST AND LEAST IMPORTANT OBSERVATIONS
+ ------------------------------------------------
+ hd08.ss              0.165142     | flow01.ss             656158.    
+ hd03.ss               7.95440     | hd01.ss               471.577    
+ hd07.ss               38.1101     | hd05.ss               131.284    
+ hd09.ss               67.7295     | hd06.ss               108.393    
+ hd10.ss               87.2855     | hd02.ss               92.3002    
+
+ NOTE: THIS TABLE IS CREATED BY SUMMING OPR OR PPR STATISTICS
+
+ ======================================
+ SUCCESSFUL PROGRAM EXECUTION - OPR-PPR
+ ======================================

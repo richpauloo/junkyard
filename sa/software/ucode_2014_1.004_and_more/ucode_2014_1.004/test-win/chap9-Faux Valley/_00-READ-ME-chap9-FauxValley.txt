@@ -1,0 +1,21 @@
+Directory "chap9-Faux Valley"
+
+This directory contains subdirectories with 
+files for conducting (i) UCODE sensitivity analysis, prediction,
+and sum-of-squares runs, and (ii) OPR-PPR runs using models that
+represent the synthetic Faux Valley groundwater flow system.
+This system, the MODFLOW models, and the UCODE and OPR-PPR runs
+are discussed in Chapter 9 of the UCODE_2014 documentation.
+
+This directory also contains subdirectory "truth", which includes
+the MODFLOW files for the true Faux Valley system (true system
+representation and true parameter values). The true system is
+known for this synthetic test case.
+
+See the READ-ME file under each subdirectory for a description of
+the runs in that subdirectory.
+
+NOTE: Faux Valley simulations for Model B initial forward model run, 
+initial sensitivity analysis, and Model B calibration using process-model 
+parameters (PMP) and with SVD are in the Chap4-SVD-test directory.
+

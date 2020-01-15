@@ -1,0 +1,14 @@
+   4   4   4   44 NQxx,NQCxx,NQTxx,IUxxOBSV
+  1.00000E+00  TOMULTxx
+         1         1  NQOBxx,NQCLxx
+SS1_1             1  0.000000E+00 -1.47431101E+03  OBSNAM,IREFSP,TOFFSET,HOBS
+         1        23         9  1.00000E+00  LAYER,ROW,COLUMN,FACTOR
+         1         1  NQOBxx,NQCLxx
+SS2_1             1  0.000000E+00 -1.25568899E+03  OBSNAM,IREFSP,TOFFSET,HOBS
+         1        24         9  1.00000E+00  LAYER,ROW,COLUMN,FACTOR
+         1         1  NQOBxx,NQCLxx
+SS1_2             2  0.000000E+00 -1.47431101E+03  OBSNAM,IREFSP,TOFFSET,HOBS
+         1        23         9  1.00000E+00  LAYER,ROW,COLUMN,FACTOR
+         1         1  NQOBxx,NQCLxx
+SS2_2             2  0.000000E+00 -1.25568899E+03  OBSNAM,IREFSP,TOFFSET,HOBS
+         1        24         9  1.00000E+00  LAYER,ROW,COLUMN,FACTOR

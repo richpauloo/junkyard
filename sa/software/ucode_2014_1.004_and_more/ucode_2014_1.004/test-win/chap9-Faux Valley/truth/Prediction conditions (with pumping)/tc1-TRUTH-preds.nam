@@ -1,0 +1,36 @@
+# NAME file for test case tc1
+#
+# NOTE: Backward slashes (\) in pathnames may need to be converted
+#       to forward slashes (/) in some computing environments
+#
+# Output files
+list            12  tc1-preds.lst
+data(binary)    13  tc1-preds.bhd
+data            14  tc1-preds.preds
+#
+# Obs-Sen-Pes process input files
+hob             22  tc1-preds.hob
+rvob            23  tc1-preds.rvob
+pval            24  tc1-TRUTH.pval
+#
+# Basic Package input files
+dis             31  tc1-preds.dis
+zone            32  tc1.zon
+mult            33  tc1-TRUTH.mlt
+#
+# Flow process input files
+bas6            41  tc1.bas
+lpf             43  tc1-TRUTH.lpf
+pcg             44  tc1.pcg
+oc              45  tc1-preds.oc
+ghb             46  tc1-preds.ghb
+riv             47  tc1-preds.riv
+rch             48  tc1-preds.rch
+MNW2            59  tc1-preds.mnw2 OLD
+MNWI            60  tc1-preds.mnwi OLD
+#
+DATA            61 tc1-preds.mnw_out REPLACE
+DATA            62 tc1-preds.qsum_out REPLACE
+DATA            63 tc1-preds.bynd_out REPLACE
+DATA           205 tc1-preds.mnwi_out REPLACE
+

@@ -1,0 +1,90 @@
+# -------------------------
+# J_UCODE INPUT EXAMPLE 1
+# -------------------------
+
+BEGIN Options
+  Verbose=0
+END Options
+
+# -------------------------
+# REGRESSION-CONTROL INFORMATION
+# -------------------------
+
+BEGIN UCODE_CONTROL_DATA KEYWORDS
+ModelName=2b #name
+prediction=yes
+sensitivities=yes
+optimize=no  
+DataExchange=yes           # graphing & postprocessing: yes, no  # I THINK THIS IS SPECIFIED IN NEDS RESIDUAL WORK
+EIGENVALUES=no            # print eigenvectors/eigenvalues yes, no
+END UCODE_CONTROL_DATA 
+
+BEGIN REG_GN_CONTROLS KEYWORDS
+tol=0.01                   # % parameter change between GaussNewton updates for convergence
+tolsosr=0.0                # fractional change in sum-of-squared weighted residuals over 3 GNupdates for convergence
+MrqtDirection=85.411137668 # angle (in degrees) between downgradient direction $ the parameter update vector above which the Mrqt parameter is utilized
+MrqtFactor=1.5             #
+MrqtIncrement=0.001        #
+quasinewton=no             # option to use quais-newton updating: yes, no
+FletcherReeves=0           # # FR iterations when FR and QN combined
+maxiter=10                 # maximum # of GaussNewton updates
+maxchange=2.0              # maximum fractional parameter change between GaussNewton updates
+END REG_GN_CONTROLS 
+
+BEGIN MODEL_COMMAND_LINES
+# Note single quotes around 'Command=value' are required if the
+# command includes one or more spaces, but are optinal otherwise
+'Command=mpredict.bat'
+purpose=forward
+CommandId=modflowpredict
+END MODEL_COMMAND_LINES
+
+# ---------------------
+# PARAMETER INFORMATION
+# ---------------------
+
+BEGIN PARAMETER_GROUPS KEYWORDS
+  groupname=Default   adjustable=yes
+END PARAMETER_GROUPS
+
+BEGIN PARAMETER_DATA FILES
+z2.param
+END PARAMETER_DATA 
+
+
+BEGIN PREDICTION_GROUPS 
+  groupname=head  
+  plotsymbol=1
+  useflag=1 
+  WTMULTIPLIER=1.0 
+  groupname=flow  
+  plotsymbol=2
+  useflag=1 
+  WTMULTIPLIER=1.0
+END PREDICTION_GROUPS
+
+BEGIN PREDICTION_DATA FILES
+zpredict.obs
+END PREDICTION_DATA 
+
+BEGIN PRIOR_INFORMATION_GROUPS
+  GROUPNAME = PRIOR  WTMULTIPLIER=1. USEFLAG=TRUE PLOTSYMBOL=3 STATFLAG=SD
+END PRIOR_INFORMATION_GROUPS
+
+BEGIN LINEAR_PRIOR_INFORMATION TABLE
+  NROW=2  NCOL=4  COLUMNLABELS  GROUPNAME=PRIOR
+  PRIORNAME  EQUATION      PRIORINFOVALUE  STATISTIC
+  K1P        KX1             4.            6.65005 
+  K5P        KX5            22.            36.5755
+END LINEAR_PRIOR_INFORMATION
+
+BEGIN MODEL_INPUT_FILES
+  modinfile=mf04.lpf  templatefile=lpf.tpl
+  modinfile=mf04.riv  templatefile=riv.tpl
+  modinfile=mf04.rch  templatefile=rch.tpl
+END MODEL_INPUT_FILES
+
+
+BEGIN MODEL_OUTPUT_FILES
+  modoutfile=mf04._os  instructionfile=zpredict.ins   category=pred
+END MODEL_OUTPUT_FILES
