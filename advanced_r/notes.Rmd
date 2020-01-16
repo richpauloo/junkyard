@@ -336,3 +336,54 @@ for (i in 1:5) {
 #> tracemem[0x7f80c5c3de20 -> 0x7f80c48de210]: 
 ```
 
+While it’s not hard to determine when a copy is made, it is hard to prevent it. If you find yourself resorting to exotic tricks to avoid copies, it may be time to rewrite your function in C++, as described in Chapter 25.
+
+You’ll learn more about environments in Chapter 7, but it’s important to mention them here because their behaviour is different from that of other objects: environments are always modified in place. This property is sometimes described as reference semantics because when you modify an environment all existing bindings to that environment continue to have the same reference.
+
+Take this environment, which we bind to e1 and e2:
+
+```{r}
+e1 <- rlang::env(a = 1, b = 2, c = 3)
+e2 <- e1
+```
+
+If we change a binding, the environment is modified in place:
+
+```{r}
+e1$c <- 4
+e2$c
+```
+
+This basic idea can be used to create functions that “remember” their previous state. See Section 10.2.4 for more details. This property is also used to implement the R6 object-oriented programming system, the topic of Chapter 14.
+
+One consequence of this is that environments can contain themselves:
+
+```{r}
+e <- rlang::env()
+e$self <- e
+
+ref(e)
+```
+
+Explain why the following code doesn’t create a circular list.
+
+```{r}
+x <- list()
+x[[1]] <- x
+```
+C
+opy-on-modify prevents the creation of a circular list. Let’s step through the details as follows:
+
+```{r}
+x <- list()  # creates initial object
+obj_addr(x)
+
+tracemem(x)
+x[[1]] <- x # copy on modify creates a new object
+
+obj_addr(x) # new address
+obj_addr(x[[1]]) # old address
+```
+
+
+
