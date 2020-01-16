@@ -13,6 +13,9 @@ library(readr)     # fast read/write functions
 # all station capacity
 # seems to be something for major 12 reservoirs, but nothing comprehensive
 # https://www.americangeosciences.org/critical-issues/maps/interactive-map-water-levels-major-reservoirs-california
+# https://cdec.water.ca.gov/resapp/RescondMain
+# https://engaging-data.com/ca-reservoir-dashboard/
+# missing from: https://www.farmwater.org/farm-water-news/californiareservoirs/
 res_capacity <- 
 
 
