@@ -1,0 +1,321 @@
+---
+title: "Lectures 3 and 4"
+output: html_notebook
+---
+
+Consider the GDP information in `global_economy`. Plot the GSP per capita over time. Which country has the highest GDP per capita? How has this changed over time?
+
+```{r}
+library(fpp3)
+```
+
+```{r}
+avg_gdp_ct <- global_economy %>% 
+  as_tibble() %>% 
+  group_by(Country, Year) %>% 
+  mutate(gdp_per_capita = GDP/Population) %>% 
+  ungroup()
+  
+avg_gdp_ct %>% 
+  ggplot(aes(Year, gdp_per_capita, color = Country),
+         alpha = 0.3) +
+  geom_line() +
+  guides(color = FALSE) +
+  scale_color_viridis_d()
+```
+
+Top 5
+```{r}
+avg_gdp_ct %>% 
+  arrange(desc(gdp_per_capita)) %>% 
+  slice(1:5)
+```
+
+
+# Inflation adjustments
+
+<see lecture notes PDF p 8-10>
+
+
+# Mathematical adjustments
+
+Variance stablization 
+
+If the data show variation at different levels of the series, then a transformation can be useful. 
+
+If $y_1 ... y_n$ are original, and $w_1 ... w_n$ are transformed, then by increasing strength:
+
+* square root $w_t = \sqrt{y_t}$
+* cube root $w_t = (y_t)^{1/3}$
+* logarithm $w_t = log(y_t)$
+
+Each of these transformations is close to a member of the family of Box-Cox transformations.
+
+```{r}
+food <- aus_retail %>% 
+  filter(Industry == "Food retailing") %>% 
+  summarise(Turnover = sum(Turnover))
+
+autoplot(food)
+```
+
+```{r}
+autoplot(food, sqrt(Turnover)) + labs(title="sqrt transformation")
+autoplot(food, (Turnover)^(1/3)) + labs(title="cube root transformation")
+autoplot(food, log(Turnover)) + labs(title="natural log transformation")
+autoplot(food, (-1)/(Turnover)) + labs(title="inverse transformation")
+```
+
+In Box-cox transformations, $\lambda = 1$ corresponds to no substantive transformation, $\lambda = 0$ corresponds to a natural logarithm, and $\lambda = -1$ is an inverse plus 1 transformation.
+
+We can find optimal values of $\lambda$ that stabalize variance via:
+```{r}
+food %>% features(Turnover, features = guerrero)
+```
+
+Always check results. A small $\lambda$ can give very large prediction intervals. 
+
+```{r}
+food %>% 
+  autoplot(box_cox(Turnover, 0.0524)) +
+  labs(title = "Box-Cox transformed turnover")
+```
+
+`logp1()` can be useful for data with zeros. 
+
+
+# Lab session 7 
+
+Find appropriate transformations to stablize variance of:
+
+US GDP from `global_economy`
+
+```{r}
+us_gdp <- global_economy %>% 
+  filter(Country == "United States")
+us_gdp %>% features(GDP, features = guerrero)
+```
+Victoria bulls, bullocks steers 
+```{r}
+aus_livestock %>% 
+  filter(
+    State == "Victoria",
+    Animal == "Bulls, bullocks and steers"
+  ) %>% 
+  autoplot(log(Count))
+```
+
+```{r}
+vic_elec %>% autoplot(log(Demand))
+```
+
+```{r}
+aus_production %>% autoplot(Gas)
+aus_production %>% features(Gas, features = guerrero)
+aus_production %>% autoplot(box_cox(Gas, 0.12))
+```
+
+In practice, going below 0 for $\lambda$ is very very uncommon.
+
+***
+
+
+The following is very hard to transform. Why?
+
+The variation does not change with the level of the season. A transformation here isn't possible. Either need to only model the period after 1995, or accept a more uncertain model with large swings in seasonality.
+```{r}
+canadian_gas %>% autoplot()
+```
+
+
+# Time Series Decompositions
+
+trend-cycle: aperiodic changes in level over time
+seasonal: (almost) periodic changes in the level due to seasonal factors (e.g., quarter, month, year, etc...)
+
+Additive decomposition:
+
+$y_t = S_t + T_t + R_t$
+
+$y_t$ is the data at time t  
+$S, T, R$ are the seasonal, trend, and remainder components at time t  
+
+## STL
+
+STL: seasonal decomposition using loess
+
+* additive model  
+* seasonal component can change over time and specified by user  
+* smoothness of trend cycle also controlled by user  
+* optionally robust to outliers
+* take logs for multiplicative decomposition
+* box-cox for other trasformations
+
+```{r}
+ee <- as_tsibble(fpp2::elecequip)
+dcmp <- ee %>% 
+  model(STL(value ~ season(window = 7))) %>% 
+  components()
+dcmp
+```
+
+Top plot is an additive model of the three bottom plots.
+
+```{r}
+autoplot(dcmp) + 
+  labs("STL decomposition", 
+       subtitle = "value = trend + season_year + remainder")
+```
+
+```{r}
+dcmp %>% gg_subseries(season_year)
+```
+
+Add a trendline
+```{r}
+ee %>% 
+  autoplot(value) +
+  autolayer(dcmp, trend, col="blue")
+```
+
+Recall holidays data
+```{r}
+holidays <- tourism %>% 
+  filter(Purpose == "Holiday") %>% 
+  group_by(State) %>% 
+  summarise(Trips = sum(Trips))
+holidays %>% autoplot()
+```
+
+Vertical rectangles are equal length scale bars to help visualize scales across axes of different limits.
+
+```{r}
+holidays %>% 
+  model(stl = STL(Trips ~ season(window = "periodic"), robust = TRUE)) %>%
+  components() %>% 
+  autoplot()
+```
+
+Changing the window. Smaller windows are more smooth, larger values are more linear. Default values are sensible.
+```{r}
+holidays %>% 
+  model(stl = STL(Trips ~ season(window = 5), robust = TRUE)) %>%
+  components() %>% 
+  autoplot()
+```
+
+```{r}
+holidays %>% 
+  model(stl = STL(Trips ~ season(window = 15) , robust = TRUE)) %>%
+  components() %>% 
+  autoplot()
+```
+
+Odd numbers are genearlly used because they contain the periods. 
+
+
+# Lab session 8
+
+Produce STL decomposition of Canadian gas volume:
+
+```{r}
+canadian_gas %>% autoplot()
+```
+
+
+```{r}
+canadian_gas %>% 
+  model(STL(Volume ~ season(window = 7) + trend(window = 11))) %>% 
+  components() %>% 
+  autoplot()
+```
+
+What happens when you change the values of the two window arguments?
+
+```{r}
+canadian_gas %>% 
+  model(STL(Volume ~ season(window = "periodic") + trend(window = 11))) %>% 
+  components() %>% 
+  autoplot()
+```
+
+```{r}
+canadian_gas %>% 
+  model(STL(Volume ~ season(window = 1) + trend(window = 11))) %>% 
+  components() %>% 
+  autoplot()
+```
+
+```{r}
+canadian_gas %>% 
+  model(STL(Volume ~ season(window = 30) + trend(window = 11))) %>% 
+  components() %>% 
+  autoplot()
+```
+
+```{r}
+canadian_gas %>% 
+  model(STL(Volume ~ season(window = 7) + trend(window = 100))) %>% 
+  components() %>% 
+  autoplot()
+```
+
+```{r}
+canadian_gas %>% 
+  model(STL(Volume ~ season(window = 100) + trend(window = 100))) %>% 
+  components() %>% 
+  autoplot()
+```
+
+How does the seasonal shape change over time? 
+
+```{r}
+canadian_gas %>% 
+  model(STL(Volume ~ season(window = 7) + trend(window = 11))) %>% 
+  components() %>% 
+  gg_season(season_year)
+```
+
+Can you produce a plausible seasonally adjusted series? [Hint: `season_adjust` is one of the variables returned by `STL`.]
+
+Estimate seasonality with STL, remove seasonality, and return trend + remainder. This is what many economics statistics do when they "correct for seasonality".
+```{r}
+canadian_gas %>% 
+  model(STL(Volume ~ season(window = 7) + trend(window = 11))) %>% 
+  components() %>% 
+  select(Month, season_adjust) %>% 
+  autoplot()
+```
+
+# Multiple seasonality
+
+```{r}
+vic_elec %>% 
+  model(STL(Demand)) %>% 
+  components() %>% 
+  autoplot()
+```
+
+
+# Seasonal adjustment
+
+Useful byproduct of decomposition: easy way to calculate seasonally adjusted data.
+
+Additive decompoosition of seasonally adjusted data:
+
+$y_t - S_t = T_t + R_t$
+
+Multiplicative decomposition of seasonally adjusted data:
+
+$y_t / S_t = T_t * R_t$
+
+Data in grey, seasonally adjusted data in blue.
+```{r}
+autoplot(ee, value, col = "gray") +
+  autolayer(dcmp, season_adjust, col = "blue") +
+  labs(title = "Electrical equipment manufacturing (Euro area)",
+       x = "Year", y = "New orders index")
+```
+
+
+

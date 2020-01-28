@@ -1,0 +1,202 @@
+---
+title: "Lecture 5"
+output: html_notebook
+---
+
+# Strength of seasonality and trend
+
+```{r}
+library(fpp3)
+```
+
+## Feature extraction and statistics
+
+```{r}
+tourism %>% 
+  features(Trips, feat_stl)
+```
+
+```{r}
+tourism %>% 
+  features(Trips, feat_stl) %>% 
+  ggplot(aes(x=trend_strength, y=seasonal_strength_year, col = Purpose)) +
+  geom_point() +
+  facet_wrap(vars(State))
+```
+
+Holidays more seasonal than other types (green dots high on y axis). Western Australia has the strongest trends. 
+
+Find the most seasonal time series:
+
+```{r}
+most_seasonal <- tourism %>% 
+  features(Trips, feat_stl) %>% 
+  filter(seasonal_strength_year == max(seasonal_strength_year))
+```
+
+```{r}
+tourism %>% 
+  right_join(most_seasonal, by = c("Region","State","Purpose")) %>% 
+  ggplot(aes(Quarter, Trips)) + 
+  geom_line() +
+  facet_grid(vars(State, Region, Purpose))
+```
+
+Same for most trended time series:
+```{r}
+most_trended <- tourism %>% 
+  features(Trips, feat_stl) %>% 
+  filter(trend_strength == max(trend_strength))
+
+tourism %>% 
+  right_join(most_trended, by = c("Region","State","Purpose")) %>% 
+  ggplot(aes(Quarter, Trips)) + 
+  geom_line() +
+  facet_grid(vars(State, Region, Purpose))
+```
+
+# Lab session 9
+
+Use `GGally::ggpairs()` to look at the relationship between STL features. You might need to change `seasonal_peak_year` and `seasonal_trough_year` to factors.
+
+```{r}
+tourism %>% 
+  features(Trips, feat_stl) %>% 
+  select(-Region, -State, -Purpose) %>% 
+  mutate(
+    seasonal_peak_year = factor(seasonal_peak_year),
+    seasonal_trough_year = factor(seasonal_trough_year)
+  ) %>% 
+  GGally::ggpairs()
+```
+
+This shows us where strange outlying values are. For isntance, very spikey series.
+```{r}
+tourism %>% 
+  features(Trips, feat_stl) %>% 
+  filter(spikiness > 2000)
+```
+
+Which is the peak quarter for travel in each state?
+```{r}
+tourism %>% 
+  group_by(State) %>% 
+  summarise(Trips = sum(Trips)) %>% 
+  features(Trips, feat_stl) %>% 
+  select(State, seasonal_peak_year)
+```
+
+Features can be used for anomaloy detection across many time series.
+
+## PCA on all feature sets
+
+```{r}
+# compute all features
+tourism_features <- tourism %>% 
+  features(Trips, feature_set(pkgs = "feasts"))
+
+# pricipal components 
+pcs <- tourism_features %>% 
+  # remove non-numeric features
+  select(-State, -Region, -Purpose) %>% 
+  # scale to mean 0, var 1 and compute PCA
+  prcomp(scale = TRUE) %>% 
+  broom::augment(tourism_features)
+```
+
+```{r}
+pcs %>% 
+  ggplot(aes(x = .fittedPC1, y = .fittedPC2)) +
+  geom_point() +
+  theme(aspect.ratio = 1)
+```
+
+What's going on here?
+```{r}
+pcs %>% 
+  ggplot(aes(x = .fittedPC1, y = .fittedPC2, col = State)) +
+  geom_point() +
+  theme(aspect.ratio = 1)
+```
+
+Coloring by "State" doesn't help us. What about by "Purpose"?
+
+```{r}
+pcs %>% 
+  ggplot(aes(x = .fittedPC1, y = .fittedPC2, color = Purpose)) +
+  geom_point() +
+  theme(aspect.ratio = 1)
+```
+
+Filter for interesting outliers.
+```{r}
+outliers <- pcs %>% 
+  filter(.fittedPC1 > 12 | .fittedPC1 > 10 & .fittedPC2 > 0)
+outliers
+
+outliers %>% 
+  left_join(tourism, by = c("State","Region","Purpose")) %>% 
+  mutate(Series = glue::glue("{State}","{Region}","{Purpose}",.sep="\n\n")) %>% 
+  ggplot(aes(Quarter, Trips)) +
+  geom_line() +
+  facet_grid(Series ~ .) +
+  labs(title = "outlying time series in the PCA space")
+```
+
+
+# Lab session 10
+
+Use a features based approach to look for outlying series in PBS (Monthly Medicare Australia prescription data).
+
+```{r}
+autoplot(PBS, Cost) + theme(legend.position = "none")
+
+pf <- PBS %>% features(Cost, feature_set(pkgs = "feasts"))
+```
+
+This won't work because two series have all zeros, and you can't compute models for data sets with all constants!
+```{r}
+# remove series with all zeros as features
+PBS_no_zeros <- PBS %>% 
+  group_by_key() %>% 
+  filter(!all(Cost == 0)) %>% 
+  ungroup()
+
+# recompute PCs
+pbs_features <- PBS_no_zeros %>% features(Cost, feature_set(pkgs = "feasts"))
+
+# look for bad features caused by messy data that we didn't clean properly
+summary(pbs_features)
+```
+
+```{r}
+# compute PCs
+pbs_prcomp <- pbs_features %>% 
+  dplyr::select(-Concession, -Type, -ATC1, -ATC2) %>% 
+  prcomp(scale = TRUE) %>% 
+  broom::augment(pbs_features)
+
+# plot first 2 components
+pbs_prcomp %>% 
+  ggplot(aes(x=.fittedPC1, y=.fittedPC2)) +
+  geom_point()
+
+# pull out outliers
+outliers <- pbs_prcomp %>% 
+  filter(.fittedPC1 == max(.fittedPC1))
+outliers
+```
+
+Visualize the outlying series.
+```{r}
+PBS %>% 
+  semi_join(outliers, by = c("Concession", "Type","ATC1","ATC2")) %>% 
+  autoplot(Cost) +
+  facet_grid(vars(Concession, Type, ATC1, ATC2)) +
+  theme(legend.position = "none")
+```
+
+This series has only two observations, so our `!any(x)` didn't catch and remove those series. However, using a features based appraoch, we were able to detect these anomalies without getting too deep into the data.
+
+
+

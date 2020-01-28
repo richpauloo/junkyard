@@ -1,0 +1,457 @@
+---
+title: "Lectures 1 and 2"
+output: html_notebook
+---
+
+# Time Series Forecasting in R
+
+Book: https://otexts.com/fpp3/
+Github: https://github.com/rstudio-conf-2020/time-series-forecasting
+tidyverts.org pacakges: `tsibble, tsibledata, feasts, fable`
+
+```{r, eval=FALSE}
+# packages for course
+install.packages(c("fpp3","GGally","sugrrants"))
+
+# should have been on CRAN by now, but didn't make it in time
+install.packages("fabletools", repos = "https://tidyverts.org")
+```
+
+`tsibble` stands for "time series tibble"
+
+```{r}
+# loads tidyverse, tsibble, tsibledata, feasts, fable and more
+library(fpp3)
+```
+
+`tsibble` objects contain:  
+
+* index (e.g., year)  
+* key (e.g., country)  
+* measured variables (e.g., GDP, population, etc...)  
+
+```{r}
+class(tourism)
+tourism
+```
+
+Note the "[304]" when the tsibble isprinted. That refers to the number of unique time series (combinations of region, state, purpose).
+
+Make a tibble
+```{r}
+tibble(year = yearmonth(1991:2000), val = rnorm(10)) %>% 
+  as_tsibble()
+```
+
+If you have quarterly data, you must convert it into quarterly data with `yearquarter`. Same for `yearweek`, `yearmonth`.
+
+When summarising tsibbles, you don't need to `group_by`. 
+
+# Lab session 1
+
+```{r}
+# Downloads tourism data http://robjhyndman.com/data/tourism.xlsx
+# convert to tsibble
+d <- readxl::read_xlsx("~/Github/junkyard/notes/time_series_forecasting/tourism.xlsx")
+d <- mutate(d, Quarter = yearquarter(Quarter)) %>% 
+  as_tsibble(index = Quarter, key = c("Region","State","Purpose"))
+class(d)
+```
+
+```{r}
+# what combo of region and purpose has the maximum number of overnight trips on average
+as_tibble(d) %>% 
+  group_by(Region, Purpose) %>% 
+  summarise(total_trips = mean(Trips)) %>% 
+  arrange(-total_trips) %>% 
+  ungroup() %>% 
+  slice(1)
+```
+
+```{r}
+# create a new tsibble which combines the purpses and regions and just has total trips by state
+d %>% 
+  group_by(State) %>% 
+  summarise(Trips = sum(Trips)) %>% 
+  ungroup()
+```
+
+Ansett airline dataset.
+```{r}
+ansett
+autoplot(ansett)
+```
+
+Economy class. Dip is due to pilot strike. 
+```{r}
+ansett %>% 
+  filter(Class == "Economy") %>% 
+  autoplot(Passengers)
+```
+
+One airport. Late time volatility results from reclassification of business and economy seats back and forth, clearly visible in the plot below.
+```{r}
+ansett %>% 
+  filter(Airports == "MEL-SYD") %>% 
+  autoplot(Passengers)
+```
+
+# Lab session 2
+
+Brick production has a positive, then negative trend. Seasonal variance increases over time.
+
+```{r}
+autoplot(aus_production, Bricks)
+```
+
+Long-range cycling of a Lynx population.
+
+```{r}
+autoplot(pelt, Lynx)
+```
+
+`!` in `[]` x label means "irregular" data. That's due to missing weekends, holidays, etc.
+
+```{r}
+autoplot(gafa_stock, Close)
+```
+
+Stable winter demand, and high peaks in summer for AC demand. 
+
+```{r}
+autoplot(vic_elec, Demand) + 
+  labs(title = "Half-hourly, total electricity demand", subtitle = "Victoria, Australia",
+       y = "Demand [MW]")
+```
+
+***  
+
+# Seasonal plots
+
+Priduction peaks in last quarter of the year to prepare for summer (Jan-Feb) demand. 
+
+```{r}
+beer <- aus_production %>% 
+  select(Quarter, Beer) %>% 
+  filter(year(Quarter) >= 1992)
+autoplot(beer)
+```
+
+```{r}
+beer %>% gg_season(Beer)
+```
+
+```{r}
+vic_elec %>% gg_season(Demand, period = "week")
+```
+
+```{r}
+vic_elec %>% gg_season(Demand, period = "day")
+```
+
+A subseries plot splits by season and plots.
+
+Blue line is average. Only Q4 is trending. From the first plot, it appears it looks like it's trending down, but on inspection of the subseries, it's only the Q4 that has a clear negative trend. 
+
+```{r}
+beer %>% gg_subseries(Beer)
+```
+
+```{r}
+holidays <- tourism %>% 
+  filter(Purpose == "Holiday") %>% 
+  group_by(State) %>% 
+  summarise(Trips = sum(Trips))
+```
+
+```{r}
+autoplot(holidays, Trips) +
+  labs(y="thousands of trips", x="Year", 
+       title = "Australian domestic holiday nights")
+```
+
+```{r}
+gg_season(holidays, Trips)
+```
+
+```{r}
+gg_subseries(holidays, Trips)
+```
+
+# Calendar Plots
+
+```{r}
+library(sugrrants)
+
+p1 <- vic_elec %>% 
+  filter(year(Date) == 2014) %>% 
+  mutate(Hour = hour(Time)) %>% 
+  frame_calendar(
+    x = Hour, y = Demand, date = Date, 
+    nrow = 4
+  ) %>% 
+  ggplot(aes(x = .Hour, y = .Demand, group = Date)) +
+  geom_line()
+
+prettify(p1, size = 3, label.padding = unit(0.15, "lines"))
+```
+
+
+# Lab session 3
+
+Look at quarterly tourism data for Snowy Mountains. Use `autoplot`, `gg_season`, and `gg_subseries` to explore the data. What do you learn?
+
+```{r}
+snowy <- tourism %>% 
+  filter(Region == "Snowy Mountains")
+```
+
+Holiday travel dominates other classes of travel, and shows strong seasonability. It appears there is no trend in any of the classes of travel, and perhaps a decreasing, then increasing trend in holiday travel.
+
+```{r}
+autoplot(snowy, Trips)
+```
+
+The seasonality plots confirm the strong seasonality of "Holiday" travel in the 3rd quarter. "Business" doesn't show much seasonality across years. "Other" and "Visiting" travel have more seasonal variance across years.
+
+```{r}
+gg_season(snowy, Trips)
+```
+
+Holiday travel peaks in Q3, and seems to indicate an upward trend. Thus the positive trend observed in the first plot of Holiday travel seems driven by Q3 travel. 
+
+```{r}
+gg_subseries(snowy,)
+```
+
+Produce a calendar plot for the pedestrian data from one location and one year.
+```{r}
+daily_traffic <- sugrrants::pedestrian %>% 
+  filter(Sensor_ID == 18 & Year == 2016) 
+```
+
+Pedestrian traffic at sensor 18 in 2016. No one walks around on the weekends, and on a normal weekday, there are two big spikes corresponding to arriving to and leaving from work. The little bump in the middle is probably related to the lunch hour or afternoon traffic. Holidays after Christmas are flat lines, as well as other holidays throughout the year.
+
+```{r}
+p2 <- daily_traffic %>% 
+  frame_calendar(
+    x = Time, y = Hourly_Counts, date = Date, 
+    nrow = 4
+  ) %>% 
+  ggplot(aes(x = .Time, y = .Hourly_Counts, group = Date)) +
+  geom_line()
+
+prettify(p2, size = 3, label.padding = unit(0.15, "lines"))
+```
+
+
+# Seasonal or Cyclic
+
+Trend = pattern exists when there is a long-term increase/decrease in the data.  
+
+Seasonal = pattern exists when a series is influenced by seasonal factors (e.g., quarter, month, year, etc.)
+
+Cyclic = pattern exists when data exhibit rises and falls that are not of a fixed period (duration of at least 2 years)... longer term trends and shifts over many years
+
+**Differences beteen seasonal and cyclic**
+
+seasonal pattern constant length; cyclic pattern variable length
+
+average length of cycle longer than length of seasonal pattern
+
+magnitude of cycle more variable than magnitude of seasonal pattern
+
+Trend and seasonality. No cycle.
+```{r}
+aus_production %>% 
+  filter(year(Quarter) >= 1980) %>% 
+  autoplot(Electricity)
+```
+
+Trends up and down, seasonality, and clear business cycles. 
+```{r}
+aus_production %>% 
+  autoplot(Bricks)
+```
+
+Same as above.
+
+```{r}
+us_employment %>% 
+  filter(Title == "Retail Trade", year(Month) >= 1980) %>% 
+  autoplot(Employed/1e3)
+```
+
+No trend or seasonality, but strong cycling.
+```{r}
+pelt %>% autoplot(Lynx)
+```
+
+The timing of peaks/troughs predicatble for seasonal data, but not for cyclic.
+
+
+***
+
+# Lags plots and autocorrelation
+
+```{r}
+np <- aus_production %>% 
+  filter(year(Quarter) >= 1992)
+np
+```
+
+```{r}
+gg_lag(np, Beer)
+```
+
+```{r}
+gg_lag(np, Beer, geom = "point")
+```
+
+Can compute correlation coefficient for each of these lagged plots, each at a different lag length. These comprise the autocorrelation function (ACF). 
+
+$r_1 = Correlation(y_t, y_{t-1})$
+$r_2 = Correlation(y_t, y_{t-2})$
+$r_3 = Correlation(y_t, y_{t-3})$
+$...$
+$r_n = Correlation(y_t, y_{t-n})$
+
+If there is seasonality, the ACF at the seasonal lag (e.g., 12 for monthly data) will be large and positive. 
+
+```{r}
+np %>% ACF(Beer, lag_max = 9)
+```
+
+Consider quarterly seasonal lags, lags of multiple 4 are lining up peaks. Lag multiples of 2 line up peaks and troughs, and you see negative associations.
+
+Horizontal blue dashed lines indicate 95% CIs. Thus, ACF exceeding the CI indicates significance = non-white noise. By default CI is set as `level = 0.95`, but you can change it with `level = x`.
+
+```{r}
+np %>% ACF(Beer, lag_max = 9) %>% autoplot()
+```
+
+For non-seasonal timeseries, the ACF should decay towards 0.
+
+```{r}
+np %>% ACF(Beer) %>% autoplot()
+```
+
+```{r}
+holidays %>% ACF(Trips) %>% autoplot()
+```
+
+When data have a trend, AC for small lags tends to be large and positive. 
+
+Seasonal data have AC at seasonal lags (multiples of seasonal frequency).
+
+Combination of effects when data are trended and seasonal.
+
+```{r}
+retail <- us_employment %>% 
+  filter(Title == "Retail Trade", year(Month) >= 1980)
+retail %>% autoplot(Employed)
+```
+
+Strong positive correlation at small lags.
+```{r}
+retail %>% 
+  ACF(Employed, lag_max = 48) %>% 
+  autoplot()
+```
+
+Google stock price.
+```{r}
+g <- gafa_stock %>% 
+  filter(Symbol == "GOOG", year(Date) == 2015) %>% 
+  select(Date, Close)
+autoplot(g)
+```
+
+```{r}
+g %>% ACF(lag_max = 100) # error. need regualr intervals
+```
+
+```{r}
+g <- mutate(g, trading_day = row_number()) %>% 
+  update_tsibble(index = trading_day, regular = TRUE)
+g %>% 
+  ACF(Close, lag_max = 100) %>% 
+  autoplot()
+```
+
+
+# Lab session 4
+
+use gg_lag and ACF to explore 4 time series: aus_production::Bricks, pelt::Lynx, gafa_stock's Close price and demand from vic_elec
+
+```{r}
+gg_lag(aus_production, Bricks, geom="point")
+gg_lag(pelt, Lynx)
+
+# need to create regular time intervals for gg_lag's ACF
+filter(gafa_stock, Symbol == "AAPL") %>% 
+  mutate(nt = row_number()) %>% 
+  update_tsibble(index = nt, regular = TRUE) %>% 
+  gg_lag(Close)
+```
+
+```{r}
+gg_lag(vic_elec, Demand)
+```
+
+
+# White Noise
+
+Uncorrelated across time with zero mean and constant variance. Technically requires independence as well.
+
+```{r}
+wn <- tsibble(t = seq(36), y = rnorm(36), index = t) 
+autoplot(wn, y)
+```
+
+ACF for white noise all within the CIs. One outside, but due to random chance.
+```{r}
+wn %>% ACF() %>% autoplot()
+```
+
+Example: pigs slaughtered
+```{r}
+pigs <- aus_livestock %>% 
+  filter(State == "Victoria" & Animal == "Pigs" & year(Month) >= 2014)
+
+pigs %>% autoplot(Count / 1e3)  
+```
+
+Slight seasonality.
+```{r}
+ACF(pigs, Count) %>% autoplot()
+```
+
+# Lab session 5
+
+Want to know if the diff of closing stock prices looks like white noise.
+
+```{r}
+dg <- gafa_stock %>% 
+  filter(Symbol == "GOOG" & year(Date) >= 2018) %>% 
+  mutate(trading_day = row_number()) %>% 
+  update_tsibble(index = trading_day, regular = TRUE) %>% 
+  mutate(diff = difference(Close))
+autoplot(dg, Close)
+```
+
+Does diff look like white noise?
+
+```{r}
+autoplot(dg, diff)
+```
+
+Yes, and let's look at the ACF.
+
+Efficient markets have lagged differences that resemble white noise.
+
+```{r}
+dg %>% ACF(diff) %>% autoplot()
+```
+
+

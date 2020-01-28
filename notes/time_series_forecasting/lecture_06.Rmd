@@ -1,0 +1,248 @@
+---
+title: "Lecture 6"
+output: html_notebook
+---
+
+# Forecasts
+
+## What can we forecast?
+
+A good forecast approximates the distribution of possible outcomes. 
+
+Stocks and exchange rates very hard, drug prices and electricity markets easier, weather hard (depends on physical models), sunrises and eclipses are very easy because we have a physical model of them.
+
+What makes somethign easy v hard to forecast? Easier if:
+
+* we have a good understanding of the factors that contribute to it (e.g., a physical model - sunrise, comets returning). 
+* there is a lot of data available
+* the forecasts cannot affect the thing we are trying to forecast (for example, the prime minister saying soemthing about the price of a stock changes the price of the stock)
+* there is relatively low natural/unexplainable random variation (low signal to noise ratio)
+* the future is somewhat similar to the past (e.g., forecasting streamflow, but then a da, is built which changes the entire flow regimes)
+
+## The Statistical forecasting perspective
+
+Simulate many possible futures (realizations).
+
+A forecast is a probability distribution of those futures. 
+
+It's nice to show both the realizations and the probability distribution for communication purposes.
+
+***
+
+Thing to forecast: $y_{T+h}$, want $y$ and some time $T$ that's $h$ steps ahead of $t$
+What we know: $y_1 ... t_T$
+Forecast distribution: $y_{T+h | t} = y_{T+h}$ 
+
+
+## Benchmark methods
+
+Basically a "null model" that you can compare forecasts to. 
+
+**mean**: forecast of all futures equal to mean of observed. 
+
+**naive - mean(y)**: forecasts of all futures equal to last observed value. Forecasts: $y_{T+h|t}=y_T$
+
+**Seasonally naive method**: repeat last series over and over again (so forecasted Q1 is last Q1 and so on.), $y_{T+h|t}=y_{T+h-m(k+1)}$.
+
+Random walk with drift - see notes.
+
+`NAIVE, SNAIVE, RW`
+
+```{r}
+library(fpp3)
+```
+
+Create the model objects.
+```{r}
+brick_fit <- aus_production %>% 
+  filter(!is.na(Bricks)) %>% 
+  model(
+    `Seasonal naive` = SNAIVE(Bricks),
+    `Naive` = NAIVE(Bricks),
+    `Drift` = RW(Bricks ~ drift()), # without ~ drift() equal to naive
+    `Mean` = MEAN(Bricks)
+  )
+brick_fit
+```
+
+Forecast.
+```{r}
+brick_fc <- brick_fit %>% 
+  forecast(h = "5 years")
+brick_fc
+```
+
+Consider a single value in the `distibution` column, e.g., `N(428, 2336)`. This means a normal distribution with mean 428 and variance 2336. There are ways to 
+
+```{r}
+# with intervals
+autoplot(brick_fc, aus_production)
+
+# without intervals
+autoplot(brick_fc, aus_production, level = NULL)
+```
+
+To extract prediction intervals use `hilo()`
+```{r}
+brick_fc %>% hilo(level = c(50,70)) %>% unnest()
+```
+
+
+# Lab Session 11
+
+Produce forecasts using an appropriate benchmark method for household wealth (`hh_budget`). Plot results with `autoplot()`.
+
+```{r}
+autoplot(hh_budget, Wealth)
+
+# can't use seasonal naive because no seaons.
+# RW with drift seems most appropriate here.
+# but we can use more
+
+hh_budget %>% 
+  model(
+    #`Mean` = MEAN(Wealth),
+    drift = RW(Wealth ~ drift()),
+    # `Seasonal Naive` = SNAIVE(Wealth),
+    #`Naive` = NAIVE(Wealth)
+  ) %>% 
+  forecast(h = "5 years") %>% 
+  autoplot(hh_budget)
+```
+
+Produce forecasts using an appropriate benchmark method for Australian takeaway food turnover (`aus_retail`). Plot results with `autoplot()`.
+
+```{r}
+aus_takeaway <- aus_retail %>% 
+  filter(Industry == "Cafes, restaurants and takeaway food services") %>% 
+  summarise(Turnover = sum(Turnover))
+autoplot(aus_takeaway, Turnover)
+
+aus_takeaway %>% 
+  model(
+    `snaive with drift` = SNAIVE(log(Turnover) ~ drift())
+  ) %>% 
+  forecast(h = "5 years") %>% 
+  autoplot(aus_takeaway)
+```
+
+A seasonally naieve method will be a hard benchmark to beat.
+
+
+# Residual diagnostics
+
+## Assumptions 
+
+Aussume uncorrelated errors ${e_t}$. If not, then there is additional information that we're not exploiting.
+
+${e_t}$ have mean = 0, otherwise the forecasts are biased
+
+## Useful properties
+
+${e_t}$ have constant variance and are normally distributed
+
+```{r}
+fb <- gafa_stock %>% 
+  filter(Symbol == "FB") %>% 
+  mutate(trading_day = row_number()) %>% 
+  update_tsibble(index = trading_day)
+autoplot(fb, Close)
+```
+see slides for the rest of this rather long example in checking for correlation between residuals for anaive model. 
+
+h = 10 for seasonal data because if you have not seen correlations within 10 lags, you probably won't thereafter. 
+
+Need to enter degrees of freedom `dog` on your own. For naive model it's 0, but for other models, we need to count. 
+
+
+# Lab session 12
+
+Compute seasonal naieve forecasts for quarterly Australian beer production
+
+```{r}
+# transformation probably isn't necessary
+autoplot(aus_production, Beer)
+
+aus_production %>% 
+  model(
+    sn = SNAIVE(Beer)
+  ) %>% 
+  forecast(h = 10) %>% 
+  autoplot(aus_production)
+```
+
+
+Test of the residuals are white noise. What do you conclude?
+```{r}
+m <- aus_production %>% 
+  model(
+    sn = SNAIVE(Beer)
+  )
+
+m %>% 
+  augment() %>% 
+  autoplot() +
+  geom_line(aes(y=Beer, color = "Data")) +
+  geom_line(aes(y=.fitted, color = "Fitted"))
+
+m %>% 
+  augment() %>% 
+  autoplot(.resid) +
+  labs(title = "Residuals from Seasonal naive method")
+
+m %>% gg_tsresiduals()
+```
+
+```{r}
+augment(m) %>% 
+  features(.resid, ljung_box, lag = 8, dof = 0)
+```
+
+ACF is clearly positive and significant. See the R script poseted to GH for the Ljung-Box test.
+
+
+***
+
+
+Problem with MAPE (mean absolute percentage error) which is common in business, is that it's not meaningful for values that are 0 (returns NAN), and not meaningful for values without a natural zero (e.g., termperature or pressure) - what does a percentage mean there?
+
+***
+
+# Lab session 13
+
+Create a training set for household wealth (hh_budget) withholding the last 4 years as testing data.
+```{r}
+train <- hh_budget %>% 
+  filter(Year < (max(Year) - 4))
+
+test <- hh_budget %>% 
+  filter(Year >= (max(Year) - 4))
+```
+
+Fit all appropriate benchmark methods to the training set to forcast the periods covered by the test set.
+```{r}
+autoplot(train, Wealth)
+
+# create and fit model
+f <- train %>% 
+  model(
+    mean = MEAN(Wealth),
+    naive = NAIVE(Wealth),
+    drift = RW(Wealth ~ drift())
+  ) %>% 
+  forecast(h = "4 years")
+
+autoplot(f, hh_budget, level=NULL)
+```
+
+```{r}
+# accuracy statistics
+f %>% 
+  accuracy(hh_budget) %>% 
+  group_by(.model) %>% 
+  # note that we didn't group by country, 
+  # so this summarises over all countries
+  summarise_if(is.numeric, mean)
+```
+
+

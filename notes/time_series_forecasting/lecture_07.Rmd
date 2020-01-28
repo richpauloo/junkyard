@@ -1,0 +1,248 @@
+---
+title: "Lecture 7"
+output: html_notebook
+---
+
+```{r}
+library(fpp3)
+```
+
+# Exponential smoothing
+
+see pdf notes for details on additive and multiplicative models.
+
+ETS(error, trend, season)
+
+Each error, trend and season can be additive/multiplicative/none, or damped.
+
+```{r}
+aus_economy <- global_economy %>% 
+  filter(Code == "AUS") %>% 
+  mutate(Pop = Population/1e6)
+
+fit <- aus_economy %>% 
+  model(
+    AAN = ETS(Pop)
+  )
+
+report(fit)
+```
+
+ETS(A,A,N) : A stands for "additive", M for "multiplicative", and N for "none". Damped is "Ad" or "Md" for additive and multiplicative respectively. 
+
+$\sigma^2$ is the variance of the residuals
+
+```{r}
+components(fit)
+components(fit) %>% autoplot()
+```
+
+```{r}
+fit %>% 
+  forecast(h = 20) %>% 
+  autoplot(aus_economy)
+```
+
+Default chooses best (which is an AAN) in this case.
+```{r}
+aus_economy %>% 
+  model(
+    mod = ETS(Pop)
+  ) %>% 
+  report()
+```
+
+A damped example: it's leveling off. 
+```{r}
+fit <- aus_economy %>% 
+  model(
+    mod = ETS(Pop ~ trend("Ad"))
+  ) 
+report(fit)
+autoplot(forecast(fit, h = 20), aus_economy)
+```
+
+An example with multiple series (and multiple models, best are selected automatically).
+```{r}
+fit <- global_economy %>% 
+  mutate(pop = Population/1e6) %>% 
+  model(ets = ETS(pop))
+
+fit  
+
+forecast(fit, h = 5)
+```
+
+# Lab session 14
+
+Try foreasting Chinese GDP from global_economy using an ETS model.
+
+```{r}
+# calcualte gp per capita for china
+china_gdp <- global_economy %>% 
+  filter(Country == "China") 
+
+autoplot(china_gdp, gdp_pc)
+
+# fit ets model
+china_gdp %>% 
+  model(
+    mod = ETS(GDP)
+  ) %>% 
+  forecast(h=10) %>% 
+  autoplot(china_gdp)
+
+# try some transformations
+fit <- china_gdp %>% 
+  model(
+    ets = ETS(GDP),
+    ets_damped = ETS(GDP ~trend("Ad")),
+    # box cox tranformation via Guerro is actually negative, 
+    # but never use soemthing that low in practice
+    ets_bc = ETS(box_cox(GDP, 0.2)),
+    ets_log = ETS(log(GDP))
+  ) 
+
+fit  
+
+# ways to extract components
+report(fit)
+fit %>% select(ets) %>% report()
+glance(fit)
+tidy(fit)
+coef(fit)
+
+fit %>% 
+  forecast(h="20 years") %>% 
+  autoplot(china_gdp, level = NULL)
+```
+
+Example: Australian holiday tourism. Observe all the unique combinations of models generated. 
+```{r}
+holidays <- tourism %>% 
+  filter(Purpose == "Holiday")
+fit <- model(holidays, mod = ETS(Trips))
+fit %>% pull(mod)
+```
+
+"Best" method chosen by AICc. See slide 39 of lecture 7. Paper for the method of "automatic forecasting" using AICc.
+
+**ETS won't work well for data less than monthly level**. 
+
+
+# Lab session 15
+
+Find an ETS model for the Gas data from aus_prouduction
+
+```{r}
+autoplot(aus_production, Gas)
+
+# needs a transformation
+autoplot(aus_production, box_cox(Gas, 0.2))
+autoplot(aus_production, log(Gas))
+
+gas <- aus_production %>% 
+  select(Gas) %>% 
+  filter(Quarter <= yearquarter("2007 Q4")) 
+autoplot(gas)
+
+# fit models
+fit <- gas %>% 
+  model(
+    auto = ETS(log(Gas)),
+    damped = ETS(Gas ~ trend("Ad")),
+    log = ETS(log(Gas))
+  )
+
+fit$auto    # AAA
+fit$damped  # M Ad M
+fit$log     # AAA
+
+fc <- fit %>% 
+  forecast(h = "4 years")
+
+fc %>% 
+  autoplot(aus_production, level = NULL)
+
+# zoom in
+fc %>% 
+  autoplot(
+    filter(
+      aus_production, 
+      Quarter > yearquarter("2000 Q4")),
+    level = NULL)
+
+fc %>% 
+  accuracy(aus_production)
+
+glance(fit)
+```
+
+```{r}
+# note that the log transformed distributions are transformed normal distributions.
+# it applies a bias correction factor in the backtransformation automatically. =)
+fc %>% filter(.model == "log") %>% pull(.distribution)
+```
+
+
+# Non-Gaussian forecast distributions
+
+If you don't want to believe normality. For instance, forecasts are too skewed (e.g. mean forecast not center of forecast distribution, or residuals not normally distributed).
+
+For non-Gaussian resduals, you can bootstrap with `generate()`. Although this still assumed uncorrelated residuals. Can also do it within `forecast()` with `bootstrap = TRUE`. 500 samples is default number of samples, but you can changes this with `times = N`. See `?forecast.ETS()`.
+
+
+# Lab session 
+
+```{r}
+vc <- aus_retail %>% 
+  filter(State == "Victoria",
+         Industry == "Cafes, restaurants and catering services") %>% 
+  select(Month, Turnover)
+
+vc %>% autoplot(Turnover)
+
+# apply transformation to stabilize variance across time series
+vc %>% autoplot(box_cox(Turnover, 0.2))
+
+# fit model
+fit <- vc %>% 
+  model(ets = ETS(box_cox(Turnover, 0.2)))
+
+fit$ets 
+```
+
+Bootstrapped forecast distributions
+```{r}
+sim <- fit %>% generate(h = "3 years", times = 5, bootstrap = TRUE)
+sim
+
+vc %>% 
+  filter(Month >= 2008) %>% 
+  ggplot(aes(x=Month)) + 
+  geom_line(aes(y = Turnover)) +
+  geom_line(data = sim, aes(y = .sim, color = as.factor(.rep))) +
+  guides(col = FALSE) +
+  coord_cartesian(xlim = yearquarter(c(2010, 2023)),
+                  ylim = c(300, 800))
+```
+
+
+
+ETS handles trend, seasonality, but fails to handle cycles. For example:
+```{r}
+pelt %>% autoplot(Lynx)
+
+# here's a lousy forecast
+pelt %>% 
+  model(ets = ETS(Lynx)) %>% 
+  forecast(h="30 years") %>% 
+  autoplot(pelt)
+
+# observe the model: error is Additive, trend is none, season is none. 
+# ETS model doesn't know what to do with cyclic data without seasonality!
+pelt %>% 
+  model(ets = ETS(Lynx)) %>% 
+  pull(ets)
+```
+
