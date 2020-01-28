@@ -1,6 +1,6 @@
 ---
 title: "Lecture 7"
-output: html_notebook
+output: github_document
 ---
 
 ```{r}
@@ -82,7 +82,7 @@ Try foreasting Chinese GDP from global_economy using an ETS model.
 china_gdp <- global_economy %>% 
   filter(Country == "China") 
 
-autoplot(china_gdp, gdp_pc)
+autoplot(china_gdp, GDP)
 
 # fit ets model
 china_gdp %>% 
