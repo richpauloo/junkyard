@@ -10,7 +10,7 @@ for(i in 1:length(report)){
   report[i] <- image_annotate(report[i], paste0("page ", i, "/", length(report)), size = 200, gravity = "northwest", color = "pink")
 }
 
-image_write(report, "C:/Users/rpauloo/Documents/Github/junkyard/mueller/mueller_pg.gif", format = "gif")
+image_write(report, "C:/Users/rpauloo/Documents/Github/junkyard/mueller/mueller_pg.pdf", format = "pdf")
 
 Sys.time() - st
 
