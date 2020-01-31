@@ -1,0 +1,180 @@
+---
+title: "Lectures 8 and 9"
+output: html_notebook
+---
+
+# ARIMA models
+
+```{r}
+library(fpp3)
+```
+
+Autoregressive integrated moving average. 3 terms in model(AR, I, MA).
+
+AR = autoregressive = lagged observations as inputs
+I = integrated = differencing to make series stationary
+MA = moving average = lagged errors as inputs
+
+ARIMA models are rarely interpretable in terms of visible data structures like trend and seasonality. But it can capture a huge range of time series patterns. 
+
+Unlike ETS models, there is an unlimited number of parameters that an ARIMA model can select so we can't brute force solve them all. 
+
+So a stepwise selection procedure is used to select ARIMA model coefficients. 
+
+AIC, AICc, BIC only useful for within-model comparisons. E.g., can't compare AIC for an ARIMA and ETS.
+
+## Stationarity
+
+staionary series is:  
+
+* roughly horizontal
+* constant variance
+* no predictable long-term patterns
+
+```{r}
+# not stationary
+gafa_stock %>% 
+  filter(Symbol == "GOOG", year(Date) == 2018) %>% 
+  autoplot(Close)
+```
+
+```{r}
+# stationary
+gafa_stock %>% 
+  filter(Symbol == "GOOG", year(Date) == 2018) %>% 
+  autoplot(difference(Close))
+```
+
+Differencing helps stabilize the mean. 
+
+Occasionaly, a second order difference is necessary. 
+
+automated ARIMA model selection achieved via stepwise selection. See lecture 8 slides.
+
+
+# Lab session 16
+
+For US GDP data, fit a suitable ARIMA model.
+
+```{r}
+us_gdp <- global_economy %>% 
+  filter(Code == "USA")
+
+autoplot(us_gdp, GDP)
+autoplot(us_gdp, log(GDP))
+
+us_gdp_model <- us_gdp %>% 
+  model(
+    arima_no_log = ARIMA(GDP),
+    arima = ARIMA(log(GDP)),
+    arima0 = ARIMA(log(GDP) ~ pdq(d=0)),
+    arima1 = ARIMA(log(GDP) ~ pdq(d=1)),
+    arima022 = ARIMA(log(GDP) ~ pdq(d=2,q=2)),
+    arima2 = ARIMA(log(GDP) ~ pdq(d=2,q=0:2,p=3))
+  )
+
+us_gdp_model$arima # 0,2,1 model... and so on. print `us_gdp_model` in console to see.
+glance(us_gdp_model)
+
+us_gdp_model %>% 
+  forecast(h = "10 years") %>% 
+  autoplot(us_gdp, level = NULL)
+
+# need to be careful. the time series needs to have stable variance prior to the ARIMA, otherwise, 
+# you get unrealisticly constrained prediction intervals. The model averages variance across the time
+# series and the low variance "washes out" the variance observed when stablized.
+us_gdp_model %>% 
+  dplyr::select(Country, arima, arima_no_log) %>% 
+  forecast(h = "10 years") %>% 
+  autoplot(us_gdp) + 
+  facet_wrap(~.model, ncol = 1)
+```
+
+
+# Lab session 17
+
+Fit a suitable ARIMA model for the "Holiday" data in `tourism`
+
+```{r}
+holidays <- tourism %>% 
+  filter(Purpose == "Holiday",
+         Region == "Snowy Mountains")
+
+# check for stable variance
+autoplot(holidays, Trips)
+
+# looks okay, but fit 2 ARIMA models anyway
+holidays %>% 
+  model(
+    ets = ETS(Trips),
+    ets_log = ETS(log(Trips)),
+    arima = ARIMA(Trips),
+    arima_log = ARIMA(log(Trips))
+  ) %>% 
+  forecast(h = "4 years") %>% 
+  autoplot(holidays) + 
+  facet_wrap(~.model, ncol = 1)
+```
+
+Consider Melbourne. The reason ARIMA models fail here is that Melbourne doesn't show strong seasonality.
+```{r}
+holidays <- tourism %>% 
+  filter(Purpose == "Holiday",
+         Region == "Melbourne")
+
+# check for stable variance
+autoplot(holidays, Trips)
+
+# looks okay, but fit 2 ARIMA models anyway
+holidays %>% 
+  model(
+    ets = ETS(Trips),
+    ets_log = ETS(log(Trips)),
+    arima = ARIMA(Trips),
+    arima_log = ARIMA(log(Trips))
+  ) %>% 
+  forecast(h = "4 years") %>% 
+  autoplot(holidays) + 
+  facet_wrap(~.model, ncol = 1)
+```
+
+
+# Forecast ensembles
+
+Simple syntax and handles distributional forecasts taking into account the correlations between the forecast errors of the component models. 
+```{r}
+mel_hol <- tourism %>% 
+  filter(year(Quarter) <= 2014,
+         Purpose == "Holiday",
+         Region == "Melbourne")
+  
+mel_hol %>% 
+  model(
+    ets = ETS(Trips),
+    arima = ARIMA(Trips),
+    snaive = SNAIVE(Trips)
+  ) %>% 
+  mutate(mixed = (ets+arima+snaive)/3) %>% 
+  forecast(h = "4 years") %>% 
+  autoplot(mel_hol) +
+  facet_wrap(~.model, nrow = 2)
+```
+
+# Lab session 18
+
+Use `I()` to specify knots in the formula call. 
+
+Compare AIC between similar AIC models paramaters(x,x,x)(x,x,x) must equal between differen models as Temperature varies.
+
+
+***
+
+# Dynamic Harmonic Regression
+
+Combine Fourier terms with ARIMA errors
+
+K can only be as high as the number of periods/2. E.g., 6 for monthly data, 26 for weekly data. This is because there are 2 coefficients per order K, thus, 2K = number of periods. 
+
+With increasing K, the ARIMA model becomes more simple (less degrees of freedom), because the Fourier terms handle more of the seasonal variance. 
+
+Idea of using a dummy variable for a kind of "QAQC" to indicate regions of the timeseries that you 

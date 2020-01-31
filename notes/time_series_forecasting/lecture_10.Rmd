@@ -1,0 +1,66 @@
+---
+title: "Lecture 10"
+output: html_notebook
+---
+
+# Hierarchical and grouped time series
+
+```{r}
+library(fpp3)
+```
+
+Recall the tourism data set
+```{r}
+tourism
+```
+
+Region is nested with State. These variables are hierarchical. 
+
+grouping factor: non-heirarchial (e.g., "Purpose")
+
+## Creating aggregates
+
+`aggregrate_key(State / Region, Trips = sum(Trips))` 
+
+`aggregrate_key(Purpose * (State / Region), , Trips = sum(Trips))`
+
+Useful when you want levels at different levels of aggregation. Simply adding up forecasts at lower levels does not always result in the same result as when you forecast at a higher level. Need to reconcile these forcasts with least squares. Implemented in `reconcile()`.
+
+
+
+
+***
+
+# Lab session 20
+
+Prepare agregations of PBS data by Concession, Type, ATC1
+
+```{r}
+PBS_agg <- PBS %>% 
+  aggregate_key(
+    Concession * Type * ATC1,
+    Cost = sum(Cost) / 1e6
+  )
+
+fit <- PBS_agg %>% 
+  filter(Month <= yearmonth("2005 Jun")) %>% 
+  model(
+    ets = ETS(Cost),
+    arima = ARIMA(Cost),
+    snaive = SNAIVE(Cost)
+  )
+
+fc <- fit %>% 
+  reconcile(
+    ets_adj = min_trace(ets),
+    arima_adj = min_trace(arima),
+    snaive_adj = min_trace(snaive)
+  ) %>% 
+  forecast(h = "3 years") 
+
+accuracy(fc, PBS_agg) %>% 
+  group_by(.model) %>% 
+  summarise(MASE = mean(MASE)) %>% 
+  arrange(MASE)
+```
+
