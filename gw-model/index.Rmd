@@ -1,0 +1,21 @@
+---
+title: "What is a Model?"
+output: 
+  html_document:
+    theme: cerulean 
+---
+
+The following is an attempt by John and Ty to describe what a model is.  
+We have tried to avoid too much philosophical rambling - sticking to the mechanics of what a model is in the context of applied hydrogeology. 
+
+Still, this seemingly simple question is deceptively difficult.  We will try to make the case that a model is the sum of many parts.  A model combines hydrogeologic theory and structure, parameters to describe local properties, and mathematical abstraction.  But, it is, or should be, more than that.  A model embodies a set of competing hypotheses to be tested in the service of answering a limited number of questions.  A model both reflects the available data and guides the collection of more data - data that are best able to test the most relevant parts of the model in the context of the questions being asked.  A model combines objective analysis and subjective elements of decision making.  In the end, a model is a foundation for discussion among multiple parties - bringing science to bear to provide decision-relevant information.
+
+We have attempted to construct a thought-flow that builds a model from its constituent parts, explaining the interactions of mathematics, theory, decision-making and data.  The presentation is non-quantitative and, we hope, accessible to a broad audience.  We welcome criticism and contributions to this representation of the modeling process.
+Picture
+
+The main ideas are compiled in a set of flow diagrams, under 'thought flow'.  There, you can use the 'NEXT' button to click through a series of increasingly complex diagrams showing the relations among parameters, models, forecasts, data, and decisions.
+Picture
+
+You can choose to see the accompanying text by hovering your mouse over the flow chart.  Definitions of key terms are provided by hovering your mouse over 'DEFINITIONS'.
+
+

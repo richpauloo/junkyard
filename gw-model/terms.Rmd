@@ -1,0 +1,37 @@
+---
+title: "Terms"
+output: 
+  html_document:
+    theme: cerulean 
+---
+
+***
+
+# Term 1 {#term-1}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dignissim placerat ornare. In dignissim tempus magna non lobortis. Nam eu ultrices velit, eget hendrerit odio. Integer sed orci eget tortor eleifend commodo. Etiam lacinia lobortis varius. Vivamus varius aliquam tortor, in congue leo blandit at. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus in dolor semper, suscipit enim in, commodo diam. Integer sit amet augue velit. Proin fermentum justo ac pellentesque pellentesque. Praesent tortor massa, lacinia at laoreet vitae, euismod quis est. Aenean posuere, dui sit amet vestibulum venenatis, est risus condimentum ante, a varius ante augue nec nisi. Mauris tincidunt ut metus in viverra. In hac habitasse platea dictumst. Mauris tempus odio in ligula rhoncus imperdiet.
+
+Aliquam malesuada dapibus justo eget dictum. Donec in convallis risus, vel feugiat arcu. Donec mollis nisl est, vitae fringilla quam efficitur in. Etiam vulputate fermentum nibh, nec luctus ex dictum eget. Fusce facilisis eros sed nisi elementum, vitae ultricies erat finibus. Nullam lectus neque, facilisis eget mauris a, sodales iaculis nisi. Integer malesuada condimentum lacinia. Duis ante orci, vestibulum a fermentum quis, tempus eu mi. Suspendisse tristique semper lectus, non sagittis arcu. Sed leo elit, mollis sit amet aliquam non, consectetur vel sem. Nunc a tortor sit amet quam elementum porta non vel massa. Donec mollis et nunc sit amet congue.
+
+Morbi et rhoncus lorem. Pellentesque dignissim vel ligula sit amet interdum. Vestibulum quis commodo ante. In interdum metus ac sem dictum fermentum. Mauris sed velit vehicula, sodales sem in, blandit erat. Pellentesque posuere lorem vel aliquet consectetur. Suspendisse non diam vel dui mollis semper ac et ligula. Duis sed ipsum enim. In id dui augue. Nunc vulputate commodo dolor, at consequat diam sodales et. Duis molestie quam augue, et posuere leo tempor luctus. Cras mollis sed velit ut tincidunt. Phasellus sagittis finibus velit sed sollicitudin. Morbi tristique, purus ac fermentum interdum, nulla arcu sodales leo, a tincidunt eros ex at ante.
+
+
+
+# Term 2 {#term-2}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dignissim placerat ornare. In dignissim tempus magna non lobortis. Nam eu ultrices velit, eget hendrerit odio. Integer sed orci eget tortor eleifend commodo. Etiam lacinia lobortis varius. Vivamus varius aliquam tortor, in congue leo blandit at. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus in dolor semper, suscipit enim in, commodo diam. Integer sit amet augue velit. Proin fermentum justo ac pellentesque pellentesque. Praesent tortor massa, lacinia at laoreet vitae, euismod quis est. Aenean posuere, dui sit amet vestibulum venenatis, est risus condimentum ante, a varius ante augue nec nisi. Mauris tincidunt ut metus in viverra. In hac habitasse platea dictumst. Mauris tempus odio in ligula rhoncus imperdiet.
+
+Aliquam malesuada dapibus justo eget dictum. Donec in convallis risus, vel feugiat arcu. Donec mollis nisl est, vitae fringilla quam efficitur in. Etiam vulputate fermentum nibh, nec luctus ex dictum eget. Fusce facilisis eros sed nisi elementum, vitae ultricies erat finibus. Nullam lectus neque, facilisis eget mauris a, sodales iaculis nisi. Integer malesuada condimentum lacinia. Duis ante orci, vestibulum a fermentum quis, tempus eu mi. Suspendisse tristique semper lectus, non sagittis arcu. Sed leo elit, mollis sit amet aliquam non, consectetur vel sem. Nunc a tortor sit amet quam elementum porta non vel massa. Donec mollis et nunc sit amet congue.
+
+
+# Term 3 {#term-3}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dignissim placerat ornare. In dignissim tempus magna non lobortis. Nam eu ultrices velit, eget hendrerit odio. Integer sed orci eget tortor eleifend commodo. Etiam lacinia lobortis varius. Vivamus varius aliquam tortor, in congue leo blandit at. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus in dolor semper, suscipit enim in, commodo diam. Integer sit amet augue velit. Proin fermentum justo ac pellentesque pellentesque. Praesent tortor massa, lacinia at laoreet vitae, euismod quis est. Aenean posuere, dui sit amet vestibulum venenatis, est risus condimentum ante, a varius ante augue nec nisi. Mauris tincidunt ut metus in viverra. In hac habitasse platea dictumst. Mauris tempus odio in ligula rhoncus imperdiet.
+
+Aliquam malesuada dapibus justo eget dictum. Donec in convallis risus, vel feugiat arcu. Donec mollis nisl est, vitae fringilla quam efficitur in. Etiam vulputate fermentum nibh, nec luctus ex dictum eget. Fusce facilisis eros sed nisi elementum, vitae ultricies erat finibus. Nullam lectus neque, facilisis eget mauris a, sodales iaculis nisi. Integer malesuada condimentum lacinia. Duis ante orci, vestibulum a fermentum quis, tempus eu mi. Suspendisse tristique semper lectus, non sagittis arcu. Sed leo elit, mollis sit amet aliquam non, consectetur vel sem. Nunc a tortor sit amet quam elementum porta non vel massa. Donec mollis et nunc sit amet congue.
+
+Morbi et rhoncus lorem. Pellentesque dignissim vel ligula sit amet interdum. Vestibulum quis commodo ante. In interdum metus ac sem dictum fermentum. Mauris sed velit vehicula, sodales sem in, blandit erat. Pellentesque posuere lorem vel aliquet consectetur. Suspendisse non diam vel dui mollis semper ac et ligula. Duis sed ipsum enim. In id dui augue. Nunc vulputate commodo dolor, at consequat diam sodales et. Duis molestie quam augue, et posuere leo tempor luctus. Cras mollis sed velit ut tincidunt. Phasellus sagittis finibus velit sed sollicitudin. Morbi tristique, purus ac fermentum interdum, nulla arcu sodales leo, a tincidunt eros ex at ante.
+
+Donec velit augue, condimentum in velit auctor, aliquam viverra ligula. Sed nec elit purus. Quisque justo nibh, aliquam ut convallis ac, tempus vitae urna. Suspendisse tincidunt maximus purus, ut elementum metus viverra a. Pellentesque quis diam laoreet, interdum ipsum id, feugiat massa. Sed consectetur turpis odio, nec blandit ipsum cursus eget. Sed ultrices lacus massa, eu placerat velit tristique sit amet. Maecenas quis mollis elit, eu ultrices elit. Donec auctor mattis orci, sed cursus turpis scelerisque quis. Vivamus risus tellus, sodales non vestibulum mattis, accumsan ac velit. Fusce a dui libero. Donec ac pellentesque nulla, molestie finibus erat. In in nisi leo.
+
+Phasellus elementum commodo nisi pulvinar mattis. Mauris volutpat dapibus risus. Pellentesque nulla erat, semper vitae luctus nec, imperdiet sed felis. Phasellus in aliquam libero. Donec mattis enim turpis, sed rhoncus massa finibus in. Morbi tincidunt lorem justo, id malesuada lorem gravida sed. Donec sit amet enim et risus viverra malesuada gravida et neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse porttitor imperdiet orci, ut varius diam auctor id. Etiam quis ullamcorper arcu, at maximus libero. Pellentesque non quam non massa semper consequat sed eu mi. Proin laoreet, ex ut efficitur egestas, leo nibh rutrum lorem, et dignissim metus turpis in ex. Pellentesque viverra tellus nisl, vitae hendrerit augue tincidunt vel. Sed id lectus metus. Mauris ultricies vitae sem vel molestie. Vivamus nisi dolor, semper et tortor egestas, aliquam fringilla leo.

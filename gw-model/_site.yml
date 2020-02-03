@@ -1,0 +1,10 @@
+name: "my-website"
+navbar:
+  title: "What is a Model"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Thought Flow"
+      href: thought-flow.html
+    - text: "Terms"
+      href: terms.html
