@@ -182,7 +182,7 @@ $P(A|B) = \frac{P(B|A) P(A)} {P(B|A) P(A) + P(B|A')P(A')}$
 
 # Probability Distributions
 
-Binomial (discrete) and normal (continuous) distributions.
+Below are examples of discrete (binomial) and continuous (normal) distributions.
 
 Probability **mass** functions $\longrightarrow$ **discrete** variables, and $f(x) = P(X=x)$  
 
@@ -260,37 +260,197 @@ sum( dbinom(x=4:5, size=5, prob=0.25) )
 sqrt(5*0.25*0.75)
 ```
 
-Consider the impact of varying success probability on the binomial distribution. Simulate by drawing random numbers from various binomial distributions while varying $p$.
+Consider an experiment with exactly two outcomes (e.g., flipping a coin), and we call heads success. This is a binomial result. We flip the coin 100 times (e.g., 100 independent trials, or experiments). If it's a fair coin, the probability of success (heads), $p =$ 0.5. The expected value is $np =$ 100 * 0.5 = 50. Thus, we expect a normal distribution with mean = 50. 
+
+Here we simulate the probability mass function of a binomial distribution, under varying success probability, and thus expected value ($\mu = E(X) = np$). `size = 100` indicates 100 independent trials, or experiments ($n$). `prob = x` gives the probability of success $p$ across the independent trials, which we vary. `n = 1000` means that for each call to `rbinom` we use 1000 random draws from a binomial distribution with the given $n$ and $p$.
+
+Under varying $p$, the probability mass function is:  
 
 ```{r}
 # `rbinom` is somewhat confusing, since the n parameter refers to the 
 # number of samples to draw, and the SIZE is actually the n in common
 # formulations of the binomial distribution
-tibble(`p = 0.10` = rbinom(n=1000, size = 20, prob = 0.01),
-       `p = 0.25` = rbinom(n=1000, size = 20, prob = 0.25),
-       `p = 0.50` = rbinom(n=1000, size = 20, prob = 0.50),
-       `p = 0.75` = rbinom(n=1000, size = 20, prob = 0.75),
-       `p = 0.90` = rbinom(n=1000, size = 20, prob = 0.90)) %>% 
+tibble(`p = 0.10` = rbinom(n=1000, size = 100, prob = 0.10),
+       `p = 0.25` = rbinom(n=1000, size = 100, prob = 0.25),
+       `p = 0.50` = rbinom(n=1000, size = 100, prob = 0.50),
+       `p = 0.75` = rbinom(n=1000, size = 100, prob = 0.75),
+       `p = 0.90` = rbinom(n=1000, size = 100, prob = 0.90)) %>% 
   pivot_longer(cols = 1:5, names_to = "p", values_to = "val") %>% 
   ggplot(aes(val)) +
-  geom_histogram(bins = 20) +
+  geom_histogram(stat = "density") +
   facet_wrap(~p, scales = "free_y") +
   labs(title = "Probability mass function for binomial distribution",
-       subtitle = "1,000 random draws for X = 1:30, across varying success probability, p",
-       x = "X", y = "Count") 
+       subtitle = "1,000 random draws for 100 trials, across varying success probability, p",
+       x = "Trails (n)", y = "Probability (P(X = k))") 
 ```
 
 
+### Binomial probability
 
 The number of possible samples of size $k$ from a population of size $n$.  
 
-For a binomial random variable:
+For a binomial random variable:  
 
-$P(X=k) = \left( \frac{n}{k} \right) p^k (1-p)^{(n-k)}$ 
+$P(X=k) = \left( \frac{n}{k} \right) p^k (1-p)^{(n-k)}$  
 
-where
+where  
 
 $\left( \frac{n}{k} \right) = \frac{n!}{k!(n-k)!}$
+
+
+## The Normal Distribution
+
+A special case of a distribution of random variable. For a random variable $X$, $P(X = x) = 0$ unlike discrete random variables, for which $P(X = k) = \left( \frac{n}{k} \right) p^k (1-p)^{(n-k)}$. 
+
+Whereas the probability **mass** function of a discrete binomial function is described by $P(X=k) = f(x)$, the probability **density** function of a continuous function at a single location is infinitesimally small, $P(X=X_i) = 0$, and instead is defined as the area under the curve over an interval bounded by $a$ and $b$: $P(a < X < b)$.  
+
+Given a normal distribution with mean $\mu$ and standard deviation, $\sigma$, the z-score of a value $x$ is the difference from the mean divided by the standard deviation, $z = \frac{x-\mu}{\sigma}$. Z-scores essentially allow us to standardize any normal distribution to a standard normal distribution, which then allows us to easily calculate probabilities from known values. Thus, z-scores are useful for comparing between different distributions, and related to the **empirical rule**, also called the **68-95-99.7 rule**: $[\mu - 1\sigma : \mu + 1\sigma]$, $[\mu - 2\sigma : \mu + 2\sigma]$, $[\mu - 3\sigma : \mu + 3\sigma]$ = $P(-1 < Z < 1)$, $P(-2 < Z < 2)$, $P(-3 < Z < 3)$ = 68, 95, 99.7 percent of the area under the normal distribution. 
+
+The max possible z score for a data set is $\frac{(n-1)}{\sqrt n}$.
+
+The standard normal distribution has $\mu = 0$ and $\sigma = 1$, $N(0,1)$:  
+
+```{r}
+# simulate a standard normal distribution
+tibble(x = seq(-4,4,by=0.1), 
+       y = dnorm(seq(-4,4,by=0.1), 0, 1)) %>% 
+  ggplot(aes(x, y)) +
+  geom_line()
+```
+
+
+## t-distribution
+
+Bell shaped continuous distribution that approaches the normal distribution with increasingly large degrees of freedom. 
+
+```{r}
+x <- seq(-10, 10, by = 0.1)
+tibble(xindex = x,
+       norm  = dnorm(x),
+       df1   = dt(x, 1), 
+       df5   = dt(x, 5), 
+       df10  = dt(x, 10)) %>% 
+  pivot_longer(-xindex, names_to = "dof", values_to = "val") %>% 
+  mutate(dof = factor(dof, levels = c('norm','df10', 'df5', 'df1'))) %>% 
+  ggplot(aes(xindex, val, color = dof)) +
+  geom_line() +
+  coord_cartesian(xlim = c(-10, 10)) +
+  labs(color = "Degrees of \nFreedom")
+```
+
+## Chi-squared distribution
+
+Right-skewed distribution that depends on the degrees of freedom.
+
+```{r}
+x <- seq(0, 30, by = 0.1)
+tibble(xindex = x,
+       df1   = dchisq(x, 1), 
+       df5   = dchisq(x, 5), 
+       df10  = dchisq(x, 10)) %>% 
+  pivot_longer(-xindex, names_to = "dof", values_to = "val") %>% 
+  mutate(dof = factor(dof, levels = c('df1', 'df5', 'df10'))) %>% 
+  ggplot(aes(xindex, val, color = dof)) +
+  geom_line() +
+  coord_cartesian(xlim = c(0, 20)) +
+  labs(color = "Degrees of \nFreedom")
+```
+
+## F-distribution 
+
+Right skewed distribution that depends on two parameters: the numerator and denominator degrees of freedom. 
+```{r}
+x <- seq(0, 10, by = 0.1)
+tibble(xindex = x,
+       df11   = df(x, 1, 1), 
+       df15   = df(x, 1, 5), 
+       df51   = df(x, 5, 1),
+       df1010 = df(x, 10, 10)) %>% 
+  pivot_longer(-xindex, names_to = "dof", values_to = "val") %>% 
+  mutate(dof = factor(dof, levels = c('df11', 'df15', 'df51', 'df1010'))) %>% 
+  ggplot(aes(xindex, val, color = dof)) +
+  geom_line() +
+  coord_cartesian(xlim = c(0, 10)) +
+  labs(color = "Degrees of \nFreedom")
+```
+
+
+## Sampling distribution
+
+Sample statistics (e.g., SD, mean) of random samples are also random variables. 
+
+A distribution of sample statistics is called a sampling distribution. 
+
+Suppose we draw 20 samples from a population and compute their mean, $\bar x_1$. We repeat this 1,000 times, generating a distribution of $\bar x_1, \bar x_2, ... \bar x_{1000}$. This is the sampling distribution of the sample mean.  
+
+```{r}
+set.seed(7)
+
+# create a population from the standard normal distribution
+pop <- rnorm(10000)
+
+# take 20 samples from the population, compute mean, and repeat 1000 times
+x <- vector(length = 1000)
+
+for(i in 1:1000) {
+  s    <- sample(pop, 30, replace = FALSE)
+  x[i] <- mean(s) 
+}
+
+tibble(s) %>% 
+  ggplot(aes(s)) +
+  geom_line(stat="density") +
+  labs(title = "Sampling distribution of the sample mean",
+       subtitle = "1,000 samples of size 30 from N(0,1)", x = "")
+```
+
+If the population is normally distributed, the sampling distribution of the sample mean is also normally distributed, no matter the sample size. The sample mean $\bar x$ has mean $\mu$ and standard deviation equal to standard error, 
+
+$$SD(\bar X) = SE(\bar X) = \frac{\sigma}{\sqrt n}$$ 
+Thus the z score of the sample mean is 
+
+$$\frac{\bar x - \mu}{\frac{\sigma}{\sqrt n}}$$
+
+If the sample comes from a distribution that is not normally distributed, the sample mean is still normally distributed if the sample is large, via the Central Limit Theorem. 
+
+If the population is skewed, the sample distribution looks more and more normal when n gets larger.  
+
+```{r}
+# simulate normal population
+pn <- rnorm(10000,0,1)
+ggplot(tibble(pn), aes(pn)) + geom_histogram() + labs(title = "N(0,1)")
+
+# skewed population - beta distribution
+pb <- rbeta(10000, 2, 10) 
+ggplot(tibble(pb), aes(pb)) + geom_histogram() + labs(title="Beta(2,10)")
+
+# sample extremely small sample sizes from normal population
+sample_dist <- function(dist, n, ...) {
+  return(sapply(1:10000, function(x) mean(sample(dist, n))))
+}
+
+tibble(n2   = sample_dist(pn, n = 2),
+       n100 = sample_dist(pn, 100),
+       b2   = sample_dist(pb, 2),
+       b100 = sample_dist(pb, 100)) %>% 
+  pivot_longer(everything(), names_to = "dist", values_to = "sample_mean") %>% 
+  ggplot(aes(sample_mean)) +
+  geom_line(stat="density") +
+  facet_wrap(~dist, scales = "free") +
+  labs(subtitle = "Skewed beta population with small sample size -> skewed sampling distribution \nNormal population with small sample size -> normal sampling distribution \nLarge sample size from skewed or normal distribution -> normal sampling distribution")
+```
+
+Therefore, CLT tells us that the sampling distribution of the sample mean is normal or approximately normal if either
+
+1. the population distribution is normal  
+2. the sample size is large  
+
+And, the sampling distribution has the same mean as the population mean $\mu$, and SD = SE = $\frac{\sigma}{\sqrt n}$.
+
+
+## Sampling distribution of the sample proportion
+
+
 
 
 ## A/B testing
@@ -471,3 +631,5 @@ Topic hierarchy for frameworks:
 [Karl Browman's Stat 371 ](https://www.biostat.wisc.edu/~kbroman/teaching/stat371/syllabus.html)
 
 
+# Motivation 
+sapply(1:10000, sample_dist, pn, 2),
