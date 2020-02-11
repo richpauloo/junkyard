@@ -321,7 +321,7 @@ tibble(x = seq(-4,4,by=0.1),
 
 ## t-distribution
 
-Bell shaped continuous distribution that approaches the normal distribution with increasingly large degrees of freedom. 
+Bell shaped continuous distribution that approaches the normal distribution with increasingly large degrees of freedom (n-1). 
 
 ```{r}
 x <- seq(-10, 10, by = 0.1)
@@ -360,7 +360,7 @@ tibble(xindex = x,
 
 Right skewed distribution that depends on two parameters: the numerator and denominator degrees of freedom. 
 ```{r}
-x <- seq(0, 10, by = 0.1)
+x <- seq(0, 10, by = 0.05)
 tibble(xindex = x,
        df11   = df(x, 1, 1), 
        df15   = df(x, 1, 5), 
@@ -448,7 +448,143 @@ Therefore, CLT tells us that the sampling distribution of the sample mean is nor
 And, the sampling distribution has the same mean as the population mean $\mu$, and SD = SE = $\frac{\sigma}{\sqrt n}$.
 
 
-## Sampling distribution of the sample proportion
+## Normal Approximation to the Binomial
+
+Can apply the CLT to find the sampling distribution of the sample proportion, $\hat{p}$. 
+
+Consider a Bernoulli random variable $Y$:  
+
+$$
+f(y) = \begin{cases}
+  1, \:  success\\
+  0, \: failure
+\end{cases}
+$$
+and $p$ is the probability of success.  
+
+The Bernoulli random variable is a special case of the binomial random variable, where the number of trials = 1. There are $n$ values of $Y$ from $Y_1, ... Y_n$.  
+
+Their sum $X$ is $X = \sum_{i=1}^n Y_i$, a binomial random variable with parameters $n$ and $p$.  
+
+The sample proportion $\hat{p} = \frac{X}{n}$, thus the CLT applies for large samples. 
+
+Mean of $\hat{p} = p$. SD = SE = $\sqrt{\frac{p(1-p)}{n}}$.  
+
+Requirements (either of): 
+
+1. $np \ge 5$  
+2. $n(1-p) \ge 5$  
+
+
+# Confidence intervals
+
+In real life, population parameters are rarely known, but methods exist to deal with this.
+
+
+## Inference
+
+You have data, but not data from the entire population. Inference gives probability statements about the population of interest based on that set of data.  
+
+**Estimation**: use sample information to estimate or predict parameter of interest.  
+
+* point estimates - one parameter, e.g., sample mean or sample proportion  
+* interval estimates - e.g., confidence interval which is likely to contain the true parameter of interest.  
+
+**Statistical (hypothesis) Tests**: use sample information to test the truth of a hypothesis.  
+
+
+## Estimation and confidence intervals
+
+General form of confidence interval = sample statistic $\pm$ margin of error, 
+
+where margin of error = $M \cdot \hat{SE}(estimate)$, and the multiplier M depends on the level of confidence.  
+
+## CI for the population proportion (example)
+
+First, check conditions: $n \hat{p} > 5$ and $n(1-\hat{p}) > 5$? This ensures the sampling distribution is approximately normal.  
+
+Next, use the general form. Z multiplier times the Standard Error. Recall the familiar 1.96 $\pm$ SE for a 95% CI.  
+
+$$
+\hat{p} \pm z_{\alpha / 2} \sqrt{\frac{\hat{p}(1-p)}{n}}
+$$
+
+where $\alpha$ is typically 0.1 or 0.05, corresponding to the 90% and 95% CIs. Note that the square root term is simply the SE of the estimate.  
+
+**A common misinterpretation of CIs** is that there is a 95% _probability_ of observing an event within the CI. This misses the random nature of the CI which derived from a random sample.  
+
+**CORRECT INTERPRETATION** of the CI: We are 95% _confident_ that the true [statistic of interest] falls between the interval from x to y. We are _confident_ in the method that gives us this specific interval, and if we were to repeat this method many times, we would find that around 95% of the generated CIs would contain the true [statistic of interest]. 
+
+
+## t-distribution
+
+The t-distribution approaches the z distribution as $n \rightarrow \infty$, are different for different degrees of rfeedom (DOF), and like the z distribution are ccentered at 0.  
+
+```{r}
+x <- seq(-10,10,0.01)
+tibble(
+  x = x,
+  `1` = dt(x, df = 1),
+  `2` = dt(x, df = 10),
+  `20` = dt(x, df = 100),
+  `200` = dt(x, df = 500),
+  `N(0,1)` = dnorm(x)
+) %>% 
+  pivot_longer(-x, names_to = "dof", values_to = "y") %>% 
+  ggplot(aes(x, y, color = dof)) +
+  geom_line() +
+  labs(title = "Student's t-distribution",
+       subtitle = "Increasingly normal with increasing degrees of freedom = (n-1)",
+       color ="Degrees of \nfreedom \n(n-1)", x="",y="Density")
+```
+
+
+# Hypothesis Testing 
+
+Steps:  
+
+1. set up hypotheses  
+2. confirm if it's testable with a normal distribution  
+3. choose significance level (tolerance to Type I error)  
+4. calculate test statistic  
+5. convert to probability of observing test statistic or more extreme (p-value)  
+6. decide whether nor not to reject null hypothesis   
+7. interpret  
+
+***  
+
+Population, Intervention, Comparison, Outcome, Time = **PICOT**. Remember **PICOT** when defining your hypotheses.
+
+***
+
+Type I error: reject $H_0$ when it is TRUE  
+
+* $\alpha$ (significance level) is the probability of committing a Type I error.  
+
+Type II error: fail to reject $H_0$ when $H_0$ is FALSE  
+
+* $\beta$ is the probability of committing a Type II error.  
+
+
+**Power** = $1 - \beta$ = is the probability $H_0$ is rejected when it is FALSE
+
+Example: 
+ 
+$H_0$: building is not safe  
+$H_a$ : building is safe  
+
+Type I error: reject $H_0$ when it's TRUE. The building is not safe, but we incorrectly determined it was safe.  
+
+Type II error: fail to reject $H_0$ when it is FALSE. The building is safe, but we incorrectly determined it was not safe.  
+
+**test statistic**: the sample statistic one uses to either reject $H_0$ or not.  
+
+**p-value**: probability of obtaining a particular test statistic or a value more extreme, assuming the null is true. Based on the rejection region approach with a standard normal distribution.  
+
+
+## Hypothesis Testing for one-sample proportion
+
+
 
 
 
