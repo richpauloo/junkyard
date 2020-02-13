@@ -445,7 +445,7 @@ Therefore, CLT tells us that the sampling distribution of the sample mean is nor
 1. the population distribution is normal  
 2. the sample size is large  
 
-And, the sampling distribution has the same mean as the population mean $\mu$, and SD = SE = $\frac{\sigma}{\sqrt n}$.
+And, the sampling distribution has the same mean as the population mean $\mu$, and SE = $\frac{\sigma}{\sqrt n}$. When the population SE $\sigma$ is unknown, we can estimate it with the sample SE $s$. 
 
 
 ## Normal Approximation to the Binomial
@@ -513,7 +513,7 @@ where $\alpha$ is typically 0.1 or 0.05, corresponding to the 90% and 95% CIs. N
 
 **A common misinterpretation of CIs** is that there is a 95% _probability_ of observing an event within the CI. This misses the random nature of the CI which derived from a random sample.  
 
-**CORRECT INTERPRETATION** of the CI: We are 95% _confident_ that the true [statistic of interest] falls between the interval from x to y. We are _confident_ in the method that gives us this specific interval, and if we were to repeat this method many times, we would find that around 95% of the generated CIs would contain the true [statistic of interest]. 
+**CORRECT INTERPRETATION** of the CI: We are 95% _confident_ that the true [statistic of interest] falls between the interval from x to y. We are _confident_ in the _method_ that gives us this specific interval, and if we were to repeat this method many times, we would find that around 95% of the generated CIs would contain the true [statistic of interest]. 
 
 
 ## t-distribution
@@ -579,12 +579,39 @@ Type II error: fail to reject $H_0$ when it is FALSE. The building is safe, but 
 
 **test statistic**: the sample statistic one uses to either reject $H_0$ or not.  
 
-**p-value**: probability of obtaining a particular test statistic or a value more extreme, assuming the null is true. Based on the rejection region approach with a standard normal distribution.  
+**p-value**: Commonly misinterpreted as "95% probability that this answer is correct." The correct interpretation of a p-value is: _the probability of obtaining a particular test statistic or a value more extreme, assuming the null is true._ In other words, the p-value itself IS A RANDOM VARIABLE (with a uniform distribution under the null hypothesis and a left skewed distribution under the alternative). If we were to repeat the experiment many times, we would find that, if the null was true, the probability of obtaining our test statistic or a value more extreme is equal to the p-value.   
+
+Interesting relationship to [effect size](https://livefreeordichotomize.com/2018/08/21/p-value-thoughts-a-twitter-follow-up/), and  [null intervals (rather than point nulls)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5863943/pdf/pone.0188299.pdf).  
+
+p-values are easily visualized with the rejection region approach (with a critical value, e.g., $t_{0.05}$).  
 
 
-## Hypothesis Testing for one-sample proportion
+***  
+
+statistical significance (passing a test) v practice significance (applicable in the real world)  
 
 
+## Power  
+
+$\alpha$ is the probability of committing a Type I error [0,1]  
+$\beta$ is the probability of committing a Type II error [0,1]  
+$Power = 1 - \beta$
+
+Need to increase sample size for $\alpha$ and $\beta$ to decrease, and therefore for power to increase. At a fixed sample size, decreasing $\alpha$ increases $\beta$.
+
+Think of power as the probability [0,1] of not making a Type II error ($1-\beta$).  
+
+Ways to increase power:  
+
+* increase $\alpha$, although this increases P(Type I error)  
+* increase $n$, which should, for example, shrink the sample distributions about their mean  
+* decrease $\sigma$ of the populations (not possible)  
+* decrease effect size you're trying to detect (usually not possible)
+
+
+## Hypothesis Testing for one-sample proportion and one-sample mean
+
+[Penn State notes](https://online.stat.psu.edu/stat500/lesson/6a/6a.3).
 
 
 
