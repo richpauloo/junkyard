@@ -613,7 +613,26 @@ Ways to increase power:
 
 [Penn State notes](https://online.stat.psu.edu/stat500/lesson/6a/6a.3).
 
+# Comparing two polulation parameters
 
+Consider 2 populations. Under certain conditions, $n_ip_i > 5 \: \& \: n_i(1-p_i) >5$ for $i = 1, 2$, the sampling proportions $\hat{p_i}$, and thus the sampling distribution of the difference in proportions $\hat{p_1} - \hat{p_2}$ approximate the normal distribution. 
+
+Then the mean is:  
+
+$$\hat{p_1} - \hat{p_2}$$  
+and the CI is:  
+
+$$
+\hat{p_1} - \hat{p_2} \: \pm \: \sqrt{\frac{\hat{p_1} (1 - \hat{p_2})}{n_1} + \frac{\hat{p_2} (1 - \hat{p_2})}{n_2}}
+$$
+
+The test statistic is:  
+
+$$
+z* = \frac{\hat{p_1}-\hat{p_2} - 0}{\sqrt{\hat{p^*}(1-\hat{p^*})(1/n_1 + 1/n_2)}}
+$$
+
+where $\hat{p^*} = \frac{x_1+x_2}{n_1+n_2}$
 
 
 ## A/B testing
