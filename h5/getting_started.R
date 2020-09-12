@@ -62,7 +62,7 @@ sp::spplot(r)
 sort(table(r@data@values))
 
 # what if we're just in a part of the year with no snow?
-layer1 <- d[,,100]
+layer1 <- d[,,150]
 r <- raster::raster(layer1)
 sp::spplot(r)
 
