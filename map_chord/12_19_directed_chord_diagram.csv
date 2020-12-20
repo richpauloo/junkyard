@@ -1,0 +1,407 @@
+,country_mentioned,author_country,count
+0,afghanistan,united states of america,9
+1,algeria,algeria,36
+2,algeria,united states of america,9
+3,antarctica,united states of america,9
+4,argentina,argentina,62
+5,argentina,spain,9
+6,armenia,armenia,9
+7,armenia,united states of america,9
+8,aruba,netherlands,9
+9,australia,australia,467
+10,australia,china,9
+11,australia,hungary,9
+12,australia,iran,9
+13,australia,united kingdom of great britain and northern ireland,9
+14,australia,united states of america,26
+15,austria,austria,18
+16,austria,norway,9
+17,austria,poland,9
+18,bahamas,united states of america,9
+19,bangladesh,australia,9
+20,bangladesh,bangladesh,45
+21,bangladesh,canada,9
+22,bangladesh,japan,18
+23,bangladesh,netherlands,9
+24,bangladesh,poland,9
+25,bangladesh,united states of america,18
+26,belgium,belgium,36
+27,belgium,netherlands,18
+28,bermuda,united states of america,9
+29,bhutan,united states of america,9
+30,bolivia (plurinational state of),china,9
+31,bolivia (plurinational state of),finland,8
+32,bolivia (plurinational state of),india,18
+33,bolivia (plurinational state of),united states of america,323
+34,brazil,australia,18
+35,brazil,brazil,81
+36,brazil,canada,9
+37,brazil,egypt,9
+38,brazil,hungary,9
+39,brazil,nigeria,9
+40,brazil,switzerland,9
+41,brazil,united states of america,108
+42,bulgaria,france,9
+43,canada,australia,18
+44,canada,bangladesh,9
+45,canada,canada,466
+46,canada,china,27
+47,canada,finland,1
+48,canada,saudi arabia,9
+49,canada,united kingdom of great britain and northern ireland,17
+50,canada,united states of america,72
+51,chad,france,9
+52,chad,germany,9
+53,chad,italy,9
+54,chad,nigeria,36
+55,chile,canada,9
+56,chile,chile,18
+57,china,canada,18
+58,china,china,764
+59,china,egypt,9
+60,china,ethiopia,9
+61,china,france,9
+62,china,germany,9
+63,china,india,27
+64,china,israel,9
+65,china,japan,18
+66,china,poland,9
+67,china,taiwan,90
+68,china,united states of america,54
+69,colombia,spain,9
+70,congo,france,9
+71,costa rica,costa rica,9
+72,croatia,croatia,18
+73,cuba,united states of america,9
+74,cyprus,canada,9
+75,denmark,denmark,72
+76,ecuador,ecuador,9
+77,egypt,australia,9
+78,egypt,egypt,97
+79,egypt,japan,9
+80,egypt,kuwait,9
+81,egypt,netherlands,18
+82,egypt,united states of america,18
+83,estonia,estonia,18
+84,estonia,lithuania,9
+85,ethiopia,ethiopia,27
+86,finland,finland,107
+87,finland,sweden,9
+88,france,brazil,9
+89,france,canada,18
+90,france,france,171
+91,france,united kingdom of great britain and northern ireland,18
+92,gabon,canada,9
+93,georgia,united states of america,108
+94,germany,algeria,9
+95,germany,australia,9
+96,germany,belgium,8
+97,germany,china,63
+98,germany,croatia,9
+99,germany,egypt,9
+100,germany,finland,9
+101,germany,france,18
+102,germany,germany,260
+103,germany,greece,18
+104,germany,hungary,18
+105,germany,india,27
+106,germany,iran,27
+107,germany,ireland,9
+108,germany,italy,27
+109,germany,japan,9
+110,germany,malaysia,9
+111,germany,netherlands,18
+112,germany,portugal,9
+113,germany,south africa,18
+114,germany,south korea,18
+115,germany,sweden,18
+116,germany,switzerland,18
+117,germany,thailand,9
+118,germany,tunisia,9
+119,germany,turkey,9
+120,germany,united kingdom of great britain and northern ireland,9
+121,germany,united states of america,125
+122,ghana,egypt,9
+123,ghana,ghana,9
+124,greece,france,9
+125,greece,greece,80
+126,greenland,russian federation,9
+127,greenland,united states of america,9
+128,guatemala,united states of america,9
+129,guinea,canada,9
+130,guinea,hungary,9
+131,guinea,papua new guinea,9
+132,hawaii,united states of america,18
+133,hungary,hungary,45
+134,iceland,france,9
+135,iceland,iceland,17
+136,iceland,united kingdom of great britain and northern ireland,9
+137,india,australia,18
+138,india,bangladesh,9
+139,india,canada,18
+140,india,egypt,9
+141,india,finland,9
+142,india,greece,9
+143,india,hungary,9
+144,india,india,935
+145,india,iran,9
+146,india,nigeria,18
+147,india,south africa,9
+148,india,united kingdom of great britain and northern ireland,45
+149,india,united states of america,72
+150,indonesia,indonesia,25
+151,indonesia,japan,9
+152,iraq,iraq,27
+153,iraq,united states of america,9
+154,ireland,ireland,54
+155,ireland,united kingdom of great britain and northern ireland,36
+156,israel,finland,1
+157,israel,israel,116
+158,israel,united kingdom of great britain and northern ireland,9
+159,italy,italy,207
+160,italy,united kingdom of great britain and northern ireland,9
+161,italy,united states of america,18
+162,jamaica,hungary,9
+163,jamaica,united states of america,9
+164,japan,canada,17
+165,japan,china,18
+166,japan,hungary,9
+167,japan,india,9
+168,japan,iran,9
+169,japan,japan,333
+170,japan,netherlands,9
+171,japan,spain,8
+172,japan,united states of america,36
+173,jersey,united states of america,81
+174,jordan,israel,18
+175,jordan,jordan,9
+176,jordan,united kingdom of great britain and northern ireland,9
+177,kazakhstan,japan,9
+178,kazakhstan,kazakhstan,9
+179,kazakhstan,russian federation,9
+180,kazakhstan,united states of america,9
+181,kenya,canada,9
+182,kenya,egypt,9
+183,kenya,nigeria,9
+184,kenya,united kingdom of great britain and northern ireland,9
+185,kuwait,austria,9
+186,kuwait,kuwait,53
+187,latvia,latvia,26
+188,lebanon,france,9
+189,libya,libyan arab jamahiriya,9
+190,lithuania,lithuania,18
+191,madagascar,france,18
+192,malawi,egypt,9
+193,malawi,united kingdom of great britain and northern ireland,9
+194,malaysia,australia,18
+195,malaysia,malaysia,45
+196,malaysia,new zealand,9
+197,mali,france,9
+198,mali,italy,9
+199,malta,malta,18
+200,malta,united kingdom of great britain and northern ireland,18
+201,mauritius,mauritius,9
+202,mexico,belgium,9
+203,mexico,brazil,9
+204,mexico,canada,26
+205,mexico,egypt,9
+206,mexico,germany,9
+207,mexico,israel,9
+208,mexico,mexico,81
+209,mexico,united states of america,197
+210,mongolia,china,63
+211,mongolia,india,9
+212,mongolia,russian federation,9
+213,morocco,morocco,18
+214,namibia,south africa,9
+215,nepal,canada,9
+216,nepal,india,9
+217,nepal,nepal,9
+218,nepal,norway,9
+219,nepal,united kingdom of great britain and northern ireland,9
+220,nepal,united states of america,18
+221,netherlands,australia,18
+222,netherlands,netherlands,459
+223,netherlands,united states of america,9
+224,new zealand,canada,9
+225,new zealand,new zealand,36
+226,new zealand,united states of america,9
+227,niger,germany,9
+228,niger,nigeria,27
+229,nigeria,australia,9
+230,nigeria,austria,9
+231,nigeria,brazil,9
+232,nigeria,canada,18
+233,nigeria,china,81
+234,nigeria,cote d'ivoire,9
+235,nigeria,croatia,9
+236,nigeria,denmark,9
+237,nigeria,egypt,36
+238,nigeria,france,36
+239,nigeria,germany,72
+240,nigeria,greece,9
+241,nigeria,hungary,9
+242,nigeria,iceland,17
+243,nigeria,india,81
+244,nigeria,indonesia,16
+245,nigeria,iran,18
+246,nigeria,israel,18
+247,nigeria,italy,36
+248,nigeria,japan,18
+249,nigeria,kuwait,9
+250,nigeria,latvia,9
+251,nigeria,mauritius,9
+252,nigeria,netherlands,9
+253,nigeria,new zealand,9
+254,nigeria,nigeria,216
+255,nigeria,poland,9
+256,nigeria,portugal,9
+257,nigeria,reunion,9
+258,nigeria,romania,18
+259,nigeria,russian federation,18
+260,nigeria,slovakia,9
+261,nigeria,south africa,9
+262,nigeria,spain,18
+263,nigeria,united kingdom of great britain and northern ireland,125
+264,nigeria,united states of america,233
+265,norway,netherlands,9
+266,norway,norway,18
+267,norway,united states of america,9
+268,oman,canada,8
+269,oman,oman,18
+270,oman,switzerland,9
+271,oman,united arab emirates,9
+272,pakistan,china,27
+273,pakistan,egypt,9
+274,pakistan,india,36
+275,pakistan,pakistan,63
+276,pakistan,united states of america,9
+277,panama,united states of america,9
+278,peru,argentina,26
+279,peru,canada,9
+280,peru,costa rica,9
+281,peru,india,9
+282,peru,new zealand,9
+283,peru,portugal,18
+284,peru,united kingdom of great britain and northern ireland,18
+285,peru,united states of america,90
+286,philippines,united states of america,18
+287,poland,poland,108
+288,portugal,portugal,18
+289,qatar,lebanon,9
+290,qatar,qatar,18
+291,romania,romania,18
+292,romania,spain,9
+293,russia,russian federation,18
+294,senegal,germany,9
+295,senegal,senegal,9
+296,serbia,australia,18
+297,serbia,serbia,27
+298,slovakia,hungary,9
+299,slovakia,slovakia,53
+300,spain,egypt,9
+301,spain,netherlands,9
+302,spain,spain,225
+303,spain,united states of america,18
+304,sudan,egypt,9
+305,sudan,france,9
+306,sudan,sudan,9
+307,sudan,united kingdom of great britain and northern ireland,9
+308,suriname,netherlands,9
+309,sweden,chile,9
+310,sweden,japan,9
+311,sweden,spain,9
+312,sweden,sweden,108
+313,switzerland,australia,9
+314,switzerland,china,369
+315,switzerland,czech republic,9
+316,switzerland,estonia,9
+317,switzerland,ghana,9
+318,switzerland,indonesia,9
+319,switzerland,malaysia,9
+320,switzerland,pakistan,9
+321,switzerland,switzerland,53
+322,switzerland,taiwan,9
+323,switzerland,thailand,18
+324,tajikistan,kyrgyzstan,9
+325,thailand,australia,9
+326,thailand,germany,9
+327,thailand,thailand,18
+328,togo,togo,18
+329,tunisia,france,9
+330,tunisia,tunisia,72
+331,tunisia,united kingdom of great britain and northern ireland,36
+332,turkey,brazil,9
+333,turkey,canada,27
+334,turkey,china,9
+335,turkey,egypt,9
+336,turkey,netherlands,18
+337,turkey,saudi arabia,9
+338,turkey,south africa,9
+339,turkey,turkey,45
+340,turkey,united states of america,9
+341,turkey,yugoslavia,9
+342,ukraine,ukraine,27
+343,united kingdom of great britain and northern ireland,australia,18
+344,united kingdom of great britain and northern ireland,austria,9
+345,united kingdom of great britain and northern ireland,brunei darussalam,9
+346,united kingdom of great britain and northern ireland,canada,72
+347,united kingdom of great britain and northern ireland,china,45
+348,united kingdom of great britain and northern ireland,finland,18
+349,united kingdom of great britain and northern ireland,france,9
+350,united kingdom of great britain and northern ireland,germany,54
+351,united kingdom of great britain and northern ireland,greece,18
+352,united kingdom of great britain and northern ireland,hungary,18
+353,united kingdom of great britain and northern ireland,india,18
+354,united kingdom of great britain and northern ireland,iran,9
+355,united kingdom of great britain and northern ireland,italy,9
+356,united kingdom of great britain and northern ireland,japan,8
+357,united kingdom of great britain and northern ireland,jordan,9
+358,united kingdom of great britain and northern ireland,latvia,9
+359,united kingdom of great britain and northern ireland,netherlands,9
+360,united kingdom of great britain and northern ireland,new zealand,9
+361,united kingdom of great britain and northern ireland,norway,9
+362,united kingdom of great britain and northern ireland,poland,9
+363,united kingdom of great britain and northern ireland,romania,9
+364,united kingdom of great britain and northern ireland,russian federation,18
+365,united kingdom of great britain and northern ireland,saudi arabia,9
+366,united kingdom of great britain and northern ireland,serbia,9
+367,united kingdom of great britain and northern ireland,south africa,27
+368,united kingdom of great britain and northern ireland,spain,18
+369,united kingdom of great britain and northern ireland,sri lanka,9
+370,united kingdom of great britain and northern ireland,sweden,9
+371,united kingdom of great britain and northern ireland,taiwan,9
+372,united kingdom of great britain and northern ireland,united kingdom of great britain and northern ireland,259
+373,united kingdom of great britain and northern ireland,united states of america,261
+374,united states of america,algeria,9
+375,united states of america,argentina,9
+376,united states of america,australia,45
+377,united states of america,bangladesh,9
+378,united states of america,belgium,9
+379,united states of america,canada,89
+380,united states of america,china,9
+381,united states of america,czech republic,9
+382,united states of america,denmark,18
+383,united states of america,germany,18
+384,united states of america,india,63
+385,united states of america,indonesia,9
+386,united states of america,iran,18
+387,united states of america,italy,9
+388,united states of america,japan,9
+389,united states of america,mexico,18
+390,united states of america,netherlands,27
+391,united states of america,saudi arabia,9
+392,united states of america,spain,9
+393,united states of america,tunisia,9
+394,united states of america,turkey,9
+395,united states of america,united arab emirates,9
+396,united states of america,united kingdom of great britain and northern ireland,63
+397,united states of america,united states of america,3164
+398,uruguay,israel,9
+399,uzbekistan,kyrgyzstan,9
+400,yemen,netherlands,9
+401,yemen,slovakia,9
+402,zambia,united states of america,9
+403,zambia,zambia,9
+404,zimbabwe,united kingdom of great britain and northern ireland,9
+405,zimbabwe,zimbabwe,9
