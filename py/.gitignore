@@ -1,0 +1,19 @@
+.venv
+.vscode
+__pycache__
+
+# This is where data files are downloaded
+/data
+
+# This is where environment-specific config is stored.
+# Check out config.example.py for example
+src/config.py
+.Rproj.user
+.env
+.Rhistory
+.RData
+.idea
+
+# etc
+.DS_Store
+.Renviron
