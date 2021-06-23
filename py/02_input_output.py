@@ -43,3 +43,68 @@ print(hellos)
 
 # %% The argument to repr() may be any Python object:
 repr((x, y, ('spam', 'eggs')))
+
+#%% more formatted sting literals (f strings)
+import math
+print(f"The value of pi is approximately {math.pi:.3f}")
+
+# %% passing an integer after the ":" will cause that
+# field to be a minimum number of characters wide. This is
+# useful for making columns line up.
+cats = {"louis": "9 lbs", "nina": "7 lbs"}
+for cat, weight in cats.items():
+    print(f"{cat:6} ==> {weight}")
+
+# %% modifiers convert value before its formatted
+animals = "kittens"
+print(f"My home is full of {animals!r}")
+
+
+## ------------------------------------------------ 
+# string .format() method
+
+#%% general use
+"my kittens are named {} and {}".format("louis", "nina")
+
+# %% use indices 
+"my kittens are named {1} and {0}".format("louis", "nina")
+
+# %% use keywords
+"my kittens are {louis} and {nina}".format(
+    louis = "silly", nina = "smart"
+)
+
+# %% combine indices and keywords
+"my kittens are {1}, {0}, {adopted}".format(
+    "louis", "nina", adopted = "ella"
+)
+
+# %% to format a long string, use a dictionary
+table = {'Sjoerd': 4127, 'Jack': 4098, 'Dcab': 8637678}
+print('Jack: {0[Jack]:d}; Sjoerd: {0[Sjoerd]:d}; '
+      'Dcab: {0[Dcab]:d}'.format(table))
+
+# %% use **
+table = {'Sjoerd': 4127, 'Jack': 4098, 'Dcab': 8637678}
+print('Jack: {Jack:d}; Sjoerd: {Sjoerd:d}; Dcab: {Dcab:d}'.format(**table))
+
+# %% another example: integers and their squares and cubes
+for x in range(1, 11):
+    print("{0:2d} {1:3d} {2:4d}".format(x, x*x, x*x*x))
+
+
+## ------------------------------------------------ 
+# manual string formatting
+# %%
+for x in range(1, 11):
+    print(repr(x).rjust(2), repr(x*x).rjust(3), end=' ')
+    # Note use of 'end' on previous line
+    print(repr(x*x*x).rjust(4))
+
+# %% use .zfill() to pad a numeric string with zeros on the left
+"1".zfill(3)
+# %%
+"1.01".zfill(3)
+# %%
+for i in range(0, 10):
+    print(f"{str(i).zfill(3)}_file.csv")
