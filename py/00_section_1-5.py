@@ -48,7 +48,8 @@ parrot('a million', 'bereft of life', 'jump')
 # %%
 " ".join(["hi","there"])
 
-# use * to split a list into arguments
+# use * (splat) to split a list into arguments, which can 
+# then be passed to a function
 #%%
 list(range(3,6))
 args = [3,6]
@@ -72,7 +73,7 @@ sorted(cats)
 
 # looping with dictionaries using .items() method
 #%%
-cats = {"louis":"is silly", "nina":"is smart"}
+cats = {"louis": "is silly", "nina": "is smart"}
 for cat, trait in cats.items():
     print(cat, trait)
 
