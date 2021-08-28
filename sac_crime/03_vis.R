@@ -86,6 +86,7 @@ p2
 
 
 # waffle plot -------------------------------------------------------------
+# adapted from: https://mvuorre.github.io/posts/2016-03-24-github-waffle-plot/
 # crime over time
 gh_waffle <- function(data) {
   p <- ggplot(data, aes(x = week, y = day, fill = n)) +
