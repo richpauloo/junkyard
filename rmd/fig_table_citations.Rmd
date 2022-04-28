@@ -1,0 +1,53 @@
+---
+title: "Untitled"
+date: '2022-04-27'
+output: bookdown::html_document2
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+f_make_caption <- function(tag, caption){
+  cat(
+    "<table width=100%>",
+    paste0("<caption>", 
+           "(#tab:", tag, ")", 
+           caption,
+           "</caption>"),
+    "</table>"
+  )
+}
+```
+
+
+## section 1
+
+You can also embed plots, for example:
+
+```{r pressure-asf-sf, fig.cap="this is a plot"}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+```{r some, fig.cap="this is another plot"}
+plot(pressure)
+```
+
+```{r asdfasdf-adsf}
+knitr::kable(pressure, caption="a table")
+```
+
+```{r dt, results="asis", echo=FALSE}
+DT::datatable(pressure)
+f_make_caption("dt", "a test caption")
+```
+
+```{r df-adsf}
+knitr::kable(pressure, caption="a table")
+```
+
+```{r dt2, results="asis", echo=FALSE}
+DT::datatable(pressure)
+f_make_caption("dt2", "another test caption")
+
+```
